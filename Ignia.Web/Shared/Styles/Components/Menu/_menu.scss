@@ -1,0 +1,131 @@
+﻿//==============================================================================================
+// MENU
+//----------------------------------------------------------------------------------------------
+// Defines styles associated with with the primary navigation menu(s).
+//----------------------------------------------------------------------------------------------
+// NOTE: If this component requires its own helpers, they should be defined in a separate
+// _placeholders.scss, _mixins.scss, or _functions.scss file and imported here.
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+@import "../../variables";
+@import "../../settings";
+@import "../../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// VARIABLES
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// COMMON
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// CORE
+//----------------------------------------------------------------------------------------------
+.site.header {
+  transition                    : all 0.25s ease-in-out 0s;
+  .navbar {
+    transition                  : all 0.25s ease-in-out 0s;
+  }
+  .navigation {
+    a {
+      border-bottom-color       : transparent;
+      font-family               : $body-font-family;
+      font-size                 : rem-calc(14);
+      font-weight               : 700;
+      line-height               : 1;
+      letter-spacing            : 0.1em;
+      text-decoration           : none;
+      color                     : $palette-grey-light;
+      transition                : border-bottom-color 100ms linear 50ms;
+      @extend .uppercase;
+      @include breakpoint(959px down) {
+        font-size               : rem-calc(20);
+      }
+      @include breakpoint(359px down) {
+        font-size               : rem-calc(16);
+      }
+      &.active {
+        border-bottom-color     : $palette-red;
+        transition              : border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
+      }
+      &.ancillary {
+        border-color            : rgba(145, 143, 138, 0.2);
+        transition              : border-bottom-color 0ms linear 0ms;
+        &:hover,
+        &:focus,
+        &:active {
+          border-color          : rgba(59, 51, 47, 0.8);
+        }
+      }
+      .ordinal {
+        font-size               : rem-calc(12);
+        font-weight             : 600;
+        color                   : $palette-grey-lighter;
+        @include breakpoint(959px down) {
+          line-height           : 1;
+          color                 : rgb(145, 143, 138);           // #918F8A
+        }
+      }
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        color                   : rgb(59, 51, 47);              // #3B332F
+        @include breakpoint(959px down) {
+          background            : transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 38px;
+        }
+        @include breakpoint(359px down) {
+          background-position   : -79px 36px;
+        }
+        .ordinal {
+          transition            : display 100ms ease-in 200ms;
+        }
+      }
+    }
+  }
+  .menu-toggle {
+    a {
+      font-size                 : rem-calc(41);
+      line-height               : 1;
+      color                     : rgb(145, 143, 138);
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(36);
+      }
+      &:hover,
+      &:focus,
+      &:active {
+        color                   : rgb(59, 51, 47);
+      }
+      &.close {
+        background-image        : url('/Images/Header/Mobile/Menu.CloseX.Sprite.png');
+        background-repeat       : no-repeat;
+      }
+    }
+  }
+  ul {
+    &.opened {
+      ~ .menu-toggle {
+        padding-top             : rem-calc(42);
+        transition              : display 100ms linear 0ms;
+        a {
+          &.open {
+            display             : none;
+          }
+          &.close {
+            display             : inline-block;
+            background-position : 0 0;
+            &:hover,
+            &:focus,
+            &:active {
+              background-position: rem-calc(0 -28);
+            }
+          }
+        }
+      }
+    }
+  }
+}

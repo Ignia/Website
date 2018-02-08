@@ -1,0 +1,274 @@
+﻿@{ Layout = "~/Views/Layout/_Layout.cshtml"; }
+
+@section Head {
+  <link rel="stylesheet" type="text/css" href="/Shared/Styles/Views/Home.css" />
+  <link rel="stylesheet" type="text/css" href="/Shared/Styles/Views/Contact.css" />
+}
+
+@section PageBodySection {
+
+  <!-- Splash -->
+  <!-- <div id="SplashBackground" class="panel splash underlay"></div> -->
+  <article id="Splash" class="panel splash full-height" role="article">
+
+    <div class="wrapper block">
+      <img src="/Images/Home/Hero.Logo.png" alt="Ignia" class="logo" />
+      <header role="definition">
+        <h1 class="section-heading headline">Ignia is a software architecture &amp;&nbsp;engineering&nbsp;firm.</h1>
+        <h2 class="section-heading subheadline">Let us build your product.</h2>
+      </header>
+      <a href="#Introduction" class="navigation arrow" data-smooth-scroll><img src="/Images/Home/Hero.DownArrow.png" alt="v" /></a>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Splash -->
+  <!-- Introduction -->
+  <article id="Introduction" class="panel introduction full-height" role="article">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Who is Ignia?</h1></header>
+      <section class="tagline">
+        <div class="heading-block"><h2 class="section-heading">Measure twice, <span>code once.</span></h2></div>
+      </section>
+      <div class="grid-x grid-margin-x">
+        <section class="factory cell large-6 show-for-large">
+          <img src="/Images/Home/CodeFactory.png" alt="v" />
+        </section>
+        <section class="body cell large-4 large-offset-2">
+          <p>We believe strong code starts with a strong plan. Ignia crafts projects from the ground up. Your website or app needs to be plugged into a complex, data-driven backend that tracks a series of metrics, and you need to be able to update the content on a daily basis. Wouldn&rsquo;t it be great if it was designed to work that way from the beginning?</p>
+          <p>Ignia collaborates closely with designers to translate functional concepts into modern web and mobile applications. We put an exceptional level of care and detail into the implementation, ensuring the functionality maintains the same degree of craftsmanship that was put into the user experience.</p>
+          <p>We specialize in applications that span multiple devices, and benefit from our experience building catalogs, communities, and editorial experiences. We have worked extensively with clients from nearly every continent, and are perfectly comfortable integrating with international teams, third-party vendors, and localized content.</p>
+          <p>Ignia has a passion for building applications and products that last. It isn&rsquo;t enough to build a website or an app that just meets today&rsquo;s requirements&ndash;it needs to be designed with the future in mind. We architect our code to anticipate new features, future designs, and novel devices.</p>
+          <p>What you can dream up, we can build. Beautifully.</p>
+        </section>
+      </div>
+    </div>
+    <span class="underlay rulers"></span>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Introduction -->
+  <!-- Services -->
+  <article id="Services" class="panel services full-height" role="article">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Services We Offer</h1></header>
+      <nav class="categories navigation" role="navigation">
+        <ul>
+          <li class="first"><a href="#ResponsiveService" class="active"><h2>Responsive Web Apps</h2></a></li>
+          <li class="second"><a href="#CloudAPIService"><h2>Cloud-Based APIs</h2></a></li>
+          <li class="third"><a href="#CMSService"><h2>Content Management Systems</h2></a></li>
+        </ul>
+      </nav>
+      <section class="details">
+        <article id="ResponsiveService" class="active">
+          <header><h2>Responsive Web Apps</h2></header>
+          <p>Ignia doesn&rsquo;t just build web apps that <em>look</em> different on phones, tablets, or even televisions. We build apps that <em>behave</em> differently, accommodating varying use cases and locations. After all, a customer&rsquo;s needs are considerably different when visiting a retail location than browsing content from the couch.</p>
+          <aside>
+            <ul>
+              <li>Google Angular 2</li>
+              <li>Twitter Bootstrap 3</li>
+              <li>Apache Cordova (PhoneGap)</li>
+            </ul>
+          </aside>
+        </article>
+        <article id="CloudAPIService">
+          <header><h2>Cloud-Based APIs</h2></header>
+          <p>Web services are the backbone of modern applications, from smartwaatches to online kiosks, by not only retrieving the data each device needs, but also responding itelligently to user requests. Ignia specializes in modeling flexible, developer-friendly APIs that meet existing needs while anticipating additional data and devices in the future.</p>
+          <aside>
+            <ul>
+              <li>Microsoft Web API 2.x</li>
+              <li>Azure Mobile Services</li>
+              <li>OData Protocol</li>
+            </ul>
+          </aside>
+        </article>
+        <article id="CMSService">
+          <header><h2>Content Management Systems</h2></header>
+          <p>Ignia has extensive experience with a variety of content management systems, including localization services and community applications. Importantly, we emphasize configuring these platforms to be presentation-agnostic, so the information can be utilized by web services to support different devices and use cases, not simply one-size-fits-some web pages.</p>
+          <aside>
+            <ul>
+              <li>Ignia OnTopic</li>
+              <li>Zimbra Community</li>
+              <li>Microsoft SharePoint</li>
+            </ul>
+          </aside>
+        </article>
+      </section>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Services -->
+  <!-- Client Highlights -->
+  <article id="ClientHighlights" class="panel clients full-height" role="complementary">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Featured Clients</h1></header>
+      <div class="grid-x grid-padding-x">
+        <section class="logos cell large-7">
+          <ul>
+            <li><span><img src="/Images/Clients/BingAds.png" class="logo client" alt="Bing Ads" /></span></li>
+            <li><span><img src="/Images/Clients/BlinkUX.png" class="logo client" alt="Blink UX" /></span></li>
+            <li><span><img src="/Images/Clients/Ford.png" class="logo client" alt="Ford Motor Company" /></span></li>
+            <li><span><img src="/Images/Clients/GoldSim.png" class="logo client" alt="GoldSim Technology Group" /></span></li>
+            <li><span><img src="/Images/Clients/Microsoft.png" class="logo client" alt="Microsoft" /></span></li>
+            <li><span><img src="/Images/Clients/TechEd.png" class="logo client" alt="Microsoft TechEd" /></span></li>
+          </ul>
+        </section>
+        <section class="tagline headings cell large-5">
+          <h2 class="section-heading headline">Our clients <span>love us.</span></h2>
+          <h2 class="section-heading subheadline">Become one <span>to find out</span> <span>why.</span></h2>
+          <a href="#Contact" class="arrow"><img src="/Images/Home/Hero.DownArrow.png" alt="v" /></a>
+        </section>
+      </div>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Client Highlights -->
+  <!-- Quote -->
+  <!--
+  <aside id="Quote" class="panel quote" role="note">
+    <blockquote>
+      <q>
+        When I&rsquo;m working on a problem,
+        <br/><span>I never think about beauty,</span>
+        <br/><span>I think only how to solve the problem.</span>
+        <br/><span>But when I have finished,</span>
+        <br/><span>if the solution is not beautiful,</span>
+        <br/><span>I know it is wrong.</span>
+      </q>
+      <footer>&#8212;<cite> R. Buckminster Fuller</cite></footer>
+    </blockquote>
+  </aside>
+  -->
+  <!-- /Quote -->
+  <!-- Contact -->
+  <section id="Contact" class="panel contact full-height" role="complementary">
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Contact Us</h1></header>
+
+      <section>
+        <!-- Heading -->
+        <h2 class="section-heading headline">Talk to us&mdash;we&rsquo;d love to hear&nbsp;from&nbsp;you!</h2>
+
+        <!-- Sidebar: Quick Contact Info -->
+        <aside class="sidebar right" role="complementary">
+          <div class="contact link"><a href="mailto:info@ignia.com"><i class="fas fa-envelope"></i></a> <a href="mailto:info@ignia.com">info@ignia.com</a></div>
+          <div class="contact link"><a href="tel:18774979284"><i class="fas fa-phone"></i></a> <a href="tel:18774979284">+1 (877) 497-9284</a></div>
+        </aside>
+        <!-- /Sidebar: Quick Contact Info -->
+        <!-- Contact Form -->
+        <form id="ContactForm" name="contactForm" class="form contact" role="form">
+
+          <!-- Form Messages -->
+          <h4 id="MessageLengthMessage" class="error hidden">
+            Please provide more information about the product you need built.
+          </h4>
+          <h4 id="SendSuccessMessage" class="success hidden">
+            Thank you for your inquiry. We will contact you shortly.
+          </h4>
+          <h4 id="SendErrorMessage" class="error hidden">
+            There was an error sending your message. Please try again later&ndash;we want to hear from you.
+          </h4>
+          <!-- /Form Messages -->
+          <!-- Form Fields and Submit -->
+          <fieldset>
+
+            <label for="contactName">Name</label>
+            <input type="text" id="ContactName" name="contactName" class="form-control" placeholder="Name" required />
+
+            <label for="contactEmail">Email</label>
+            <input type="email" id="ContactEmail" name="contactEmail" placeholder="Email@Domain.com" required />
+
+            <label for="contactMessage">Message</label>
+            <textarea id="ContactMessage" name="contactMessage" class="form-control" rows="4" cols="50" placeholder="Message..." required minlength="5"></textarea>
+
+            <button type="submit">Submit</button>
+
+          </fieldset>
+          <!-- /Form Fields and Submit -->
+
+        </form>
+        <!-- /Contact Form -->
+
+      </section>
+    </div>
+  </section>
+
+}
+
+@section Scripts {
+
+  <script>
+
+    $(function() {
+
+      validateForm();
+      $('input, textarea').on('keyup', validateForm);
+
+      $('#ContactMessage').on('keyup, blur', function() {
+        checkMessageLength();
+      });
+
+      $("#ContactForm").on('submit', function(e) {
+        e.preventDefault();
+
+        var contactFormData     = $(this).serialize();
+
+        $.ajax({
+          type                  : 'POST',
+          data                  : contactFormData,
+          url                   : '@Url.Action("SendContactRequest", "Contact")'
+        })
+        .done(function(data, textStatus, jqXHR) {
+          console.log('success');
+          console.log(data);
+          $('#SendSuccessMessage').removeClass('hidden');
+        })
+        .fail(function() {
+          console.log('Contact form POST failed.');
+          $('#SendErrorMessage').removeClass('hidden');
+        })
+        .always(function() {
+        });
+
+      });
+
+    });
+
+    function validateForm() {
+      var inputsWithValues = 0;
+
+      // get all input fields except for type='submit'
+      var myInputs = $("input:not([type='submit']), textarea");
+      var messageBody = $('#ContactMessage');
+
+      myInputs.each(function (e) {
+        // if it has a value, increment the counter
+        if ($(this).val()) {
+          inputsWithValues += 1;
+        }
+      });
+
+      if (inputsWithValues == myInputs.length && messageBody.val().length >= 20) {
+        $("button[type=submit]").prop("disabled", false);
+      } else {
+        $("button[type=submit]").prop("disabled", true);
+      }
+    }
+
+    function checkMessageLength() {
+      if ($('#ContactMessage').val().length < 20) {
+        $('#MessageLengthMessage').removeClass('hidden');
+      }
+      else {
+        $('#MessageLengthMessage').addClass('hidden');
+      }
+    }
+
+  </script>
+
+}

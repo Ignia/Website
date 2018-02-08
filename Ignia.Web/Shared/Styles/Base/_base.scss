@@ -1,0 +1,74 @@
+﻿//==============================================================================================
+// BASE CLASSES
+//----------------------------------------------------------------------------------------------
+// Provides global overrides for standard HTML elements based on element, attribute, and single-
+// class selectors. Selectors in this section should never be nested more than two layers deep.
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+@import "../Vendor/ZURB/util/mixins";
+@import "fonts";
+@import "typography";
+@import "links";
+@import "lists";
+@import "buttons";
+@import "images";
+@import "forms";
+@import "utilities";
+
+//----------------------------------------------------------------------------------------------
+// HEADER AREA ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+.header {
+  box-shadow                    : 0 0 3px 0 rgba(153, 153, 153, 0.25);
+  background                    : $palette-white url('/Images/Header/Header.Tile.png') repeat 0 0;
+  .logo {
+    background                  : $palette-red url('/Images/Header/LogoBox.Tile.png') repeat 0 0;
+    a {
+      line-height               : 1;
+    }
+  }
+  img.annotation {
+    opacity                     : 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// MAIN CONTENT AREA ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// FOOTER ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+.footer {
+  background                    : rgb(51, 46, 44);              // #332E2C
+  .navbar {
+    background                  : $palette-white;
+  }
+  .navigation {
+    ul {
+      li {
+        a {
+          color                 : $palette-grey-dark;
+          &:hover,
+          &:focus,
+          &:active {
+            color               : $palette-red;
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    padding-top                 : rem-calc(5);
+    text-align                  : center;
+    color                       : $palette-grey-light;
+    small {
+      font-size                 : rem-calc(12);
+    }
+  }
+}

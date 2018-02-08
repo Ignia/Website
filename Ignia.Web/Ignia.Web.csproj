@@ -1,0 +1,547 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{82DF1273-61EA-41E2-841C-9B5553BAAD13}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ignia.Web</RootNamespace>
+    <AssemblyName>Ignia.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXssLibrary, Version=4.3.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AntiXssLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Ignia.Topics, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.dll</HintPath>
+    </Reference>
+    <Reference Include="Ignia.Topics.Data.Caching, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.Data.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="Ignia.Topics.Data.Sql, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.Data.Sql.dll</HintPath>
+    </Reference>
+    <Reference Include="Ignia.Topics.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Ignia.Topics.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\FallbackController.cs" />
+    <Compile Include="Controllers\LayoutController.cs" />
+    <Compile Include="Controllers\RedirectController.cs" />
+    <Compile Include="Controllers\SitemapController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="IgniaControllerFactory.cs" />
+    <Compile Include="Models\NavigationViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\Clients\BingAds.png" />
+    <Content Include="Images\Clients\BlinkUX.png" />
+    <Content Include="Images\Clients\Ford.png" />
+    <Content Include="Images\Clients\GoldSim.png" />
+    <Content Include="Images\Clients\Microsoft.png" />
+    <Content Include="Images\Clients\TechEd.png" />
+    <Content Include="Images\Favicons\android-chrome-144x144.png" />
+    <Content Include="Images\Favicons\android-chrome-192x192.png" />
+    <Content Include="Images\Favicons\android-chrome-36x36.png" />
+    <Content Include="Images\Favicons\android-chrome-48x48.png" />
+    <Content Include="Images\Favicons\android-chrome-72x72.png" />
+    <Content Include="Images\Favicons\android-chrome-96x96.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-114x114.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-120x120.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-144x144.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-152x152.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-180x180.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-57x57.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-60x60.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-72x72.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-76x76.png" />
+    <Content Include="Images\Favicons\apple-touch-icon-precomposed.png" />
+    <Content Include="Images\Favicons\apple-touch-icon.png" />
+    <Content Include="Images\Favicons\browserconfig.xml" />
+    <Content Include="Images\Favicons\favicon-16x16.png" />
+    <Content Include="Images\Favicons\favicon-194x194.png" />
+    <Content Include="Images\Favicons\favicon-32x32.png" />
+    <Content Include="Images\Favicons\favicon-96x96.png" />
+    <Content Include="Images\Favicons\favicon.ico" />
+    <Content Include="Images\Favicons\mstile-144x144.png" />
+    <Content Include="Images\Favicons\mstile-150x150.png" />
+    <Content Include="Images\Favicons\mstile-310x150.png" />
+    <Content Include="Images\Favicons\mstile-310x310.png" />
+    <Content Include="Images\Favicons\mstile-70x70.png" />
+    <Content Include="Images\Header\ActiveNavigation.Highlight.png" />
+    <Content Include="Images\Header\Header.Tile.png" />
+    <Content Include="Images\Header\LogoBox.Tile.png" />
+    <Content Include="Images\Header\Mobile\Contact.Annotation.png" />
+    <Content Include="Images\Header\Mobile\Menu.CloseX.Sprite.png" />
+    <Content Include="Images\Home\Clients.Tile.png" />
+    <Content Include="Images\Home\CodeFactory.png" />
+    <Content Include="Images\Home\Hero.DownArrow.png" />
+    <Content Include="Images\Home\Hero.jpg" />
+    <Content Include="Images\Home\Hero.Large.jpg" />
+    <Content Include="Images\Home\Hero.Logo.png" />
+    <Content Include="Images\Home\Introduction.Background.png" />
+    <Content Include="Images\Home\Introduction.Tile.png" />
+    <Content Include="Images\Home\RBF.jpg" />
+    <Content Include="Images\Home\RBF.Large.jpg" />
+    <Content Include="Images\Home\Services.Background.png" />
+    <Content Include="Images\Home\Services.Circle1.png" />
+    <Content Include="Images\Home\Services.Circle2.png" />
+    <Content Include="Images\Home\Services.Circle3.png" />
+    <Content Include="Images\Home\Services.CloudAPI.png" />
+    <Content Include="Images\Home\Services.CloudAPI.svg" />
+    <Content Include="Images\Home\Services.CMS.png" />
+    <Content Include="Images\Home\Services.CMS.svg" />
+    <Content Include="Images\Home\Services.Responsive.png" />
+    <Content Include="Images\Home\Services.Responsive.svg" />
+    <Content Include="Images\Home\Tagline.Code.png" />
+    <Content Include="Images\Home\Tagline.Rulers.png" />
+    <Content Include="Images\Logo.png" />
+    <Content Include="Images\Logo.White.png" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Configuration\appSettings.config" />
+    <Content Include="Configuration\connectionStrings.config" />
+    <Content Include="Configuration\connectionStrings.Debug.config" />
+    <Content Include="Configuration\connectionStrings.Release.config" />
+    <Content Include="Configuration\README.md" />
+    <Content Include="Configuration\smtp.config" />
+    <Content Include="Images\Favicons\manifest.json" />
+    <Content Include="Configuration\rewriteRules.config" />
+    <Content Include="Shared\Scripts\Home.Animations.js" />
+    <Content Include="Shared\Scripts\Home.js" />
+    <Content Include="Shared\Scripts\Menu.js" />
+    <Content Include="Shared\Scripts\Scripts.js" />
+    <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.js" />
+    <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\foundation.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\foundation.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\npm.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.abide.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.abide.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.accordion.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.accordion.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.accordionMenu.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.accordionMenu.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.core.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.core.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.drilldown.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.drilldown.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.dropdown.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.dropdown.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.dropdownMenu.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.dropdownMenu.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.equalizer.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.equalizer.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.interchange.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.interchange.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.magellan.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.magellan.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.offcanvas.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.offcanvas.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.orbit.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.orbit.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveAccordionTabs.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveAccordionTabs.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveMenu.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveMenu.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveToggle.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.responsiveToggle.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.reveal.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.reveal.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.slider.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.slider.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.smoothScroll.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.smoothScroll.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.sticky.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.sticky.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.tabs.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.tabs.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.toggler.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.toggler.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.tooltip.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.tooltip.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.box.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.box.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.imageLoader.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.imageLoader.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.keyboard.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.keyboard.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.mediaQuery.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.mediaQuery.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.motion.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.motion.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.nest.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.nest.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.timer.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.timer.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.timerAndImageLoader.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.timerAndImageLoader.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.touch.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.touch.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.triggers.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.util.triggers.min.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.zf.responsiveAccordionTabs.js" />
+    <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.zf.responsiveAccordionTabs.min.js" />
+    <Content Include="Shared\Styles\Style.css" />
+    <Content Include="Shared\Styles\Style.min.css" />
+    <Content Include="Shared\Styles\Views\Home.css" />
+    <Content Include="Shared\Styles\Views\Home.min.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Layout\Footer.cshtml" />
+    <Content Include="Views\Layout\_Layout.cshtml" />
+    <Content Include="Views\Layout\Menu.cshtml" />
+    <Content Include="Shared\Styles\Style.scss" />
+    <Content Include="Shared\Styles\_variables.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_accordion-menu.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_accordion.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_badge.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_breadcrumbs.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_button-group.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_button.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_callout.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_card.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_close-button.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_drilldown.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_dropdown-menu.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_dropdown.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_flex-video.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_flex.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_float.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_label.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_media-object.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_menu-icon.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_menu.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_off-canvas.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_orbit.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_pagination.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_progress-bar.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_responsive-embed.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_reveal.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_slider.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_sticky.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_switch.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_table.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_tabs.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_thumbnail.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_title-bar.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_tooltip.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_top-bar.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\components\_visibility.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_checkbox.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_error.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_fieldset.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_forms.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_help-text.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_input-group.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_label.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_meter.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_progress.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_range.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_select.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\forms\_text.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\foundation.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_classes.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_column.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_flex-grid.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_grid.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_gutter.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_layout.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_position.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_row.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\grid\_size.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_arrow.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_border-box.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_border-none.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_bordered.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_box.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_display.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_font-styling.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_list-style-type.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_overflow.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_position.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_prototype.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_relation.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_rotate.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_rounded.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_separator.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_shadow.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_sizing.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_spacing.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_text-decoration.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_text-transformation.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\prototype\_text-utilities.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\settings\_settings.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\typography\_alignment.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\typography\_base.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\typography\_helpers.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\typography\_print.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\typography\_typography.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_breakpoint.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_color.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_direction.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_flex.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_math.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_mixins.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_selector.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_typography.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_unit.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_util.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\util\_value.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_cell.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_classes.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_collapse.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_frame.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_grid.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_gutters.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_layout.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_position.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\xy-grid\_xy-grid.scss" />
+    <Content Include="Shared\Styles\Vendor\ZURB\_global.scss" />
+    <Content Include="Shared\Styles\_settings.scss" />
+    <Content Include="Shared\Styles\Base\_base.scss" />
+    <Content Include="Shared\Styles\Base\_buttons.scss" />
+    <Content Include="Shared\Styles\Base\_fonts.scss" />
+    <Content Include="Shared\Styles\Base\_forms.scss" />
+    <Content Include="Shared\Styles\Base\_icons.scss" />
+    <Content Include="Shared\Styles\Base\_images.scss" />
+    <Content Include="Shared\Styles\Base\_lists.scss" />
+    <Content Include="Shared\Styles\Base\_typography.scss" />
+    <Content Include="Shared\Styles\Base\_utilities.scss" />
+    <Content Include="Shared\Styles\Components\Menu\_menu.scss" />
+    <Content Include="Shared\Styles\Components\_components.scss" />
+    <Content Include="Shared\Styles\Helpers\_helpers.scss" />
+    <Content Include="Shared\Styles\Helpers\_mixins.scss" />
+    <Content Include="Shared\Styles\Layout\_layout.scss" />
+    <Content Include="Shared\Styles\Overrides\_overrides.scss" />
+    <Content Include="Shared\Styles\Vendor\Normalize\normalize\_import-now.scss" />
+    <Content Include="Shared\Styles\Vendor\Normalize\normalize\_normalize-mixin.scss" />
+    <Content Include="Shared\Styles\Vendor\Normalize\normalize\_variables.scss" />
+    <Content Include="Shared\Styles\Vendor\Normalize\normalize\_vertical-rhythm.scss" />
+    <Content Include="Shared\Styles\Vendor\Normalize\_normalize.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\functions\_purge.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\functions\_remove.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\functions\_replace.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\functions\_to-list.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\helpers\_missing-dependencies.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\helpers\_true.scss" />
+    <Content Include="Shared\Styles\Vendor\SassyLists\functions\_contain.scss" />
+    <Content Include="Shared\Styles\Views\_views.scss" />
+    <Content Include="Shared\Styles\Base\_links.scss" />
+    <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.min.map" />
+    <Content Include="Shared\Styles\Views\Home.scss" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\Shared\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Shared\Scripts\Vendor\ZURB\foundation.d.ts" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54117</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:63083/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.1.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
