@@ -43,16 +43,15 @@ namespace Ignia.Web {
       | (Previously, this relied instead on the ASP.NET Provider Model, which prevented injection of e.g. connection strings and
       | thus established hard-coded dependencies on e.g. ConfigurationManager)
       \-----------------------------------------------------------------------------------------------------------------------*/
-      //var connectionString              = ConfigurationManager.ConnectionStrings["TopicsServer"].ConnectionString;
-      var connectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=Ignia_Test;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-      var sqlTopicRepository            = new SqlTopicRepository(connectionString);
-      var cachedTopicRepository         = new CachedTopicRepository(sqlTopicRepository);
+      var connectionString                      = ConfigurationManager.ConnectionStrings["TopicsServer"].ConnectionString;
+      var sqlTopicRepository                    = new SqlTopicRepository(connectionString);
+      var cachedTopicRepository                 = new CachedTopicRepository(sqlTopicRepository);
 
       //Preload data to ensure it's available to subsequent applications
       cachedTopicRepository.Load();
 
       #pragma warning disable CS0618
-      TopicRepository.DataProvider      = cachedTopicRepository;
+      TopicRepository.DataProvider              = cachedTopicRepository;
       #pragma warning restore CS0618
 
       /*------------------------------------------------------------------------------------------------------------------------
