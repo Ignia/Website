@@ -522,7 +522,7 @@ footer.footer {
           padding-left: 0.625rem; } }
       @media screen and (min-width: 48em) and (max-width: 60em) {
         .panel.clients section.logos {
-          top: 1.875rem;
+          top: 2.5rem;
           padding-bottom: 3%;
           text-align: center; } }
       @media screen and (max-width: 47.9375em) {
@@ -592,10 +592,10 @@ footer.footer {
           padding-left: 0.625rem; } }
       @media screen and (min-width: 48em) and (max-width: 60em) {
         .panel.clients ul {
-          max-width: 91.5%; } }
+          max-width: 43rem; } }
       @media screen and (min-width: 22.5em) and (max-width: 47.9375em) {
         .panel.clients ul {
-          max-width: 75%; } }
+          max-width: 78%; } }
       @media screen and (max-width: 22.4375em) {
         .panel.clients ul {
           max-width: 84.5%; } }
@@ -610,21 +610,28 @@ footer.footer {
         background: rgba(0, 0, 0, 0.05);
         -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d; }
-        @media screen and (min-width: 25.625em) and (max-width: 47.9375em) {
+        @media screen and (max-width: 59.9375em) {
           .panel.clients ul li {
-            width: 9rem;
-            height: 6.875rem; } }
-        @media screen and (min-width: 22.5em) and (max-width: 25.5625em) {
+            width: 13.5rem;
+            height: 12.25rem; } }
+        @media screen and (min-width: 30em) and (max-width: 36.1875em) {
           .panel.clients ul li {
-            width: 8.1875rem;
-            height: 6.25rem; } }
-        @media screen and (max-width: 22.4375em) {
+            width: 13rem;
+            height: 12.375rem; } }
+        @media screen and (min-width: 25.875em) and (max-width: 29.9375em) {
+          .panel.clients ul li {
+            width: 9.1875rem;
+            height: 7.9375rem; } }
+        @media screen and (max-width: 25.8125em) {
           .panel.clients ul li {
             width: 7.75rem;
             height: 5.625rem; } }
         .panel.clients ul li:nth-child(even), .panel.clients ul li:last-child {
           margin-right: 0; }
-        @media screen and (min-width: 48em) and (max-width: 60em) {
+        @media screen and (min-width: 48em) and (max-width: 59.9375em) {
+          .panel.clients ul li:nth-child(even) {
+            margin-right: 1.25rem; } }
+        @media screen and (min-width: 48em) and (max-width: 59.9375em) {
           .panel.clients ul li:nth-child(3n) {
             margin-right: 0; } }
         .panel.clients ul li span {
@@ -634,7 +641,7 @@ footer.footer {
     .panel.clients img.logo {
       width: 100%;
       max-width: 8.75rem; }
-      @media screen and (max-width: 47.9375em) {
+      @media screen and (max-width: 29.9375em) {
         .panel.clients img.logo {
           max-width: 5.625rem; } }
   .panel.contact {

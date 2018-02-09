@@ -620,7 +620,7 @@ footer.footer {
         padding-left            : rem-calc(10);
       }
       @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
-        top                     : rem-calc(30);
+        top                     : rem-calc(40);
         padding-bottom          : 3%;
         text-align              : center;
       }
@@ -698,10 +698,10 @@ footer.footer {
         padding-left            : rem-calc(10);
       }
       @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
-        max-width               : 91.5%;
+        max-width               : rem-calc(688);
       }
       @media screen and #{breakpoint(360px)} and #{breakpoint(767px down)} {
-        max-width               : 75%;
+        max-width               : 78%;
       }
       @include breakpoint(359px down) {
         max-width               : 84.5%;
@@ -716,15 +716,19 @@ footer.footer {
         height                  : rem-calc(200);
         background              : rgba(0, 0, 0, 0.05);
         transform-style         : preserve-3d;
-        @media screen and #{breakpoint(410px)} and #{breakpoint(767px down)} {
-          width                 : rem-calc(144);
-          height                : rem-calc(110);
+        @media screen and #{breakpoint(580px) and #{breakpoint(959px down)}} {
+          width                 : rem-calc(216);
+          height                : rem-calc(196);
         }
-        @media screen and #{breakpoint(360px)} and #{breakpoint(409px down)} {
-          width                 : rem-calc(131);
-          height                : rem-calc(100);
+        @media screen and #{breakpoint(480px)} and #{breakpoint(579px down)} {
+          width                 : rem-calc(208);
+          height                : rem-calc(198);
         }
-        @include breakpoint(359px down) {
+        @media screen and #{breakpoint(414px)} and #{breakpoint(479px down)} {
+          width                 : rem-calc(147);
+          height                : rem-calc(127);
+        }
+        @include breakpoint(413px down) {
           width                 : rem-calc(124);
           height                : rem-calc(90);
         }
@@ -732,8 +736,13 @@ footer.footer {
         &:last-child {
           margin-right          : 0;
         }
+        &:nth-child(even) {
+          @media screen and #{breakpoint(768px)} and #{breakpoint(959px down)} {
+            margin-right        : rem-calc(20);
+          }
+        }
         &:nth-child(3n) {
-          @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+          @media screen and #{breakpoint(768px)} and #{breakpoint(959px down)} {
             margin-right        : 0;
           }
         }
@@ -747,7 +756,7 @@ footer.footer {
     img.logo {
       width                     : 100%;
       max-width                 : rem-calc(140);
-      @include breakpoint(767px down) {
+      @include breakpoint(479px down) {
         max-width               : rem-calc(90);
       }
     }
