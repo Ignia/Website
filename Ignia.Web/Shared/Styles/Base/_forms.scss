@@ -57,13 +57,13 @@ label, .label {
 textarea,
 select {
   box-shadow                    : none;
+  border-radius                 : 3px;
   &:active,
   &:focus {
     box-shadow                  : none;
     border-color                : $palette-yellow;
   }
 }
-
 input {
   &:active,
   &:focus {
@@ -76,7 +76,6 @@ input {
     margin-bottom               : 0;
   }
 }
-
 textarea {
   min-height                    : rem-calc(128);
 }
