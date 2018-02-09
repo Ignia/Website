@@ -100,6 +100,9 @@ footer.footer {
     z-index                     : -1;
     opacity                     : 0;
   }
+  section {
+    @include clearfix;
+  }
   .section-heading {
     font-family                 : $special-headings-font-family;
   }
@@ -736,6 +739,80 @@ footer.footer {
       max-width                 : rem-calc(140);
       @include breakpoint(767px down) {
         max-width               : rem-calc(90);
+      }
+    }
+  }
+
+  // Contact
+  &.contact {
+    z-index                     : 45;
+    background                  : $palette-grey-darker;
+    @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+      min-height                : rem-calc(944);
+    }
+    @include breakpoint(767px down) {
+      height                    : auto;
+    }
+    .container,
+    .form {
+      background                : $palette-grey-darker;
+    }
+    header {
+      border-color              : rgb(166, 161, 156);
+    }
+    section {
+      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+        padding                 : 0 5%;
+      }
+    }
+    .section-heading {
+      margin                    : 0;
+      padding                   : rem-calc(35 0 25);
+      color                     : $palette-white;
+      @include breakpoint(767px down) {
+        padding                 : rem-calc(15 0);
+        line-height             : 1.4;
+        text-align              : center;
+      }
+    }
+    .form {
+      padding-left              : rem-calc(10);
+      label {
+        display                 : none;
+      }
+    }
+    .sidebar.right {
+      @include clearfix;
+      position                  : relative;
+      top                       : rem-calc(44);
+      right                     : rem-calc(10);
+      float                     : right;
+      border-radius             : 3px;
+      padding                   : rem-calc(30 0 30 35);
+      width                     : rem-calc(220);
+      background                : rgba($palette-black, 0.1);
+      .contact.link {
+        &:first-child {
+          margin-bottom         : rem-calc(30);
+        }
+        .svg-inline--fa {
+          margin-right          : rem-calc(5);
+          width                 : rem-calc(28);
+          height                : auto;
+        }
+        .fa-phone {
+          transform             : rotateY(180deg);
+        }
+        a.text {
+          @extend .uppercase;
+          position              : relative;
+          top                   : rem-calc(-7);
+        }
+        &:nth-child(2) {
+          a.text {
+            top                 : rem-calc(-11);
+          }
+        }
       }
     }
   }
