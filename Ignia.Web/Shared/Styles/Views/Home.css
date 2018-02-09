@@ -185,7 +185,7 @@ footer.footer {
       color: #f2eee6; }
       @media screen and (max-width: 47.9375em) {
         .panel.introduction section p {
-          margin-bottom: 1.75rem; } }
+          margin-bottom: 2.5rem; } }
       .panel.introduction section p:first-child {
         padding-top: 2.5rem; }
         @media screen and (max-width: 47.9375em) {
@@ -199,6 +199,12 @@ footer.footer {
         line-height: 2.625rem;
         font-weight: 900;
         color: #f0ad20; }
+        @media screen and (max-width: 47.9375em) {
+          .panel.introduction section p:first-child:first-letter {
+            margin: 0.25rem 0.375rem 0 0;
+            font-size: 2.75rem;
+            line-height: 0.85;
+            font-weight: 700; } }
       .panel.introduction section p:last-child {
         padding-bottom: 2.5rem; }
     .panel.introduction section.tagline .section-heading {
@@ -216,7 +222,6 @@ footer.footer {
         .panel.introduction section.tagline .section-heading {
           margin: 0 auto;
           padding: 2.5% 0;
-          max-width: 95%;
           font-size: 5.625rem;
           text-align: center; } }
       @media screen and (max-width: 47.9375em) {
@@ -244,13 +249,12 @@ footer.footer {
           background: transparent url("/Images/Home/Tagline.Code.png") no-repeat 44px 77.5%; } }
       .panel.introduction section.factory img {
         padding-left: 9.5%; }
-    .panel.introduction section.body {
-      float: left;
-      margin: 0 1.04159% 0 9.37492%;
-      width: 81.25016%; }
-      @media screen and (min-width: 60em) {
-        .panel.introduction section.body {
-          width: 31.25016%; } }
+    @media screen and (min-width: 60em) {
+      .panel.introduction section.body {
+        padding-right: 3.75rem; } }
+    @media screen and (max-width: 47.9375em) {
+      .panel.introduction section.body {
+        text-align: justify; } }
   .panel.services {
     z-index: 20;
     background: #332e2c; }

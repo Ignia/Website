@@ -220,7 +220,7 @@ footer.footer {
         line-height             : 1.8;
         color                   : $palette-white;
         @include breakpoint(767px down) {
-          margin-bottom         : rem-calc(28);
+          margin-bottom         : rem-calc(40);
         }
         &:first-child {
           padding-top           : rem-calc(40);
@@ -236,6 +236,12 @@ footer.footer {
           line-height           : rem-calc(42);
           font-weight           : 900;
           color                 : $palette-yellow;
+          @include breakpoint(767px down) {
+            margin              : rem-calc(4 6 0 0);
+            font-size           : rem-calc(44);
+            line-height         : 0.85;
+            font-weight         : 700;
+          }
         }
         &:last-child {
           padding-bottom        : rem-calc(40);
@@ -257,7 +263,6 @@ footer.footer {
           @include breakpoint(959px down) {
             margin              : 0 auto;
             padding             : 2.5% 0;
-            max-width           : 95%;
             font-size           : rem-calc(90);
             text-align          : center;
           }
@@ -265,7 +270,7 @@ footer.footer {
             font-size           : rem-calc(44);
           }
           @include breakpoint(359px down) {
-            font-size             : rem-calc(38);
+            font-size           : rem-calc(38);
           }
           span {
             display             : block;
@@ -293,11 +298,11 @@ footer.footer {
         }
       }
       &.body {
-        float                   : left;
-        margin                  : 0 1.04159% 0 9.37492%;
-        width                   : 81.25016%;
         @include breakpoint(960px) {
-          width                 : 31.25016%;
+          padding-right         : rem-calc(60);
+        }
+        @include breakpoint(767px down) {
+          text-align            : justify;
         }
       }
 
