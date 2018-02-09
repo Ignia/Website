@@ -6059,7 +6059,8 @@ label, .label {
 textarea,
 select {
   -webkit-box-shadow: none;
-          box-shadow: none; }
+          box-shadow: none;
+  border-radius: 3px; }
   [type='text']:active, [type='text']:focus,
   [type='password']:active,
   [type='password']:focus,
@@ -6146,6 +6147,17 @@ span.radio {
   .checkbox input[type="checkbox"]:checked + label:before {
     background-color: #f0ad20; }
 
+button[type="submit"] {
+  border: 0 none transparent;
+  border-radius: 2px;
+  padding: 0.625rem 0.75rem;
+  font-size: 1.125rem;
+  color: #333333;
+  background: #f0ad20; }
+  button[type="submit"][disabled] {
+    opacity: 0.75;
+    cursor: not-allowed; }
+
 label.required {
   font-weight: 600; }
 
@@ -6154,31 +6166,6 @@ label.required {
 
 .is-invalid-input:not(:focus) {
   background-color: #f2eee6; }
-
-.alert.callout {
-  float: none; }
-
-.alert.error-message {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  margin-left: 0;
-  border: 0 none transparent;
-  border-left: 3px solid #ef4a24;
-  padding: 0 0.75rem;
-  line-height: 1.2;
-  font-weight: 600;
-  color: #ef4a24;
-  background-color: #f2eee6; }
-
-span[id*="Validator"][style*="visibility:hidden"] {
-  display: none; }
-
-.instructions {
-  font-size: 1rem;
-  font-style: italic;
-  color: #7f7b76; }
-  .instructions.error {
-    color: #ef4a24; }
 
 .hidden {
   display: none; }
@@ -6307,7 +6294,7 @@ body {
     overflow: visible;
     position: absolute;
     top: 0;
-    right: 0.625rem;
+    right: 1.25rem;
     margin: 0;
     padding: 0;
     width: 13.75rem;
@@ -6315,6 +6302,7 @@ body {
     height: 10.125rem; }
     @media screen and (max-width: 59.9375em) {
       #Header .logo {
+        right: 0.625rem;
         width: 10.3125rem;
         max-width: 10.3125rem;
         height: 7.625rem; } }
@@ -6491,13 +6479,6 @@ body {
       padding: 0.8125rem 0.9375rem;
       width: 6.875rem;
       height: 7.125rem; }
-  #MainContent .sidebar {
-    float: left;
-    margin: 0 0.625rem;
-    padding: 1.875rem 0;
-    width: 23%; }
-    #MainContent .sidebar.right {
-      float: right; }
 
 #Footer {
   padding: 3.125rem 0 5rem; }
