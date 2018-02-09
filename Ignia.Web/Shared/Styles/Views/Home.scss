@@ -436,11 +436,11 @@ footer.footer {
       position                  : relative;
       margin                    : 0 13.5%;
       padding-bottom            : rem-calc(70);
+      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+        margin                  : rem-calc(40) 8% 0;
+      }
       @include breakpoint(767px down) {
         margin                  : 0;
-      }
-      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
-        margin                  : rem-calc(20) 11.75% 0;
       }
       header {
         display                 : table;
@@ -495,7 +495,7 @@ footer.footer {
           }
         }
         @include breakpoint(767px down) {
-          padding               : 2.5% 2.5% 0;
+          padding               : rem-calc(30 16 0 14);
           &:first-child {
             header {
               background-image  : url('/Images/Home/Services.Circle1.png');
@@ -517,6 +517,9 @@ footer.footer {
           &:first-child:before,
           &:first-child:after {
             left                : 5.25%;
+            @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+              left              : 8.65%;
+            }
           }
           &:nth-child(2):before,
           &:nth-child(2):after {
@@ -526,6 +529,9 @@ footer.footer {
           &:nth-child(3):after {
             right               : 5.25%;
             left                : auto;
+            @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+              right             : 8.65%;
+            }
           }
         }
         p,
@@ -546,8 +552,7 @@ footer.footer {
             max-width           : 60%;
           }
           @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
-            float               : left;
-            max-width           : 55%;
+            max-width           : 58%;
           }
           @include breakpoint(767px down) {
             margin-top          : rem-calc(8);
@@ -565,11 +570,11 @@ footer.footer {
           }
           @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
             float               : right;
+            width               : 35%;
             max-width           : 35%;
           }
           @include breakpoint(767px down) {
-            margin-top          : 2.5%;
-            margin-bottom       : 5%;
+            margin-top          : rem-calc(20);
           }
           ul {
             margin              : 0;
