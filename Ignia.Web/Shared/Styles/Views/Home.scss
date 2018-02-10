@@ -301,9 +301,6 @@ footer.footer {
         @include breakpoint(960px) {
           padding-right         : rem-calc(60);
         }
-        @include breakpoint(767px down) {
-          text-align            : justify;
-        }
       }
 
     }
@@ -729,8 +726,12 @@ footer.footer {
           height                : rem-calc(127);
         }
         @include breakpoint(413px down) {
-          width                 : rem-calc(124);
-          height                : rem-calc(90);
+          width                 : rem-calc(135);
+          height                : rem-calc(105);
+        }
+        @include breakpoint(360px down) {
+          width                 : rem-calc(126);
+          height                : rem-calc(106);
         }
         &:nth-child(even),
         &:last-child {
@@ -790,12 +791,16 @@ footer.footer {
       color                     : $palette-white;
       @include breakpoint(767px down) {
         padding                 : rem-calc(15 0);
+        font-size               : rem-calc(26);
         line-height             : 1.4;
         text-align              : center;
       }
     }
     .form {
       padding-left              : rem-calc(10);
+      @include breakpoint(767px down) {
+        padding-left            : 0;
+      }
       label {
         display                 : none;
       }
@@ -810,26 +815,75 @@ footer.footer {
       padding                   : rem-calc(30 0 30 35);
       width                     : rem-calc(220);
       background                : rgba($palette-black, 0.1);
+      @include breakpoint(959px down) {
+        right                   : 0;
+      }
+      @include breakpoint(767px down) {
+        top                     : 0;
+        right                   : 0;
+        float                   : none;
+        margin-bottom           : rem-calc(20);
+        padding                 : 0;
+        width                   : 100%;
+      }
       .contact.link {
+        @include breakpoint(767px down) {
+          display               : inline-block;
+          margin                : rem-calc(5 10 15);
+        }
         &:first-child {
           margin-bottom         : rem-calc(30);
+          @include breakpoint(757px down) {
+            margin-bottom       : rem-calc(15);
+          }
         }
         .svg-inline--fa {
           margin-right          : rem-calc(5);
           width                 : rem-calc(28);
           height                : auto;
+          @include breakpoint(757px down) {
+            width               : rem-calc(18);
+          }
+          @include breakpoint(360px down) {
+            width               : rem-calc(16);
+          }
         }
         .fa-phone {
           transform             : rotateY(180deg);
         }
-        a.text {
-          @extend .uppercase;
+        a {
           position              : relative;
-          top                   : rem-calc(-7);
+          &.icon {
+            @include breakpoint(413px down) {
+              top               : rem-calc(8);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(6);
+            }
+          }
+          &.text {
+            @extend .uppercase;
+            top                 : rem-calc(-7);
+            @include breakpoint(413px down) {
+              top               : rem-calc(5);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(4);
+            }
+          }
         }
         &:nth-child(2) {
+          @include breakpoint(360px down) {
+            margin-left         : rem-calc(3);
+          }
           a.text {
             top                 : rem-calc(-11);
+            @include breakpoint(413px down) {
+              top               : rem-calc(5);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(4);
+            }
           }
         }
       }
