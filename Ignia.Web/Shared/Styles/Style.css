@@ -6032,6 +6032,18 @@ ol {
   ol.show-list-style {
     list-style: initial; }
 
+.success {
+  border-color: #65a61f;
+  color: #65a61f; }
+
+.warning {
+  border-color: #ef8d24;
+  color: #ef8d24; }
+
+.error {
+  border-color: #ef4a24;
+  color: #ef4a24; }
+
 fieldset legend {
   margin-bottom: 1.125rem;
   padding-top: 2.125rem;

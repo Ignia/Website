@@ -15,16 +15,31 @@
 @import '../settings';
 
 //----------------------------------------------------------------------------------------------
+// COMMON
+//----------------------------------------------------------------------------------------------
+.success {
+  border-color                  : rgb(101, 166, 31);            // #65A61F
+  color                         : rgb(101, 166, 31);            // #65A61F
+}
+.warning {
+  border-color                  : rgb(239, 141, 36);            // #EF8D24
+  color                         : rgb(239, 141, 36);            // #EF8D24
+}
+.error {
+  border-color                  : $palette-red;
+  color                         : $palette-red;
+}
+
+//----------------------------------------------------------------------------------------------
 // FIELDSET
 //----------------------------------------------------------------------------------------------
-
 fieldset {
   legend {
-    margin-bottom               : rem-calc(18);
-    padding-top                 : rem-calc(34);
-    font-family                 : $header-font-family;
-    font-size                   : rem-calc(20);
-    font-weight                 : 600;
+    margin-bottom: rem-calc(18);
+    padding-top: rem-calc(34);
+    font-family: $header-font-family;
+    font-size: rem-calc(20);
+    font-weight: 600;
   }
 }
 
