@@ -1,7 +1,6 @@
 ﻿@model NavigationViewModel
 
-<nav id="PrimaryNavigation" class="navigation" role="navigation">
-
+<nav id="PrimaryNavigationSmallScreen" class="navigation primary hide-for-large off-canvas position-top is-closed" role="navigation" data-transition="overlap" data-off-canvas>
   <!-- Navigation items -->
   <ul data-smooth-scroll>
     <li>
@@ -37,10 +36,44 @@
 
   <!-- Menu buttons -->
   <div class="menu-toggle">
-    <!-- Menu open icon -->
-    <a href="#" class="menu-toggle open"><span class="fa fa-bars"></span></a>
     <!-- Menu close icon -->
-    <a href="#" class="menu-toggle close">&nbsp;</a>
+    <button class="close-button menu-toggle close" aria-label="Close menu" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
+
+</nav>
+
+<nav id="PrimaryNavigation" class="navigation primary show-for-large" role="navigation">
+
+  <!-- Navigation items -->
+  <ul data-smooth-scroll>
+    <li>
+      <a id="IntroductionAnchor" href="#Introduction">
+        <span class="ordinal">01</span>
+        Who We Are
+      </a>
+    </li>
+    <li>
+      <a id="ServicesAnchor" href="#Services">
+        <span class="ordinal">02</span>
+        Services
+      </a>
+    </li>
+    <li>
+      <a id="ClientHighlightsAnchor" href="#ClientHighlights">
+        <span class="ordinal">03</span>
+        Clients
+      </a>
+    </li>
+    <li>
+      <a id="ContactAnchor" href="#Contact">
+        <span class="ordinal">04</span>
+        Contact
+      </a>
+    </li>
+    <li><a href="/Library/" class="ancillary">Library</a></li>
+  </ul>
+  <!-- /Navigation items -->
 
 </nav>
