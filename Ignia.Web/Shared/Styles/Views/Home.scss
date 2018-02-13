@@ -258,7 +258,7 @@ footer.footer {
           @extend .uppercase;
           @include breakpoint(960px) {
             margin              : 0;
-            padding             : rem-calc(76 0 78 62);
+            padding             : rem-calc(70 0 78 60);
           }
           @include breakpoint(959px down) {
             margin              : 0 auto;

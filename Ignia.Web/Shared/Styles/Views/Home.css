@@ -217,7 +217,7 @@ footer.footer {
       @media screen and (min-width: 60em) {
         .panel.introduction section.tagline .section-heading {
           margin: 0;
-          padding: 4.75rem 0 4.875rem 3.875rem; } }
+          padding: 4.375rem 0 4.875rem 3.75rem; } }
       @media screen and (max-width: 59.9375em) {
         .panel.introduction section.tagline .section-heading {
           margin: 0 auto;
