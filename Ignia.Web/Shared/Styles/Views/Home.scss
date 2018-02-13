@@ -833,7 +833,7 @@ footer.footer {
         }
         &:first-child {
           margin-bottom         : rem-calc(30);
-          @include breakpoint(757px down) {
+          @include breakpoint(767px down) {
             margin-bottom       : rem-calc(15);
           }
         }
@@ -841,7 +841,7 @@ footer.footer {
           margin-right          : rem-calc(5);
           width                 : rem-calc(28);
           height                : auto;
-          @include breakpoint(757px down) {
+          @include breakpoint(767px down) {
             width               : rem-calc(18);
           }
           @include breakpoint(360px down) {

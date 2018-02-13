@@ -715,14 +715,14 @@ footer.footer {
           margin: 0.3125rem 0.625rem 0.9375rem; } }
       .panel.contact .sidebar.right .contact.link:first-child {
         margin-bottom: 1.875rem; }
-        @media screen and (max-width: 47.3125em) {
+        @media screen and (max-width: 47.9375em) {
           .panel.contact .sidebar.right .contact.link:first-child {
             margin-bottom: 0.9375rem; } }
       .panel.contact .sidebar.right .contact.link .svg-inline--fa {
         margin-right: 0.3125rem;
         width: 1.75rem;
         height: auto; }
-        @media screen and (max-width: 47.3125em) {
+        @media screen and (max-width: 47.9375em) {
           .panel.contact .sidebar.right .contact.link .svg-inline--fa {
             width: 1.125rem; } }
         @media screen and (max-width: 22.5em) {
