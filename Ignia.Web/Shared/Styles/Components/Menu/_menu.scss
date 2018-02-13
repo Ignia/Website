@@ -25,12 +25,16 @@
 //----------------------------------------------------------------------------------------------
 // CORE
 //----------------------------------------------------------------------------------------------
+
 .site.header {
   transition                    : all 0.25s ease-in-out 0s;
   .navbar {
     transition                  : all 0.25s ease-in-out 0s;
   }
   .navigation {
+    &.off-canvas {
+      background                : $palette-white url('/Images/Header/Header.Tile.png') repeat 0 0;
+    }
     a {
       border-bottom-color       : transparent;
       font-family               : $body-font-family;
@@ -39,14 +43,11 @@
       line-height               : 1;
       letter-spacing            : 0.1em;
       text-decoration           : none;
-      color                     : $palette-grey-light;
+      color                     : rgb(145, 143, 138);
       transition                : border-bottom-color 100ms linear 50ms;
       @extend .uppercase;
       @include breakpoint(959px down) {
-        font-size               : rem-calc(20);
-      }
-      @include breakpoint(359px down) {
-        font-size               : rem-calc(16);
+        font-size               : rem-calc(24);
       }
       &.active {
         border-bottom-color     : $palette-red;
@@ -66,8 +67,8 @@
         font-weight             : 600;
         color                   : $palette-grey-lighter;
         @include breakpoint(959px down) {
+          display               : block;
           line-height           : 1;
-          color                 : rgb(145, 143, 138);           // #918F8A
         }
       }
       &:hover,
@@ -87,45 +88,32 @@
       }
     }
   }
-  .menu-toggle {
-    a {
-      font-size                 : rem-calc(41);
-      line-height               : 1;
-      color                     : rgb(145, 143, 138);
-      @include breakpoint(767px down) {
-        font-size               : rem-calc(36);
-      }
-      &:hover,
-      &:focus,
-      &:active {
-        color                   : rgb(59, 51, 47);
-      }
-      &.close {
-        background-image        : url('/Images/Header/Mobile/Menu.CloseX.Sprite.png');
-        background-repeat       : no-repeat;
-      }
+}
+
+//----------------------------------------------------------------------------------------------
+// SMALL SCREENS
+//----------------------------------------------------------------------------------------------
+
+.menu-toggle {
+  color                         : rgba(167, 165, 161, 0.95);
+  &:hover,
+  &:focus,
+  &:active {
+    color                       : rgba(59, 51, 47, 1);
+  }
+  &.open-button {
+    margin                      : rem-calc(14 0 0 10);
+    svg {
+      width                     : rem-calc(34);
+      height                    : rem-calc(32);
     }
   }
-  ul {
-    &.opened {
-      ~ .menu-toggle {
-        padding-top             : rem-calc(42);
-        transition              : display 100ms linear 0ms;
-        a {
-          &.open {
-            display             : none;
-          }
-          &.close {
-            display             : inline-block;
-            background-position : 0 0;
-            &:hover,
-            &:focus,
-            &:active {
-              background-position: rem-calc(0 -28);
-            }
-          }
-        }
-      }
-    }
+  &.close-button {
+    top                         : auto;
+    right                       : auto;
+    bottom                      : rem-calc(20);
+    left                        : rem-calc(20);
+    font-size                   : rem-calc(64);
+    line-height                 : 0.5;
   }
 }
