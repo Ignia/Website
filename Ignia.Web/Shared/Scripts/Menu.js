@@ -1,7 +1,7 @@
 ﻿/**
  * MENU / NAVIGATION
  *
- * @file Functions associated with the primary navigation, including highlight and menu toggle functionality.
+ * @file Functions associated with the primary navigation, including menu smooth scroll and highlight functionality.
  * @author Katherine Trunkey (katherine.trunkey@ignia.com)
  */
 
@@ -21,7 +21,22 @@ $(function () {
    */
   var
     topOffset                   = $('#Header').height(),
-    headingBuffer               = $('#Introduction header:first-child').height();
+    headingBuffer               = $('#Introduction header:first-child').height(),
+    menuElement                 = $('#PrimaryNavigation');
+
+  if ($(window).width() < 960) {
+    menuElement                 = $('#PrimaryNavigationSmallScreen');
+  }
+
+  /**
+   * Initializes Foundation smooth scrolling for menu items
+   */
+  var
+    smoothScrollOptions         = {
+      animationDuration         : 1000,
+      offset                    : (topOffset - 25)
+    },
+    menuSmoothScroll            = new Foundation.SmoothScroll(menuElement, smoothScrollOptions);
 
   /**
    * Fires navigation highlight reset on initialization
