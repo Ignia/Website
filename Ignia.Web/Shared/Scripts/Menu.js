@@ -10,7 +10,7 @@
  */
 function resetNavHighlight() {
   'use strict';
-  $('#PrimaryNavigation ul li a').removeClass('active');
+  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
 };
 
 $(function () {
