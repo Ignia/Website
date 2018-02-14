@@ -6353,8 +6353,8 @@ body {
         left: 9.625rem; } }
     @media screen and (max-width: 47.9375em) {
       #Header img.annotation {
-        top: 14.75rem;
-        left: 9.125rem; } }
+        top: 13.375rem;
+        left: 9.25rem; } }
     @media screen and (max-width: 22.4375em) {
       #Header img.annotation {
         top: 14.25rem;
@@ -6546,8 +6546,8 @@ body {
     line-height: 0.5; }
 
 .navigation img.annotation {
-  -webkit-transition: opacity 3.25s;
-  transition: opacity 3.25s; }
+  -webkit-transition: opacity 4.25s;
+  transition: opacity 4.25s; }
 
 .navigation.is-closed img.annotation {
   opacity: 0; }
