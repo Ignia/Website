@@ -6528,11 +6528,15 @@ body {
   color: rgba(167, 165, 161, 0.95); }
   .menu-toggle:hover, .menu-toggle:focus, .menu-toggle:active {
     color: #3b332f; }
-  .menu-toggle.open-button {
-    margin: 0.875rem 0 0 0.625rem; }
-    .menu-toggle.open-button svg {
-      width: 2.125rem;
-      height: 2rem; }
+  @media screen and (max-width: 59.9375em) {
+    .menu-toggle.open-button {
+      margin: 1.4375rem 0 0 1.6875rem; } }
+  @media screen and (max-width: 47.9375em) {
+    .menu-toggle.open-button {
+      margin: 0.875rem 0 0 0.625rem; } }
+  .menu-toggle.open-button svg {
+    width: 2.125rem;
+    height: 2rem; }
   .menu-toggle.close-button {
     top: auto;
     right: auto;
@@ -6540,6 +6544,16 @@ body {
     left: 1.25rem;
     font-size: 4rem;
     line-height: 0.5; }
+
+.navigation img.annotation {
+  -webkit-transition: opacity 3.25s;
+  transition: opacity 3.25s; }
+
+.navigation.is-closed img.annotation {
+  opacity: 0; }
+
+.navigation.is-open img.annotation {
+  opacity: 1; }
 
 * {
   outline-width: 0;

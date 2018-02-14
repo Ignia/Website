@@ -102,7 +102,12 @@
     color                       : rgba(59, 51, 47, 1);
   }
   &.open-button {
-    margin                      : rem-calc(14 0 0 10);
+    @include breakpoint(959px down) {
+      margin                    : rem-calc(23 0 0 27);
+    }
+    @include breakpoint(767px down) {
+      margin                    : rem-calc(14 0 0 10);
+    }
     svg {
       width                     : rem-calc(34);
       height                    : rem-calc(32);
@@ -115,5 +120,21 @@
     left                        : rem-calc(20);
     font-size                   : rem-calc(64);
     line-height                 : 0.5;
+  }
+}
+
+.navigation {
+  img.annotation {
+    transition                  : opacity 3.25s;
+  }
+  &.is-closed {
+    img.annotation {
+      opacity                   : 0;
+    }
+  }
+  &.is-open {
+    img.annotation {
+      opacity                   : 1;
+    }
   }
 }
