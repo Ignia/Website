@@ -151,16 +151,12 @@ body {
       max-width                 : 56%;
       @include breakpoint(959px down) {
         display                 : inline-block;
-        top                     : rem-calc(245);
-        left                    : rem-calc(154);
+        top                     : rem-calc(230);
+        left                    : rem-calc(175);
       }
       @include breakpoint(767px down) {
         top                     : rem-calc(214);
         left                    : rem-calc(148);
-      }
-      @include breakpoint(359px down) {
-        top                     : rem-calc(228);
-        left                    : rem-calc(126);
       }
     }
   }
@@ -173,6 +169,7 @@ body {
 #PrimaryNavigation,
 #PrimaryNavigationSmallScreen {
   ul {
+    margin                      : 0;
     li {
       a {
         &.ancillary {
@@ -231,16 +228,33 @@ body {
 
 }
 #PrimaryNavigationSmallScreen {
-  padding                       : rem-calc(28 0 0);
+  padding                       : 0;
   ul {
+    position                    : relative;
+    @include breakpoint(959px down) {
+      top                       : rem-calc(50);
+    }
+    @include breakpoint(767px down) {
+      top                       : rem-calc(33);
+    }
     li {
       padding-bottom            : rem-calc(28);
       a {
+        display                 : inline-block;
+        @include breakpoint(959px down) {
+          padding-left          : rem-calc(40);
+        }
+        @include breakpoint(767px down) {
+          padding-left          : rem-calc(24);
+        }
         &.ancillary {
           @include breakpoint(959px down) {
             margin-top          : rem-calc(28);
-            margin-left         : rem-calc(-12);
-          //padding-left        : rem-calc(12);
+            margin-left         : rem-calc(29);
+            padding-left        : rem-calc(8);
+          }
+          @include breakpoint(767px down) {
+            margin-left         : rem-calc(16);
           }
         }
       }

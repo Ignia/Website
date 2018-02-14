@@ -6349,23 +6349,22 @@ body {
     @media screen and (max-width: 59.9375em) {
       #Header img.annotation {
         display: inline-block;
-        top: 15.3125rem;
-        left: 9.625rem; } }
+        top: 14.375rem;
+        left: 10.9375rem; } }
     @media screen and (max-width: 47.9375em) {
       #Header img.annotation {
         top: 13.375rem;
         left: 9.25rem; } }
-    @media screen and (max-width: 22.4375em) {
-      #Header img.annotation {
-        top: 14.25rem;
-        left: 7.875rem; } }
 
-#PrimaryNavigation ul li a.ancillary,
-#PrimaryNavigationSmallScreen ul li a.ancillary {
-  border-width: 0.125rem;
-  border-bottom-width: 0.125rem;
-  border-style: solid;
-  padding: 0.3125rem 0.5rem 0.375rem 0.625rem; }
+#PrimaryNavigation ul,
+#PrimaryNavigationSmallScreen ul {
+  margin: 0; }
+  #PrimaryNavigation ul li a.ancillary,
+  #PrimaryNavigationSmallScreen ul li a.ancillary {
+    border-width: 0.125rem;
+    border-bottom-width: 0.125rem;
+    border-style: solid;
+    padding: 0.3125rem 0.5rem 0.375rem 0.625rem; }
 
 #PrimaryNavigation {
   position: absolute;
@@ -6401,13 +6400,33 @@ body {
           display: block; }
 
 #PrimaryNavigationSmallScreen {
-  padding: 1.75rem 0 0; }
-  #PrimaryNavigationSmallScreen ul li {
-    padding-bottom: 1.75rem; }
+  padding: 0; }
+  #PrimaryNavigationSmallScreen ul {
+    position: relative; }
     @media screen and (max-width: 59.9375em) {
-      #PrimaryNavigationSmallScreen ul li a.ancillary {
-        margin-top: 1.75rem;
-        margin-left: -0.75rem; } }
+      #PrimaryNavigationSmallScreen ul {
+        top: 3.125rem; } }
+    @media screen and (max-width: 47.9375em) {
+      #PrimaryNavigationSmallScreen ul {
+        top: 2.0625rem; } }
+    #PrimaryNavigationSmallScreen ul li {
+      padding-bottom: 1.75rem; }
+      #PrimaryNavigationSmallScreen ul li a {
+        display: inline-block; }
+        @media screen and (max-width: 59.9375em) {
+          #PrimaryNavigationSmallScreen ul li a {
+            padding-left: 2.5rem; } }
+        @media screen and (max-width: 47.9375em) {
+          #PrimaryNavigationSmallScreen ul li a {
+            padding-left: 1.5rem; } }
+        @media screen and (max-width: 59.9375em) {
+          #PrimaryNavigationSmallScreen ul li a.ancillary {
+            margin-top: 1.75rem;
+            margin-left: 1.8125rem;
+            padding-left: 0.5rem; } }
+        @media screen and (max-width: 47.9375em) {
+          #PrimaryNavigationSmallScreen ul li a.ancillary {
+            margin-left: 1rem; } }
 
 #MainContent {
   display: block;
@@ -6494,6 +6513,9 @@ body {
     @media screen and (max-width: 59.9375em) {
       .site.header .navigation a {
         font-size: 1.5rem; } }
+    @media screen and (max-width: 47.9375em) {
+      .site.header .navigation a {
+        font-size: 1.3125rem; } }
     .site.header .navigation a.active {
       border-bottom-color: #ef4a24;
       -webkit-transition: border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
@@ -6516,10 +6538,10 @@ body {
       color: #3b332f; }
       @media screen and (max-width: 59.9375em) {
         .site.header .navigation a:hover, .site.header .navigation a:focus, .site.header .navigation a:active, .site.header .navigation a.active {
-          background: transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 38px; } }
-      @media screen and (max-width: 22.4375em) {
+          background: transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 16px; } }
+      @media screen and (max-width: 47.9375em) {
         .site.header .navigation a:hover, .site.header .navigation a:focus, .site.header .navigation a:active, .site.header .navigation a.active {
-          background-position: -79px 36px; } }
+          background-position: -81px 15px; } }
       .site.header .navigation a:hover .ordinal, .site.header .navigation a:focus .ordinal, .site.header .navigation a:active .ordinal, .site.header .navigation a.active .ordinal {
         -webkit-transition: display 100ms ease-in 200ms;
         transition: display 100ms ease-in 200ms; }
@@ -6540,10 +6562,16 @@ body {
   .menu-toggle.close-button {
     top: auto;
     right: auto;
-    bottom: 1.25rem;
-    left: 1.25rem;
     font-size: 4rem;
     line-height: 0.5; }
+    @media screen and (max-width: 59.9375em) {
+      .menu-toggle.close-button {
+        bottom: 2.375rem;
+        left: 2.25rem; } }
+    @media screen and (max-width: 47.9375em) {
+      .menu-toggle.close-button {
+        bottom: 1.25rem;
+        left: 1.25rem; } }
 
 .navigation img.annotation {
   -webkit-transition: opacity 4.25s;

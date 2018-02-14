@@ -49,6 +49,9 @@
       @include breakpoint(959px down) {
         font-size               : rem-calc(24);
       }
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(21);
+      }
       &.active {
         border-bottom-color     : $palette-red;
         transition              : border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
@@ -77,10 +80,10 @@
       &.active {
         color                   : rgb(59, 51, 47);              // #3B332F
         @include breakpoint(959px down) {
-          background            : transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 38px;
+          background            : transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 16px;
         }
-        @include breakpoint(359px down) {
-          background-position   : -79px 36px;
+        @include breakpoint(767px down) {
+          background-position   : -81px 15px;
         }
         .ordinal {
           transition            : display 100ms ease-in 200ms;
@@ -116,10 +119,16 @@
   &.close-button {
     top                         : auto;
     right                       : auto;
-    bottom                      : rem-calc(20);
-    left                        : rem-calc(20);
     font-size                   : rem-calc(64);
     line-height                 : 0.5;
+    @include breakpoint(959px down) {
+      bottom                    : rem-calc(38);
+      left                      : rem-calc(36);
+    }
+    @include breakpoint(767px down) {
+      bottom                    : rem-calc(20);
+      left                      : rem-calc(20);
+    }
   }
 }
 
