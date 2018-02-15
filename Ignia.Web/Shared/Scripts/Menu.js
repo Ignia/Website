@@ -5,14 +5,6 @@
  * @author Katherine Trunkey (katherine.trunkey@ignia.com)
  */
 
-/**
- * Removes the "active" class from all primary navigation items
- */
-function resetNavHighlight() {
-  'use strict';
-  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
-};
-
 $(function () {
   'use strict';
 
@@ -83,9 +75,34 @@ $(function () {
   $('#PrimaryNavigationSmallScreen ul li a').click(function (event) {
     resetNavHighlight();
     $(this).addClass('active');
-    setTimeout(function () {
-      $('#PrimaryNavigationSmallScreen').foundation('close');
-    }, 250);
+    closeOffCanvasMenu();
+  });
+
+  /**
+   * Workaround for non-responsive close button
+   * ### TODO: Resolve underlying issue
+   */
+  $('#PrimaryNavigationSmallScreen .close-button').click(function (event) {
+    closeOffCanvasMenu();
   });
 
 });
+
+/**
+ * Removes the "active" class from all primary navigation items
+ */
+function resetNavHighlight() {
+  'use strict';
+  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
+};
+
+/**
+  * Sets the active state of the tapped-on navigation item;
+  * closes the off-canvas menu on tap of one of the navigation items
+  */
+function closeOffCanvasMenu() {
+  'use strict';
+  setTimeout(function() {
+    $('#PrimaryNavigationSmallScreen').foundation('close');
+  }, 250);
+};
