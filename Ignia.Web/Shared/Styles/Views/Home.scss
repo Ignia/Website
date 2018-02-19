@@ -592,6 +592,7 @@ footer.footer {
     background                  : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
     @include breakpoint(960px) {
       z-index                   : 35;
+      padding-bottom            : rem-calc(54);
     }
     @include breakpoint(959px down) {
       padding-bottom            : 18%;

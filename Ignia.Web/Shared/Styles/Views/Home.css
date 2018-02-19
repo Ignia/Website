@@ -497,7 +497,8 @@ footer.footer {
     background: #f0ad20 url("/Images/Home/Clients.Tile.png") repeat center top; }
     @media screen and (min-width: 60em) {
       .panel.clients {
-        z-index: 35; } }
+        z-index: 35;
+        padding-bottom: 3.375rem; } }
     @media screen and (max-width: 59.9375em) {
       .panel.clients {
         padding-bottom: 18%; } }
