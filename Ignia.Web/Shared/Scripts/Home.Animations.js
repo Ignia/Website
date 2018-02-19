@@ -26,6 +26,27 @@ $(function() {
   }).setPin('#Splash', { pushFollowers: false }).addTo(sceneController);
 
   /**
+   * Set panel scenes for tablet and larger screens
+   */
+  if ($(window).width() > 767) {
+
+    // Establish variables
+    var servicesPinDuration     = $('#Services').height();
+    if ($(window).height() > $(window).width()) {
+      servicesPinDuration       = (servicesPinDuration * 0.85);
+    }
+
+    // Services panel pin
+    var servicesPinScene        = new ScrollMagic.Scene({
+      triggerElement            : '#Services',
+      offset                    : -topOffset,
+      duration                  : servicesPinDuration,
+      triggerHook               : 0
+    }).setPin('#Services').addTo(sceneController);
+
+  }
+
+  /**
    * Creates scale and opacity tweens for featured client logos
    */
   var
