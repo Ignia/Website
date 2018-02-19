@@ -11,7 +11,9 @@ $(function() {
   /**
    * Establish variables
    */
-  var topOffset                 = $('#Header').height();
+  var
+    viewportWidth               = $(window).width(),
+    topOffset                   = $('#Header').height();
 
   /**
    * Initializes Foundation smooth scrolling for homepage navigation arrows
@@ -23,6 +25,14 @@ $(function() {
     },
     splashSmoothScroll          = new Foundation.SmoothScroll($('#SplashArrow'), smoothScrollOptions),
     clientsSmoothScroll         = new Foundation.SmoothScroll($('#ClientsArrow'), smoothScrollOptions);
+
+  /**
+   * Adds height to panels needing additional buffer for scroll-based functionality or animations (see Home.Animations.js), for
+   * tablet or larger screens
+   */
+  if (viewportWidth > 767) {
+    $('#Services').height($('#Services').height() * 1.25);
+  }
 
   /**
    * Handles Services panel click functionality in order to fire off selected Service
