@@ -75,6 +75,7 @@ body {
 #Header {
   z-index                       : 999;
   position                      : fixed;
+  top                           : 0;
   backface-visibility           : hidden;
   -webkit-overflow-scrolling    : touch;
   width                         : 100%;

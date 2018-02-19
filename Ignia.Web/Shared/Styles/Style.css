@@ -6276,6 +6276,7 @@ body {
 #Header {
   z-index: 999;
   position: fixed;
+  top: 0;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
   -webkit-overflow-scrolling: touch;
