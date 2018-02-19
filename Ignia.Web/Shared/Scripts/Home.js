@@ -42,6 +42,8 @@ $(function() {
 /**
  * Sets the "active" class on the Service category navigation as well as the associated details area on click of the category
  * navigation. Also moves the indicator arrow on the details area border.
+ *
+ * @param {string} selectedService - The HREF value for the selected service category.
  */
 function selectService(selectedService) {
   'use strict';
