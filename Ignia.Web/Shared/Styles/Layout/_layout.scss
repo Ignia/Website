@@ -35,12 +35,12 @@
 }
 
 .full-height {
-  min-height                    : calc(100vh - 100px);
+  min-height                    : calc(100vh - 120px);
   @include breakpoint(959px down) {
-    min-height                  : calc(100vh - 60px);
+    min-height                  : calc(100vh - 80px);
   }
   @include breakpoint(767px down) {
-    min-height                  : calc(100vh - 41px);
+    min-height                  : calc(100vh - 61px);
   }
 }
 

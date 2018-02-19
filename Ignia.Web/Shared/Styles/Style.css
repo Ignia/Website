@@ -6245,16 +6245,16 @@ label.required {
   clear: both; }
 
 .full-height {
-  min-height: -webkit-calc(100vh - 100px);
-  min-height: calc(100vh - 100px); }
+  min-height: -webkit-calc(100vh - 120px);
+  min-height: calc(100vh - 120px); }
   @media screen and (max-width: 59.9375em) {
     .full-height {
-      min-height: -webkit-calc(100vh - 60px);
-      min-height: calc(100vh - 60px); } }
+      min-height: -webkit-calc(100vh - 80px);
+      min-height: calc(100vh - 80px); } }
   @media screen and (max-width: 47.9375em) {
     .full-height {
-      min-height: -webkit-calc(100vh - 41px);
-      min-height: calc(100vh - 41px); } }
+      min-height: -webkit-calc(100vh - 61px);
+      min-height: calc(100vh - 61px); } }
 
 html,
 body {
