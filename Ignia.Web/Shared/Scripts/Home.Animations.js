@@ -26,6 +26,25 @@ $(function() {
   }).setPin('#Splash', { pushFollowers: false }).addTo(sceneController);
 
   /**
+   * Creates scale and opacity tweens for featured client logos
+   */
+  var
+    clientLogosItem             = $('#ClientHighlights section.logos ul li'),
+    clientLogosDuration         = ($('#ClientHighlights').innerHeight()*0.8),
+    clientLogosTween            = TweenMax.staggerFromTo(
+      clientLogosItem,
+      3,
+      { autoAlpha: 0, scale: 0 },
+      { autoAlpha: 1, scale: 1, ease: Power2.easeIn, autoCSS: true },
+      0.25
+    ),
+    clientLogosScene            = new ScrollMagic.Scene({
+      triggerElement            : '#ClientHighlights section.logos',
+      duration                  : clientLogosDuration,
+      triggerHook               : 1,
+    }).setTween(clientLogosTween).addTo(sceneController);
+
+  /**
    * Set panel scenes for tablet and larger screens
    */
   if ($(window).width() > 767) {
@@ -45,24 +64,5 @@ $(function() {
     }).setPin('#Services').addTo(sceneController);
 
   }
-
-  /**
-   * Creates scale and opacity tweens for featured client logos
-   */
-  var
-    clientLogosItem             = $('#ClientHighlights section.logos ul li'),
-    clientLogosDuration         = ($('#ClientHighlights').innerHeight()*0.8),
-    clientLogosTween            = TweenMax.staggerFromTo(
-      clientLogosItem,
-      3,
-      { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1, ease: Power2.easeIn, autoCSS: true },
-      0.25
-    ),
-    clientLogosScene            = new ScrollMagic.Scene({
-      triggerElement            : '#ClientHighlights section.logos',
-      duration                  : clientLogosDuration,
-      triggerHook               : 1,
-    }).setTween(clientLogosTween).addTo(sceneController);
 
 });
