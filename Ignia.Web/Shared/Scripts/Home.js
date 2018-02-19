@@ -37,6 +37,41 @@ $(function() {
 
   });
 
+  /**
+   * Monitors the scroll position within the Services panel, in order to highlight sections and swap out the content.
+   */
+
+  // Establish variables
+  var
+    servicesAreaTop             = ($('#Services').offset().top - topOffset),
+    servicesAreaHeight          = ($('#Services').height()),
+    servicesAreaSectionHeight   = (servicesAreaHeight / 3),
+    servicesScrollRegion        = (servicesAreaTop + servicesAreaHeight),
+    sectionCloudStart           = (servicesAreaTop + servicesAreaSectionHeight),
+    sectionCmsStart             = (sectionCloudStart + servicesAreaSectionHeight);
+
+  // Calculate selected service on scroll
+  $(window).scroll(function() {
+
+    var scrollPosition          = $(window).scrollTop();
+
+    // Highlight Responsive Web Apps section
+    if (scrollPosition >= servicesAreaTop && scrollPosition < sectionCloudStart) {
+      selectService('#ResponsiveService');
+    }
+
+    // Highlight Cloud-based APIs section
+    if (scrollPosition >= sectionCloudStart && scrollPosition < sectionCmsStart) {
+      selectService('#CloudAPIService');
+    }
+
+    // Highlight Content Management Systems section
+    if (scrollPosition >= sectionCmsStart && scrollPosition < servicesScrollRegion) {
+      selectService('#CMSService');
+    }
+
+  });
+
 });
 
 /**
