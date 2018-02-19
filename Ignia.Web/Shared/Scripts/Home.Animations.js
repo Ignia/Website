@@ -13,9 +13,19 @@ $(function() {
    * Establish variables
    */
   var
-    topOffset                   = $('#Header').height(),
+    topOffset                   = $('#Header').outerHeight(),
     slides                      = $('.panel').not('.splash'),
     sceneController             = new ScrollMagic.Controller();
+
+  console.log('topOffset: ' + topOffset);
+
+  /**
+   * Sets up pin / section wipe scene for splash panel
+   */
+  var splashPinScene            = new ScrollMagic.Scene({
+    triggerElement              : '#Introduction',
+    triggerHook                 : 1
+  }).setPin('#Splash', { pushFollowers: false }).addTo(sceneController);
 
   /**
    * Creates scale and opacity tweens for featured client logos
