@@ -17,8 +17,6 @@ $(function() {
     slides                      = $('.panel').not('.splash'),
     sceneController             = new ScrollMagic.Controller();
 
-  console.log('topOffset: ' + topOffset);
-
   /**
    * Sets up pin / section wipe scene for splash panel
    */
