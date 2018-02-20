@@ -96,10 +96,17 @@ $(function() {
     // Services panel pin
     var servicesPinScene        = new ScrollMagic.Scene({
       triggerElement            : '#Services',
+      triggerHook               : 0,
       offset                    : -topOffset,
-      duration                  : servicesPinDuration,
-      triggerHook               : 0
+      duration                  : servicesPinDuration
     }).setPin('#Services').addTo(sceneController);
+
+    // Contact panel pin
+    var contactPinScene         = new ScrollMagic.Scene({
+      triggerElement            : '#Contact',
+      triggerHook               : 0,
+      offset                    : -topOffset
+    }).setPin('#Contact', { pushFollowers: true }).addTo(sceneController);
 
   }
 
