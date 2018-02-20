@@ -27,6 +27,43 @@ $(function() {
   }).setPin('#Splash', { pushFollowers: false }).addTo(sceneController);
 
   /**
+   * Sets up overlay layer and opacity tweens for panels
+   */
+  $('article.panel').not('#Contact').each(function() {
+
+    // Establish variables
+    var
+      panelId                   = $(this).attr('id'),
+      panelOverlay              = $(this).find('span.overlay'),
+      triggerPanel              = '#Introduction';
+
+    // Conditionally set subsequent trigger panels
+    if (panelId === 'Introduction') {
+      triggerPanel              = '#Services';
+    }
+    if (panelId === 'Services') {
+      triggerPanel              = '#ClientHighlights';
+    }
+    if (panelId === 'ClientHighlights') {
+      triggerPanel              = '#Contact';
+    }
+
+    // Define tweens timeline
+    var overlayTweens           = new TimelineMax()
+      .add(TweenMax.to(panelOverlay, 0.1, { zIndex: 1, ease: Power0.easeNone }))
+      .add(TweenMax.to(panelOverlay, 0.9, { autoAlpha: 0.8, ease: Power0.easeNone }, '-=0.05'));
+
+    // Define scene
+    var overlayScene            = new ScrollMagic.Scene({
+      triggerElement            : triggerPanel,
+      duration                  : mainContentHeight,
+      triggerHook               : 1
+    }).setTween(overlayTweens).addTo(sceneController);
+
+  });
+
+
+  /**
    * Creates scale and opacity tweens for featured client logos
    */
   var
