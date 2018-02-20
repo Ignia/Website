@@ -240,10 +240,6 @@ footer.footer {
           display: block;
           position: relative;
           top: 2.125rem;
-          float: left;
-          margin: 0 0.625rem;
-          min-width: 26.1875rem;
-          width: 47.91682%;
           min-height: 50rem;
           background: transparent url("/Images/Home/Tagline.Code.png") no-repeat 44px 77.5%; } }
       .panel.introduction section.factory img {
