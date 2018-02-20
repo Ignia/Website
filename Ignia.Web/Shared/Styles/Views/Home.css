@@ -169,6 +169,7 @@ footer.footer {
     color: #f2eee6;
     background: #ef4a24 url("/Images/Home/Introduction.Tile.png") repeat center top; }
     .panel.introduction header {
+      z-index: 1;
       background: #ef4a24 url("/Images/Home/Introduction.Tile.png") repeat center top; }
       .panel.introduction header[style*="position: fixed"] {
         z-index: 10; }

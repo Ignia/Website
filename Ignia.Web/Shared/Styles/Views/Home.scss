@@ -198,6 +198,7 @@ footer.footer {
     color                       : $palette-white;
     background                  : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
     header {
+      z-index                   : 1;
       background                : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
       &[style*="position: fixed"] {
         z-index                 : 10;
