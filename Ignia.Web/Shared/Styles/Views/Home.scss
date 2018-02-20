@@ -35,7 +35,6 @@ main {
 }
 
 footer.footer {
-  z-index                       : 45;
   position                      : relative;
   @include breakpoint(768px) {
     margin-top                  : -15px;
@@ -109,7 +108,6 @@ footer.footer {
 
   // Splash
   &.splash {
-    z-index                     : 3;
     display                     : flex;
     flex-direction              : column;
     justify-content             : center;
@@ -197,12 +195,13 @@ footer.footer {
 
   // Introduction
   &.introduction {
-    z-index                     : 10;
     color                       : $palette-white;
     background                  : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
     header {
-      z-index                   : 13;
       background                : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
+      &[style*="position: fixed"] {
+        z-index                 : 10;
+      }
       h1 {
         span {
           display               : inline-block;
@@ -308,7 +307,6 @@ footer.footer {
 
   // Services
   &.services {
-    z-index                     : 20;
     background                  : $palette-grey-darker;
     header {
       border-color              : rgb(166, 161, 156);
@@ -588,7 +586,6 @@ footer.footer {
 
   // Clients
   &.clients {
-    z-index                     : 30;
     background                  : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
     @include breakpoint(960px) {
       z-index                   : 35;
@@ -714,7 +711,7 @@ footer.footer {
         height                  : rem-calc(200);
         background              : rgba(0, 0, 0, 0.05);
         transform-style         : preserve-3d;
-        @media screen and #{breakpoint(580px) and #{breakpoint(959px down)}} {
+        @media screen and #{breakpoint(580px)} and #{breakpoint(959px down)} {
           width                 : rem-calc(216);
           height                : rem-calc(196);
         }
@@ -766,7 +763,6 @@ footer.footer {
 
   // Contact
   &.contact {
-    z-index                     : 45;
     background                  : $palette-grey-darker;
     @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
       min-height                : rem-calc(944);

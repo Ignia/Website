@@ -24,7 +24,6 @@ main {
       overflow-y: scroll; } }
 
 footer.footer {
-  z-index: 45;
   position: relative; }
   @media screen and (min-width: 48em) {
     footer.footer {
@@ -80,7 +79,6 @@ footer.footer {
   .panel .section-heading {
     font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif; }
   .panel.splash {
-    z-index: 3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -168,12 +166,12 @@ footer.footer {
       height: 100%;
       background-color: black; }
   .panel.introduction {
-    z-index: 10;
     color: #f2eee6;
     background: #ef4a24 url("/Images/Home/Introduction.Tile.png") repeat center top; }
     .panel.introduction header {
-      z-index: 13;
       background: #ef4a24 url("/Images/Home/Introduction.Tile.png") repeat center top; }
+      .panel.introduction header[style*="position: fixed"] {
+        z-index: 10; }
       .panel.introduction header h1 span {
         display: inline-block; }
     @media screen and (min-width: 60em) {
@@ -253,7 +251,6 @@ footer.footer {
       .panel.introduction section.body {
         padding-right: 3.75rem; } }
   .panel.services {
-    z-index: 20;
     background: #332e2c; }
     .panel.services header {
       border-color: #a6a19c;
@@ -493,7 +490,6 @@ footer.footer {
             padding-bottom: 0.4375rem;
             color: rgba(242, 238, 230, 0.5); }
   .panel.clients {
-    z-index: 30;
     background: #f0ad20 url("/Images/Home/Clients.Tile.png") repeat center top; }
     @media screen and (min-width: 60em) {
       .panel.clients {
@@ -608,7 +604,7 @@ footer.footer {
         background: rgba(0, 0, 0, 0.05);
         -webkit-transform-style: preserve-3d;
                 transform-style: preserve-3d; }
-        @media screen and (max-width: 59.9375em) {
+        @media screen and (min-width: 36.25em) and (max-width: 59.9375em) {
           .panel.clients ul li {
             width: 13.5rem;
             height: 12.25rem; } }
@@ -647,7 +643,6 @@ footer.footer {
         .panel.clients img.logo {
           max-width: 5.625rem; } }
   .panel.contact {
-    z-index: 45;
     background: #332e2c; }
     @media screen and (min-width: 48em) and (max-width: 60em) {
       .panel.contact {
