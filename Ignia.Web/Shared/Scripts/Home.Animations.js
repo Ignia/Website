@@ -14,6 +14,7 @@ $(function() {
    */
   var
     topOffset                   = $('#Header').outerHeight(),
+    mainContentHeight           = ($(window).height() - topOffset),
     slides                      = $('.panel').not('.splash'),
     sceneController             = new ScrollMagic.Controller();
 
@@ -62,6 +63,24 @@ $(function() {
       duration                  : servicesPinDuration,
       triggerHook               : 0
     }).setPin('#Services').addTo(sceneController);
+
+  }
+
+  /**
+   * Set panel scenes for large screens
+   */
+  if ($(window).width() > 959) {
+
+    // Establish variables
+    var introductionPanelHeader = '#Introduction header:first-child';
+
+    // Introduction panel header pin
+    var introHeaderScene        = new ScrollMagic.Scene({
+      triggerElement            : '#Introduction',
+      offset                    : -topOffset,
+      triggerHook               : 0,
+      duration                  : ($('#Introduction').height() - mainContentHeight)
+    }).setPin(introductionPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
   }
 
