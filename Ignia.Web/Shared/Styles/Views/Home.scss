@@ -211,7 +211,12 @@ footer.footer {
     }
     .container {
       @include breakpoint(960px) {
-        background              : transparent url('/Images/Home/Tagline.Rulers.png') no-repeat 125px 100%;
+        background-color        : transparent;
+        background-image        : url('/Images/Home/Tagline.Rulers.png');
+        background-repeat       : no-repeat;
+        background-position-x   : calc(50vw - 365px);
+        background-position-y   : 100%;
+        background-attachment   : fixed;
       }
     }
     section {
@@ -287,7 +292,12 @@ footer.footer {
           position              : relative;
           top                   : rem-calc(34);
           min-height            : rem-calc(800);
-          background            : transparent url('/Images/Home/Tagline.Code.png') no-repeat 44px 77.5%;
+          background-color      : transparent;
+          background-image      : url('/Images/Home/Tagline.Code.png');
+          background-repeat     : no-repeat;
+          background-position-x : calc(50vw - 434px);
+          background-position-y : 77.5%;
+          background-attachment : fixed;
         }
         img {
           padding-left          : 9.5%;

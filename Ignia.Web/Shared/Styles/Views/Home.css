@@ -177,7 +177,13 @@ footer.footer {
         display: inline-block; }
     @media screen and (min-width: 60em) {
       .panel.introduction .container {
-        background: transparent url("/Images/Home/Tagline.Rulers.png") no-repeat 125px 100%; } }
+        background-color: transparent;
+        background-image: url("/Images/Home/Tagline.Rulers.png");
+        background-repeat: no-repeat;
+        background-position-x: -webkit-calc(50vw - 365px);
+        background-position-x: calc(50vw - 365px);
+        background-position-y: 100%;
+        background-attachment: fixed; } }
     .panel.introduction section p {
       margin: 0 0 3.25rem;
       line-height: 1.8;
@@ -241,7 +247,13 @@ footer.footer {
           position: relative;
           top: 2.125rem;
           min-height: 50rem;
-          background: transparent url("/Images/Home/Tagline.Code.png") no-repeat 44px 77.5%; } }
+          background-color: transparent;
+          background-image: url("/Images/Home/Tagline.Code.png");
+          background-repeat: no-repeat;
+          background-position-x: -webkit-calc(50vw - 434px);
+          background-position-x: calc(50vw - 434px);
+          background-position-y: 77.5%;
+          background-attachment: fixed; } }
       .panel.introduction section.factory img {
         padding-left: 9.5%; }
     @media screen and (min-width: 60em) {
