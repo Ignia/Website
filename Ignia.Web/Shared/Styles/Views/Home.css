@@ -192,7 +192,7 @@ footer.footer {
         .panel.introduction section p {
           margin-bottom: 2.5rem; } }
       .panel.introduction section p:first-child {
-        padding-top: 2.5rem; }
+        padding-top: 3.0625rem; }
         @media screen and (max-width: 47.9375em) {
           .panel.introduction section p:first-child {
             padding-top: 1.5625rem; } }
@@ -245,7 +245,7 @@ footer.footer {
         .panel.introduction section.factory {
           display: block;
           position: relative;
-          top: 2.125rem;
+          top: 17.75rem;
           min-height: 50rem;
           background-color: transparent;
           background-image: url("/Images/Home/Tagline.Code.png");
@@ -255,10 +255,12 @@ footer.footer {
           background-position-y: 77.5%;
           background-attachment: fixed; } }
       .panel.introduction section.factory img {
-        padding-left: 9.5%; }
+        position: relative;
+        top: -15rem;
+        left: 2.625rem; }
     @media screen and (min-width: 60em) {
       .panel.introduction section.body {
-        padding-right: 3.75rem; } }
+        padding-right: 2.5rem; } }
   .panel.services {
     background: #332e2c; }
     .panel.services header {

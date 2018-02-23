@@ -228,7 +228,7 @@ footer.footer {
           margin-bottom         : rem-calc(40);
         }
         &:first-child {
-          padding-top           : rem-calc(40);
+          padding-top           : rem-calc(49);
           @include breakpoint(767px down) {
             padding-top         : rem-calc(25);
           }
@@ -290,7 +290,7 @@ footer.footer {
         @include breakpoint(960px) {
           display               : block;
           position              : relative;
-          top                   : rem-calc(34);
+          top                   : rem-calc(284);
           min-height            : rem-calc(800);
           background-color      : transparent;
           background-image      : url('/Images/Home/Tagline.Code.png');
@@ -300,12 +300,14 @@ footer.footer {
           background-attachment : fixed;
         }
         img {
-          padding-left          : 9.5%;
+          position              : relative;
+          top                   : rem-calc(-240);
+          left                  : rem-calc(42);
         }
       }
       &.body {
         @include breakpoint(960px) {
-          padding-right         : rem-calc(60);
+          padding-right         : rem-calc(40);
         }
       }
 
