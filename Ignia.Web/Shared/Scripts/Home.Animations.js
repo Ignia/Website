@@ -121,11 +121,24 @@ $(function() {
     // Introduction panel header pin
     var introHeaderScene        = new ScrollMagic.Scene({
       triggerElement            : '#Introduction',
-      offset                    : -topOffset,
       triggerHook               : 0,
+      offset                    : -topOffset,
       duration                  : ($('#Introduction').height() - mainContentHeight)
     }).setPin(introductionPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
+    // Introduction panel code factory tween
+    var
+      codefactoryTween          = TweenMax.to(
+        '#Introduction section.factory img',
+        5,
+        { top: '0', autoCSS: true, ease: SlowMo.ease.config(0.1, 0.1, false) }
+      ),
+      codeFactoryScene          = new ScrollMagic.Scene({
+        triggerElement          : '#Introduction',
+        triggerHook             : 0,
+        offset                  : -topOffset,
+        duration                : '660',
+      }).setTween(codefactoryTween).addTo(sceneController);
   }
 
 });
