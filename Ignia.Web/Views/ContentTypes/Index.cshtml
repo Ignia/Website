@@ -1,0 +1,135 @@
+﻿@model TopicViewModel
+
+@{
+  Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+@section Head {
+  <!-- Library Index View Styles -->
+  <link rel="stylesheet" href="/Shared/Styles/Views/Library.css" />
+}
+
+@section PageHeaderSection {
+  <div class="container">
+    <h1>Library</h1>
+    <!-- Library Navigation Menu -->
+    @Html.Action("Menu.Library", "Layout")
+  </div>
+}
+
+@section PageBodySection {
+
+  <!-- Library Categories Navigation -->
+  <section class="navbar" style="display: none;">
+    <nav id="WorkAreaNavigation" class="navigation pictographic" role="navigation">
+      <ul>
+        <li>
+          <div class="selection">
+            <a href="#">
+              <div class="pictographs">
+                <span class="fas fa-database"></span>
+              </div>
+              <span class="label">Data / API</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="selection">
+            <a href="#">
+              <div class="pictographs">
+                <span class="fas fa-cloud"></span>
+                <span class="fas fa-server"></span>
+              </div>
+              <span class="label">Web / Server</span>
+            </a>
+          </div>
+        </li>
+        <li>
+          <div class="selection">
+            <a href="#">
+              <div class="pictographs">
+                <span class="fas fa-mobile"></span>
+                <span class="fas fa-desktop"></span>
+                <span class="fas fa-laptop"></span>
+              </div>
+              <span class="label">Mobile</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </section>
+  <!-- Library Categories Navigation -->
+
+  <!-- Articles Listing/Index -->
+  <article id="ArticlesIndex" class="library index container" role="article">
+
+    <!-- Page Header -->
+    <header role="banner"><h2>@Model.Topic.Title</h2></header>
+
+    <section role="region">
+
+      <!-- Introduction -->
+      <div class="introduction">@Model.Topic.Attributes.GetValue("Body")</div>
+
+      <!-- Articles Listing -->
+      <ul id="ArticleCategories" class="article categories">
+        @foreach (var articlePage in getArticlePages()) {
+          <li>
+            <details id="@(articlePage.Key)Articles">
+
+              <!-- Section Heading -->
+              <summary><h3 class="details heading">@articlePage.Title</h3></summary>
+
+              <!-- Articles -->
+              <ul class="article items">
+                <li>
+                  <h4><a href="@articlePage.WebPath">@articlePage.Title</a></h4>
+                  <div class="abstract">@articlePage.Attributes.GetValue("Abstract")</div>
+                </li>
+              </ul>
+              <!-- /Articles -->
+
+            </details>
+          </li>
+        }
+      </ul>
+      <!-- /Articles Listing -->
+
+    </section>
+
+  </article>
+  <!-- /Articles Listing/Index -->
+
+}
+
+@functions {
+
+  /*============================================================================================================================
+  | VARIABLES
+  \---------------------------------------------------------------------------------------------------------------------------*/
+  List<Topic> _articlePages = null;
+
+  /*============================================================================================================================
+  | GET ARTICLE PAGES
+  >-----------------------------------------------------------------------------------------------------------------------------
+  | Returns a set of indexed article pages / Topics.
+  \---------------------------------------------------------------------------------------------------------------------------*/
+  List<Topic> getArticlePages() {
+
+    if (_articlePages == null) {
+
+      _articlePages = new List<Topic>();
+
+      foreach (Topic articlePage in Model.Topic.Children) {
+        if (!articlePage.Attributes.GetValue("IsDisabled").Equals("1") && !_articlePages.Contains(articlePage)) {
+          _articlePages.Add(articlePage);
+        }
+      }
+
+    }
+
+    return _articlePages;
+  }
+
+}
