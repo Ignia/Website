@@ -53,12 +53,12 @@
 
       <!-- Main Site Content Area -->
       <main id="MainContent" class="page content" role="main">
-        <article itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" class="">
+        <section itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage">
 
           @if (IsSectionDefined("PageHeaderSection")) {
-            <section>
-              @RenderSection("PageHeaderSection")
-            </section>
+            <!-- Page Header -->
+            @RenderSection("PageHeaderSection")
+            <!-- /Page Header -->
           }
 
           <!-- Main Page Content -->
@@ -70,7 +70,7 @@
           }
           <!-- /Main Page Content -->
 
-        </article>
+        </section>
       </main>
       <!-- /Main Site Content Area -->
     }
