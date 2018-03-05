@@ -1,0 +1,119 @@
+﻿//==============================================================================================
+// LIBRARY
+//----------------------------------------------------------------------------------------------
+// Represents styles specific to the Ignia Library page(s).
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+// NOTE: It is expected that this page will co-exist with the centralized stylesheet and,
+// therefore, it is not necessary that it reimport shared styles. It may, however, need to
+// import variables and helpers.
+//----------------------------------------------------------------------------------------------
+@import "../variables";
+@import "../settings";
+@import "../Vendor/ZURB/util/mixins";
+@import "../Helpers/mixins";
+@import "../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// INDEX CONTENT
+//----------------------------------------------------------------------------------------------
+
+.library {
+  &.index {
+    header,
+    section {
+      padding-right             : 18px;
+      padding-left              : 18px;
+      background                : transparent;
+    }
+    > header {
+      > h2 {
+        color                   : $palette-white;
+      }
+    }
+    .introduction,
+    .introduction p {
+      font-family               : $body-font-family;
+      font-size                 : 14px;
+    }
+    ul {
+      padding-left              : 0;
+      list-style-type           : none;
+    }
+  }
+}
+
+details {
+  summary {
+    outline                     : none;
+    max-height                  : 52px;
+    &:hover,
+    &:focus,
+    &:active {
+      outline                   : none;
+      max-height                : 52px;
+    }
+    &::-webkit-details-marker {
+      display                   : none;
+    }
+    h3 {
+      color                     : rgb(166, 166, 166);           // #A6A6A6
+      cursor                    : pointer;
+      &:hover,
+      &:active,
+      &:focus {
+        color                   : $palette-yellow;
+      }
+      &:before {
+        content                 : "+";
+        display                 : inline-block;
+        margin-right            : 5px;
+        padding-bottom          : 3px;
+        width                   : 20px;
+        font-size               : 135%;
+        cursor                  : pointer;
+      }
+    }
+  }
+  &[open] summary h3,
+  &.open summary h3 {
+    color                       : $palette-yellow;
+    &:before {
+      content                   : "-";
+    }
+  }
+  &[open] ul,
+  &.open ul {
+    display                     : block;
+  }
+  ul {
+    margin                      : 0 0 0 26px;
+  }
+  li {
+    margin-bottom               : 15px;
+    h4 {
+      margin-bottom             : 0;
+      a {
+        color                   : $palette-white;
+        &:hover,
+        &:focus,
+        &:active {
+          color                 : $palette-yellow;
+        }
+      }
+    }
+    .abstract {
+      margin                    : 0 0 12px;
+      font-family               : $body-font-family;
+      font-size                 : 14px;
+      p {
+        margin                  : 0;
+        font-family             : $body-font-family;
+        font-size               : 14px;
+      }
+    }
+  }
+}
