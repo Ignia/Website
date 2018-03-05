@@ -147,3 +147,93 @@
     }
   }
 }
+
+//----------------------------------------------------------------------------------------------
+// LIBRARY NAVIGATION
+//----------------------------------------------------------------------------------------------
+
+.navigation.pictographic {
+  ul {
+    margin                      : 0;
+    padding                     : 0;
+    li {
+      display                   : inline-block;
+      margin                    : 0 10% 0 5%;
+      text-align                : center;
+    }
+  }
+  .selection {
+    &.active {
+      a {
+        color                   : $palette-white;
+      }
+    }
+    a {
+      display                   : block;
+      color                     : rgb(149, 149, 149);
+      &:hover,
+      &:focus,
+      &:active {
+        color                   : $palette-white;
+      }
+    }
+    span {
+      &.label {
+        font-family             : $body-font-family;
+        font-size               : 18px;
+      }
+      &.fas {
+        font-size               : 4.571rem;
+      }
+    }
+  }
+  .pictographs {
+    position                    : relative;
+    @include clearfix;
+  }
+  span.fas {
+    position                    : relative;
+    &.fa-cloud {
+      left                      : 15px;
+    }
+    &.fa-server {
+      z-index                   : 15;
+      bottom                    : -5px;
+      left                      : -15px;
+      font-size                 : 3.429rem;
+      text-shadow               : 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.page.header {
+  .navbar {
+    display                     : table-cell;
+    vertical-align              : bottom;
+  }
+  nav {
+    ul {
+      margin                    : 0 0 10px;
+      padding                   : 0 0 0 18px;
+      li {
+        display                 : inline-block;
+        margin-right            : 12px;
+        a {
+          display               : block;
+          padding               : 16px 18px;
+          font-family           : $body-font-family;
+          font-size             : 16px;
+          line-height           : 1;
+          color                 : rgb(149, 149, 149);
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            color               : $palette-white;
+            background          : $palette-grey-dark;
+          }
+        }
+      }
+    }
+  }
+}

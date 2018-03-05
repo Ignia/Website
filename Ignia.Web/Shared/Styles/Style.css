@@ -6584,6 +6584,75 @@ body {
 .navigation.is-open img.annotation {
   opacity: 1; }
 
+.navigation.pictographic ul {
+  margin: 0;
+  padding: 0; }
+  .navigation.pictographic ul li {
+    display: inline-block;
+    margin: 0 10% 0 5%;
+    text-align: center; }
+
+.navigation.pictographic .selection.active a {
+  color: #f2eee6; }
+
+.navigation.pictographic .selection a {
+  display: block;
+  color: #959595; }
+  .navigation.pictographic .selection a:hover, .navigation.pictographic .selection a:focus, .navigation.pictographic .selection a:active {
+    color: #f2eee6; }
+
+.navigation.pictographic .selection span.label {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-size: 18px; }
+
+.navigation.pictographic .selection span.fas {
+  font-size: 4.571rem; }
+
+.navigation.pictographic .pictographs {
+  position: relative; }
+  .navigation.pictographic .pictographs::before, .navigation.pictographic .pictographs::after {
+    display: table;
+    content: ' ';
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1; }
+  .navigation.pictographic .pictographs::after {
+    clear: both; }
+
+.navigation.pictographic span.fas {
+  position: relative; }
+  .navigation.pictographic span.fas.fa-cloud {
+    left: 15px; }
+  .navigation.pictographic span.fas.fa-server {
+    z-index: 15;
+    bottom: -5px;
+    left: -15px;
+    font-size: 3.429rem;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5); }
+
+.page.header .navbar {
+  display: table-cell;
+  vertical-align: bottom; }
+
+.page.header nav ul {
+  margin: 0 0 10px;
+  padding: 0 0 0 18px; }
+  .page.header nav ul li {
+    display: inline-block;
+    margin-right: 12px; }
+    .page.header nav ul li a {
+      display: block;
+      padding: 16px 18px;
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      color: #959595; }
+      .page.header nav ul li a:hover, .page.header nav ul li a:focus, .page.header nav ul li a:active, .page.header nav ul li a.active {
+        color: #f2eee6;
+        background: #333333; }
+
 * {
   outline-width: 0;
   outline-color: transparent; }
