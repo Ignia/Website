@@ -14,10 +14,10 @@ $(function () {
   var
     topOffset                   = $('#Header').height(),
     headingBuffer               = $('#Introduction header:first-child').height(),
-    menuElement                 = $('#PrimaryNavigation');
+    menuElement                 = $('#PrimaryNavigation li a:not("#LibraryLink")');
 
   if ($(window).width() < 960) {
-    menuElement                 = $('#PrimaryNavigationSmallScreen');
+    menuElement                 = $('#PrimaryNavigationSmallScreen li a:not("#LibraryLinkSmallScreen")');
   }
 
   /**
