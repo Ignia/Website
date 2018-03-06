@@ -70,7 +70,7 @@
     <section role="region">
 
       <!-- Introduction -->
-      <div class="introduction">@Model.Topic.Attributes.GetValue("Body")</div>
+      <div class="introduction">@Html.Raw(Model.Topic.Attributes.GetValue("Body"))</div>
 
       <!-- Articles Listing -->
       <ul id="ArticleCategories" class="article categories">
