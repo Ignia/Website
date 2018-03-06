@@ -68,14 +68,9 @@ namespace Ignia.Web {
       | Handle OnTopic Library namespace
       \-----------------------------------------------------------------------------------------------------------------------*/
       routes.MapRoute(
-        name: "LibraryTopic",
-        url: "Library/",
-        defaults: new { controller = "Topic", action = "Index", id = UrlParameter.Optional, rootTopic = "Library" }
-      );
-      routes.MapRoute(
         name: "LibraryTopics",
         url: "Library/{*path}",
-        defaults: new { controller = "Topic", action = "Index", id = UrlParameter.Optional, rootTopic = "Library" }
+        defaults: new { controller = "Topic", action = "Index", path = UrlParameter.Optional, rootTopic = "Library" }
       );
 
       /*------------------------------------------------------------------------------------------------------------------------
