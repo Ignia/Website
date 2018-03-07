@@ -13,6 +13,12 @@
 .no-transform {
   text-transform: none; }
 
+#Footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0; }
+
 .library.index header,
 .library.index section {
   padding-right: 18px;
