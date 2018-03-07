@@ -60,7 +60,7 @@ details {
       display                   : none;
     }
     h3 {
-      color                     : rgb(166, 166, 166);           // #A6A6A6
+      color                     : $palette-secondary-grey-light;
       cursor                    : pointer;
       &:hover,
       &:active,
