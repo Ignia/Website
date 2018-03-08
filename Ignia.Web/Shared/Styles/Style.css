@@ -6194,6 +6194,9 @@ label.required {
 .no-transform {
   text-transform: none; }
 
+body {
+  background-color: #333333; }
+
 .header {
   -webkit-box-shadow: 0 0 3px 0 rgba(153, 153, 153, 0.25);
           box-shadow: 0 0 3px 0 rgba(153, 153, 153, 0.25);
