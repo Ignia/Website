@@ -48,6 +48,13 @@ main {
     header {
       margin-bottom             : 20px;
     }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family               : $special-headings-font-family;
+      font-weight               : 500;
+    }
     h2,
     h3 {
       color                     : $palette-secondary-grey-darker;

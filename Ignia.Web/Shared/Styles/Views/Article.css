@@ -26,6 +26,12 @@ main {
   color: black; }
   .library.article header {
     margin-bottom: 20px; }
+  .library.article h1,
+  .library.article h2,
+  .library.article h3,
+  .library.article h4 {
+    font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-weight: 500; }
   .library.article h2,
   .library.article h3 {
     color: #343434;
