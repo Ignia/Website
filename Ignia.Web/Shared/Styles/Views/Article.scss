@@ -66,6 +66,31 @@ main {
     h3 {
       font-size                 : 30px;
     }
+    .publication {
+      &.details {
+        @include clearfix;
+        position                : relative;
+        padding                 : 14px;
+        border-radius           : 8px;
+        min-height              : 40px;
+        background              : $palette-secondary-grey-lightest;
+        .pubdate,
+        .author {
+          position              : absolute;
+          font-family           : $special-headings-font-family;
+          font-size             : 14px;
+          line-height           : 100%;
+          font-weight           : 400;
+          color                 : lighten($palette-secondary-grey-medium, 9%);
+        }
+        .pubdate {
+          left                  : 20px;
+        }
+        .author {
+          right                 : 20px;
+        }
+      }
+    }
     .contents {
       &.ancillary {
         padding-right           : 0;
@@ -89,31 +114,6 @@ main {
             padding-left        : 20px;
             list-style-type     : square;
           }
-        }
-      }
-    }
-    .publication {
-      &.details {
-        @include clearfix;
-        position                : relative;
-        padding                 : 16px 14px;
-        border-radius           : 8px;
-        min-height              : 12px;
-        background              : $palette-secondary-grey-lightest;
-        .pubdate,
-        .author {
-          position              : absolute;
-          font-family           : $body-font-family;
-          font-size             : 12px;
-          line-height           : 100%;
-          font-weight           : 700;
-          color                 : lighten($palette-secondary-grey-medium, 9%);
-        }
-        .pubdate {
-          left                  : 14px;
-        }
-        .author {
-          right                 : 14px;
         }
       }
     }
