@@ -20,7 +20,7 @@
 
 @section PageBodySection {
 
-  <article id="LibraryArticle" class="library article container" role="article" vocab="http://schema.org/" typeof="Article">
+  <article id="LibraryArticle" class="library article container grid-container" role="article" vocab="http://schema.org/" typeof="Article">
 
     <!-- Page Header / Article Title and/or Subtitle -->
     <header role="heading">
@@ -55,7 +55,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Strengths", ""))) {
         <!-- Strengths Content -->
         <section id="Strengths" class="content section" role="region" property="articleSection">
-          <header role="presentation"><h3>Strengths</h3></header>
+          <header role="heading"><h3>Strengths</h3></header>
           <div>
             @Html.Raw(Model.Topic.Attributes.GetValue("Strengths"))
           </div>
@@ -66,7 +66,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Weaknesses", ""))) {
         <!-- Weaknesses Content -->
         <section id="Weaknesses" class="content section" role="region" property="articleSection">
-          <header role="presentation"><h3>Weaknesses</h3></header>
+          <header role="heading"><h3>Weaknesses</h3></header>
           <div>
             @Html.Raw(Model.Topic.Attributes.GetValue("Weaknesses"))
           </div>
@@ -77,7 +77,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Usage", ""))) {
         <!-- Usage Content -->
         <section id="Usage" class="content section" role="region" property="articleSection">
-          <header role="presentation"><h3>Usage</h3></header>
+          <header role="heading"><h3>Usage</h3></header>
           <div>
             @Html.Raw(Model.Topic.Attributes.GetValue("Usage"))
           </div>
@@ -88,7 +88,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("BestPractices", ""))) {
         <!-- Best Practices Content -->
         <section id="BestPractices" class="content section" role="region" property="articleSection">
-          <header role="presentation"><h3>Best Practices</h3></header>
+          <header role="heading"><h3>Best Practices</h3></header>
           <div>
             @Html.Raw(Model.Topic.Attributes.GetValue("BestPractices"))
           </div>
@@ -99,7 +99,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Examples", ""))) {
         <!-- Examples Content -->
         <section id="Examples" class="content section" role="region" property="articleSection">
-          <header role="presentation"><h3>Examples</h3></header>
+          <header role="heading"><h3>Examples</h3></header>
           <div>
             @Html.Raw(Model.Topic.Attributes.GetValue("Examples"))
           </div>
