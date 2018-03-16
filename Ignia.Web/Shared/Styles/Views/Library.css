@@ -16,23 +16,22 @@
 main {
   min-height: 768px; }
 
-.library.index header,
-.library.index section {
-  padding-right: 18px;
-  padding-left: 18px;
-  background: transparent; }
-
-.library.index > header > h2 {
-  color: #f2eee6; }
-
-.library.index .introduction,
-.library.index .introduction p {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  font-size: 14px; }
-
-.library.index ul {
-  padding-left: 0;
-  list-style-type: none; }
+.library.index {
+  color: white; }
+  .library.index header,
+  .library.index section {
+    padding-right: 18px;
+    padding-left: 18px;
+    background: transparent; }
+  .library.index > header > h2 {
+    color: #f2eee6; }
+  .library.index .introduction,
+  .library.index .introduction p {
+    font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+    font-size: 14px; }
+  .library.index ul {
+    padding-left: 0;
+    list-style-type: none; }
 
 details summary {
   outline: none;

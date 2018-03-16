@@ -31,6 +31,7 @@ main {
 
 .library {
   &.index {
+    color                       : $palette-secondary-white;
     header,
     section {
       padding-right             : 18px;
