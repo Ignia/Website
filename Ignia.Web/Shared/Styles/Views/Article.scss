@@ -1,0 +1,133 @@
+﻿//==============================================================================================
+// (LIBRARY) ARTICLE
+//----------------------------------------------------------------------------------------------
+// Represents styles specific to the Ignia Library Article Content Type page(s).
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+// NOTE: It is expected that this page will co-exist with the centralized stylesheet and,
+// therefore, it is not necessary that it reimport shared styles. It may, however, need to
+// import variables and helpers.
+//----------------------------------------------------------------------------------------------
+@import "../variables";
+@import "../settings";
+@import "../Vendor/ZURB/util/mixins";
+@import "../Helpers/mixins";
+@import "../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// LAYOUT
+//----------------------------------------------------------------------------------------------
+
+main {
+  .page.header {
+    margin-bottom               : 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// BASE
+//----------------------------------------------------------------------------------------------
+
+main {
+  background-color              : $palette-secondary-white;
+}
+
+//----------------------------------------------------------------------------------------------
+// ARTICLE CONTENT
+//----------------------------------------------------------------------------------------------
+
+.library {
+  &.article {
+    padding-top                 : 50px;
+    padding-bottom              : 20px;
+    font-family                 : $body-font-family;
+    color                       : $palette-black;
+    header {
+      margin-bottom             : 20px;
+    }
+    h2,
+    h3 {
+      color                     : $palette-secondary-grey-darker;
+      background                : $palette-secondary-white;
+    }
+    h2 {
+      font-size                 : 48px;
+    }
+    h3 {
+      font-size                 : 30px;
+    }
+    .contents {
+      &.ancillary {
+        padding-right           : 0;
+        padding-left            : 0;
+        aside {
+          margin                : 0 -1px;
+          padding               : 20px;
+          border                : 1px solid $palette-secondary-grey-lighter;
+          h4 {
+            margin              : 15px 0 0;
+            line-height         : 100%;
+            &:first-child {
+              margin-top        : 0;
+            }
+          }
+          p {
+            margin              : 5px 0;
+          }
+          ul {
+            margin              : 5px 0 0;
+            padding-left        : 20px;
+            list-style-type     : square;
+          }
+        }
+      }
+    }
+    .publication {
+      &.details {
+        @include clearfix;
+        position                : relative;
+        padding                 : 16px 14px;
+        border-radius           : 8px;
+        min-height              : 12px;
+        background              : $palette-secondary-grey-lightest;
+        .pubdate,
+        .author {
+          position              : absolute;
+          font-family           : $body-font-family;
+          font-size             : 12px;
+          line-height           : 100%;
+          font-weight           : 700;
+          color                 : lighten($palette-secondary-grey-medium, 9%);
+        }
+        .pubdate {
+          left                  : 14px;
+        }
+        .author {
+          right                 : 14px;
+        }
+      }
+    }
+    .abstract,
+    .content.section {
+      header {
+        margin                  : 20px 0 0;
+        h3 {
+          margin                : 0 0 5px;
+        }
+        div,
+        p {
+          line-height           : 1.65;
+        }
+        p {
+          margin                : 5px 0;
+        }
+      }
+    }
+    .abstract {
+      margin-top                : 25px;
+    }
+  }
+}
