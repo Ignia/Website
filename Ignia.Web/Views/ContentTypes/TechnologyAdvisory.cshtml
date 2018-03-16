@@ -35,7 +35,7 @@
 
       <!-- Publication Details -->
       <section id="PublicationDetails" class="publication details" role="region">
-        <time datetime="@getDateTimeValue(@Model.Topic.Attributes.GetValue(" PublishDate", "" ), "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
+        <time datetime="@getDateTimeValue(@Model.Topic.Attributes.GetValue("PublishDate", "" ), "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
           @getDateTimeValue(@Model.Topic.Attributes.GetValue("PublishDate", ""), "MMMM dd, yyyy | h:mm tt")
         </time>
         <span class="author" property="author">by @articleAuthor</span>
@@ -137,7 +137,7 @@
           <h4>Additional Resources</h4>
           <ul id="Resources">
             @foreach (Topic resource in Model.Topic.Children["Resources"].Children.Sorted) {
-              <li>@getReference(resource.Attributes.GetValue("URL"), resource.Title)</li>
+              <li>@getReference(resource.Attributes.GetValue("URL", ""), resource.Title)</li>
             }
           </ul>
         }
@@ -167,8 +167,8 @@
     /*--------------------------------------------------------------------------------------------------------------------------
     | Establish variables
     \-------------------------------------------------------------------------------------------------------------------------*/
-    string      dateTimeOutput  = "";
-    DateTime    dateTimeValue;
+    string dateTimeOutput       = "";
+    DateTime dateTimeValue;
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Verify DateTime value and set it to the output string based on the specified format
@@ -204,7 +204,7 @@
     | Verifies whether specific value is a valid URI, and if so, transforms it (and the label, if provided) into a text link
     \-------------------------------------------------------------------------------------------------------------------------*/
     if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
-      formattedReference        = "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null)? label : value) + "</a>";
+      formattedReference        = "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
     }
 
     /*--------------------------------------------------------------------------------------------------------------------------
