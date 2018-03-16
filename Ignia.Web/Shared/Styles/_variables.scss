@@ -28,9 +28,12 @@ $palette-yellow                 : rgb(240, 173, 32);            // #F0AD20
 // Secondary / Library colors
 $palette-secondary-white        : rgb(255, 255, 255);           // #FFFFFF
 $palette-secondary-grey-darkest : rgb(26, 26, 26);              // #1A1A1A
+$palette-secondary-grey-darker  : rgb(52, 52, 52);              // #343434
 $palette-secondary-grey-dark    : rgb(75, 75, 75);              // #4B4B4B
 $palette-secondary-grey-medium  : rgb(102, 102, 102);           // #666666
 $palette-secondary-grey-light   : rgb(166, 166, 166);           // #A6A6A6
+$palette-secondary-grey-lighter : rgb(204, 204, 204);           // #CCCCCC
+$palette-secondary-grey-lightest: rgb(245, 245, 245);           // #F5F5F5
 
 // Text
 $text-color                     : $palette-grey-dark;
