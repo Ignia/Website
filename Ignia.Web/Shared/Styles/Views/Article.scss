@@ -41,12 +41,12 @@ main {
 
 .library {
   &.article {
-    padding-top                 : 50px;
-    padding-bottom              : 20px;
+    padding-top                 : rem-calc(50);
+    padding-bottom              : rem-calc(20);
     font-family                 : $body-font-family;
     color                       : $palette-black;
     header {
-      margin-bottom             : 20px;
+      margin-bottom             : rem-calc(20);
     }
     h1,
     h2,
@@ -61,33 +61,33 @@ main {
       background                : $palette-secondary-white;
     }
     h2 {
-      font-size                 : 48px;
+      font-size                 : rem-calc(48);
     }
     h3 {
-      font-size                 : 30px;
+      font-size                 : rem-calc(30);
     }
     .publication {
       &.details {
         @include clearfix;
         position                : relative;
-        padding                 : 14px;
-        border-radius           : 8px;
-        min-height              : 40px;
+        padding                 : rem-calc(14);
+        border-radius           : rem-calc(8);
+        min-height              : rem-calc(40);
         background              : $palette-secondary-grey-lightest;
         .pubdate,
         .author {
           position              : absolute;
           font-family           : $special-headings-font-family;
-          font-size             : 14px;
+          font-size             : rem-calc(14);
           line-height           : 100%;
           font-weight           : 400;
           color                 : lighten($palette-secondary-grey-medium, 9%);
         }
         .pubdate {
-          left                  : 20px;
+          left                  : rem-calc(20);
         }
         .author {
-          right                 : 20px;
+          right                 : rem-calc(20);
         }
       }
     }
@@ -97,7 +97,7 @@ main {
         padding-left            : 0;
         aside {
           margin                : 0 -1px;
-          padding               : 20px;
+          padding               : rem-calc(20);
           border                : 1px solid $palette-secondary-grey-lighter;
           h4 {
             margin              : 15px 0 0;
@@ -111,7 +111,7 @@ main {
           }
           ul {
             margin              : 5px 0 0;
-            padding-left        : 20px;
+            padding-left        : rem-calc(20);
             list-style-type     : square;
           }
         }
@@ -134,7 +134,7 @@ main {
       }
     }
     .abstract {
-      margin-top                : 25px;
+      margin-top                : rem-calc(25);
     }
   }
 }

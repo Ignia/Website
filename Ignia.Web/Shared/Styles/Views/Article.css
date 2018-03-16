@@ -20,12 +20,12 @@ main {
   background-color: white; }
 
 .library.article {
-  padding-top: 50px;
-  padding-bottom: 20px;
+  padding-top: 3.125rem;
+  padding-bottom: 1.25rem;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: black; }
   .library.article header {
-    margin-bottom: 20px; }
+    margin-bottom: 1.25rem; }
   .library.article h1,
   .library.article h2,
   .library.article h3,
@@ -37,14 +37,14 @@ main {
     color: #343434;
     background: white; }
   .library.article h2 {
-    font-size: 48px; }
+    font-size: 3rem; }
   .library.article h3 {
-    font-size: 30px; }
+    font-size: 1.875rem; }
   .library.article .publication.details {
     position: relative;
-    padding: 14px;
-    border-radius: 8px;
-    min-height: 40px;
+    padding: 0.875rem;
+    border-radius: 0.5rem;
+    min-height: 2.5rem;
     background: whitesmoke; }
     .library.article .publication.details::before, .library.article .publication.details::after {
       display: table;
@@ -60,20 +60,20 @@ main {
     .library.article .publication.details .author {
       position: absolute;
       font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
-      font-size: 14px;
+      font-size: 0.875rem;
       line-height: 100%;
       font-weight: 400;
       color: #7d7d7d; }
     .library.article .publication.details .pubdate {
-      left: 20px; }
+      left: 1.25rem; }
     .library.article .publication.details .author {
-      right: 20px; }
+      right: 1.25rem; }
   .library.article .contents.ancillary {
     padding-right: 0;
     padding-left: 0; }
     .library.article .contents.ancillary aside {
       margin: 0 -1px;
-      padding: 20px;
+      padding: 1.25rem;
       border: 1px solid #cccccc; }
       .library.article .contents.ancillary aside h4 {
         margin: 15px 0 0;
@@ -84,7 +84,7 @@ main {
         margin: 5px 0; }
       .library.article .contents.ancillary aside ul {
         margin: 5px 0 0;
-        padding-left: 20px;
+        padding-left: 1.25rem;
         list-style-type: square; }
   .library.article .abstract header,
   .library.article .content.section header {
@@ -101,4 +101,4 @@ main {
     .library.article .content.section header p {
       margin: 5px 0; }
   .library.article .abstract {
-    margin-top: 25px; }
+    margin-top: 1.5625rem; }
