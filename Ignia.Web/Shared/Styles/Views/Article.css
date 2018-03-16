@@ -76,22 +76,22 @@ main {
       padding: 1.25rem;
       border: 1px solid #cccccc; }
       .library.article .contents.ancillary aside h4 {
-        margin: 15px 0 0;
+        margin: 0.9375rem 0 0;
         line-height: 100%; }
         .library.article .contents.ancillary aside h4:first-child {
           margin-top: 0; }
       .library.article .contents.ancillary aside p {
-        margin: 5px 0; }
+        margin: 0.3125rem 0; }
       .library.article .contents.ancillary aside ul {
-        margin: 5px 0 0;
+        margin: 0.3125rem 0 0;
         padding-left: 1.25rem;
         list-style-type: square; }
   .library.article .abstract header,
   .library.article .content.section header {
-    margin: 20px 0 0; }
+    margin: 1.25rem 0 0; }
     .library.article .abstract header h3,
     .library.article .content.section header h3 {
-      margin: 0 0 5px; }
+      margin: 0 0 0.3125rem; }
     .library.article .abstract header div,
     .library.article .abstract header p,
     .library.article .content.section header div,
@@ -99,6 +99,6 @@ main {
       line-height: 1.65; }
     .library.article .abstract header p,
     .library.article .content.section header p {
-      margin: 5px 0; }
+      margin: 0.3125rem 0; }
   .library.article .abstract {
     margin-top: 1.5625rem; }
