@@ -47,7 +47,7 @@
       @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Abstract", ""))) {
         <!-- Abstract -->
         <section id="Abstract" class="abstract" role="region" property="about">
-          @Model.Topic.Attributes.GetValue("Abstract")
+          @Html.Raw(Model.Topic.Attributes.GetValue("Abstract"))
         </section>
         <!-- /Abstract -->
       }
@@ -57,7 +57,7 @@
         <section id="Strengths" class="content section" role="region" property="articleSection">
           <header role="presentation"><h3>Strengths</h3></header>
           <div>
-            @Model.Topic.Attributes.GetValue("Strengths")
+            @Html.Raw(Model.Topic.Attributes.GetValue("Strengths"))
           </div>
         </section>
         <!-- /Strengths Content -->
@@ -68,7 +68,7 @@
         <section id="Weaknesses" class="content section" role="region" property="articleSection">
           <header role="presentation"><h3>Weaknesses</h3></header>
           <div>
-            @Model.Topic.Attributes.GetValue("Weaknesses")
+            @Html.Raw(Model.Topic.Attributes.GetValue("Weaknesses"))
           </div>
         </section>
         <!-- /Weaknesses Content -->
@@ -79,7 +79,7 @@
         <section id="Usage" class="content section" role="region" property="articleSection">
           <header role="presentation"><h3>Usage</h3></header>
           <div>
-            @Model.Topic.Attributes.GetValue("Usage")
+            @Html.Raw(Model.Topic.Attributes.GetValue("Usage"))
           </div>
         </section>
         <!-- /Usage Content -->
@@ -90,7 +90,7 @@
         <section id="BestPractices" class="content section" role="region" property="articleSection">
           <header role="presentation"><h3>Best Practices</h3></header>
           <div>
-            @Model.Topic.Attributes.GetValue("BestPractices")
+            @Html.Raw(Model.Topic.Attributes.GetValue("BestPractices"))
           </div>
         </section>
         <!-- /Best Practices Content -->
@@ -101,7 +101,7 @@
         <section id="Examples" class="content section" role="region" property="articleSection">
           <header role="presentation"><h3>Examples</h3></header>
           <div>
-            @Model.Topic.Attributes.GetValue("Examples")
+            @Html.Raw(Model.Topic.Attributes.GetValue("Examples"))
           </div>
         </section>
         <!-- /Examples Content -->
@@ -121,14 +121,14 @@
         @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Website", ""))) {
           <!-- Website -->
           <h4>Website</h4>
-          <p>@getReference(@Model.Topic.Attributes.GetValue("Website"))</p>
+          <p>@Html.Raw(getReference(@Model.Topic.Attributes.GetValue("Website")))</p>
           <!-- /Website -->
         }
 
         @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Documentation", ""))) {
           <!-- Documentation -->
           <h4>Documentation</h4>
-          <p>@getReference(@Model.Topic.Attributes.GetValue("Documentation"))</p>
+          <p>@Html.Raw(getReference(@Model.Topic.Attributes.GetValue("Documentation")))</p>
           <!-- /Documentation -->
         }
 
@@ -137,7 +137,7 @@
           <h4>Additional Resources</h4>
           <ul id="Resources">
             @foreach (Topic resource in Model.Topic.Children["Resources"].Children.Sorted) {
-              <li>@getReference(resource.Attributes.GetValue("URL", ""), resource.Title)</li>
+            <li>@Html.Raw(getReference(resource.Attributes.GetValue("URL", ""), resource.Title))</li>
             }
           </ul>
         }
