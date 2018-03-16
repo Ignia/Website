@@ -133,7 +133,7 @@
             <!-- /Documentation -->
           }
 
-          @if (Model.Topic.Children["Resources"].Children.Count > 0) {
+          @if (Model.Topic.Children["Resources"] != null && Model.Topic.Children["Resources"].Children.Count > 0) {
             <!-- Additional Resources -->
             <h4>Additional Resources</h4>
             <ul id="Resources">
