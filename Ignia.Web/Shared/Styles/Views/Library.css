@@ -20,8 +20,6 @@ main {
   color: white; }
   .library.index header,
   .library.index section {
-    padding-right: 1.125rem;
-    padding-left: 1.125rem;
     background: transparent; }
   .library.index > header > h2 {
     color: #f2eee6; }

@@ -34,8 +34,6 @@ main {
     color                       : $palette-secondary-white;
     header,
     section {
-      padding-right             : rem-calc(18);
-      padding-left              : rem-calc(18);
       background                : transparent;
     }
     > header {
