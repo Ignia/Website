@@ -133,16 +133,15 @@
   /// <summary>
   ///   Returns the Article(s) category heading, based on the category (Content Type) key.
   /// </summary>
-  /// <param name="categoryKey">Corresponds to the Content Type</param>
-  /// <returns>Title/Heading string for the category</returns>
+  /// <param name="categoryKey">String corresponding to the Content Type for the set of articles.</param>
+  /// <returns>The title/heading string for the category.</returns>
   string getCategoryHeading(string categoryKey) {
-    string categoryTitle        = categoryKey;
 
-    if (categoryKey == "TechnologyAdvisory") {
-      categoryTitle = "Technology Advisories";
+    switch (categoryKey) {
+      case "TechnologyAdvisory" : return "Technology Advisories";
+      default                   : return "Articles";
     }
 
-    return categoryTitle;
   }
 
   /*============================================================================================================================
