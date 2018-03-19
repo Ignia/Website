@@ -14,31 +14,31 @@
   text-transform: none; }
 
 main {
-  min-height: 768px; }
+  min-height: 48rem; }
 
 .library.index {
   color: white; }
   .library.index header,
   .library.index section {
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-right: 1.125rem;
+    padding-left: 1.125rem;
     background: transparent; }
   .library.index > header > h2 {
     color: #f2eee6; }
   .library.index .introduction,
   .library.index .introduction p {
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-    font-size: 14px; }
+    font-size: 0.875rem; }
   .library.index ul {
     padding-left: 0;
     list-style-type: none; }
 
 details summary {
   outline: none;
-  max-height: 52px; }
+  max-height: 3.25rem; }
   details summary:hover, details summary:focus, details summary:active {
     outline: none;
-    max-height: 52px; }
+    max-height: 3.25rem; }
   details summary::-webkit-details-marker {
     display: none; }
   details summary h3 {
@@ -49,9 +49,9 @@ details summary {
     details summary h3:before {
       content: "+";
       display: inline-block;
-      margin-right: 5px;
-      padding-bottom: 3px;
-      width: 20px;
+      margin-right: 0.3125rem;
+      padding-bottom: 0.1875rem;
+      width: 1.25rem;
       font-size: 135%;
       cursor: pointer; }
 
@@ -67,10 +67,10 @@ details.open ul {
   display: block; }
 
 details ul {
-  margin: 0 0 0 26px; }
+  margin: 0 0 0 1.625rem; }
 
 details li {
-  margin-bottom: 15px; }
+  margin-bottom: 0.9375rem; }
   details li h4 {
     margin-bottom: 0; }
     details li h4 a {
@@ -78,10 +78,10 @@ details li {
       details li h4 a:hover, details li h4 a:focus, details li h4 a:active {
         color: #f0ad20; }
   details li .abstract {
-    margin: 0 0 12px;
+    margin: 0 0 0.75rem;
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-    font-size: 14px; }
+    font-size: 0.875rem; }
     details li .abstract p {
       margin: 0;
       font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-      font-size: 14px; }
+      font-size: 0.875rem; }

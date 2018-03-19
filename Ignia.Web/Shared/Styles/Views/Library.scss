@@ -22,7 +22,7 @@
 //----------------------------------------------------------------------------------------------
 
 main {
-  min-height                    : 768px;
+  min-height                    : rem-calc(768);
 }
 
 //----------------------------------------------------------------------------------------------
@@ -34,8 +34,8 @@ main {
     color                       : $palette-secondary-white;
     header,
     section {
-      padding-right             : 18px;
-      padding-left              : 18px;
+      padding-right             : rem-calc(18);
+      padding-left              : rem-calc(18);
       background                : transparent;
     }
     > header {
@@ -46,7 +46,7 @@ main {
     .introduction,
     .introduction p {
       font-family               : $body-font-family;
-      font-size                 : 14px;
+      font-size                 : rem-calc(14);
     }
     ul {
       padding-left              : 0;
@@ -58,12 +58,12 @@ main {
 details {
   summary {
     outline                     : none;
-    max-height                  : 52px;
+    max-height                  : rem-calc(52);
     &:hover,
     &:focus,
     &:active {
       outline                   : none;
-      max-height                : 52px;
+      max-height                : rem-calc(52);
     }
     &::-webkit-details-marker {
       display                   : none;
@@ -79,9 +79,9 @@ details {
       &:before {
         content                 : "+";
         display                 : inline-block;
-        margin-right            : 5px;
-        padding-bottom          : 3px;
-        width                   : 20px;
+        margin-right            : rem-calc(5);
+        padding-bottom          : rem-calc(3);
+        width                   : rem-calc(20);
         font-size               : 135%;
         cursor                  : pointer;
       }
@@ -99,10 +99,10 @@ details {
     display                     : block;
   }
   ul {
-    margin                      : 0 0 0 26px;
+    margin                      : rem-calc(0 0 0 26);
   }
   li {
-    margin-bottom               : 15px;
+    margin-bottom               : rem-calc(15);
     h4 {
       margin-bottom             : 0;
       a {
@@ -115,13 +115,13 @@ details {
       }
     }
     .abstract {
-      margin                    : 0 0 12px;
+      margin                    : rem-calc(0 0 12);
       font-family               : $body-font-family;
-      font-size                 : 14px;
+      font-size                 : rem-calc(14);
       p {
         margin                  : 0;
         font-family             : $body-font-family;
-        font-size               : 14px;
+        font-size               : rem-calc(14);
       }
     }
   }
