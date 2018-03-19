@@ -66,9 +66,11 @@
 
   /*============================================================================================================================
   | GET ARTICLE PAGES
-  >-----------------------------------------------------------------------------------------------------------------------------
-  | Returns a set of indexed article pages / Topics.
   \---------------------------------------------------------------------------------------------------------------------------*/
+  /// <summary>
+  ///   Returns a set of indexed article pages / Topics.
+  /// </summary>
+  /// <returns>The list of Article Topics</returns>
   List<Topic> getArticlePages() {
 
     /*--------------------------------------------------------------------------------------------------------------------------
@@ -106,9 +108,11 @@
 
   /*============================================================================================================================
   | GET CATEGORIZED ARTICLES
-  >-----------------------------------------------------------------------------------------------------------------------------
-  | Returns a set of articles grouped by category.
   \---------------------------------------------------------------------------------------------------------------------------*/
+  /// <summary>
+  ///   Returns a set of articles grouped by category.
+  /// </summary>
+  /// <returns>The categorized set of Article Topics</returns>
   Dictionary<string, List<Topic>> getCategorizedArticles() {
 
     if (_categorizedArticles == null) {
@@ -125,9 +129,12 @@
 
   /*============================================================================================================================
   | GET CATEGORY HEADING
-  >-----------------------------------------------------------------------------------------------------------------------------
-  | Returns the Article(s) category heading.
   \---------------------------------------------------------------------------------------------------------------------------*/
+  /// <summary>
+  ///   Returns the Article(s) category heading, based on the category (Content Type) key.
+  /// </summary>
+  /// <param name="categoryKey">Corresponds to the Content Type</param>
+  /// <returns>Title/Heading string for the category</returns>
   string getCategoryHeading(string categoryKey) {
     string categoryTitle        = categoryKey;
 
@@ -140,9 +147,12 @@
 
   /*============================================================================================================================
   | ADD ARTICLE PAGE
-  >-----------------------------------------------------------------------------------------------------------------------------
-  | Ensures that the appropriate category exists and then adds the article page to the category.
   \---------------------------------------------------------------------------------------------------------------------------*/
+  /// <summary>
+  ///   Ensures that the appropriate category exists and then adds the article page to the category.
+  /// </summary>
+  /// <param name="category">The category key.</param>
+  /// <param name="applicationPage">The Article Topic.</param>
   void addArticlePage(string category, Topic applicationPage) {
     if (!_categorizedArticles.ContainsKey(category)) {
       _categorizedArticles.Add(category, new List<Topic>());
