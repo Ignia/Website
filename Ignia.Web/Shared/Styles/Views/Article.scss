@@ -37,8 +37,7 @@ main {
 
 .library {
   &.article {
-    padding-top                 : rem-calc(50);
-    padding-bottom              : rem-calc(20);
+    padding                     : rem-calc(32 0);
     font-family                 : $body-font-family;
     color                       : $palette-black;
     background-color            : $palette-secondary-white;
@@ -52,10 +51,10 @@ main {
       font-family               : $headings-font-family;
       font-weight               : 500;
     }
+    h1,
     h2,
     h3 {
       color                     : $palette-secondary-grey-darker;
-      background                : $palette-secondary-white;
     }
     h2 {
       font-size                 : rem-calc(48);
