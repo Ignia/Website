@@ -31,11 +31,11 @@ main {
 
 section[itemprop="mainContentOfPage"] {
   > header {
-    min-height                  : rem-calc(114);
+    min-height                  : rem-calc(80);
     h1 {
       margin                    : 0;
-      padding                   : rem-calc(44 0 18);
-      font-family               : $special-headings-font-family;
+      padding                   : rem-calc(26 0 18);
+      font-family               : $headings-font-family;
       font-size                 : rem-calc(36);
       line-height               : 1;
       font-weight               : 300;
@@ -50,6 +50,7 @@ section[itemprop="mainContentOfPage"] {
 
 .library {
   &.index {
+    padding                     : rem-calc(32 0);
     color                       : $palette-secondary-white;
     header,
     section {

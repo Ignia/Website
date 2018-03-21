@@ -103,7 +103,7 @@ footer.footer {
     @include clearfix;
   }
   .section-heading {
-    font-family                 : $special-headings-font-family;
+    font-family                 : $headings-font-family;
   }
 
   // Splash
@@ -424,7 +424,7 @@ footer.footer {
       }
       h2 {
         margin                  : 0;
-        font-family             : $special-headings-font-family;
+        font-family             : $headings-font-family;
         @include breakpoint(960px) {
           padding               : 0 10%;
           line-height           : rem-calc(42);
@@ -462,7 +462,7 @@ footer.footer {
         h2 {
           display               : table-cell;
           vertical-align        : middle;
-          font-family           : $special-headings-font-family;
+          font-family           : $headings-font-family;
           font-size             : rem-calc(25);
           line-height           : 115%;
           color                 : $palette-yellow;

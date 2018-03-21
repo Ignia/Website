@@ -3869,9 +3869,9 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   color: inherit;
   text-rendering: optimizeLegibility; }
   h1 small, .h1 small,
@@ -6048,7 +6048,7 @@ ol {
 fieldset legend {
   margin-bottom: 1.125rem;
   padding-top: 2.125rem;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-size: 1.25rem;
   font-weight: 600; }
 
