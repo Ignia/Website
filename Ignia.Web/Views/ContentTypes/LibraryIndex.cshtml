@@ -16,41 +16,40 @@
 @section PageBodySection {
 
   <!-- Articles Listing/Index -->
-  <article id="ArticlesIndex" class="library index container grid-container" role="article">
+  <article id="ArticlesIndex" class="library index" role="article">
+    <div class="container grid-container">
+      <div class="grid-x grid-margin-x">
 
-    <!-- Introduction -->
-    <div class="introduction">@Html.Raw(Model.Topic.Attributes.GetValue("Body"))</div>
+        <!-- Introduction -->
+        <div class="introduction cell">@Html.Raw(Model.Topic.Attributes.GetValue("Body"))</div>
 
-    @foreach (var category in getCategorizedArticles())
-    {
-      <!-- @category.Key Articles -->
-      <section role="region">
-        <header>
-          <h2>@getCategoryHeading(category.Key)</h2>
-        </header>
-        @WriteArticleItems(category.Value)
-      </section>
-      <!-- /@category.Key Articles -->
-    }
+        @foreach (var category in getCategorizedArticles()) {
+          <!-- @category.Key Articles -->
+          <section role="region" class="cell">
+            <header>
+              <h2>@getCategoryHeading(category.Key)</h2>
+            </header>
+            @WriteArticleItems(category.Value)
+          </section>
+          <!-- /@category.Key Articles -->
+        }
 
+      </div>
+    </div>
   </article>
   <!-- /Articles Listing/Index -->
 
 }
 
-@helper WriteArticleItems(List<Topic> articles)
-  {
-
-    foreach (Topic article in articles)
-    {
-      <section id="@(article.ContentType + article.Key)">
-        <!-- Section Heading -->
-        <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
-        <!-- Abstract / Description -->
-        <div class="description">@Html.Raw(article.Attributes.GetValue("Abstract"))</div>
-      </section>
-    }
-
+@helper WriteArticleItems(List<Topic> articles) {
+  foreach (Topic article in articles) {
+    <section id="@(article.ContentType + article.Key)">
+      <!-- Section Heading -->
+      <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
+      <!-- Abstract / Description -->
+      <div class="description">@Html.Raw(article.Attributes.GetValue("Abstract"))</div>
+    </section>
+  }
 }
 
 @functions {
@@ -69,36 +68,30 @@
   ///   Returns a set of indexed article pages / Topics.
   /// </summary>
   /// <returns>The list of Article Topics</returns>
-  List<Topic> getArticlePages()
-  {
+  List<Topic> getArticlePages() {
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Add expected Article Content Types to _contentTypes
     \-------------------------------------------------------------------------------------------------------------------------*/
     Topic articleContentType = Model.TopicRepository.Load().GetTopic("Configuration:ContentTypes:Page:Article");
-    foreach (Topic contentType in articleContentType.Children)
-    {
+    foreach (Topic contentType in articleContentType.Children) {
       _contentTypes.Add(contentType.Key);
     }
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Add article pages with a Content Type available in (Article) _contentTypes
     \-------------------------------------------------------------------------------------------------------------------------*/
-    if (_articlePages == null)
-    {
+    if (_articlePages == null) {
 
       _articlePages = new List<Topic>();
 
-      foreach (string contentType in _contentTypes)
-      {
-        foreach (Topic articlePage in Model.Topic.FindAllByAttribute("ContentType", contentType))
-        {
+      foreach (string contentType in _contentTypes) {
+        foreach (Topic articlePage in Model.Topic.FindAllByAttribute("ContentType", contentType)) {
           if (
             !articlePage.Attributes.GetValue("IsDisabled").Equals("1")
             && !articlePage.Attributes.GetValue("IsHidden").Equals("1")
             && !_articlePages.Contains(articlePage)
-          )
-          {
+          ) {
             _articlePages.Add(articlePage);
           }
         }
@@ -117,21 +110,20 @@
   ///   Returns a set of articles grouped by category.
   /// </summary>
   /// <returns>The categorized set of Article Topics</returns>
-  Dictionary<string, List<Topic>> getCategorizedArticles()
-  {
+  Dictionary<string, List<Topic>> getCategorizedArticles() {
 
-    if (_categorizedArticles == null)
-    {
+    if (_categorizedArticles == null) {
 
       _categorizedArticles = new Dictionary<string, List<Topic>>();
 
-      foreach (Topic articlePage in getArticlePages())
-      {
+      foreach (Topic articlePage in getArticlePages()) {
         addArticlePage(articlePage.ContentType, articlePage);
       }
 
     }
+
     return _categorizedArticles;
+
   }
 
   /*============================================================================================================================
@@ -142,15 +134,11 @@
   /// </summary>
   /// <param name="categoryKey">String corresponding to the Content Type for the set of articles.</param>
   /// <returns>The title/heading string for the category.</returns>
-  string getCategoryHeading(string categoryKey)
-  {
-
-    switch (categoryKey)
-    {
-      case "TechnologyAdvisory": return "Technology Advisories";
-      default: return "Articles";
+  string getCategoryHeading(string categoryKey) {
+    switch (categoryKey) {
+      case "TechnologyAdvisory" : return "Technology Advisories";
+      default                   : return "Articles";
     }
-
   }
 
   /*============================================================================================================================
@@ -161,14 +149,11 @@
   /// </summary>
   /// <param name="category">The category key.</param>
   /// <param name="applicationPage">The Article Topic.</param>
-  void addArticlePage(string category, Topic applicationPage)
-  {
-    if (!_categorizedArticles.ContainsKey(category))
-    {
+  void addArticlePage(string category, Topic applicationPage) {
+    if (!_categorizedArticles.ContainsKey(category)) {
       _categorizedArticles.Add(category, new List<Topic>());
     }
-    if (!_categorizedArticles[category].Contains(applicationPage))
-    {
+    if (!_categorizedArticles[category].Contains(applicationPage)) {
       _categorizedArticles[category].Add(applicationPage);
     }
   }
