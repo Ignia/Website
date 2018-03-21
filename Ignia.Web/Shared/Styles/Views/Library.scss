@@ -68,12 +68,22 @@ section[itemprop="mainContentOfPage"] {
     }
     section {
       > header {
+        margin-bottom           : rem-calc(32);
         border-bottom           : 1px solid $palette-secondary-white;
         > h2 {
           margin                : 0;
           padding               : rem-calc(0 0 16);
           font-size             : rem-calc(28);
           color                 : $palette-white;
+        }
+      }
+      h3 {
+        font-size               : rem-calc(20);
+        a,
+        a:hover,
+        a:focus,
+        a:active {
+          color                 : $palette-yellow;
         }
       }
     }

@@ -37,12 +37,20 @@ section[itemprop="mainContentOfPage"] > header {
   .library.index section {
     background: transparent; }
   .library.index section > header {
+    margin-bottom: 2rem;
     border-bottom: 1px solid white; }
     .library.index section > header > h2 {
       margin: 0;
       padding: 0 0 1rem;
       font-size: 1.75rem;
       color: #f2eee6; }
+  .library.index section h3 {
+    font-size: 1.25rem; }
+    .library.index section h3 a,
+    .library.index section h3 a:hover,
+    .library.index section h3 a:focus,
+    .library.index section h3 a:active {
+      color: #f0ad20; }
   .library.index .introduction,
   .library.index .introduction p {
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
