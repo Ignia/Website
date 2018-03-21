@@ -18,23 +18,24 @@
   <!-- Articles Listing/Index -->
   <article id="ArticlesIndex" class="library index" role="article">
     <div class="container grid-container">
+
+      <!-- Introduction -->
       <div class="grid-x grid-margin-x">
-
-        <!-- Introduction -->
         <div class="introduction cell">@Html.Raw(Model.Topic.Attributes.GetValue("Body"))</div>
-
-        @foreach (var category in getCategorizedArticles()) {
-          <!-- @category.Key Articles -->
-          <section role="region" class="cell">
-            <header>
-              <h2>@getCategoryHeading(category.Key)</h2>
-            </header>
-            @WriteArticleItems(category.Value)
-          </section>
-          <!-- /@category.Key Articles -->
-        }
-
       </div>
+      <!-- /Introduction -->
+
+      @foreach (var category in getCategorizedArticles()) {
+        <!-- @category.Key Articles -->
+        <section class="grid-x grid-margin-x" role="region">
+          <header class="cell">
+            <h2>@getCategoryHeading(category.Key)</h2>
+          </header>
+          @WriteArticleItems(category.Value)
+        </section>
+        <!-- /@category.Key Articles -->
+      }
+
     </div>
   </article>
   <!-- /Articles Listing/Index -->
@@ -43,12 +44,12 @@
 
 @helper WriteArticleItems(List<Topic> articles) {
   foreach (Topic article in articles) {
-    <section id="@(article.ContentType + article.Key)">
+    <div id="@(article.ContentType + article.Key)" class="medium-10 medium-offset-1 cell">
       <!-- Section Heading -->
       <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
       <!-- Abstract / Description -->
-      <div class="description">@Html.Raw(article.Attributes.GetValue("Abstract"))</div>
-    </section>
+      <span class="description" class="medium-10 medium-offset-1 cell">@Html.Raw(article.Attributes.GetValue("Abstract"))</span>
+    </div>
   }
 }
 
