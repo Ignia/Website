@@ -36,8 +36,13 @@ section[itemprop="mainContentOfPage"] > header {
   .library.index header,
   .library.index section {
     background: transparent; }
-  .library.index > header > h2 {
-    color: #f2eee6; }
+  .library.index section > header {
+    border-bottom: 1px solid white; }
+    .library.index section > header > h2 {
+      margin: 0;
+      padding: 0 0 1rem;
+      font-size: 1.75rem;
+      color: #f2eee6; }
   .library.index .introduction,
   .library.index .introduction p {
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;

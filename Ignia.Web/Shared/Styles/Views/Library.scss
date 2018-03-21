@@ -66,9 +66,15 @@ section[itemprop="mainContentOfPage"] {
     section {
       background                : transparent;
     }
-    > header {
-      > h2 {
-        color                   : $palette-white;
+    section {
+      > header {
+        border-bottom           : 1px solid $palette-secondary-white;
+        > h2 {
+          margin                : 0;
+          padding               : rem-calc(0 0 16);
+          font-size             : rem-calc(28);
+          color                 : $palette-white;
+        }
       }
     }
     .introduction,
