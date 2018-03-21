@@ -16,6 +16,9 @@
 main {
   min-height: 48rem; }
 
+footer.site {
+  background-color: #4b4b4b; }
+
 section[itemprop="mainContentOfPage"] > header {
   min-height: 5rem; }
   section[itemprop="mainContentOfPage"] > header h1 {
