@@ -16,14 +16,12 @@
 main .page.header {
   margin-bottom: 0; }
 
-main {
-  background-color: white; }
-
 .library.article {
   padding-top: 3.125rem;
   padding-bottom: 1.25rem;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
-  color: black; }
+  color: black;
+  background-color: white; }
   .library.article header {
     margin-bottom: 1.25rem; }
   .library.article h1,

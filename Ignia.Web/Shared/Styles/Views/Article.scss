@@ -31,10 +31,6 @@ main {
 // BASE
 //----------------------------------------------------------------------------------------------
 
-main {
-  background-color              : $palette-secondary-white;
-}
-
 //----------------------------------------------------------------------------------------------
 // ARTICLE CONTENT
 //----------------------------------------------------------------------------------------------
@@ -45,6 +41,7 @@ main {
     padding-bottom              : rem-calc(20);
     font-family                 : $body-font-family;
     color                       : $palette-black;
+    background-color            : $palette-secondary-white;
     header {
       margin-bottom             : rem-calc(20);
     }
