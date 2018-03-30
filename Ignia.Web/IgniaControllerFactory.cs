@@ -3,17 +3,14 @@
 | Client        Ignia, LLC
 | Project       Website
 \=============================================================================================================================*/
-using Ignia.Web.Controllers;
-using Ignia.Topics;
-using Ignia.Topics.Web;
-using Ignia.Topics.Web.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Ignia.Web.Controllers;
+using Ignia.Topics.Mapping;
+using Ignia.Topics.Web;
+using Ignia.Topics.Web.Mvc;
+using Ignia.Topics;
 
 namespace Ignia.Web {
 
@@ -38,16 +35,17 @@ namespace Ignia.Web {
       | Register
       \-----------------------------------------------------------------------------------------------------------------------*/
       #pragma warning disable CS0618
-      var topicRepository       = TopicRepository.DataProvider;
-      var rootTopic             = TopicRepository.RootTopic;
-      var topicRoutingService   = new TopicRoutingService(
+      var topicRepository               = TopicRepository.DataProvider;
+      var rootTopic                     = TopicRepository.RootTopic;
+      var mvcTopicRoutingService        = new MvcTopicRoutingService(
         topicRepository,
         requestContext.HttpContext.Request.Url,
         requestContext.RouteData
       );
+      var topicMappingService           = new TopicMappingService(topicRepository);
       #pragma warning restore CS0618
 
-      //Set default controller
+      // Set default controller
       if (controllerType == null) {
         controllerType = typeof(FallbackController);
       }
@@ -68,11 +66,11 @@ namespace Ignia.Web {
       }
 
       if (controllerType == typeof(LayoutController)) {
-        return new LayoutController(topicRepository, topicRoutingService.Topic);
+        return new LayoutController(topicRepository, mvcTopicRoutingService, topicMappingService);
       }
 
       if (controllerType == typeof(TopicController)) {
-        return new TopicController(topicRepository, topicRoutingService.Topic);
+        return new TopicController(topicRepository, mvcTopicRoutingService, topicMappingService);
       }
 
       return base.GetControllerInstance(requestContext, controllerType);
@@ -80,9 +78,9 @@ namespace Ignia.Web {
       /*------------------------------------------------------------------------------------------------------------------------
       | Release
       \-----------------------------------------------------------------------------------------------------------------------*/
-      //There are no resources to release
+      // There are no resources to release
 
     }
 
-  } //Class
-} //Namespace
+  } // Class
+} // Namespace
