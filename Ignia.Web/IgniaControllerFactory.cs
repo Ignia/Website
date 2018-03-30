@@ -62,7 +62,7 @@ namespace Ignia.Web {
       }
 
       if (controllerType == typeof(ErrorController)) {
-        return new ErrorController(topicRepository, null);
+        return new ErrorController();
       }
 
       if (controllerType == typeof(LayoutController)) {
