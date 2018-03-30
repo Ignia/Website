@@ -69,6 +69,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Ignia.Topics.Data.Sql.dll</HintPath>
     </Reference>
+    <Reference Include="Ignia.Topics.ViewModels, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ignia.Topics.ViewModels.dll</HintPath>
+    </Reference>
     <Reference Include="Ignia.Topics.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Ignia.Topics.Web.dll</HintPath>
@@ -204,6 +208,7 @@
       <SubType>ASPXCodeBehind</SubType>
     </Content>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="bin\Ignia.Topics.ViewModels.dll" />
     <Content Include="Common\Global\Controls\FormField.ascx.cs">
       <DependentUpon>FormField.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
