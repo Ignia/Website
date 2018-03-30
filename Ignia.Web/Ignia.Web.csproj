@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -82,34 +82,34 @@
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.Web, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AI.Web, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.AI.WindowsServer, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.ApplicationInsights, Version=2.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.0\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -123,7 +123,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -203,11 +203,11 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Content Include="Account\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Common\Global\Controls\FormField.ascx.cs">
+      <DependentUpon>FormField.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FallbackController.cs" />
@@ -1842,6 +1842,45 @@
     <Content Include="bin\System.Web.WebPages.dll" />
     <Content Include="bin\System.Web.WebPages.Razor.dll" />
     <Content Include="bin\WebGrease.dll" />
+    <Content Include="Common\Global\Client.Scripts\Activate.MSIE.js" />
+    <Content Include="Common\Global\Client.Scripts\ClientValidation.js" />
+    <Content Include="Common\Global\Client.Scripts\dhtmlHistory.FlashInit.js" />
+    <Content Include="Common\Global\Client.Scripts\dhtmlHistory.js" />
+    <Content Include="Common\Global\Client.Scripts\dotIR.js" />
+    <Content Include="Common\Global\Client.Scripts\Flash.Sniffer.inc" />
+    <Content Include="Common\Global\Client.Scripts\FormatPhone.js" />
+    <Content Include="Common\Global\Client.Scripts\GetFlash.js" />
+    <Content Include="Common\Global\Client.Scripts\HighlightForm.js" />
+    <Content Include="Common\Global\Client.Scripts\HighlightTable.js" />
+    <Content Include="Common\Global\Client.Scripts\jQuery.MaskedInput.Pack.js" />
+    <Content Include="Common\Global\Client.Scripts\jQuery.Pack.js" />
+    <Content Include="Common\Global\Client.Scripts\Main.js" />
+    <Content Include="Common\Global\Client.Scripts\Menu.js" />
+    <Content Include="Common\Global\Client.Scripts\MSIE.Png.js" />
+    <Content Include="Common\Global\Client.Scripts\swfObject.js" />
+    <Content Include="Common\Global\Client.Scripts\Tooltip.js" />
+    <Content Include="Common\Global\Controls\BingSearch.ascx" />
+    <Content Include="Common\Global\Controls\ClientValidation.ascx" />
+    <Content Include="Common\Global\Controls\Debug.ascx" />
+    <Content Include="Common\Global\Controls\Flash.ascx" />
+    <Content Include="Common\Global\Controls\FormField.ascx" />
+    <Content Include="Common\Global\Controls\ImageReplace.ascx" />
+    <Content Include="Common\Global\Controls\LookupBox.ascx" />
+    <Content Include="Common\Global\Controls\Menu.ascx" />
+    <Content Include="Common\Global\Controls\Menu.css" />
+    <Content Include="Common\Global\Controls\MenuItem.ascx" />
+    <Content Include="Common\Global\Controls\Pager.ascx" />
+    <Content Include="Common\Global\Controls\SMS.ascx" />
+    <Content Include="Common\Global\Controls\TextImage.ascx" />
+    <Content Include="Common\Global\Controls\TextTruncation.ascx" />
+    <Content Include="Common\Global\CS.Functions\AddAttributeToFields.aspx" />
+    <Content Include="Common\Global\CS.Functions\AddSQLParameter.aspx" />
+    <Content Include="Common\Global\CS.Functions\BindXmlToControl.aspx" />
+    <Content Include="Common\Global\CS.Functions\GetDataFrom.aspx" />
+    <Content Include="Common\Global\CS.Functions\ImportFromQuerystring.aspx" />
+    <Content Include="Common\Global\CS.Functions\TreeView.Functions.aspx" />
+    <Content Include="Common\Global\CS.Functions\TreeView.Functions.bak.aspx" />
+    <Content Include="Common\Global\Headers\Form.Headers.inc.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\Clients\BingAds.png" />
@@ -1924,6 +1963,8 @@
     <Content Include="Shared\Scripts\Scripts.js" />
     <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.js" />
     <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.min.js" />
+    <Content Include="Shared\Scripts\Vendor\MathiasBynens\jquery.details.js" />
+    <Content Include="Shared\Scripts\Vendor\MathiasBynens\jquery.details.min.js" />
     <Content Include="Shared\Scripts\Vendor\ZURB\foundation.js" />
     <Content Include="Shared\Scripts\Vendor\ZURB\foundation.min.js" />
     <Content Include="Shared\Scripts\Vendor\ZURB\npm.js" />
@@ -1997,6 +2038,8 @@
     <Content Include="Shared\Styles\Style.min.css" />
     <Content Include="Shared\Styles\Views\Home.css" />
     <Content Include="Shared\Styles\Views\Home.min.css" />
+    <Content Include="Shared\Styles\Views\Library.css" />
+    <Content Include="Shared\Styles\Views\Library.min.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2331,6 +2374,12 @@
     <None Include="Properties\PublishProfiles\ignia-live - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\IgniaWeb-Test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\IgniaWeb-Test - Web Deploy.pubxml" />
+    <Content Include="Views\ContentTypes\LibraryIndex.cshtml" />
+    <Content Include="Shared\Styles\Views\Library.scss" />
+    <Content Include="Views\Layout\Menu.Library.cshtml" />
+    <Content Include="Views\ContentTypes\TechnologyAdvisory.cshtml" />
+    <Content Include="Shared\Styles\Views\Article.scss" />
+    <Content Include="Views\Layout\Header.Library.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
@@ -2371,8 +2420,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
