@@ -11,6 +11,7 @@ using Ignia.Topics.Mapping;
 using Ignia.Topics.Web;
 using Ignia.Topics.Web.Mvc;
 using Ignia.Topics;
+using Ignia.Topics.Repositories;
 
 namespace Ignia.Web {
 
@@ -21,6 +22,28 @@ namespace Ignia.Web {
   ///   Provides access to the default homepage for the site.
   /// </summary>
   class IgniaControllerFactory : DefaultControllerFactory {
+
+    /*==========================================================================================================================
+    | PRIVATE INSTANCES
+    \-------------------------------------------------------------------------------------------------------------------------*/
+    private readonly            ITopicMappingService            _topicMappingService            = null;
+    private readonly            ITopicRepository                _topicRepository                = null;
+    private readonly            Topic                           _rootTopic                      = null;
+
+    /*==========================================================================================================================
+    | CONSTRUCTOR
+    \-------------------------------------------------------------------------------------------------------------------------*/
+    /// <summary>
+    ///   Establishes a new instance of the <see cref="IgniaControllerFactory"/>, including any shared dependencies to be used
+    ///   across instances of controllers.
+    /// </summary>
+    public IgniaControllerFactory() : base() {
+      #pragma warning disable CS0618
+      _topicRepository          = TopicRepository.DataProvider;
+      _topicMappingService      = new TopicMappingService(_topicRepository);
+      _rootTopic                = TopicRepository.RootTopic;
+      #pragma warning restore CS0618
+    }
 
     /*==========================================================================================================================
     | GET CONTROLLER INSTANCE
@@ -34,16 +57,11 @@ namespace Ignia.Web {
       /*------------------------------------------------------------------------------------------------------------------------
       | Register
       \-----------------------------------------------------------------------------------------------------------------------*/
-      #pragma warning disable CS0618
-      var topicRepository               = TopicRepository.DataProvider;
-      var rootTopic                     = TopicRepository.RootTopic;
-      var mvcTopicRoutingService        = new MvcTopicRoutingService(
-        topicRepository,
+      var mvcTopicRoutingService = new MvcTopicRoutingService(
+        _topicRepository,
         requestContext.HttpContext.Request.Url,
         requestContext.RouteData
       );
-      var topicMappingService           = new TopicMappingService(topicRepository);
-      #pragma warning restore CS0618
 
       // Set default controller
       if (controllerType == null) {
