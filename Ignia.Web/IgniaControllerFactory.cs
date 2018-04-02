@@ -71,27 +71,27 @@ namespace Ignia.Web {
       /*------------------------------------------------------------------------------------------------------------------------
       | Resolve
       \-----------------------------------------------------------------------------------------------------------------------*/
-      if (controllerType == typeof(RedirectController)) {
-        return new RedirectController(topicRepository);
-      }
+      switch (controllerType.Name) {
 
-      if (controllerType == typeof(SitemapController)) {
-        return new SitemapController(topicRepository, null);
-      }
+        case (nameof(RedirectController)):
+          return new RedirectController(_topicRepository);
 
-      if (controllerType == typeof(ErrorController)) {
-        return new ErrorController();
-      }
+        case (nameof(SitemapController)):
+          return new SitemapController(_topicRepository, null);
 
-      if (controllerType == typeof(LayoutController)) {
-        return new LayoutController(topicRepository, mvcTopicRoutingService, topicMappingService);
-      }
+        case (nameof(ErrorController)):
+          return new ErrorController();
 
-      if (controllerType == typeof(TopicController)) {
-        return new TopicController(topicRepository, mvcTopicRoutingService, topicMappingService);
-      }
+        case (nameof(LayoutController)):
+          return new LayoutController(_topicRepository, mvcTopicRoutingService, _topicMappingService);
 
-      return base.GetControllerInstance(requestContext, controllerType);
+        case nameof(TopicController):
+          return new TopicController(_topicRepository, mvcTopicRoutingService, _topicMappingService);
+
+        default:
+          return base.GetControllerInstance(requestContext, controllerType);
+
+      }
 
       /*------------------------------------------------------------------------------------------------------------------------
       | Release
