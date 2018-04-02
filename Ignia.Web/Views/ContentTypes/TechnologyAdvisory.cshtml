@@ -1,9 +1,7 @@
-﻿@model TopicViewModel
+﻿@model TechnologyAdvisoryTopicViewModel
 
 @{
   Layout = "~/Views/Layout/_Layout.cshtml";
-
-  string articleAuthor = Model.TopicRepository.Load().GetTopic(Model.Topic.Attributes.GetValue("Author")).Title;
 }
 
 @section Head {
@@ -24,9 +22,9 @@
 
         <!-- Page Header / Article Title and/or Subtitle -->
         <header role="heading" class="cell">
-          <h1>@Model.Topic.Title</h1>
-          @if (!String.IsNullOrEmpty(Model.Topic.Attributes.GetValue("Subtitle", ""))) {
-            <p class="subtitle">@Model.Topic.Attributes.GetValue("Subtitle")</p>
+          <h1>@Model.Title</h1>
+          @if (!String.IsNullOrEmpty(Model.Subtitle)) {
+            <p class="subtitle">@Model.Subtitle</p>
           }
         </header>
 
@@ -35,76 +33,65 @@
 
           <!-- Publication Details -->
           <section id="PublicationDetails" class="publication details" role="region">
-            <time datetime="@getDateTimeValue(@Model.Topic.Attributes.GetValue("PublishDate", "" ), "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
-              @getDateTimeValue(@Model.Topic.Attributes.GetValue("PublishDate", ""), "MMMM dd, yyyy | h:mm tt")
+            <time datetime="@getDateTimeValue(@Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
+              @getDateTimeValue(@Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
             </time>
-            <span class="author" property="author">by @articleAuthor</span>
+            <span class="author" property="author">by @Model.Author</span>
           </section>
           <!-- /Publication Details -->
 
           <!-- Technology Advisory Content Sections -->
 
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Abstract", ""))) {
+          @if (!String.IsNullOrEmpty(@Model.Abstract)) {
             <!-- Abstract -->
             <section id="Abstract" class="abstract" role="region" property="about">
-              @Html.Raw(Model.Topic.Attributes.GetValue("Abstract"))
+              @Html.Raw(Model.Abstract)
             </section>
             <!-- /Abstract -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Strengths", ""))) {
+          @if (!String.IsNullOrEmpty(@Model.Strengths)) {
             <!-- Strengths Content -->
             <section id="Strengths" class="content section" role="region" property="articleSection">
               <header role="heading"><h3>Strengths</h3></header>
               <div>
-                @Html.Raw(Model.Topic.Attributes.GetValue("Strengths"))
+                @Html.Raw(Model.Strengths)
               </div>
             </section>
             <!-- /Strengths Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Weaknesses", ""))) {
+          @if (!String.IsNullOrEmpty(@Model.Weaknesses)) {
             <!-- Weaknesses Content -->
             <section id="Weaknesses" class="content section" role="region" property="articleSection">
               <header role="heading"><h3>Weaknesses</h3></header>
               <div>
-                @Html.Raw(Model.Topic.Attributes.GetValue("Weaknesses"))
+                @Html.Raw(Model.Weaknesses)
               </div>
             </section>
             <!-- /Weaknesses Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Usage", ""))) {
+          @if (!String.IsNullOrEmpty(@Model.Usage)) {
             <!-- Usage Content -->
             <section id="Usage" class="content section" role="region" property="articleSection">
               <header role="heading"><h3>Usage</h3></header>
               <div>
-                @Html.Raw(Model.Topic.Attributes.GetValue("Usage"))
+                @Html.Raw(Model.Usage)
               </div>
             </section>
             <!-- /Usage Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("BestPractices", ""))) {
+          @if (!String.IsNullOrEmpty(@Model.BestPractices)) {
             <!-- Best Practices Content -->
             <section id="BestPractices" class="content section" role="region" property="articleSection">
               <header role="heading"><h3>Best Practices</h3></header>
               <div>
-                @Html.Raw(Model.Topic.Attributes.GetValue("BestPractices"))
+                @Html.Raw(Model.BestPractices)
               </div>
             </section>
             <!-- /Best Practices Content -->
-          }
-
-          @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Examples", ""))) {
-            <!-- Examples Content -->
-            <section id="Examples" class="content section" role="region" property="articleSection">
-              <header role="heading"><h3>Examples</h3></header>
-              <div>
-                @Html.Raw(Model.Topic.Attributes.GetValue("Examples"))
-              </div>
-            </section>
-            <!-- /Examples Content -->
           }
 
           <!-- /Technology Advisory Content Sections -->
@@ -118,26 +105,26 @@
           <!-- References -->
           <aside id="References" role="complementary">
 
-            @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Website", ""))) {
+            @if (!String.IsNullOrEmpty(@Model.Website)) {
               <!-- Website -->
               <h4>Website</h4>
-              <p>@Html.Raw(getReference(@Model.Topic.Attributes.GetValue("Website")))</p>
+              <p>@Html.Raw(getReference(@Model.Website))</p>
               <!-- /Website -->
             }
 
-            @if (!String.IsNullOrEmpty(@Model.Topic.Attributes.GetValue("Documentation", ""))) {
+            @if (!String.IsNullOrEmpty(@Model.Documentation)) {
               <!-- Documentation -->
               <h4>Documentation</h4>
-              <p>@Html.Raw(getReference(@Model.Topic.Attributes.GetValue("Documentation")))</p>
+              <p>@Html.Raw(getReference(@Model.Documentation))</p>
               <!-- /Documentation -->
             }
 
-            @if (Model.Topic.Children["Resources"] != null && Model.Topic.Children["Resources"].Children.Count > 0) {
+            @if (Model.Resources.Count > 0) {
               <!-- Additional Resources -->
               <h4>Additional Resources</h4>
               <ul id="Resources">
-                @foreach (Topic resource in Model.Topic.Children["Resources"].Children.Sorted) {
-                  <li>@Html.Raw(getReference(resource.Attributes.GetValue("URL", ""), resource.Title))</li>
+                @foreach (var resource in Model.Resources) {
+                  <li>@Html.Raw(getReference(resource.URL, resource.Title))</li>
                 }
               </ul>
             }
