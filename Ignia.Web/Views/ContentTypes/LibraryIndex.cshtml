@@ -25,18 +25,7 @@
       </div>
       <!-- /Introduction -->
 
-      @foreach (var category in Model.GetCategorizedArticles()) {
-        <!-- @category.Key Articles -->
-        <section class="grid-x grid-margin-x" role="region">
-          <header class="cell">
-            <h2>@Model.GetCategoryHeading(category.Key)</h2>
-          </header>
-          @foreach (var article in category.Value) {
-            @WriteArticleItem(article)
-          }
-        </section>
-        <!-- /@category.Key Articles -->
-      }
+      @WriteArticles(Model)
 
     </div>
   </article>
@@ -44,11 +33,36 @@
 
 }
 
+@helper WriteArticles(LibraryIndexTopicViewModel index, int tier = 2) {
+  if (index.GetArticleCount() == 0) { return; }
+  if (index.Key != "Library" && index.Key != "Articles") {
+    <!-- @index.Title Articles -->
+    <section class="grid-x grid-margin-x" role="region">
+      <header class="cell">
+        <h@(tier)>@index.Title</h@(tier)>
+      </header>
+      @foreach(var article in index.Articles) {
+        @WriteArticleItem(article);
+      }
+      @foreach(var childIndex in index.Indexes) {
+        @WriteArticles(childIndex, tier+1);
+      }
+    </section>
+    <!-- /@index.Title Articles -->
+  }
+  else {
+    foreach(var childIndex in index.Indexes) {
+      @WriteArticles(childIndex, tier);
+    }
+  }
+}
+
 @helper WriteArticleItem(ArticleTopicViewModel article) {
   <div id="@(article.ContentType + article.Key)" class="medium-10 medium-offset-1 cell">
     <!-- Section Heading -->
     <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
     <!-- Abstract / Description -->
-    <span class="description medium-10 medium-offset-1 cell">@Html.Raw(article.Abstract)</span>
+    <div class="description medium-10 medium-offset-1 cell">@Html.Raw(article.Abstract)</div>
   </div>
 }
+
