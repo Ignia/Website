@@ -39,6 +39,27 @@ section[itemprop="mainContentOfPage"] > header {
     background: transparent; }
   .library.index section.articles.list {
     margin-bottom: 1.5rem; }
+  .library.index section h2 a,
+  .library.index section h2 a:hover,
+  .library.index section h2 a:focus,
+  .library.index section h2 a:active,
+  .library.index section h3 a,
+  .library.index section h3 a:hover,
+  .library.index section h3 a:focus,
+  .library.index section h3 a:active,
+  .library.index section h4 a,
+  .library.index section h4 a:hover,
+  .library.index section h4 a:focus,
+  .library.index section h4 a:active,
+  .library.index section h5 a,
+  .library.index section h5 a:hover,
+  .library.index section h5 a:focus,
+  .library.index section h5 a:active,
+  .library.index section h6 a,
+  .library.index section h6 a:hover,
+  .library.index section h6 a:focus,
+  .library.index section h6 a:active {
+    color: #f0ad20; }
   .library.index section h2 {
     margin: 0 0 2rem 0;
     border-bottom: 1px solid white;
@@ -46,12 +67,10 @@ section[itemprop="mainContentOfPage"] > header {
     font-size: 1.75rem;
     color: #f2eee6; }
   .library.index section h3 {
+    margin-bottom: 1.25rem;
     font-size: 1.25rem; }
-    .library.index section h3 a,
-    .library.index section h3 a:hover,
-    .library.index section h3 a:focus,
-    .library.index section h3 a:active {
-      color: #f0ad20; }
+  .library.index section .article.item {
+    padding: 0 5%; }
   .library.index .introduction,
   .library.index .introduction p {
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;

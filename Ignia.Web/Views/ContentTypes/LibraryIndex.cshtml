@@ -47,7 +47,7 @@
       <h@(tier)>@index.Title</h@(tier)>
     </header>
     @foreach(var article in index.Articles) {
-      @WriteArticleItem(article);
+      @WriteArticleItem(article, tier+1);
     }
     @foreach(var childIndex in index.Indexes) {
       @WriteArticles(childIndex, tier+1);
@@ -57,10 +57,10 @@
 
 }
 
-@helper WriteArticleItem(ArticleTopicViewModel article) {
-  <div id="@(article.ContentType + article.Key)" class="article item medium-10 medium-offset-1 cell">
-    <!-- Section Heading -->
-    <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
+@helper WriteArticleItem(ArticleTopicViewModel article, int tier = 3) {
+  <div id="@(article.ContentType + article.Key)" class="article item cell">
+    <!-- Article Title -->
+    <h@(tier) class="title"><a href="@article.WebPath">@article.Title</a></h@(tier)>
     <!-- Abstract / Description -->
     <div class="description">@Html.Raw(article.Abstract)</div>
   </div>

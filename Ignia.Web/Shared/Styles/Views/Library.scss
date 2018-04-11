@@ -71,21 +71,31 @@ section[itemprop="mainContentOfPage"] {
       &.articles.list {
         margin-bottom           : rem-calc(24);
       }
-      h2 {
-        margin                : rem-calc(0 0 32 0);
-        border-bottom         : 1px solid $palette-secondary-white;
-        padding               : rem-calc(0 0 16);
-        font-size             : rem-calc(28);
-        color                 : $palette-white;
-      }
-      h3 {
-        font-size               : rem-calc(20);
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         a,
         a:hover,
         a:focus,
         a:active {
           color                 : $palette-yellow;
         }
+      }
+      h2 {
+        margin                  : rem-calc(0 0 32 0);
+        border-bottom           : 1px solid $palette-secondary-white;
+        padding                 : rem-calc(0 0 16);
+        font-size               : rem-calc(28);
+        color                   : $palette-white;
+      }
+      h3 {
+        margin-bottom           : rem-calc(20);
+        font-size               : rem-calc(20);
+      }
+      .article.item {
+        padding                 : 0 5%;
       }
     }
     .introduction,
