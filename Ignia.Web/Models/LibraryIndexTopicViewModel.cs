@@ -4,8 +4,8 @@
 | Project       Website
 \=============================================================================================================================*/
 using System.Linq;
-using System.Collections.Generic;
 using Ignia.Topics.ViewModels;
+using Ignia.Topics.Mapping;
 
 namespace Ignia.Web.Models {
 
@@ -18,60 +18,42 @@ namespace Ignia.Web.Models {
   public class LibraryIndexTopicViewModel : PageTopicViewModel {
 
     /*==========================================================================================================================
-    | PRIVATE VARIABLES
-    \-------------------------------------------------------------------------------------------------------------------------*/
-
-    /*==========================================================================================================================
     | GENERIC PROPERTIES
     \-------------------------------------------------------------------------------------------------------------------------*/
-    public virtual TopicViewModelCollection<ArticleTopicViewModel> Processes { get; set; }
-    public virtual TopicViewModelCollection<ArticleTopicViewModel> Standards { get; set; }
-    public virtual TopicViewModelCollection<ArticleTopicViewModel> Technologies { get; set; }
+    [Recurse(Relationships.Children)]
+    [Relationship("Children", RelationshipType.Children)]
+    public TopicViewModelCollection<LibraryIndexTopicViewModel> Indexes { get; set; }
+
+    [Relationship("Children", RelationshipType.Children)]
+    public TopicViewModelCollection<ArticleTopicViewModel> Articles { get; set; }
 
     /*==========================================================================================================================
-    | GET CATEGORY HEADING
+    | GET ARTICLE COUNT
     \-------------------------------------------------------------------------------------------------------------------------*/
     /// <summary>
-    ///   Returns the Article(s) category heading, based on the category (Content Type) key.
+    ///   Calculates the total number of <see cref="ArticleTopicViewModel"/> Topics available from <code>Articles</code> and
+    ///   children of <code>Indexes</code>.
     /// </summary>
-    /// <param name="categoryKey">String corresponding to the Content Type for the set of articles.</param>
-    /// <returns>The title/heading string for the category.</returns>
-    public string GetCategoryHeading(string categoryKey) {
-      switch (categoryKey) {
-        case "Technologies"     : return "Technology Advisories";
-        case "Standards"        : return "Development Standards";
-        case "Processes"        : return "Business and Development Processes";
-        default                 : return "Articles";
-      }
+    /// <returns>
+    ///   The total number of <see cref="ArticleTopicViewModel"/> Topics.
+    /// </returns>
+    public int GetArticleCount() {
+      return Articles.Count + Indexes.Sum(i => i.GetArticleCount());
     }
 
     /*==========================================================================================================================
-    | GET ALL APPLICATIONS
+    | GET ALL ARTICLES
     \-------------------------------------------------------------------------------------------------------------------------*/
     /// <summary>
-    ///   Returns a consolidated list of <i>all</i> articles from the corresponding properties.
+    ///   Returns a collection of articles assembled from the <see cref="Articles"/> and <see cref="Indexes"/> collections.
     /// </summary>
     /// <returns>A consolidated list of articles.</returns>
     public TopicViewModelCollection<ArticleTopicViewModel> GetAllArticles() {
       return new TopicViewModelCollection<ArticleTopicViewModel>(
-        Processes.Concat(Standards).Concat(Technologies).Distinct().ToList()
+        Articles.Union(
+          Indexes.SelectMany(i => i.GetAllArticles())
+        )
       );
-    }
-
-    /*==========================================================================================================================
-    | GET CATEGORIZED APPLICATIONS
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    /// <summary>
-    ///   Returns a dictionary of applications keyed by <see cref="Categories"/>.
-    /// </summary>
-    /// <returns>A consolidated list of applications.</returns>
-    public Dictionary<string, TopicViewModelCollection<ArticleTopicViewModel>> GetCategorizedArticles() {
-      var categorizedApplications = new Dictionary<string, TopicViewModelCollection<ArticleTopicViewModel>> {
-        { nameof(Processes), Processes },
-        { nameof(Standards), Standards },
-        { nameof(Technologies), Technologies }
-      };
-      return categorizedApplications;
     }
 
   } // Class
