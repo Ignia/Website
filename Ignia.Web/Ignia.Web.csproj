@@ -207,6 +207,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Content>
+    <Compile Include="App_Code\TopicEntityViewModel.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="bin\Ignia.Topics.ViewModels.dll" />
     <Content Include="Common\Global\Controls\FormField.ascx.cs">
@@ -223,7 +224,15 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IgniaControllerFactory.cs" />
+    <Compile Include="Models\ArticleTopicViewModel.cs" />
+    <Compile Include="Models\HomeTopicViewModel.cs" />
+    <Compile Include="Models\LibraryIndexTopicViewModel.cs" />
+    <Compile Include="Models\NavigationTopicViewModel.cs" />
     <Compile Include="Models\NavigationViewModel.cs" />
+    <Compile Include="Models\ProcessTopicViewModel.cs" />
+    <Compile Include="Models\ResourceTopicViewModel.cs" />
+    <Compile Include="Models\StandardTopicViewModel.cs" />
+    <Compile Include="Models\TechnologyAdvisoryTopicViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2041,6 +2050,8 @@
     <Content Include="Shared\Scripts\Vendor\ZURB\plugins\foundation.zf.responsiveAccordionTabs.min.js" />
     <Content Include="Shared\Styles\Style.css" />
     <Content Include="Shared\Styles\Style.min.css" />
+    <Content Include="Shared\Styles\Views\Article.css" />
+    <Content Include="Shared\Styles\Views\Article.min.css" />
     <Content Include="Shared\Styles\Views\Home.css" />
     <Content Include="Shared\Styles\Views\Home.min.css" />
     <Content Include="Shared\Styles\Views\Library.css" />
