@@ -42,7 +42,7 @@
   }
 
   <!-- @index.Title Articles -->
-  <section class="grid-x grid-margin-x" role="region">
+  <section class="articles list grid-x" role="region">
     <header class="cell">
       <h@(tier)>@index.Title</h@(tier)>
     </header>
@@ -58,11 +58,11 @@
 }
 
 @helper WriteArticleItem(ArticleTopicViewModel article) {
-  <div id="@(article.ContentType + article.Key)" class="medium-10 medium-offset-1 cell">
+  <div id="@(article.ContentType + article.Key)" class="article item medium-10 medium-offset-1 cell">
     <!-- Section Heading -->
     <h3 class="heading"><a href="@article.WebPath">@article.Title</a></h3>
     <!-- Abstract / Description -->
-    <div class="description medium-10 medium-offset-1 cell">@Html.Raw(article.Abstract)</div>
+    <div class="description">@Html.Raw(article.Abstract)</div>
   </div>
 }
 

@@ -60,22 +60,23 @@ section[itemprop="mainContentOfPage"] {
 
 .library {
   &.index {
-    padding                     : rem-calc(32 0);
+    padding-top                 : rem-calc(32);
+    padding-bottom              : rem-calc(32);
     color                       : $palette-secondary-white;
     header,
     section {
       background                : transparent;
     }
     section {
-      > header {
-        margin-bottom           : rem-calc(32);
-        border-bottom           : 1px solid $palette-secondary-white;
-        > h2 {
-          margin                : 0;
-          padding               : rem-calc(0 0 16);
-          font-size             : rem-calc(28);
-          color                 : $palette-white;
-        }
+      &.articles.list {
+        margin-bottom           : rem-calc(24);
+      }
+      h2 {
+        margin                : rem-calc(0 0 32 0);
+        border-bottom         : 1px solid $palette-secondary-white;
+        padding               : rem-calc(0 0 16);
+        font-size             : rem-calc(28);
+        color                 : $palette-white;
       }
       h3 {
         font-size               : rem-calc(20);

@@ -31,19 +31,20 @@ section[itemprop="mainContentOfPage"] > header {
     color: white; }
 
 .library.index {
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   color: white; }
   .library.index header,
   .library.index section {
     background: transparent; }
-  .library.index section > header {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid white; }
-    .library.index section > header > h2 {
-      margin: 0;
-      padding: 0 0 1rem;
-      font-size: 1.75rem;
-      color: #f2eee6; }
+  .library.index section.articles.list {
+    margin-bottom: 1.5rem; }
+  .library.index section h2 {
+    margin: 0 0 2rem 0;
+    border-bottom: 1px solid white;
+    padding: 0 0 1rem;
+    font-size: 1.75rem;
+    color: #f2eee6; }
   .library.index section h3 {
     font-size: 1.25rem; }
     .library.index section h3 a,
