@@ -36,7 +36,7 @@
             <time datetime="@getDateTimeValue(@Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
               @getDateTimeValue(@Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
             </time>
-            <span class="author" property="author">by @Model.Author</span>
+            <span class="author" property="author">by @Model.GetAuthorTitle(Model.Author)</span>
           </section>
           <!-- /Publication Details -->
 
