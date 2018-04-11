@@ -16,18 +16,16 @@
 @section PageBodySection {
 
   <!-- Articles Listing/Index -->
-  <article id="ArticlesIndex" class="library index" role="article">
-    <div class="container grid-container">
+  <article id="ArticlesIndex" class="container grid-container library index" role="article">
 
-      <!-- Introduction -->
-      <div class="grid-x grid-margin-x">
-        <div class="introduction cell">@Html.Raw(Model.Body)</div>
-      </div>
-      <!-- /Introduction -->
-
-      @WriteArticles(Model)
-
+    <!-- Introduction -->
+    <div class="grid-x grid-margin-x">
+      <div class="introduction cell">@Html.Raw(Model.Body)</div>
     </div>
+    <!-- /Introduction -->
+
+    @WriteArticles(Model)
+
   </article>
   <!-- /Articles Listing/Index -->
 
@@ -35,26 +33,28 @@
 
 @helper WriteArticles(LibraryIndexTopicViewModel index, int tier = 2) {
   if (index.GetArticleCount() == 0) { return; }
-  if (index.Key != "Library" && index.Key != "Articles") {
-    <!-- @index.Title Articles -->
-    <section class="grid-x grid-margin-x" role="region">
-      <header class="cell">
-        <h@(tier)>@index.Title</h@(tier)>
-      </header>
-      @foreach(var article in index.Articles) {
-        @WriteArticleItem(article);
-      }
-      @foreach(var childIndex in index.Indexes) {
-        @WriteArticles(childIndex, tier+1);
-      }
-    </section>
-    <!-- /@index.Title Articles -->
-  }
-  else {
+
+  if (index.BypassDisplay) {
     foreach(var childIndex in index.Indexes) {
       @WriteArticles(childIndex, tier);
     }
+    return;
   }
+
+  <!-- @index.Title Articles -->
+  <section class="grid-x grid-margin-x" role="region">
+    <header class="cell">
+      <h@(tier)>@index.Title</h@(tier)>
+    </header>
+    @foreach(var article in index.Articles) {
+      @WriteArticleItem(article);
+    }
+    @foreach(var childIndex in index.Indexes) {
+      @WriteArticles(childIndex, tier+1);
+    }
+  </section>
+  <!-- /@index.Title Articles -->
+
 }
 
 @helper WriteArticleItem(ArticleTopicViewModel article) {
