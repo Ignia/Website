@@ -9,71 +9,29 @@ $(function () {
   'use strict';
 
   /**
-   * Establish variables
+   * Fire menu-dependent functions on initialization
    */
-  var
-    topOffset                   = $('#Header').height(),
-    headingBuffer               = $('#Introduction header:first-child').height(),
-    menuElement                 = $('#PrimaryNavigation li a:not("#LibraryLink")');
-
-  if ($(window).width() < 960) {
-    menuElement                 = $('#PrimaryNavigationSmallScreen li a:not("#LibraryLinkSmallScreen")');
-  }
+  setMenuLinks();
+  setSmoothScrolling();
 
   /**
-   * Initializes Foundation smooth scrolling for menu items
+   * Re-fire menu-dependent functions on resize
    */
-  var
-    smoothScrollOptions         = {
-      animationDuration         : 1000,
-      offset                    : (topOffset - 25)
-    },
-    menuSmoothScroll            = new Foundation.SmoothScroll(menuElement, smoothScrollOptions);
-
-  /**
-   * Fires navigation highlight reset on initialization
-   */
-  resetNavHighlight();
-
-  /**
-   * Highlights the "active" navigation as the corresponding panel comes into view
-   */
-  $(window).scroll(function() {
-
-    var scrollPosition          = $(window).scrollTop() + topOffset + headingBuffer;
-
-    // Highlight 'About (01)' item
-    if (scrollPosition >= $("#Introduction").offset().top && scrollPosition <= $("#Services").offset().top) {
-      resetNavHighlight();
-      $('#IntroductionAnchor, #IntroductionAnchorSmallScreen').addClass('active');
-    }
-
-    // Highlight 'Services (02)' item
-    if (scrollPosition >= $("#Services").offset().top && scrollPosition <= $("#ClientHighlights").offset().top) {
-      resetNavHighlight();
-      $('#ServicesAnchor, #ServicesAnchorSmallScreen').addClass('active');
-    }
-
-    // Highlight 'Clients (03)' item
-    if (scrollPosition >= $("#ClientHighlights").offset().top && scrollPosition <= $("#Contact").offset().top) {
-      resetNavHighlight();
-      $('#ClientHighlightsAnchor, #ClientHighlightsAnchorSmallScreen').addClass('active');
-    }
-
-    // Highlight 'Contact (04)' item
-    if (scrollPosition >= $('#Contact').offset().top) {
-      resetNavHighlight();
-      $('#ContactAnchor, #ContactAnchorSmallScreen').addClass('active');
-    }
-
+  var resizeTimer;
+  $(window).on('resize', function(e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function() {
+      setMenuLinks();
+      setSmoothScrolling();
+    }, 250);
   });
 
   /**
    * Sets the active state of the tapped-on navigation item;
    * closes the off-canvas menu on tap of one of the navigation items
    */
-  $('#PrimaryNavigationSmallScreen ul li a').click(function (event) {
-    resetNavHighlight();
+  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').click(function (event) {
+    $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
     $(this).addClass('active');
     closeOffCanvasMenu();
   });
@@ -89,12 +47,46 @@ $(function () {
 });
 
 /**
- * Removes the "active" class from all primary navigation items
+ * Re-associates menu item targets for smaller screens
  */
-function resetNavHighlight() {
-  'use strict';
-  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
-};
+function getMenuElement() {
+  if ($(window).width() < 960) {
+    return $('#PrimaryNavigationSmallScreen li a:not("#LibraryLinkSmallScreen")');
+  }
+  return $('#PrimaryNavigation li a:not("#LibraryLink")');
+}
+
+/**
+ * Prepends Homepage path to menu links on non-Home (Library) views
+ */
+function setMenuLinks() {
+  $(getMenuElement()).each(function() {
+    var
+      href                      = $(this).attr('href'),
+      hash                      = href.substring(href.indexOf('#')),
+      homeHref                  = hash.replace('#', '/Web/Home/#');
+    if (window.location.pathname.toLowerCase().indexOf('web/home') < 0) {
+      $(this).attr('href', homeHref);
+    }
+    else {
+      $(this).attr('href', hash);
+    }
+  });
+}
+
+/**
+ * Initializes Foundation smooth scrolling for menu items
+ */
+function setSmoothScrolling() {
+  if (window.location.pathname.toLowerCase().indexOf('web/home') >= 0) {
+    var
+      smoothScrollOptions       = {
+        animationDuration       : 1000,
+        offset                  : ($('#Header').height() - 25)
+      },
+      menuSmoothScroll          = new Foundation.SmoothScroll(getMenuElement(), smoothScrollOptions);
+  }
+}
 
 /**
   * Sets the active state of the tapped-on navigation item;
