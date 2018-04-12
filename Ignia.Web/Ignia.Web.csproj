@@ -2056,6 +2056,8 @@
     <Content Include="Shared\Styles\Views\Home.min.css" />
     <Content Include="Shared\Styles\Views\Library.css" />
     <Content Include="Shared\Styles\Views\Library.min.css" />
+    <Content Include="Shared\Styles\Views\LibraryIndex.css" />
+    <Content Include="Shared\Styles\Views\LibraryIndex.min.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -2396,6 +2398,7 @@
     <Content Include="Views\ContentTypes\TechnologyAdvisory.cshtml" />
     <Content Include="Shared\Styles\Views\Article.scss" />
     <Content Include="Views\Layout\Header.Library.cshtml" />
+    <Content Include="Shared\Styles\Views\LibraryIndex.scss" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
