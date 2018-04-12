@@ -1973,6 +1973,7 @@
     <Content Include="Configuration\rewriteRules.config" />
     <Content Include="Shared\Scripts\Home.Animations.js" />
     <Content Include="Shared\Scripts\Home.js" />
+    <Content Include="Shared\Scripts\HomeScripts.js" />
     <Content Include="Shared\Scripts\Menu.js" />
     <Content Include="Shared\Scripts\Scripts.js" />
     <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.js" />
