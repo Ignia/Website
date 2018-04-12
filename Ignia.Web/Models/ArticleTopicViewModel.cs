@@ -35,12 +35,12 @@ namespace Ignia.Web.Models {
     \-------------------------------------------------------------------------------------------------------------------------*/
     /// <summary>
     ///   Looks up an author from the <see cref="Authors"/> collection based on the <see
-    ///   cref="LookupListItemTopicViewModel.UniqueKey"/> and returns the corresponding <see
+    ///   cref="LookupListItemTopicViewModel.Key"/> and returns the corresponding <see
     ///   cref="LookupListItemTopicViewModel.Title"/>.
     /// </summary>
     /// <param name="author">The <c>UniqueKey</c> for the author.</param>
     /// <returns>The title corresponding to the author <c>UniqueKey</c>.</returns>
-    public string GetAuthorTitle(string author) => Authors.Where(t => t.UniqueKey.Equals(author)).FirstOrDefault().Title;
+    public string GetAuthorTitle(string author) => Authors.Where(t => t.Key.Equals(author)).FirstOrDefault().Title;
 
   } // Class
 
