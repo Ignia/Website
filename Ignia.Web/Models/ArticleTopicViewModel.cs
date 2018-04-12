@@ -40,7 +40,12 @@ namespace Ignia.Web.Models {
     /// </summary>
     /// <param name="author">The <c>UniqueKey</c> for the author.</param>
     /// <returns>The title corresponding to the author <c>UniqueKey</c>.</returns>
-    public string GetAuthorTitle(string author) => Authors.Where(t => t.Key.Equals(author)).FirstOrDefault().Title;
+    public string GetAuthorTitle(string author) {
+      if (Authors.Count > 0) {
+        return Authors.Where(t => t.Key.Equals(author)).FirstOrDefault().Title;
+      }
+      return string.Empty;
+    }
 
   } // Class
 
