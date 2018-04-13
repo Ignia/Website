@@ -6440,17 +6440,20 @@ body {
     #MainContent {
       margin-top: 3.8125rem; } }
   #MainContent .page.header {
-    margin-bottom: 3.125rem;
     max-height: 8.125rem; }
+    #MainContent .page.header .container {
+      position: relative; }
     #MainContent .page.header h1 {
-      display: table-cell;
-      position: relative;
-      vertical-align: bottom;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      bottom: -0.625rem;
       overflow: visible;
+      border-width: 0 0.0625rem;
       margin: 0;
-      padding: 0.8125rem 0.9375rem;
-      width: 6.875rem;
-      height: 7.125rem; }
+      padding: 1.9375rem 0.9375rem 0.8125rem;
+      width: 8rem;
+      height: 5rem; }
 
 #Footer {
   padding: 3.125rem 0 5rem; }

@@ -122,15 +122,22 @@ footer {
 
 section[itemprop="mainContentOfPage"] {
   > header {
-    min-height                  : rem-calc(80);
+    min-height                  : rem-calc(70);
+    &.header {
+      background-color          : lighten($palette-secondary-grey-darkest, 4%);
+      background-image          : none;
+    }
     h1 {
       margin                    : 0;
+      border-style              : none solid;
+      border-color              : $palette-grey-dark;
       padding                   : rem-calc(26 0 18);
       font-family               : $headings-font-family;
       font-size                 : rem-calc(36);
       line-height               : 1;
       font-weight               : 300;
       color                     : $palette-secondary-white;
+      background-color          : $palette-secondary-grey-darkest;
     }
   }
 }
