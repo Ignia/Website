@@ -53,7 +53,7 @@
           @if (!String.IsNullOrEmpty(@Model.Strengths)) {
             <!-- Strengths Content -->
             <section id="Strengths" class="content section" role="region" property="articleSection">
-              <header role="heading"><h3>Strengths</h3></header>
+              <header role="heading"><h2>Strengths</h2></header>
               <div>
                 @Html.Raw(Model.Strengths)
               </div>
@@ -64,7 +64,7 @@
           @if (!String.IsNullOrEmpty(@Model.Weaknesses)) {
             <!-- Weaknesses Content -->
             <section id="Weaknesses" class="content section" role="region" property="articleSection">
-              <header role="heading"><h3>Weaknesses</h3></header>
+              <header role="heading"><h2>Weaknesses</h2></header>
               <div>
                 @Html.Raw(Model.Weaknesses)
               </div>
@@ -75,7 +75,7 @@
           @if (!String.IsNullOrEmpty(@Model.Usage)) {
             <!-- Usage Content -->
             <section id="Usage" class="content section" role="region" property="articleSection">
-              <header role="heading"><h3>Usage</h3></header>
+              <header role="heading"><h2>Usage</h2></header>
               <div>
                 @Html.Raw(Model.Usage)
               </div>
@@ -86,7 +86,7 @@
           @if (!String.IsNullOrEmpty(@Model.BestPractices)) {
             <!-- Best Practices Content -->
             <section id="BestPractices" class="content section" role="region" property="articleSection">
-              <header role="heading"><h3>Best Practices</h3></header>
+              <header role="heading"><h2>Best Practices</h2></header>
               <div>
                 @Html.Raw(Model.BestPractices)
               </div>
@@ -107,21 +107,21 @@
 
             @if (!String.IsNullOrEmpty(@Model.Website)) {
               <!-- Website -->
-              <h4>Website</h4>
+              <h3>Website</h3>
               <p>@Html.Raw(getReference(@Model.Website))</p>
               <!-- /Website -->
             }
 
             @if (!String.IsNullOrEmpty(@Model.Documentation)) {
               <!-- Documentation -->
-              <h4>Documentation</h4>
+              <h3>Documentation</h3>
               <p>@Html.Raw(getReference(@Model.Documentation))</p>
               <!-- /Documentation -->
             }
 
             @if (Model.Resources.Count > 0) {
               <!-- Additional Resources -->
-              <h4>Additional Resources</h4>
+              <h3>Additional Resources</h3>
               <ul id="Resources">
                 @foreach (var resource in Model.Resources) {
                   <li>@Html.Raw(getReference(resource.URL, resource.Title))</li>
