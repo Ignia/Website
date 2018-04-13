@@ -2395,7 +2395,6 @@
     <None Include="Properties\PublishProfiles\IgniaWeb-Test - Web Deploy.pubxml" />
     <Content Include="Views\ContentTypes\LibraryIndex.cshtml" />
     <Content Include="Shared\Styles\Views\Library.scss" />
-    <Content Include="Views\Layout\Menu.Library.cshtml" />
     <Content Include="Views\ContentTypes\TechnologyAdvisory.cshtml" />
     <Content Include="Shared\Styles\Views\Article.scss" />
     <Content Include="Views\Layout\Header.Library.cshtml" />
