@@ -5261,7 +5261,7 @@ a.button:hover, a.button:focus {
   height: 100%;
   -webkit-transition: opacity 0.5s ease, visibility 0.5s ease;
   transition: opacity 0.5s ease, visibility 0.5s ease;
-  background: rgba(240, 173, 32, 0.85);
+  background: rgba(51, 51, 51, 0.75);
   opacity: 0;
   visibility: hidden;
   overflow: hidden; }
