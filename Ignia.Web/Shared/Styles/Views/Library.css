@@ -42,6 +42,9 @@ main {
   #PrimaryNavigation ul li a .ordinal {
     display: none; } }
 
+#PrimaryNavigationSmallScreen.position-top {
+  height: 28.5rem; }
+
 #PrimaryNavigationSmallScreen ul {
   top: 2.75rem; }
   #PrimaryNavigationSmallScreen ul li a.ancillary {

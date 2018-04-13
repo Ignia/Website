@@ -72,6 +72,9 @@ main {
   }
 }
 #PrimaryNavigationSmallScreen {
+  &.position-top {
+    height                      : rem-calc(456);
+  }
   ul {
     top: rem-calc(44);
     li {
