@@ -25,13 +25,94 @@ main {
   min-height                    : rem-calc(768);
 }
 
+#PrimaryNavigation,
+#PrimaryNavigationSmallScreen {
+  ul {
+    li {
+      a {
+        &.ancillary {
+          border-width          : 0;
+          border-bottom-width   : rem-calc(10);
+          border-style          : solid;
+        }
+        .ordinal {
+          display               : none;
+        }
+      }
+    }
+  }
+}
+#PrimaryNavigation {
+  ul {
+    li {
+      a {
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          .ordinal {
+            display: none;
+          }
+        }
+        &.ancillary {
+          position              : relative;
+          top                   : rem-calc(1);
+          padding-bottom        : rem-calc(7);
+        }
+        .ordinal {
+          @include breakpoint(959px down) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 //----------------------------------------------------------------------------------------------
 // BASE
 //----------------------------------------------------------------------------------------------
 
+header,
 footer {
   &.site {
     background-color            : $palette-secondary-grey-dark;
+    background-image            : none;
+  }
+}
+.header {
+  &.site {
+    .navigation {
+      a {
+        border-bottom           : rem-calc(10) solid transparent;
+        font-family             : $headings-font-family;
+        font-size               : rem-calc(20);
+        font-weight             : 300;
+        color                   : $palette-secondary-white;
+        text-transform          : none;
+        &:hover,
+        &:focus,
+        &:active {
+          border-bottom-color   : $palette-red;
+          color                 : darken($palette-secondary-white, 30.5%);
+        }
+        &.ancillary {
+          border                : 0 none transparent;
+          border-bottom-width   : rem-calc(10);
+          border-bottom-style   : solid;
+          border-bottom-color   : $palette-red;
+          color                 : darken($palette-secondary-white, 30.5%);
+          &:hover,
+          &:focus,
+          &:active {
+            border              : 0 none transparent;
+            border-bottom-width : rem-calc(10);
+            border-bottom-style : solid;
+            border-bottom-color : $palette-red;
+          }
+        }
+      }
+    }
   }
 }
 
