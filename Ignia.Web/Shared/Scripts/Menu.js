@@ -27,6 +27,13 @@ $(function () {
   });
 
   /**
+   * Set active class on Library menu item if within the Library
+   */
+  if (window.location.pathname.toLowerCase().indexOf('library') >= 0) {
+    $('#LibraryLink, #LibraryLinkSmallScreen').addClass('active');
+  }
+
+  /**
    * Sets the active state of the tapped-on navigation item;
    * closes the off-canvas menu on tap of one of the navigation items
    */
