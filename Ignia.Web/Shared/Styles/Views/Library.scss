@@ -32,14 +32,15 @@ main {
       a {
         &.ancillary {
           border-width          : 0;
-          border-bottom-width   : rem-calc(10);
-          border-style          : solid;
         }
         .ordinal {
           display               : none;
         }
       }
     }
+  }
+  img.annotation {
+    display                     : none;
   }
 }
 #PrimaryNavigation {
@@ -51,17 +52,39 @@ main {
         &:active,
         &.active {
           .ordinal {
-            display: none;
+            display             : none;
           }
         }
         &.ancillary {
           position              : relative;
           top                   : rem-calc(1);
+          border-bottom-width   : rem-calc(10);
+          border-style          : solid;
           padding-bottom        : rem-calc(7);
         }
         .ordinal {
           @include breakpoint(959px down) {
-            display: none;
+            display             : none;
+          }
+        }
+      }
+    }
+  }
+}
+#PrimaryNavigationSmallScreen {
+  ul {
+    top: rem-calc(44);
+    li {
+      a {
+        &.ancillary {
+          margin-left           : 0;
+          padding-top           : 0;
+          padding-bottom        : 0;
+          @include breakpoint(959px down) {
+            padding-left        : rem-calc(40);
+          }
+          @include breakpoint(767px down) {
+            padding-left        : rem-calc(24);
           }
         }
       }
@@ -83,6 +106,10 @@ footer {
 .header {
   &.site {
     .navigation {
+      &.off-canvas {
+        background-color        : $palette-secondary-grey-dark;
+        background-image        : none;
+      }
       a {
         border-bottom           : rem-calc(10) solid transparent;
         font-family             : $headings-font-family;
@@ -90,11 +117,19 @@ footer {
         font-weight             : 300;
         color                   : $palette-secondary-white;
         text-transform          : none;
+        @include breakpoint(959px down) {
+          border-bottom-color   : transparent;
+        }
         &:hover,
         &:focus,
-        &:active {
+        &:active,
+        &.active {
           border-bottom-color   : $palette-red;
           color                 : darken($palette-secondary-white, 30.5%);
+          @include breakpoint(959px down) {
+            border-bottom-color : transparent;
+            background-position : rem-calc(-81 4);
+          }
         }
         &.ancillary {
           border                : 0 none transparent;

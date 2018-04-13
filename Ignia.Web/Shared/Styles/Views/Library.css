@@ -18,12 +18,14 @@ main {
 
 #PrimaryNavigation ul li a.ancillary,
 #PrimaryNavigationSmallScreen ul li a.ancillary {
-  border-width: 0;
-  border-bottom-width: 0.625rem;
-  border-style: solid; }
+  border-width: 0; }
 
 #PrimaryNavigation ul li a .ordinal,
 #PrimaryNavigationSmallScreen ul li a .ordinal {
+  display: none; }
+
+#PrimaryNavigation img.annotation,
+#PrimaryNavigationSmallScreen img.annotation {
   display: none; }
 
 #PrimaryNavigation ul li a:hover .ordinal, #PrimaryNavigation ul li a:focus .ordinal, #PrimaryNavigation ul li a:active .ordinal, #PrimaryNavigation ul li a.active .ordinal {
@@ -32,14 +34,33 @@ main {
 #PrimaryNavigation ul li a.ancillary {
   position: relative;
   top: 0.0625rem;
+  border-bottom-width: 0.625rem;
+  border-style: solid;
   padding-bottom: 0.4375rem; }
 
 @media screen and (max-width: 59.9375em) {
   #PrimaryNavigation ul li a .ordinal {
     display: none; } }
 
+#PrimaryNavigationSmallScreen ul {
+  top: 2.75rem; }
+  #PrimaryNavigationSmallScreen ul li a.ancillary {
+    margin-left: 0;
+    padding-top: 0;
+    padding-bottom: 0; }
+    @media screen and (max-width: 59.9375em) {
+      #PrimaryNavigationSmallScreen ul li a.ancillary {
+        padding-left: 2.5rem; } }
+    @media screen and (max-width: 47.9375em) {
+      #PrimaryNavigationSmallScreen ul li a.ancillary {
+        padding-left: 1.5rem; } }
+
 header.site,
 footer.site {
+  background-color: #4b4b4b;
+  background-image: none; }
+
+.header.site .navigation.off-canvas {
   background-color: #4b4b4b;
   background-image: none; }
 
@@ -50,9 +71,16 @@ footer.site {
   font-weight: 300;
   color: white;
   text-transform: none; }
-  .header.site .navigation a:hover, .header.site .navigation a:focus, .header.site .navigation a:active {
+  @media screen and (max-width: 59.9375em) {
+    .header.site .navigation a {
+      border-bottom-color: transparent; } }
+  .header.site .navigation a:hover, .header.site .navigation a:focus, .header.site .navigation a:active, .header.site .navigation a.active {
     border-bottom-color: #ef4a24;
     color: #b1b1b1; }
+    @media screen and (max-width: 59.9375em) {
+      .header.site .navigation a:hover, .header.site .navigation a:focus, .header.site .navigation a:active, .header.site .navigation a.active {
+        border-bottom-color: transparent;
+        background-position: -5.0625rem 0.25rem; } }
   .header.site .navigation a.ancillary {
     border: 0 none transparent;
     border-bottom-width: 0.625rem;
