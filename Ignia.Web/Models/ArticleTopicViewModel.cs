@@ -38,13 +38,13 @@ namespace Ignia.Web.Models {
     ///   cref="LookupListItemTopicViewModel.Key"/> and returns the corresponding <see
     ///   cref="LookupListItemTopicViewModel.Title"/>.
     /// </summary>
-    /// <param name="author">The <c>UniqueKey</c> for the author.</param>
-    /// <returns>The title corresponding to the author <c>UniqueKey</c>.</returns>
+    /// <param name="author">The <c>Key</c> for the author.</param>
+    /// <returns>The title corresponding to the author <c>Key</c>.</returns>
     public string GetAuthorTitle(string author) {
       if (Authors.Count > 0) {
         return Authors.Where(t => t.Key.Equals(author)).FirstOrDefault().Title;
       }
-      return string.Empty;
+      return "Ignia, LLC";
     }
 
   } // Class
