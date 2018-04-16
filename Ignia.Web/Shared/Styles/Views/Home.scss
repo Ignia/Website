@@ -724,21 +724,25 @@ footer.footer {
           width                 : rem-calc(216);
           height                : rem-calc(196);
         }
-        @media screen and #{breakpoint(480px)} and #{breakpoint(579px down)} {
+        @media screen and #{breakpoint(479px)} and #{breakpoint(579px down)} {
           width                 : rem-calc(208);
           height                : rem-calc(198);
         }
-        @media screen and #{breakpoint(414px)} and #{breakpoint(479px down)} {
+        @media screen and #{breakpoint(415px)} and #{breakpoint(479px down)} {
           width                 : rem-calc(147);
           height                : rem-calc(127);
         }
-        @include breakpoint(413px down) {
-          width                 : rem-calc(135);
-          height                : rem-calc(105);
+        @include breakpoint(479px down) {
+          width                 : rem-calc(132);
+          height                : rem-calc(102);
         }
         @include breakpoint(360px down) {
           width                 : rem-calc(126);
           height                : rem-calc(106);
+        }
+        @include breakpoint(320px down) {
+          width                 : rem-calc(120);
+          height                : rem-calc(100);
         }
         &:nth-child(even),
         &:last-child {
@@ -860,7 +864,7 @@ footer.footer {
         a {
           position              : relative;
           &.icon {
-            @include breakpoint(413px down) {
+            @include breakpoint(479px down) {
               top               : rem-calc(8);
             }
             @include breakpoint(360px down) {
@@ -870,7 +874,7 @@ footer.footer {
           &.text {
             @extend .uppercase;
             top                 : rem-calc(-7);
-            @include breakpoint(413px down) {
+            @include breakpoint(479px down) {
               top               : rem-calc(5);
             }
             @include breakpoint(360px down) {
@@ -884,7 +888,7 @@ footer.footer {
           }
           a.text {
             top                 : rem-calc(-11);
-            @include breakpoint(413px down) {
+            @include breakpoint(479px down) {
               top               : rem-calc(5);
             }
             @include breakpoint(360px down) {
