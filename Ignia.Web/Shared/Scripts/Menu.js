@@ -12,7 +12,6 @@ $(function () {
    * Fire menu-dependent functions on initialization
    */
   setMenuLinks();
-  setSmoothScrolling();
 
   /**
    * Re-fire menu-dependent functions on resize
@@ -22,7 +21,6 @@ $(function () {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       setMenuLinks();
-      setSmoothScrolling();
     }, 250);
   });
 
