@@ -130,14 +130,14 @@ $(function() {
     var
       codefactoryTween          = TweenMax.to(
         '#Introduction section.factory img',
-        5,
+        7,
         { top: '0', autoCSS: true, ease: SlowMo.ease.config(0.1, 0.1, false) }
       ),
       codeFactoryScene          = new ScrollMagic.Scene({
         triggerElement          : '#Introduction',
         triggerHook             : 0,
-        offset                  : -topOffset,
-        duration                : '660',
+        offset                  : (-topOffset - 80),
+        duration                : '1000',
       }).setTween(codefactoryTween).addTo(sceneController);
   }
 
