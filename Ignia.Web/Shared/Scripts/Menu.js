@@ -48,11 +48,11 @@ $(function () {
 
     // Smooth scroll to the target panel
     if (isLibraryItem === false) {
-      Foundation.SmoothScroll.scrollToLoc(
+      new Foundation.SmoothScroll.scrollToLoc(
         target,
         {
-          duration              : 1000,
-          threshold             : 25,
+          animationDuration     : 1000,
+          threshold             : 20,
           offset                : ($('#Header').height() - 20)
         },
         function () {
