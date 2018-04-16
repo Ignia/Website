@@ -58,9 +58,15 @@ main {
     }
     h2 {
       font-size                 : rem-calc(32);
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(24);
+      }
     }
     h3 {
       font-size                 : rem-calc(22);
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(16);
+      }
     }
     .publication {
       &.details {
