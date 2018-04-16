@@ -68,12 +68,12 @@ $(function() {
    */
   var
     clientLogosItem             = $('#ClientHighlights section.logos ul li'),
-    clientLogosDuration         = ($('#ClientHighlights').innerHeight()*0.8),
+    clientLogosDuration         = ($('#ClientHighlights').innerHeight() * 0.7),
     clientLogosTween            = TweenMax.staggerFromTo(
       clientLogosItem,
       3,
       { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1, ease: Power2.easeIn, autoCSS: true },
+      { autoAlpha: 1, scale: 1, ease: SlowMo.ease.config(0.3, 0.4, false), autoCSS: true },
       0.25
     ),
     clientLogosScene            = new ScrollMagic.Scene({
