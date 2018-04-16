@@ -48,25 +48,25 @@ $(function() {
     // Highlight 'About (01)' item
     if (scrollPosition >= $("#Introduction").offset().top && scrollPosition <= $("#Services").offset().top) {
       menuItem                  = '#IntroductionAnchor, #IntroductionAnchorSmallScreen';
-      resetNavHighlight(menuItem);
+      setActiveNavigation(menuItem);
     }
 
     // Highlight 'Services (02)' item
     if (scrollPosition >= $("#Services").offset().top && scrollPosition <= $("#ClientHighlights").offset().top) {
       menuItem                  = '#ServicesAnchor, #ServicesAnchorSmallScreen';
-      resetNavHighlight(menuItem);
+      setActiveNavigation(menuItem);
     }
 
     // Highlight 'Clients (03)' item
     if (scrollPosition >= $("#ClientHighlights").offset().top && scrollPosition <= $("#Contact").offset().top) {
       menuItem                  = '#ClientHighlightsAnchor, #ClientHighlightsAnchorSmallScreen';
-      resetNavHighlight(menuItem);
+      setActiveNavigation(menuItem);
     }
 
     // Highlight 'Contact (04)' item
     if (scrollPosition >= $('#Contact').offset().top) {
       menuItem                  = '#ContactAnchor, #ContactAnchorSmallScreen';
-      resetNavHighlight(menuItem);
+      setActiveNavigation(menuItem);
     }
 
   });
