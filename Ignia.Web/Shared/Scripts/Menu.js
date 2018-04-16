@@ -37,10 +37,37 @@ $(function () {
    * Sets the active state of the tapped-on navigation item;
    * closes the off-canvas menu on tap of one of the navigation items
    */
-  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').click(function (event) {
-    setActiveNavigation('#' + $(this).attr('id'));
-    $(this).addClass('active');
-    closeOffCanvasMenu();
+  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').click(function(event) {
+
+    // Establish variables
+    var
+      menuItem                  = '#' + $(this).attr('id'),
+      target                    = $(this).attr('href'),
+      isLibraryItem             = (target.indexOf('Library') >= 0 || target.indexOf('/Web/Home/') >= 0);
+
+    // Set the active navigation item
+    setActiveNavigation(menuItem);
+
+    // Smooth scroll to the target panel
+    if (isLibraryItem === false) {
+      Foundation.SmoothScroll.scrollToLoc(
+        target,
+        {
+          duration              : 1000,
+          threshold             : 25,
+          offset                : ($('#Header').height() - 20)
+        },
+        function () {
+          setActiveNavigation(menuItem);
+        }
+      );
+    }
+
+    // Force close of the small screen menu
+    if (menuItem.indexOf("SmallScreen") >= 0) {
+      closeOffCanvasMenu();
+    }
+
   });
 
   /**
@@ -90,20 +117,6 @@ function setMenuLinks() {
       $(this).attr('href', hash);
     }
   });
-}
-
-/**
- * Initializes Foundation smooth scrolling for menu items
- */
-function setSmoothScrolling() {
-  if (window.location.pathname.toLowerCase().indexOf('web/home') >= 0) {
-    var
-      smoothScrollOptions       = {
-        animationDuration       : 1000,
-        offset                  : ($('#Header').height() - 25)
-      },
-      menuSmoothScroll          = new Foundation.SmoothScroll(getMenuElement(), smoothScrollOptions);
-  }
 }
 
 /**
