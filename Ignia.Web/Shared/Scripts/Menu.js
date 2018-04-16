@@ -38,7 +38,7 @@ $(function () {
    * closes the off-canvas menu on tap of one of the navigation items
    */
   $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').click(function (event) {
-    $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
+    resetNavHighlight('#' + $(this).attr('id'));
     $(this).addClass('active');
     closeOffCanvasMenu();
   });
@@ -52,6 +52,18 @@ $(function () {
   });
 
 });
+
+/**
+ * Removes the "active" class from all primary navigation items
+ */
+function resetNavHighlight(menuItem) {
+  'use strict';
+  console.log('resetting nav highlight');
+  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
+  if (typeof menuItem !== 'undefined' && menuItem.length) {
+    $(menuItem).addClass('active');
+  }
+};
 
 /**
  * Re-associates menu item targets for smaller screens

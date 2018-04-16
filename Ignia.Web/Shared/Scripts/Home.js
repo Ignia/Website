@@ -36,45 +36,37 @@ $(function() {
   }
 
   /**
-   * Fires navigation highlight reset on initialization
-   */
-  resetNavHighlight();
-
-  /**
    * Highlights the "active" navigation as the corresponding panel comes into view
    */
   $(window).scroll(function () {
 
-    var scrollPosition = $(window).scrollTop() + topOffset + headingBuffer;
-
-    console.log('scrollPosition: ' + scrollPosition);
+    // Establish variables
+    var
+      menuItem,
+      scrollPosition            = $(window).scrollTop() + topOffset + headingBuffer;
 
     // Highlight 'About (01)' item
     if (scrollPosition >= $("#Introduction").offset().top && scrollPosition <= $("#Services").offset().top) {
-      resetNavHighlight();
-      $('#IntroductionAnchor, #IntroductionAnchorSmallScreen').addClass('active');
-      console.log('highlighting About');
+      menuItem                  = '#IntroductionAnchor, #IntroductionAnchorSmallScreen';
+      resetNavHighlight(menuItem);
     }
 
     // Highlight 'Services (02)' item
     if (scrollPosition >= $("#Services").offset().top && scrollPosition <= $("#ClientHighlights").offset().top) {
-      resetNavHighlight();
-      $('#ServicesAnchor, #ServicesAnchorSmallScreen').addClass('active');
-      console.log('highlighting Services');
+      menuItem                  = '#ServicesAnchor, #ServicesAnchorSmallScreen';
+      resetNavHighlight(menuItem);
     }
 
     // Highlight 'Clients (03)' item
     if (scrollPosition >= $("#ClientHighlights").offset().top && scrollPosition <= $("#Contact").offset().top) {
-      resetNavHighlight();
-      $('#ClientHighlightsAnchor, #ClientHighlightsAnchorSmallScreen').addClass('active');
-      console.log('highlighting Clients');
+      menuItem                  = '#ClientHighlightsAnchor, #ClientHighlightsAnchorSmallScreen';
+      resetNavHighlight(menuItem);
     }
 
     // Highlight 'Contact (04)' item
     if (scrollPosition >= $('#Contact').offset().top) {
-      resetNavHighlight();
-      $('#ContactAnchor, #ContactAnchorSmallScreen').addClass('active');
-      console.log('highlighting Contact');
+      menuItem                  = '#ContactAnchor, #ContactAnchorSmallScreen';
+      resetNavHighlight(menuItem);
     }
 
   });
@@ -128,15 +120,6 @@ $(function() {
   });
 
 });
-
-/**
- * Removes the "active" class from all primary navigation items
- */
-function resetNavHighlight() {
-  'use strict';
-  console.log('resetting nav highlight');
-  $('#PrimaryNavigation ul li a, #PrimaryNavigationSmallScreen ul li a').removeClass('active');
-};
 
 /**
  * Sets the "active" class on the Service category navigation as well as the associated details area on click of the category
