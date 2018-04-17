@@ -33,8 +33,8 @@
 
           <!-- Publication Details -->
           <section id="PublicationDetails" class="publication details" role="region">
-            <time datetime="@getDateTimeValue(@Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
-              @getDateTimeValue(@Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
+            <time datetime="@getDateTimeValue(Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
+              @getDateTimeValue(Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
             </time>
             <span class="author" property="author">by @Model.GetAuthorTitle(Model.Author)</span>
           </section>
@@ -42,7 +42,7 @@
 
           <!-- Technology Advisory Content Sections -->
 
-          @if (!String.IsNullOrEmpty(@Model.Abstract)) {
+          @if (!String.IsNullOrEmpty(Model.Abstract)) {
             <!-- Abstract -->
             <section id="Abstract" class="abstract" role="region" property="about">
               @Html.Raw(Model.Abstract)
@@ -50,7 +50,7 @@
             <!-- /Abstract -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Strengths)) {
+          @if (!String.IsNullOrEmpty(Model.Strengths)) {
             <!-- Strengths Content -->
             <section id="Strengths" class="content section" role="region" property="articleSection">
               <header role="heading"><h2>Strengths</h2></header>
@@ -61,7 +61,7 @@
             <!-- /Strengths Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Weaknesses)) {
+          @if (!String.IsNullOrEmpty(Model.Weaknesses)) {
             <!-- Weaknesses Content -->
             <section id="Weaknesses" class="content section" role="region" property="articleSection">
               <header role="heading"><h2>Weaknesses</h2></header>
@@ -72,7 +72,7 @@
             <!-- /Weaknesses Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.Usage)) {
+          @if (!String.IsNullOrEmpty(Model.Usage)) {
             <!-- Usage Content -->
             <section id="Usage" class="content section" role="region" property="articleSection">
               <header role="heading"><h2>Usage</h2></header>
@@ -83,7 +83,7 @@
             <!-- /Usage Content -->
           }
 
-          @if (!String.IsNullOrEmpty(@Model.BestPractices)) {
+          @if (!String.IsNullOrEmpty(Model.BestPractices)) {
             <!-- Best Practices Content -->
             <section id="BestPractices" class="content section" role="region" property="articleSection">
               <header role="heading"><h2>Best Practices</h2></header>
@@ -105,17 +105,17 @@
           <!-- References -->
           <aside id="References" role="complementary">
 
-            @if (!String.IsNullOrEmpty(@Model.Website)) {
+            @if (!String.IsNullOrEmpty(Model.Website)) {
               <!-- Website -->
               <h3>Website</h3>
-              <p>@Html.Raw(getReference(@Model.Website))</p>
+              <p>@Html.Raw(getReference(Model.Website))</p>
               <!-- /Website -->
             }
 
-            @if (!String.IsNullOrEmpty(@Model.Documentation)) {
+            @if (!String.IsNullOrEmpty(Model.Documentation)) {
               <!-- Documentation -->
               <h3>Documentation</h3>
-              <p>@Html.Raw(getReference(@Model.Documentation))</p>
+              <p>@Html.Raw(getReference(Model.Documentation))</p>
               <!-- /Documentation -->
             }
 
@@ -124,7 +124,7 @@
               <h3>Additional Resources</h3>
               <ul id="Resources">
                 @foreach (var resource in Model.Resources) {
-                  <li>@Html.Raw(getReference(resource.URL, resource.Title))</li>
+                  <li>@Html.Raw(getReference(resource.Url, resource.Title))</li>
                 }
               </ul>
             }
@@ -189,13 +189,13 @@
     /*--------------------------------------------------------------------------------------------------------------------------
     | Establish variables
     \-------------------------------------------------------------------------------------------------------------------------*/
-    string formattedReference = value;
+    string formattedReference   = value;
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Verifies whether specific value is a valid URI, and if so, transforms it (and the label, if provided) into a text link
     \-------------------------------------------------------------------------------------------------------------------------*/
     if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
-      formattedReference = "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
+      formattedReference        = "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
     }
 
     /*--------------------------------------------------------------------------------------------------------------------------
