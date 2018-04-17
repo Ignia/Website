@@ -33,13 +33,12 @@
 
           <!-- Publication Details -->
           <section id="PublicationDetails" class="publication details" role="region">
-            <time datetime="@getDateTimeValue(Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
-              @getDateTimeValue(Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
+            <time datetime="@GetDateTimeValue(Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
+              @GetDateTimeValue(Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
             </time>
             <span class="author" property="author">by @Model.GetAuthorTitle(Model.Author)</span>
           </section>
           <!-- /Publication Details -->
-
           <!-- Technology Advisory Content Sections -->
 
           @if (!String.IsNullOrEmpty(Model.Abstract)) {
@@ -108,14 +107,14 @@
             @if (!String.IsNullOrEmpty(Model.Website)) {
               <!-- Website -->
               <h3>Website</h3>
-              <p>@Html.Raw(getReference(Model.Website))</p>
+              <p>@Html.Raw(WriteReference(Model.Website))</p>
               <!-- /Website -->
             }
 
             @if (!String.IsNullOrEmpty(Model.Documentation)) {
               <!-- Documentation -->
               <h3>Documentation</h3>
-              <p>@Html.Raw(getReference(Model.Documentation))</p>
+              <p>@Html.Raw(WriteReference(Model.Documentation))</p>
               <!-- /Documentation -->
             }
 
@@ -124,7 +123,7 @@
               <h3>Additional Resources</h3>
               <ul id="Resources">
                 @foreach (var resource in Model.Resources) {
-                  <li>@Html.Raw(getReference(resource.Url, resource.Title))</li>
+                  <li>@Html.Raw(WriteReference(resource.Url, resource.Title))</li>
                 }
               </ul>
             }
@@ -142,6 +141,20 @@
 
 }
 
+@helper WriteReference(string value, string label = null) {
+
+  @*----------------------------------------------------------------------------------------------------------------------------
+  | Write full link with label, if URL is valid; otherwise, just write the value
+  \---------------------------------------------------------------------------------------------------------------------------*@
+  @if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
+    <a href="@value" title="@((label != null) ? label : value)">@((label != null) ? label : value)</a>
+  }
+  else {
+    @value
+  }
+
+}
+
 @functions {
 
   /*============================================================================================================================
@@ -153,7 +166,7 @@
   /// <param name="value">String representation of the date/time Attribute value.</param>
   /// <param name="format">Specified date/time string format for return value.</param>
   /// <returns>String representation of the date and/or time, corresponding to the format provided.</returns>
-  string getDateTimeValue(string value, string format) {
+  string GetDateTimeValue(string value, string format) {
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Establish variables
@@ -172,31 +185,6 @@
     | Return output
     \-------------------------------------------------------------------------------------------------------------------------*/
     return dateTimeOutput;
-
-  }
-
-  /*============================================================================================================================
-  | GET REFERENCE
-  \---------------------------------------------------------------------------------------------------------------------------*/
-  /// <summary>
-  ///   Formats a sidebar reference Attribute as a link if the value is a valid URI; otherwise, returns the raw text.
-  /// </summary>
-  /// <param name="value"></param>
-  /// <param name="label"></param>
-  /// <returns></returns>
-  string getReference(string value, string label = null) {
-
-    /*--------------------------------------------------------------------------------------------------------------------------
-    | Verifies whether specific value is a valid URI, and if so, transforms it (and the label, if provided) into a text link
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
-      return "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
-    }
-
-    /*--------------------------------------------------------------------------------------------------------------------------
-    | Return output
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    return value;
 
   }
 
