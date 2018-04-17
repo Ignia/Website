@@ -146,7 +146,7 @@
   @*----------------------------------------------------------------------------------------------------------------------------
   | Write full link with label, if URL is valid; otherwise, just write the value
   \---------------------------------------------------------------------------------------------------------------------------*@
-  @if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
+  if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
     <a href="@value" title="@((label != null) ? label : value)">@((label != null) ? label : value)</a>
   }
   else {
