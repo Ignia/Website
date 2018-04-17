@@ -184,24 +184,19 @@
   /// <param name="value"></param>
   /// <param name="label"></param>
   /// <returns></returns>
-  string @getReference(string value, string label = null) {
-
-    /*--------------------------------------------------------------------------------------------------------------------------
-    | Establish variables
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    string formattedReference   = value;
+  string getReference(string value, string label = null) {
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Verifies whether specific value is a valid URI, and if so, transforms it (and the label, if provided) into a text link
     \-------------------------------------------------------------------------------------------------------------------------*/
     if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
-      formattedReference        = "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
+      return "<a href=\"" + value + "\" title=\"" + ((label != null) ? label : value) + "\">" + ((label != null) ? label : value) + "</a>";
     }
 
     /*--------------------------------------------------------------------------------------------------------------------------
     | Return output
     \-------------------------------------------------------------------------------------------------------------------------*/
-    return formattedReference;
+    return value;
 
   }
 
