@@ -17,7 +17,7 @@ namespace Ignia.Web.Models
   public class ResourceTopicViewModel : TopicViewModel {
 
     public string Description { get; set; }
-    public string URL { get; set; }
+    public string Url { get; set; }
 
   } // Class
 
