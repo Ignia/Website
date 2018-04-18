@@ -3,9 +3,10 @@
 | Client        Ignia, LLC
 | Project       Website
 \=============================================================================================================================*/
+using System;
+using System.Linq;
 using Ignia.Topics.Mapping;
 using Ignia.Topics.ViewModels;
-using System.Linq;
 
 namespace Ignia.Web.Models {
 
@@ -31,7 +32,7 @@ namespace Ignia.Web.Models {
     public TopicViewModelCollection<LookupListItemTopicViewModel> Authors { get; set; }
 
     /*==========================================================================================================================
-    | GET CATEGORY TITLE
+    | GET AUTHOR TITLE
     \-------------------------------------------------------------------------------------------------------------------------*/
     /// <summary>
     ///   Looks up an author from the <see cref="Authors"/> collection based on the <see
@@ -45,6 +46,37 @@ namespace Ignia.Web.Models {
         return Authors.Where(t => t.Key.Equals(author)).FirstOrDefault().Title;
       }
       return "Ignia, LLC";
+    }
+
+    /*==========================================================================================================================
+    | GET DATETIME VALUE
+    \-------------------------------------------------------------------------------------------------------------------------*/
+    /// <summary>
+    ///   Returns a date and/or time value based on the provided string value and date/time format
+    /// </summary>
+    /// <param name="value">String representation of the date/time Attribute value.</param>
+    /// <param name="format">Specified date/time string format for return value.</param>
+    /// <returns>String representation of the date and/or time, corresponding to the format provided.</returns>
+    public string GetDateTimeValue(string value, string format) {
+
+      /*------------------------------------------------------------------------------------------------------------------------
+      | Establish variables
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      string dateTimeOutput     = "";
+      DateTime dateTimeValue;
+
+      /*------------------------------------------------------------------------------------------------------------------------
+      | Verify DateTime value and set it to the output string based on the specified format
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      if (DateTime.TryParse(value, out dateTimeValue)) {
+        dateTimeOutput          = dateTimeValue.ToString(format);
+      }
+
+      /*------------------------------------------------------------------------------------------------------------------------
+      | Return output
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      return dateTimeOutput;
+
     }
 
   } // Class
