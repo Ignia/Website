@@ -6520,24 +6520,6 @@ body {
     @media screen and (max-width: 47.9375em) {
       .site.header .navigation a {
         font-size: 1.3125rem; } }
-    .site.header .navigation a.active {
-      border-bottom-color: #ef4a24;
-      -webkit-transition: border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
-      transition: border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms; }
-    .site.header .navigation a.ancillary {
-      border-color: rgba(145, 143, 138, 0.2);
-      -webkit-transition: border-bottom-color 0ms linear 0ms;
-      transition: border-bottom-color 0ms linear 0ms; }
-      .site.header .navigation a.ancillary:hover, .site.header .navigation a.ancillary:focus, .site.header .navigation a.ancillary:active {
-        border-color: rgba(59, 51, 47, 0.8); }
-    .site.header .navigation a .ordinal {
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: #bbbbbb; }
-      @media screen and (max-width: 59.9375em) {
-        .site.header .navigation a .ordinal {
-          display: block;
-          line-height: 1; } }
     .site.header .navigation a:hover, .site.header .navigation a:focus, .site.header .navigation a:active, .site.header .navigation a.active {
       color: #3b332f; }
       @media screen and (max-width: 59.9375em) {
@@ -6549,6 +6531,26 @@ body {
       .site.header .navigation a:hover .ordinal, .site.header .navigation a:focus .ordinal, .site.header .navigation a:active .ordinal, .site.header .navigation a.active .ordinal {
         -webkit-transition: display 100ms ease-in 200ms;
         transition: display 100ms ease-in 200ms; }
+    .site.header .navigation a:focus, .site.header .navigation a:active, .site.header .navigation a.active {
+      border-bottom-color: #ef4a24;
+      -webkit-transition: border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
+      transition: border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms; }
+    .site.header .navigation a.ancillary {
+      border-color: rgba(145, 143, 138, 0.2);
+      -webkit-transition: border-bottom-color 0ms linear 0ms;
+      transition: border-bottom-color 0ms linear 0ms; }
+      .site.header .navigation a.ancillary:hover {
+        border-color: #3b332f; }
+      .site.header .navigation a.ancillary:focus, .site.header .navigation a.ancillary:active {
+        border-color: #ef4a24; }
+    .site.header .navigation a .ordinal {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #bbbbbb; }
+      @media screen and (max-width: 59.9375em) {
+        .site.header .navigation a .ordinal {
+          display: block;
+          line-height: 1; } }
 
 .menu-toggle {
   color: rgba(167, 165, 161, 0.95); }

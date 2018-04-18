@@ -52,28 +52,6 @@
       @include breakpoint(767px down) {
         font-size               : rem-calc(21);
       }
-      &.active {
-        border-bottom-color     : $palette-red;
-        transition              : border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
-      }
-      &.ancillary {
-        border-color            : rgba(145, 143, 138, 0.2);
-        transition              : border-bottom-color 0ms linear 0ms;
-        &:hover,
-        &:focus,
-        &:active {
-          border-color          : rgba(59, 51, 47, 0.8);
-        }
-      }
-      .ordinal {
-        font-size               : rem-calc(12);
-        font-weight             : 600;
-        color                   : $palette-grey-lighter;
-        @include breakpoint(959px down) {
-          display               : block;
-          line-height           : 1;
-        }
-      }
       &:hover,
       &:focus,
       &:active,
@@ -87,6 +65,32 @@
         }
         .ordinal {
           transition            : display 100ms ease-in 200ms;
+        }
+      }
+      &:focus,
+      &:active,
+      &.active {
+        border-bottom-color     : $palette-red;
+        transition              : border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
+      }
+      &.ancillary {
+        border-color            : rgba(145, 143, 138, 0.2);
+        transition              : border-bottom-color 0ms linear 0ms;
+        &:hover {
+          border-color          : rgb(59, 51, 47);
+        }
+        &:focus,
+        &:active {
+          border-color          : $palette-red;
+        }
+      }
+      .ordinal {
+        font-size               : rem-calc(12);
+        font-weight             : 600;
+        color                   : $palette-grey-lighter;
+        @include breakpoint(959px down) {
+          display               : block;
+          line-height           : 1;
         }
       }
     }
