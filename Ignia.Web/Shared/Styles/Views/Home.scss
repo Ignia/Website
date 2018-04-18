@@ -449,8 +449,9 @@ footer.footer {
       header {
         display                 : table;
         border-bottom           : 0 none transparent;
-        margin                  : 2.5% 0;
-        padding                 : 2.5% 0 2.5% 5%;
+        margin                  : 0;
+        padding                 : 0 0 0 5%;
+        min-height              : initial;
         text-align              : left;
         background-color        : transparent;
         background-repeat       : no-repeat;
@@ -460,11 +461,11 @@ footer.footer {
           display               : none;
         }
         h2 {
-          display               : table-cell;
-          vertical-align        : middle;
+          margin-bottom         : 0;
+          padding               : rem-calc(16 0);
           font-family           : $headings-font-family;
           font-size             : rem-calc(25);
-          line-height           : 115%;
+          line-height           : 1;
           color                 : $palette-yellow;
           text-shadow           : 1px 1px 3px rgb(75, 75, 75);
         }
@@ -499,22 +500,7 @@ footer.footer {
           }
         }
         @include breakpoint(767px down) {
-          padding               : rem-calc(30 16 0 14);
-          &:first-child {
-            header {
-              background-image  : url('/Images/Home/Services.Circle1.png');
-            }
-          }
-          &:nth-child(2) {
-            header {
-              background-image  : url('/Images/Home/Services.Circle2.png');
-            }
-          }
-          &:nth-child(3) {
-            header {
-              background-image  : url('/Images/Home/Services.Circle3.png');
-            }
-          }
+          padding               : rem-calc(24 16 16 14);
         }
         &.active {
           display               : block;

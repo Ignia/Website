@@ -386,8 +386,9 @@ footer.footer {
       .panel.services section.details header {
         display: table;
         border-bottom: 0 none transparent;
-        margin: 2.5% 0;
-        padding: 2.5% 0 2.5% 5%;
+        margin: 0;
+        padding: 0 0 0 5%;
+        min-height: initial;
         text-align: left;
         background-color: transparent;
         background-repeat: no-repeat;
@@ -397,11 +398,11 @@ footer.footer {
           .panel.services section.details header {
             display: none; } }
         .panel.services section.details header h2 {
-          display: table-cell;
-          vertical-align: middle;
+          margin-bottom: 0;
+          padding: 1rem 0;
           font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
           font-size: 1.5625rem;
-          line-height: 115%;
+          line-height: 1;
           color: #f0ad20;
           text-shadow: 1px 1px 3px #4b4b4b; }
       @media screen and (min-width: 48em) {
@@ -431,13 +432,7 @@ footer.footer {
             border-color: transparent transparent #332e2c transparent; } }
       @media screen and (max-width: 47.9375em) {
         .panel.services section.details article {
-          padding: 1.875rem 1rem 0 0.875rem; }
-          .panel.services section.details article:first-child header {
-            background-image: url("/Images/Home/Services.Circle1.png"); }
-          .panel.services section.details article:nth-child(2) header {
-            background-image: url("/Images/Home/Services.Circle2.png"); }
-          .panel.services section.details article:nth-child(3) header {
-            background-image: url("/Images/Home/Services.Circle3.png"); } }
+          padding: 1.5rem 1rem 1rem 0.875rem; } }
       .panel.services section.details article.active {
         display: block; }
         .panel.services section.details article.active:first-child:before, .panel.services section.details article.active:first-child:after {
