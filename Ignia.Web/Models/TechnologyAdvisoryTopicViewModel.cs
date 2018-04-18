@@ -3,6 +3,7 @@
 | Client        Ignia, LLC
 | Project       Website
 \=============================================================================================================================*/
+using System.Collections.Generic;
 using Ignia.Topics.ViewModels;
 
 namespace Ignia.Web.Models {
@@ -22,6 +23,24 @@ namespace Ignia.Web.Models {
     public string Website { get; set; }
     public string Documentation { get; set; }
     public TopicViewModelCollection<ResourceTopicViewModel> Resources { get; set; }
+
+    /*==========================================================================================================================
+    | CONTENT SECTIONS
+    \-------------------------------------------------------------------------------------------------------------------------*/
+    /// <summary>
+    ///   Assembles a collection of named body content sections for the Technology Advisory Article view.
+    /// </summary>
+    public Dictionary<string, string> ContentSections {
+      get {
+        Dictionary<string, string> contentSections = new Dictionary<string, string>();
+        contentSections.Add("Abstract", Abstract);
+        contentSections.Add("Strengths", Strengths);
+        contentSections.Add("Weaknesses", Weaknesses);
+        contentSections.Add("Usage", Usage);
+        contentSections.Add("BestPractices", BestPractices);
+        return contentSections;
+      }
+    }
 
   } // Class
 
