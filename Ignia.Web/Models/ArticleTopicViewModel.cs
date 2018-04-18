@@ -49,7 +49,7 @@ namespace Ignia.Web.Models {
     }
 
     /*==========================================================================================================================
-    | GET DATETIME VALUE
+    | GET FORMATTED DATETIME VALUE
     \-------------------------------------------------------------------------------------------------------------------------*/
     /// <summary>
     ///   Returns a date and/or time value based on the provided string value and date/time format
@@ -57,7 +57,7 @@ namespace Ignia.Web.Models {
     /// <param name="value">String representation of the date/time Attribute value.</param>
     /// <param name="format">Specified date/time string format for return value.</param>
     /// <returns>String representation of the date and/or time, corresponding to the format provided.</returns>
-    public string GetDateTimeValue(string value, string format) {
+    public string GetFormattedDateTimeValue(string value, string format) {
 
       /*------------------------------------------------------------------------------------------------------------------------
       | Establish variables
