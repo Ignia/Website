@@ -76,6 +76,12 @@
       &.ancillary {
         border-color            : rgba(145, 143, 138, 0.2);
         transition              : border-bottom-color 0ms linear 0ms;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-image      : none;
+        }
         &:hover {
           border-color          : rgb(59, 51, 47);
         }

@@ -29,10 +29,11 @@ main {
 #PrimaryNavigationSmallScreen {
   ul {
     li {
-      a {
-        &.ancillary {
-          border-width          : 0;
-        }
+      a,
+      a:hover,
+      a:focus,
+      a:active,
+      a.active {
         .ordinal {
           display               : none;
         }
@@ -43,55 +44,9 @@ main {
     display                     : none;
   }
 }
-#PrimaryNavigation {
-  ul {
-    li {
-      a {
-        &:hover,
-        &:focus,
-        &:active,
-        &.active {
-          .ordinal {
-            display             : none;
-          }
-        }
-        &.ancillary {
-          position              : relative;
-          top                   : rem-calc(1);
-          border-bottom-width   : rem-calc(10);
-          border-style          : solid;
-          padding-bottom        : rem-calc(7);
-        }
-        .ordinal {
-          @include breakpoint(959px down) {
-            display             : none;
-          }
-        }
-      }
-    }
-  }
-}
 #PrimaryNavigationSmallScreen {
   &.position-top {
-    height                      : rem-calc(456);
-  }
-  ul {
-    top: rem-calc(44);
-    li {
-      a {
-        &.ancillary {
-          margin-left           : 0;
-          padding-top           : 0;
-          padding-bottom        : 0;
-          @include breakpoint(959px down) {
-            padding-left        : rem-calc(40);
-          }
-          @include breakpoint(767px down) {
-            padding-left        : rem-calc(24);
-          }
-        }
-      }
-    }
+    height                      : rem-calc(426);
   }
 }
 
@@ -114,40 +69,17 @@ footer {
         background-image        : none;
       }
       a {
-        border-bottom           : rem-calc(10) solid transparent;
-        font-family             : $headings-font-family;
-        font-size               : rem-calc(20);
-        font-weight             : 300;
         color                   : $palette-secondary-white;
-        text-transform          : none;
-        @include breakpoint(959px down) {
-          border-bottom-color   : transparent;
-        }
         &:hover,
         &:focus,
         &:active,
         &.active {
-          border-bottom-color   : $palette-red;
           color                 : darken($palette-secondary-white, 30.5%);
-          @include breakpoint(959px down) {
-            border-bottom-color : transparent;
-            background-position : rem-calc(-81 4);
-          }
+          background-position   : rem-calc(-81 4);
         }
         &.ancillary {
-          border                : 0 none transparent;
-          border-bottom-width   : rem-calc(10);
-          border-bottom-style   : solid;
-          border-bottom-color   : $palette-red;
+          border-color          : $palette-red;
           color                 : darken($palette-secondary-white, 30.5%);
-          &:hover,
-          &:focus,
-          &:active {
-            border              : 0 none transparent;
-            border-bottom-width : rem-calc(10);
-            border-bottom-style : solid;
-            border-bottom-color : $palette-red;
-          }
         }
       }
     }

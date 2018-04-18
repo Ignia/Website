@@ -6539,6 +6539,8 @@ body {
       border-color: rgba(145, 143, 138, 0.2);
       -webkit-transition: border-bottom-color 0ms linear 0ms;
       transition: border-bottom-color 0ms linear 0ms; }
+      .site.header .navigation a.ancillary:hover, .site.header .navigation a.ancillary:focus, .site.header .navigation a.ancillary:active, .site.header .navigation a.ancillary.active {
+        background-image: none; }
       .site.header .navigation a.ancillary:hover {
         border-color: #3b332f; }
       .site.header .navigation a.ancillary:focus, .site.header .navigation a.ancillary:active {
