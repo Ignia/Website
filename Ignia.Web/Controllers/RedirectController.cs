@@ -3,12 +3,7 @@
 | Client        Ignia, LLC
 | Project       Website
 \=============================================================================================================================*/
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Ignia.Topics;
 using Ignia.Topics.Repositories;
 
 namespace Ignia.Web.Controllers {
@@ -48,7 +43,7 @@ namespace Ignia.Web.Controllers {
       /*------------------------------------------------------------------------------------------------------------------------
       | Find the topic with the correct PageID.
       \-----------------------------------------------------------------------------------------------------------------------*/
-      var topic = _topicRepository.Load(topicId);
+      var topic                 = _topicRepository.Load(topicId);
 
       /*------------------------------------------------------------------------------------------------------------------------
       | Provide error handling
@@ -64,47 +59,6 @@ namespace Ignia.Web.Controllers {
 
     }
 
-    /*==========================================================================================================================
-    | REDIRECT
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    /// <summary>
-    ///   Redirect based on TopicID
-    /// </summary>
-    public ActionResult LegacyRedirect(int pageId) {
+  } // Class
 
-      /*------------------------------------------------------------------------------------------------------------------------
-      | Find the topic with the correct PageID.
-      \-----------------------------------------------------------------------------------------------------------------------*/
-      var topic = FindTopicWithAttribute(_topicRepository.Load(), "PageID", pageId.ToString());
-
-      /*------------------------------------------------------------------------------------------------------------------------
-      | Provide error handling
-      \-----------------------------------------------------------------------------------------------------------------------*/
-      if (topic == null) {
-        return HttpNotFound("Invalid PageID.");
-      }
-
-      /*------------------------------------------------------------------------------------------------------------------------
-      | Perform redirect
-      \-----------------------------------------------------------------------------------------------------------------------*/
-      return RedirectPermanent(topic.GetWebPath());
-
-    }
-
-    /*==========================================================================================================================
-    | METHOD: FIND TOPIC WITH ATTRIBUTE
-    \-------------------------------------------------------------------------------------------------------------------------*/
-    private Topic FindTopicWithAttribute(Topic rootTopic, string attributeName, string attributeValue) {
-      if (rootTopic.Attributes.GetValue(attributeName) == attributeValue) {
-        return rootTopic;
-      }
-      foreach (var topic in rootTopic.Children) {
-        var returnTopic = FindTopicWithAttribute(topic, attributeName, attributeValue);
-        if (returnTopic != null) return returnTopic;
-      }
-      return null;
-    }
-
-  } //Class
-
-} //Namespace
+} // Namespace
