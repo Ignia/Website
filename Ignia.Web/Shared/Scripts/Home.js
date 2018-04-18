@@ -36,9 +36,43 @@ $(function() {
   }
 
   /**
+   * Performs Contact form validation on load as well as during input
+   */
+  validateForm();
+  $('input, textarea').on('keyup', validateForm);
+
+  $('#ContactMessage').on('keyup, blur', function() {
+    checkMessageLength();
+  });
+
+  /**
+   * Sends Contact form data to the controller processing on submit
+   */
+  $("#ContactForm").on('submit', function(e) {
+    e.preventDefault();
+
+    var contactFormData         = $(this).serialize();
+
+    $.ajax({
+      type                      : 'POST',
+      data                      : contactFormData,
+      url                       : '/Contact/SendContactRequest'
+    })
+    .done(function(data, textStatus, jqXHR) {
+      $('#SendSuccessMessage').removeClass('hidden');
+    })
+    .fail(function() {
+      $('#SendErrorMessage').removeClass('hidden');
+    })
+    .always(function() {
+    });
+
+  });
+
+  /**
    * Highlights the "active" navigation as the corresponding panel comes into view
    */
-  $(window).scroll(function () {
+  $(window).scroll(function() {
 
     // Establish variables
     var
@@ -149,3 +183,42 @@ function selectService(selectedService) {
   }
 
 };
+
+/**
+ * Performs Contact form validation
+ */
+function validateForm() {
+  var inputsWithValues          = 0;
+
+  // Get all input fields except for type='submit'
+  var formInputs                = $("input:not([type='submit']), textarea");
+  var messageBody               = $('#ContactMessage');
+
+  // Increment the counter for inputs that have a value
+  formInputs.each(function (e) {
+    if ($(this).val()) {
+      inputsWithValues         += 1;
+    }
+  });
+
+  // If the form is valid, enable the submit button
+  if (inputsWithValues == formInputs.length && messageBody.val().length >= 20) {
+    $("button[type=submit]").prop("disabled", false);
+  } else {
+    $("button[type=submit]").prop("disabled", true);
+  }
+
+}
+
+/**
+ * Ensures the length of the Contact form message field
+ */
+function checkMessageLength() {
+  if ($('#ContactMessage').val().length < 20) {
+    $('#MessageLengthMessage').removeClass('hidden');
+  }
+  else {
+    $('#MessageLengthMessage').addClass('hidden');
+  }
+}
+
