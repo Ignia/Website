@@ -39,58 +39,11 @@
             <span class="author" property="author">by @Model.GetAuthorTitle(Model.Author)</span>
           </section>
           <!-- /Publication Details -->
+
           <!-- Technology Advisory Content Sections -->
 
-          @if (!String.IsNullOrEmpty(Model.Abstract)) {
-            <!-- Abstract -->
-            <section id="Abstract" class="abstract" role="region" property="about">
-              @Html.Raw(Model.Abstract)
-            </section>
-            <!-- /Abstract -->
-          }
-
-          @if (!String.IsNullOrEmpty(Model.Strengths)) {
-            <!-- Strengths Content -->
-            <section id="Strengths" class="content section" role="region" property="articleSection">
-              <header role="heading"><h2>Strengths</h2></header>
-              <div>
-                @Html.Raw(Model.Strengths)
-              </div>
-            </section>
-            <!-- /Strengths Content -->
-          }
-
-          @if (!String.IsNullOrEmpty(Model.Weaknesses)) {
-            <!-- Weaknesses Content -->
-            <section id="Weaknesses" class="content section" role="region" property="articleSection">
-              <header role="heading"><h2>Weaknesses</h2></header>
-              <div>
-                @Html.Raw(Model.Weaknesses)
-              </div>
-            </section>
-            <!-- /Weaknesses Content -->
-          }
-
-          @if (!String.IsNullOrEmpty(Model.Usage)) {
-            <!-- Usage Content -->
-            <section id="Usage" class="content section" role="region" property="articleSection">
-              <header role="heading"><h2>Usage</h2></header>
-              <div>
-                @Html.Raw(Model.Usage)
-              </div>
-            </section>
-            <!-- /Usage Content -->
-          }
-
-          @if (!String.IsNullOrEmpty(Model.BestPractices)) {
-            <!-- Best Practices Content -->
-            <section id="BestPractices" class="content section" role="region" property="articleSection">
-              <header role="heading"><h2>Best Practices</h2></header>
-              <div>
-                @Html.Raw(Model.BestPractices)
-              </div>
-            </section>
-            <!-- /Best Practices Content -->
+          @foreach(var contentSection in Model.ContentSections) {
+            @WriteContentSection(contentSection.Key, contentSection.Value)
           }
 
           <!-- /Technology Advisory Content Sections -->
@@ -138,6 +91,26 @@
 
     </div>
   </article>
+
+}
+
+@helper WriteContentSection(string sectionName, string sectionContent) {
+
+  @*----------------------------------------------------------------------------------------------------------------------------
+  | Write out the content section, if the contents are available
+  \---------------------------------------------------------------------------------------------------------------------------*@
+  if (!String.IsNullOrEmpty(sectionContent)) {
+
+    <!-- @sectionName -->
+    <section id="@sectionName" class="@(sectionName.Equals("Abstract") ? "abstract" : "content section")" role="region" property="@(sectionName.Equals("Abstract") ? "about" : "articleSection")">
+      @if (!sectionName.Equals("Abstract")) {
+        <header role="heading"><h2>@sectionName</h2></header>
+      }
+      @Html.Raw(sectionContent)
+    </section>
+    <!-- /@sectionName -->
+
+  }
 
 }
 
