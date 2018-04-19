@@ -21,8 +21,8 @@
 // LAYOUT
 //----------------------------------------------------------------------------------------------
 
-main {
-  min-height                    : rem-calc(768);
+body {
+  padding-bottom                : rem-calc(160);
 }
 
 #PrimaryNavigation,
@@ -48,6 +48,15 @@ main {
   &.position-top {
     height                      : rem-calc(426);
   }
+}
+
+#Footer {
+  position                      : absolute;
+  right                         : 0;
+  bottom                        : 0;
+  left                          : 0;
+  width                         : 100%;
+  height                        : rem-calc(160);
 }
 
 //----------------------------------------------------------------------------------------------
