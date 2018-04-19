@@ -104,18 +104,20 @@ main {
           @include breakpoint(767px down) {
             margin-top          : rem-calc(32);
           }
-          h4 {
-            margin              : rem-calc(15 0 0);
-            line-height         : 100%;
+          h3 {
+            margin-top          : rem-calc(16);
+            margin-bottom       : 0;
+            font-size           : rem-calc(18);
+            color               : $palette-secondary-grey-light;
             &:first-child {
               margin-top        : 0;
             }
           }
           p {
-            margin              : rem-calc(5 0);
+            margin              : rem-calc(0 0 8);
           }
           ul {
-            margin              : rem-calc(5 0 0);
+            margin              : rem-calc(0 0 8);
             padding-left        : rem-calc(20);
             list-style-type     : square;
           }
