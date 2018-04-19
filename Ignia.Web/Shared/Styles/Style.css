@@ -6450,17 +6450,6 @@ body {
     max-height: 8.125rem; }
     #MainContent .page.header .container {
       position: relative; }
-    #MainContent .page.header h1 {
-      display: inline-block;
-      position: absolute;
-      top: 0;
-      bottom: -0.625rem;
-      overflow: visible;
-      border-width: 0 0.0625rem;
-      margin: 0;
-      padding: 1.9375rem 0.9375rem 0.8125rem;
-      width: 8rem;
-      height: 5rem; }
 
 #Footer {
   padding: 3.125rem 0 5rem; }

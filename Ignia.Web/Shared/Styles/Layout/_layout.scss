@@ -284,18 +284,6 @@ body {
     .container {
       position                  : relative;
     }
-    h1 {
-      display                   : inline-block;
-      position                  : absolute;
-      top                       : 0;
-      bottom                    : rem-calc(-10);
-      overflow                  : visible;
-      border-width              : rem-calc(0 1);
-      margin                    : 0;
-      padding                   : rem-calc(31 15 13);
-      width                     : rem-calc(128);
-      height                    : rem-calc(80);
-    }
   }
 }
 
