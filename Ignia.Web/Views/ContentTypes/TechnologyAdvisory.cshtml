@@ -71,6 +71,50 @@
               <!-- /Documentation -->
             }
 
+            @if (Model.Targets.Count > 0) {
+              <!-- Target(s) -->
+              <h3>Target</h3>
+              <ul id="Targets">
+                @foreach(var target in Model.Targets) {
+                  <li>@target.Title</li>
+                }
+              </ul>
+              <!-- /Target(s) -->
+            }
+
+            @if (Model.Types.Count > 0) {
+              <!-- Type(s) -->
+              <h3>Type</h3>
+              <ul id="Types">
+                @foreach(var type in Model.Types) {
+                  <li>@type.Title</li>
+                }
+              </ul>
+              <!-- /Type(s) -->
+            }
+
+            @if (Model.Languages.Count > 0) {
+              <!-- Language(s) -->
+              <h3>Language</h3>
+              <ul id="Languages">
+                @foreach(var language in Model.Languages) {
+                  <li>@language.Title</li>
+                }
+              </ul>
+              <!-- /Language(s) -->
+            }
+
+            @if (Model.Locations.Count > 0) {
+              <!-- Location(s) -->
+              <h3>Location</h3>
+              <ul id="Locations">
+                @foreach(var location in Model.Locations) {
+                  <li>@location.Title</li>
+                }
+              </ul>
+              <!-- /Language(s) -->
+            }
+
             @if (Model.Resources.Count > 0) {
               <!-- Additional Resources -->
               <h3>Additional Resources</h3>
