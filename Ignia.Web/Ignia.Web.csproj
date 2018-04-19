@@ -2217,7 +2217,6 @@
     <Folder Include="!Admin\Topics\Common\Scripts\Vendor\ExtJS\resources\images\vista\dd\" />
     <Folder Include="!Admin\Topics\Common\Scripts\Vendor\ExtJS\resources\images\vista\tree\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\ApplicationInsights.config" />
@@ -2399,6 +2398,7 @@
     <Content Include="Shared\Styles\Views\Article.scss" />
     <Content Include="Views\Layout\Header.Library.cshtml" />
     <Content Include="Shared\Styles\Views\LibraryIndex.scss" />
+    <Content Include="Views\Shared\Sitemap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
