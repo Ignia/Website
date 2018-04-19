@@ -60,6 +60,7 @@ html {
 
 body {
   position                      : relative;
+  padding-bottom                : rem-calc(350);
   min-height                    : calc(100vh - 120px);
   @include breakpoint(959px down) {
     min-height                  : calc(100vh - 80px);
@@ -292,7 +293,13 @@ body {
 //----------------------------------------------------------------------------------------------
 
 #Footer {
+  position                      : absolute;
+  right                         : 0;
+  bottom                        : 0;
+  left                          : 0;
   padding                       : rem-calc(50 0 80);
+  width                         : 100%;
+  height                        : rem-calc(350);
   @include breakpoint(959px down) {
     padding-bottom              : rem-calc(100);
   }
@@ -305,5 +312,42 @@ body {
   .navbar,
   .copyright {
     @include clearfix;
+  }
+  .navigation {
+    padding                     : rem-calc(30 0 32);
+  }
+  .contact {
+    padding-left                : rem-calc(26);
+  }
+  .logo {
+    padding-right               : rem-calc(26);
+    text-align                  : right;
+    img {
+      max-width                 : rem-calc(115);
+    }
+  }
+  dl {
+    margin-bottom               : 0;
+    dt {
+      display                   : none;
+    }
+    dd {
+      padding-bottom            : rem-calc(8);
+      &:last-child {
+        padding-bottom          : 0;
+      }
+      .icon {
+        display                 : inline-block;
+        position                : relative;
+        margin-right            : rem-calc(4);
+        width                   : rem-calc(15);
+        text-align              : center;
+        &.phone,
+        &.linkedin,
+        &.facebook {
+          top                   : rem-calc(-1);
+        }
+      }
+    }
   }
 }

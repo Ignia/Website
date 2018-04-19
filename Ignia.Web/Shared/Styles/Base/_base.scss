@@ -57,17 +57,28 @@ body {
     background                  : $palette-white;
   }
   .navigation {
-    ul {
-      li {
-        a {
-          color                 : $palette-grey-dark;
-          &:hover,
-          &:focus,
-          &:active {
-            color               : $palette-red;
-          }
-        }
+    background-color            : $palette-white;
+    a {
+      color                     : $palette-secondary-grey-medium;
+      &:hover,
+      &:focus,
+      &:active {
+        color                   : $palette-secondary-grey-medium;
       }
+    }
+    p,
+    dd {
+      font-family               : $headings-font-family;
+      font-weight               : 500;
+    }
+    p.heading {
+      margin-bottom             : rem-calc(8);
+      font-size                 : rem-calc(16);
+      color                     : $palette-grey-dark;
+    }
+    dd {
+      font-size                 : rem-calc(14);
+      color                     : $palette-secondary-grey-medium;
     }
   }
   .copyright {

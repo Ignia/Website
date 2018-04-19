@@ -1,9 +1,49 @@
 ﻿@model Ignia.Web.Models.NavigationViewModel
 
 <!-- Site Footer Area -->
-<footer id="Footer" class="site footer" role="contentinfo">
+<footer id="Footer" class="site footer" role="contentinfo" vocab="http://schema.org" typeof="WPFooter">
   <div class="grid-container">
-    <div class="copyright"><small><span><i class="far fa-copyright"></i> Copyright @DateTime.Now.Year Ignia, LLC. All rights reserved.</span> <span>Ignia<i class="far fa-registered"></i> is a registered trademark of Ignia, LLC.</span></small></div>
+
+    <!-- Footer Navigation -->
+    <nav id="FooterNavigation" class="navigation grid-x" role="navigation">
+
+      <!-- Contact -->
+      <div class="contact cell large-4 medium-6">
+        <p class="link list heading">Contact Us</p>
+        <dl itemscope itemtype="http://schema.org/Organization">
+          <dt>Email</dt>
+          <dd itemprop="email"><a href="mailto:info@ignia.com" class="icon envelope"><i class="fas fa-envelope"></i></a> <a href="mailto:info@ignia.com" class="text">info@ignia.com</a></dd>
+          <dt>Phone</dt>
+          <dd itemprop="telephone"><a href="tel:18774979284" class="icon phone"><i class="fas fa-phone"></i></a> <a href="tel:18774979284" class="text">+1 (877) 497-9284</a></dd>
+        </dl>
+      </div>
+      <!-- /Contact -->
+
+      <!-- Social -->
+      <div class="social cell large-4 medium-6">
+        <p class="link list heading">Visit Us</p>
+        <dl itemscope itemtype="http://schema.org/Organization">
+          <dt>GitHub</dt>
+          <dd itemprop="url"><a href="https://github.com/Ignia" class="icon github"><i class="fab fa-github"></i></a> <a href="https://github.com/Ignia">GitHub</a></dd>
+          <dt>LinkedIn</dt>
+          <dd itemprop="url"><a href="https://www.linkedin.com/company/ignia-llc" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a> <a href="https://www.linkedin.com/company/ignia-llc">LinkedIn</a></dd>
+          <dt>Facebook</dt>
+          <dd itemprop="url"><a href="https://www.facebook.com/Ignia-279984238690468" class="icon facebook"><i class="fab fa-facebook-f"></i></a> <a href="https://www.facebook.com/Ignia-279984238690468">Facebook</a></dd>
+        </dl>
+      </div>
+      <!-- /Social -->
+
+      <!-- Logo -->
+      <div class="logo cell large-4">
+        <a href="/"><img src="~/Images/Logo.png" alt="Ignia, LLC" /></a>
+      </div>
+      <!-- /Logo -->
+
+    </nav>
+    <!-- /Footer Navigation -->
+
+    <div class="copyright grid-x" itemscope itemtype="http://schema.org/Organization"><small><i class="far fa-copyright"></i> Copyright <span property="copyrightYear">@DateTime.Now.Year</span> <span property="copyrightHolder" typeof="Organization"><span property="name">Ignia, LLC</span>. All rights reserved.</span> <span class="line-break">Ignia<i class="far fa-registered"></i> is a registered trademark of Ignia, LLC.</span></small></div>
+
   </div>
 </footer>
 <!-- /Site Footer Area -->
