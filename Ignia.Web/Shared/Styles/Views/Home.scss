@@ -290,7 +290,7 @@ footer.footer {
         @include breakpoint(960px) {
           display               : block;
           position              : relative;
-          top                   : rem-calc(284);
+          top                   : rem-calc(344);
           min-height            : rem-calc(800);
           background-color      : transparent;
           background-image      : url('/Images/Home/Tagline.Code.png');
@@ -301,7 +301,7 @@ footer.footer {
         }
         img {
           position              : relative;
-          top                   : rem-calc(-240);
+          top                   : rem-calc(-300);
           left                  : rem-calc(42);
         }
       }

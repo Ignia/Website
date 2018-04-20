@@ -151,14 +151,14 @@ $(function() {
     // Introduction panel code factory tween
     var
       codefactoryTween          = TweenMax.to(
-        '#Introduction section.factory img',
+        'img#FactoryWidget',
         7,
         { top: '0', autoCSS: true, ease: SlowMo.ease.config(0.1, 0.1, false) }
       ),
       codeFactoryScene          = new ScrollMagic.Scene({
-        triggerElement          : '#Introduction',
-        triggerHook             : 0,
-        offset                  : (-topOffset - 80),
+        triggerElement          : '#FactoryWidget',
+        triggerHook             : 1,
+      //offset                  : (-topOffset * 2),
         duration                : '1000',
       }).setTween(codefactoryTween).addTo(sceneController);
   }
