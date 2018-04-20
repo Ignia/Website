@@ -2065,9 +2065,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Error\Error.cshtml" />
-    <Content Include="Views\Layout\Footer.cshtml" />
     <Content Include="Views\Layout\_Layout.cshtml" />
-    <Content Include="Views\Layout\Menu.cshtml" />
     <Content Include="Shared\Styles\Style.scss" />
     <Content Include="Shared\Styles\_variables.scss" />
     <Content Include="Shared\Styles\Vendor\ZURB\components\_accordion-menu.scss" />
@@ -2392,9 +2390,11 @@
     <Content Include="Shared\Styles\Views\Library.scss" />
     <Content Include="Views\ContentTypes\TechnologyAdvisory.cshtml" />
     <Content Include="Shared\Styles\Views\Article.scss" />
-    <Content Include="Views\Layout\Header.Library.cshtml" />
     <Content Include="Shared\Styles\Views\LibraryIndex.scss" />
     <Content Include="Views\Shared\Sitemap.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.Library.cshtml" />
+    <Content Include="Views\Shared\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
