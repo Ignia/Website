@@ -6382,6 +6382,10 @@ body {
       #Header img.annotation {
         top: 13.375rem;
         left: 9.25rem; } }
+    @media screen and (max-width: 22.4375em) {
+      #Header img.annotation {
+        top: 12.5rem;
+        left: 7.25rem; } }
 
 #PrimaryNavigation ul,
 #PrimaryNavigationSmallScreen ul {
@@ -6433,6 +6437,9 @@ body {
     @media screen and (max-width: 59.9375em) {
       #PrimaryNavigationSmallScreen ul {
         top: 3.125rem; } }
+    @media screen and (max-width: 47.9375em) {
+      #PrimaryNavigationSmallScreen ul {
+        top: 2.0625rem; } }
     @media screen and (max-width: 47.9375em) {
       #PrimaryNavigationSmallScreen ul {
         top: 2.0625rem; } }
@@ -6586,6 +6593,9 @@ body {
     @media screen and (max-width: 47.9375em) {
       .site.header .navigation a {
         font-size: 1.3125rem; } }
+    @media screen and (max-width: 22.4375em) {
+      .site.header .navigation a {
+        font-size: 1rem; } }
     .site.header .navigation a:hover, .site.header .navigation a:focus, .site.header .navigation a:active, .site.header .navigation a.active {
       color: #3b332f; }
       @media screen and (max-width: 59.9375em) {

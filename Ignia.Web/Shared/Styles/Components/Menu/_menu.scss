@@ -52,6 +52,9 @@
       @include breakpoint(767px down) {
         font-size               : rem-calc(21);
       }
+      @include breakpoint(359px down) {
+        font-size               : rem-calc(16);
+      }
       &:hover,
       &:focus,
       &:active,

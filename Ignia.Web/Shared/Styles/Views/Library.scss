@@ -41,8 +41,16 @@
   }
 }
 #PrimaryNavigationSmallScreen {
-  &.position-top {
-    height                      : rem-calc(426);
+  ul {
+    @include breakpoint(959px down) {
+      top                       : rem-calc(66);
+    }
+    @include breakpoint(767px down) {
+      top                       : rem-calc(45);
+    }
+    @include breakpoint(359px down) {
+      top                       : rem-calc(46);
+    }
   }
 }
 

@@ -165,6 +165,10 @@ body {
         top                     : rem-calc(214);
         left                    : rem-calc(148);
       }
+      @include breakpoint(359px down) {
+        top                     : rem-calc(200);
+        left                    : rem-calc(116);
+      }
     }
   }
 }
@@ -240,6 +244,9 @@ body {
     position                    : relative;
     @include breakpoint(959px down) {
       top                       : rem-calc(50);
+    }
+    @include breakpoint(767px down) {
+      top                       : rem-calc(33);
     }
     @include breakpoint(767px down) {
       top                       : rem-calc(33);

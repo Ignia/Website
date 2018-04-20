@@ -29,8 +29,17 @@
 #PrimaryNavigationSmallScreen img.annotation {
   display: none; }
 
-#PrimaryNavigationSmallScreen.position-top {
-  height: 26.625rem; }
+@media screen and (max-width: 59.9375em) {
+  #PrimaryNavigationSmallScreen ul {
+    top: 4.125rem; } }
+
+@media screen and (max-width: 47.9375em) {
+  #PrimaryNavigationSmallScreen ul {
+    top: 2.8125rem; } }
+
+@media screen and (max-width: 22.4375em) {
+  #PrimaryNavigationSmallScreen ul {
+    top: 2.875rem; } }
 
 header.site,
 footer.site {
