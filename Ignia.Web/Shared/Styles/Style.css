@@ -6199,8 +6199,6 @@ body {
   background-color: #333333; }
 
 .header {
-  -webkit-box-shadow: 0 0 3px 0 rgba(153, 153, 153, 0.25);
-          box-shadow: 0 0 3px 0 rgba(153, 153, 153, 0.25);
   background: #f2eee6 url("/Images/Header/Header.Tile.png") repeat 0 0; }
   .header .logo {
     background: #ef4a24 url("/Images/Header/LogoBox.Tile.png") repeat 0 0; }
