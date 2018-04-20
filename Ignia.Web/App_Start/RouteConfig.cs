@@ -52,7 +52,7 @@ namespace Ignia.Web {
       routes.MapRoute(
         name: "TopicRedirect",
         url: "Topic/{topicId}",
-        defaults: new { controller = "Redirect", action = "TopicRedirect" }
+        defaults: new { controller = "Redirect", action = "Redirect" }
       );
 
       /*------------------------------------------------------------------------------------------------------------------------
