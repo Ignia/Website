@@ -83,9 +83,6 @@ namespace Ignia.Web {
         case (nameof(ErrorController)):
           return new ErrorController();
 
-        case (nameof(LayoutController)):
-          return new LayoutController(_topicRepository, mvcTopicRoutingService, _topicMappingService);
-
         case nameof(TopicController):
           return new TopicController(_topicRepository, mvcTopicRoutingService, _topicMappingService);
 
