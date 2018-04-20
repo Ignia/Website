@@ -62,7 +62,6 @@ $(function() {
 
   });
 
-
   /**
    * Creates scale and opacity tweens for featured client logos
    */
@@ -78,9 +77,32 @@ $(function() {
     ),
     clientLogosScene            = new ScrollMagic.Scene({
       triggerElement            : '#ClientHighlights section.logos',
-      duration                  : clientLogosDuration,
       triggerHook               : 1,
+      duration                  : clientLogosDuration
     }).setTween(clientLogosTween).addTo(sceneController);
+
+  /**
+   * Gradually fades the Contact form and callout as the footer comes into view
+   */
+  var
+    contactFormArea             = $('#Contact section'),
+    contactFormAreaTween        = TweenMax.to(
+      contactFormArea,
+      0.9,
+      { autoAlpha: 0.05, ease: Power0.easeNone }
+    ),
+    contactFormAreaScene        = new ScrollMagic.Scene({
+      triggerElement            : '#Footer',
+      triggerHook               : 1,
+    //offset                    : -topOffset,
+      duration                  : $('#Footer').height()
+    }).setTween(contactFormAreaTween);
+  if ($(window).width() > 959 && $('#Contact').height() < 1000) {
+    $('#Footer').addClass('transparent');
+    contactFormAreaScene.addTo(sceneController);
+  }
+
+
 
   /**
    * Set panel scenes for tablet and larger screens

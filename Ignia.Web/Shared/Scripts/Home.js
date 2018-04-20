@@ -31,9 +31,13 @@ $(function() {
    * Adds height to panels needing additional buffer for scroll-based functionality or animations (see Home.Animations.js), for
    * tablet or larger screens
    */
+  if (viewportWidth > 959) {
+    $('#Contact').height($('#Contact').height() + $('#Footer').height());
+  }
   if (viewportWidth > 767) {
     $('#Services').height($('#Services').height() * 1.25);
   }
+
 
   /**
    * Performs Contact form validation on load as well as during input
