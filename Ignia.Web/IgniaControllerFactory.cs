@@ -10,6 +10,7 @@ using Ignia.Web.Controllers;
 using Ignia.Topics.Mapping;
 using Ignia.Topics.Web;
 using Ignia.Topics.Web.Mvc;
+using Ignia.Topics.Web.Mvc.Controllers;
 using Ignia.Topics;
 using Ignia.Topics.Repositories;
 
@@ -77,7 +78,7 @@ namespace Ignia.Web {
           return new RedirectController(_topicRepository);
 
         case (nameof(SitemapController)):
-          return new SitemapController(_topicRepository, null);
+          return new SitemapController(_topicRepository);
 
         case (nameof(ErrorController)):
           return new ErrorController();
@@ -101,4 +102,5 @@ namespace Ignia.Web {
     }
 
   } // Class
+
 } // Namespace
