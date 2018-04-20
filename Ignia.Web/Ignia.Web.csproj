@@ -207,7 +207,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Content>
-    <Compile Include="App_Code\TopicEntityViewModel.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="bin\Ignia.Topics.ViewModels.dll" />
     <Content Include="Common\Global\Controls\FormField.ascx.cs">
@@ -216,10 +215,6 @@
     </Content>
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\FallbackController.cs" />
-    <Compile Include="Controllers\LayoutController.cs" />
-    <Compile Include="Controllers\RedirectController.cs" />
-    <Compile Include="Controllers\SitemapController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2216,6 +2211,7 @@
   <ItemGroup>
     <Folder Include="!Admin\Topics\Common\Scripts\Vendor\ExtJS\resources\images\vista\dd\" />
     <Folder Include="!Admin\Topics\Common\Scripts\Vendor\ExtJS\resources\images\vista\tree\" />
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
