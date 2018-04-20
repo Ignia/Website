@@ -21,10 +21,6 @@
 // LAYOUT
 //----------------------------------------------------------------------------------------------
 
-body {
-  padding-bottom                : rem-calc(350);
-}
-
 #PrimaryNavigation,
 #PrimaryNavigationSmallScreen {
   ul {
@@ -48,15 +44,6 @@ body {
   &.position-top {
     height                      : rem-calc(426);
   }
-}
-
-#Footer {
-  position                      : absolute;
-  right                         : 0;
-  bottom                        : 0;
-  left                          : 0;
-  width                         : 100%;
-  height                        : rem-calc(350);
 }
 
 //----------------------------------------------------------------------------------------------

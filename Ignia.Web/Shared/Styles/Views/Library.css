@@ -13,9 +13,6 @@
 .no-transform {
   text-transform: none; }
 
-body {
-  padding-bottom: 21.875rem; }
-
 #PrimaryNavigation ul li a .ordinal,
 #PrimaryNavigation ul li a:hover .ordinal,
 #PrimaryNavigation ul li a:focus .ordinal,
@@ -34,14 +31,6 @@ body {
 
 #PrimaryNavigationSmallScreen.position-top {
   height: 26.625rem; }
-
-#Footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 21.875rem; }
 
 header.site,
 footer.site {

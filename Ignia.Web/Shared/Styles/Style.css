@@ -6211,6 +6211,8 @@ body {
 
 .footer {
   background: #332e2c; }
+  .footer.transparent {
+    background: transparent; }
   .footer .navbar {
     background: #f2eee6; }
   .footer .navigation {
@@ -6283,13 +6285,16 @@ html {
 
 body {
   position: relative;
-  padding-bottom: 21.875rem;
+  padding-bottom: 18.625rem;
   min-height: -webkit-calc(100vh - 120px);
   min-height: calc(100vh - 120px); }
   @media screen and (max-width: 59.9375em) {
     body {
       min-height: -webkit-calc(100vh - 80px);
       min-height: calc(100vh - 80px); } }
+  @media screen and (max-width: 47.9375em) {
+    body {
+      padding-bottom: 21.0625rem; } }
 
 .header {
   position: relative; }
@@ -6470,18 +6475,16 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 3.125rem 0 5rem;
+  padding: 3rem 0;
   width: 100%;
-  height: 21.875rem; }
-  @media screen and (max-width: 59.9375em) {
-    #Footer {
-      padding-bottom: 6.25rem; } }
+  height: 18.625rem; }
   @media screen and (max-width: 47.9375em) {
     #Footer {
-      padding-bottom: 1.875rem; } }
+      padding: 2rem 0;
+      height: 21.0625rem; } }
   @media screen and (max-width: 22.4375em) {
     #Footer {
-      padding-bottom: 0.625rem; } }
+      padding: 1rem 0; } }
   #Footer .navbar::before, #Footer .navbar::after,
   #Footer .copyright::before,
   #Footer .copyright::after {
@@ -6497,13 +6500,28 @@ body {
     clear: both; }
   #Footer .navigation {
     padding: 1.875rem 0 2rem; }
+    @media screen and (max-width: 47.9375em) {
+      #Footer .navigation {
+        padding: 1.375rem 0 1.5rem; } }
+  @media screen and (max-width: 47.9375em) {
+    #Footer .contact,
+    #Footer .social {
+      text-align: center; } }
   #Footer .contact {
     padding-left: 1.625rem; }
   #Footer .logo {
     padding-right: 1.625rem;
     text-align: right; }
+    @media screen and (max-width: 47.9375em) {
+      #Footer .logo {
+        padding-right: 0;
+        padding-bottom: 1.5rem;
+        text-align: center; } }
     #Footer .logo img {
       max-width: 7.1875rem; }
+      @media screen and (max-width: 47.9375em) {
+        #Footer .logo img {
+          max-width: 5.15625rem; } }
   #Footer dl {
     margin-bottom: 0; }
     #Footer dl dt {
@@ -6520,6 +6538,13 @@ body {
         text-align: center; }
         #Footer dl dd .icon.phone, #Footer dl dd .icon.linkedin, #Footer dl dd .icon.facebook {
           top: -0.0625rem; }
+  @media screen and (max-width: 47.9375em) {
+    #Footer small {
+      display: inline-block;
+      margin: 0 auto;
+      text-align: center; }
+      #Footer small .line-break {
+        display: block; } }
 
 .hidden {
   display: none; }

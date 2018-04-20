@@ -53,6 +53,9 @@ body {
 
 .footer {
   background                    : rgb(51, 46, 44);              // #332E2C
+  &.transparent {
+    background                  : transparent;
+  }
   .navbar {
     background                  : $palette-white;
   }

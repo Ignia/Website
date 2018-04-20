@@ -60,10 +60,13 @@ html {
 
 body {
   position                      : relative;
-  padding-bottom                : rem-calc(350);
+  padding-bottom                : rem-calc(298);
   min-height                    : calc(100vh - 120px);
   @include breakpoint(959px down) {
     min-height                  : calc(100vh - 80px);
+  }
+  @include breakpoint(767px down) {
+    padding-bottom              : rem-calc(337);
   }
 }
 
@@ -297,17 +300,15 @@ body {
   right                         : 0;
   bottom                        : 0;
   left                          : 0;
-  padding                       : rem-calc(50 0 80);
+  padding                       : rem-calc(48 0);
   width                         : 100%;
-  height                        : rem-calc(350);
-  @include breakpoint(959px down) {
-    padding-bottom              : rem-calc(100);
-  }
+  height                        : rem-calc(298);
   @include breakpoint(767px down) {
-    padding-bottom              : rem-calc(30);
+    padding                     : rem-calc(32 0);
+    height                      : rem-calc(337);
   }
   @include breakpoint(359px down) {
-    padding-bottom              : rem-calc(10);
+    padding                     : rem-calc(16 0);
   }
   .navbar,
   .copyright {
@@ -315,6 +316,15 @@ body {
   }
   .navigation {
     padding                     : rem-calc(30 0 32);
+    @include breakpoint(767px down) {
+      padding                   : rem-calc(22 0 24);
+    }
+  }
+  .contact,
+  .social {
+    @include breakpoint(767px down) {
+      text-align                : center;
+    }
   }
   .contact {
     padding-left                : rem-calc(26);
@@ -322,8 +332,16 @@ body {
   .logo {
     padding-right               : rem-calc(26);
     text-align                  : right;
+    @include breakpoint(767px down) {
+      padding-right             : 0;
+      padding-bottom            : rem-calc(24);
+      text-align                : center;
+    }
     img {
       max-width                 : rem-calc(115);
+      @include breakpoint(767px down) {
+        max-width               : rem-calc(82.5);
+      }
     }
   }
   dl {
@@ -347,6 +365,16 @@ body {
         &.facebook {
           top                   : rem-calc(-1);
         }
+      }
+    }
+  }
+  @include breakpoint(767px down) {
+    small {
+      display                   : inline-block;
+      margin                    : 0 auto;
+      text-align                : center;
+      .line-break {
+        display                 : block;
       }
     }
   }
