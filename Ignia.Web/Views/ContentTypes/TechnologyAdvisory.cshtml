@@ -1,5 +1,7 @@
 ﻿@model TechnologyAdvisoryTopicViewModel
 
+@using Ignia.Topics.ViewModels
+
 @{
   Layout = "~/Views/Layout/_Layout.cshtml";
 }
@@ -71,49 +73,13 @@
               <!-- /Documentation -->
             }
 
-            @if (Model.Targets.Count > 0) {
-              <!-- Target(s) -->
-              <h3>Target</h3>
-              <ul id="Targets">
-                @foreach(var target in Model.Targets) {
-                  <li>@target.Title</li>
-                }
-              </ul>
-              <!-- /Target(s) -->
-            }
+            @WriteCategoryProperties("Target", Model.Targets)
 
-            @if (Model.Types.Count > 0) {
-              <!-- Type(s) -->
-              <h3>Type</h3>
-              <ul id="Types">
-                @foreach(var type in Model.Types) {
-                  <li>@type.Title</li>
-                }
-              </ul>
-              <!-- /Type(s) -->
-            }
+            @WriteCategoryProperties("Type", Model.Types)
 
-            @if (Model.Languages.Count > 0) {
-              <!-- Language(s) -->
-              <h3>Language</h3>
-              <ul id="Languages">
-                @foreach(var language in Model.Languages) {
-                  <li>@language.Title</li>
-                }
-              </ul>
-              <!-- /Language(s) -->
-            }
+            @WriteCategoryProperties("Language", Model.Languages)
 
-            @if (Model.Locations.Count > 0) {
-              <!-- Location(s) -->
-              <h3>Location</h3>
-              <ul id="Locations">
-                @foreach(var location in Model.Locations) {
-                  <li>@location.Title</li>
-                }
-              </ul>
-              <!-- /Language(s) -->
-            }
+            @WriteCategoryProperties("Location", Model.Locations)
 
             @if (Model.Resources.Count > 0) {
               <!-- Additional Resources -->
@@ -168,6 +134,26 @@
   }
   else {
     @value
+  }
+
+}
+
+@helper WriteCategoryProperties(string category, TopicViewModelCollection<TopicViewModel> categoryProperties) {
+
+  if (categoryProperties.Count > 0) {
+    <!-- @(category + "(s)") -->
+    <h3>@category@(categoryProperties.Count > 1 ? "s" : "")</h3>
+    if (categoryProperties.Count > 1) {
+      <ul id="@(category + "s")">
+        @foreach(var categoryProperty in categoryProperties) {
+          <li>@categoryProperty.Title</li>
+        }
+      </ul>
+    }
+    else {
+      <p>@categoryProperties.FirstOrDefault().Title</p>
+    }
+    <!-- /@(category + "(s)") -->
   }
 
 }
