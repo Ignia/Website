@@ -2393,7 +2393,7 @@
     <Content Include="Shared\Styles\Views\LibraryIndex.scss" />
     <Content Include="Views\Shared\Sitemap.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
-    <Content Include="Views\Shared\Header.Library.cshtml" />
+    <Content Include="Views\Shared\PageHeader.Library.cshtml" />
     <Content Include="Views\Shared\Menu.cshtml" />
   </ItemGroup>
   <ItemGroup>
