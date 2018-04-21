@@ -152,14 +152,14 @@ $(function() {
     var
       codefactoryTween          = TweenMax.to(
         'img#FactoryWidget',
-        7,
-        { top: '0', autoCSS: true, ease: SlowMo.ease.config(0.1, 0.1, false) }
+        10,
+        { y: '260px', ease: Linear.easeNone, force3D: true }
       ),
       codeFactoryScene          = new ScrollMagic.Scene({
         triggerElement          : '#FactoryWidget',
         triggerHook             : 1,
-      //offset                  : (-topOffset * 2),
-        duration                : '1000',
+        offset                  : 10,
+        duration                : '750',
       }).setTween(codefactoryTween).addTo(sceneController);
   }
 

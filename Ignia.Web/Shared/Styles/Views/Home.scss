@@ -290,18 +290,18 @@ footer.footer {
         @include breakpoint(960px) {
           display               : block;
           position              : relative;
-          top                   : rem-calc(354);
+          top                   : rem-calc(284);
           min-height            : rem-calc(800);
           background-color      : transparent;
           background-image      : url('/Images/Home/Tagline.Code.png');
           background-repeat     : no-repeat;
-          background-position-x : calc(50vw - 434px);
+          background-position-x : calc(50vw - 438px);
           background-position-y : 77.5%;
           background-attachment : fixed;
         }
         img {
           position              : relative;
-          top                   : rem-calc(-300);
+          top                   : rem-calc(-260);
           left                  : rem-calc(42);
         }
       }
