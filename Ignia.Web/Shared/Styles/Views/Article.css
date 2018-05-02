@@ -62,7 +62,6 @@ main .page.header {
     .library.article .publication.details .pubdate,
     .library.article .publication.details .author {
       position: absolute;
-      font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
       font-size: 0.875rem;
       line-height: 100%;
       font-weight: 400;
