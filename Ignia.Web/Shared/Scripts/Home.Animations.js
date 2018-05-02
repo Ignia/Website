@@ -67,7 +67,7 @@ $(function() {
    */
   var
     clientLogosItem             = $('#ClientHighlights section.logos ul li'),
-    clientLogosDuration         = ($('#ClientHighlights').innerHeight() * 0.7),
+    clientLogosDuration         = ($('#ClientHighlights').innerHeight() * 0.5),
     clientLogosTween            = TweenMax.staggerFromTo(
       clientLogosItem,
       3,
@@ -76,8 +76,9 @@ $(function() {
       0.25
     ),
     clientLogosScene            = new ScrollMagic.Scene({
-      triggerElement            : '#ClientHighlights section.logos',
+      triggerElement            : '#ClientHighlights section.tagline h2.subheadline',
       triggerHook               : 1,
+      offset                    : -48,
       duration                  : clientLogosDuration
     }).setTween(clientLogosTween).addTo(sceneController);
 
