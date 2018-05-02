@@ -95,12 +95,11 @@ $(function() {
     contactFormAreaScene        = new ScrollMagic.Scene({
       triggerElement            : '#Footer',
       triggerHook               : 1,
-    //offset                    : -topOffset,
       duration                  : $('#Footer').height()
     }).setTween(contactFormAreaTween);
   if ($(window).width() > 959 && $('#Contact').height() < 1000) {
-    $('#Footer').addClass('transparent');
-    contactFormAreaScene.addTo(sceneController);
+    // $('#Footer').addClass('transparent');
+    // contactFormAreaScene.addTo(sceneController);
   }
 
   /**
