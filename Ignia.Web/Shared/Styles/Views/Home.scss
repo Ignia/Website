@@ -804,8 +804,8 @@ footer.footer {
     .sidebar.right {
       @include clearfix;
       position                  : relative;
-      top                       : rem-calc(44);
-      right                     : rem-calc(10);
+      top                       : rem-calc(100);
+      right                     : 0;
       float                     : right;
       border-radius             : 3px;
       padding                   : rem-calc(30 0 30 35);
@@ -834,8 +834,8 @@ footer.footer {
           }
         }
         .svg-inline--fa {
-          margin-right          : rem-calc(5);
-          width                 : rem-calc(28);
+          margin-right          : rem-calc(12);
+          width                 : rem-calc(20);
           height                : auto;
           @include breakpoint(767px down) {
             width               : rem-calc(18);
@@ -859,9 +859,9 @@ footer.footer {
           }
           &.text {
             @extend .uppercase;
-            top                 : rem-calc(-7);
+            top                 : rem-calc(-4);
             @include breakpoint(479px down) {
-              top               : rem-calc(5);
+              top               : rem-calc(6);
             }
             @include breakpoint(360px down) {
               top               : rem-calc(4);
@@ -869,13 +869,10 @@ footer.footer {
           }
         }
         &:nth-child(2) {
-          @include breakpoint(360px down) {
-            margin-left         : rem-calc(3);
-          }
           a.text {
-            top                 : rem-calc(-11);
+            top                 : rem-calc(-6);
             @include breakpoint(479px down) {
-              top               : rem-calc(5);
+              top               : rem-calc(6);
             }
             @include breakpoint(360px down) {
               top               : rem-calc(4);
