@@ -31,7 +31,7 @@
         </header>
 
         <!-- Primary Article Body -->
-        <div class="medium-7 cell contents primary">
+        <div id="ArticleBody" class="medium-7 cell contents primary">
 
           <!-- Publication Details -->
           <section id="PublicationDetails" class="publication details" role="region">
@@ -54,7 +54,7 @@
         <!-- /Primary Article Body -->
 
         <!-- Callouts -->
-        <div class="medium-5 large-4 large-offset-1 cell contents ancillary">
+        <div id="ArticleMetadata" class="medium-5 large-4 large-offset-1 cell contents ancillary">
 
           <!-- References -->
           <aside id="References" role="complementary">
@@ -102,6 +102,10 @@
     </div>
   </article>
 
+}
+
+@section Scripts {
+  <script src="/Shared/Scripts/Library.min.js" async defer></script>
 }
 
 @helper WriteContentSection(string sectionName, string sectionContent) {

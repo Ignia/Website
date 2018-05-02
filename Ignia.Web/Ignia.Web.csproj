@@ -1969,6 +1969,9 @@
     <Content Include="Shared\Scripts\Home.Animations.js" />
     <Content Include="Shared\Scripts\Home.js" />
     <Content Include="Shared\Scripts\Home.min.js" />
+    <Content Include="Shared\Scripts\Library.Animations.js" />
+    <Content Include="Shared\Scripts\Library.js" />
+    <Content Include="Shared\Scripts\Library.min.js" />
     <Content Include="Shared\Scripts\Menu.js" />
     <Content Include="Shared\Scripts\Scripts.min.js" />
     <Content Include="Shared\Scripts\Vendor\jQuery\jquery-3.3.1.js" />
