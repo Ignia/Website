@@ -51,13 +51,13 @@ footer.site {
   background-image: none; }
 
 .header.site .navigation a {
-  color: white; }
+  color: #a6a6a6; }
   .header.site .navigation a:hover, .header.site .navigation a:focus, .header.site .navigation a:active, .header.site .navigation a.active {
-    color: #b1b1b1;
+    color: #f2eee6;
     background-position: -5.0625rem 0.25rem; }
   .header.site .navigation a.ancillary {
     border-color: #ef4a24;
-    color: #b1b1b1; }
+    color: #f2eee6; }
 
 section[itemprop="mainContentOfPage"] > header {
   min-height: 4.375rem; }
