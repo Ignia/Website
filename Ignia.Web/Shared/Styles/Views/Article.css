@@ -20,7 +20,7 @@ main .page.header {
   padding: 3rem 0;
   font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   color: black;
-  background-color: white; }
+  background-color: #f2eee6; }
   .library.article header {
     margin-bottom: 1.25rem; }
   .library.article h1,
@@ -48,7 +48,7 @@ main .page.header {
     padding: 0.75rem 0 0.875rem;
     border-radius: 0.5rem;
     min-height: 2.5rem;
-    background: whitesmoke; }
+    background: #cccccc; }
     .library.article .publication.details::before, .library.article .publication.details::after {
       display: table;
       content: ' ';

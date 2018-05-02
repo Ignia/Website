@@ -40,7 +40,7 @@ main {
     padding                     : rem-calc(48 0);
     font-family                 : $body-font-family;
     color                       : $palette-black;
-    background-color            : $palette-secondary-white;
+    background-color            : $palette-white;
     header {
       margin-bottom             : rem-calc(20);
     }
@@ -75,7 +75,7 @@ main {
         padding                 : rem-calc(12 0 14);
         border-radius           : rem-calc(8);
         min-height              : rem-calc(40);
-        background              : $palette-secondary-grey-lightest;
+        background              : $palette-secondary-grey-lighter;
         .pubdate,
         .author {
           position              : absolute;
