@@ -103,8 +103,6 @@ $(function() {
     contactFormAreaScene.addTo(sceneController);
   }
 
-
-
   /**
    * Set panel scenes for tablet and larger screens
    */
@@ -125,11 +123,16 @@ $(function() {
     }).setPin('#Services').addTo(sceneController);
 
     // Contact panel pin
-    var contactPinScene         = new ScrollMagic.Scene({
-      triggerElement            : '#Contact',
-      triggerHook               : 0,
-      offset                    : -topOffset
-    }).setPin('#Contact', { pushFollowers: true }).addTo(sceneController);
+    var
+      contactPanelAllowance     = ($('#Header').outerHeight() + $('#Contact > .container').outerHeight() + $('#Footer').outerHeight()),
+      contactPinScene           = new ScrollMagic.Scene({
+        triggerElement          : '#Contact',
+        triggerHook             : 0,
+        offset                  : -topOffset
+      }).setPin('#Contact', { pushFollowers: true });
+    if (contactPanelAllowance <= $(window).outerHeight()) {
+      contactPinScene.addTo(sceneController);
+    }
 
   }
 

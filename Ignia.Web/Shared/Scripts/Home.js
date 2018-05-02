@@ -28,16 +28,19 @@ $(function() {
     clientsSmoothScroll         = new Foundation.SmoothScroll($('#ClientsArrow'), smoothScrollOptions);
 
   /**
-   * Adds height to panels needing additional buffer for scroll-based functionality or animations (see Home.Animations.js), for
+   * Adjusts height for panels needing additional buffer for scroll-based functionality or animations (see Home.Animations.js), for
    * tablet or larger screens
    */
-  if (viewportWidth > 959) {
-    $('#Contact').height($('#Contact').height() + $('#Footer').height());
-  }
   if (viewportWidth > 767) {
+    // Add buffer height to Services panel to allow for content scrolling
     $('#Services').height($('#Services').height() * 1.25);
   }
-
+  // Reduce height for Contact panel to account for footer
+  var contactPanelAllowance     = ($('#Header').outerHeight() + $('#Contact > .container').outerHeight() + $('#Footer').outerHeight());
+  if (contactPanelAllowance <= $(window).outerHeight()) {
+    var adjustedHeight = ($('#Contact').height() - $('#Footer').outerHeight());
+    $('#Contact').height(adjustedHeight).css('min-height', adjustedHeight);
+  }
 
   /**
    * Performs Contact form validation on load as well as during input
