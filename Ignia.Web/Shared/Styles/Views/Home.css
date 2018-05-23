@@ -262,6 +262,7 @@ footer.footer {
       .panel.introduction section.body {
         padding-right: 2.5rem; } }
   .panel.services {
+    padding-bottom: 3.75rem;
     background: #332e2c; }
     .panel.services header {
       border-color: #a6a19c;
@@ -318,7 +319,8 @@ footer.footer {
             clear: both; }
       .panel.services article p,
       .panel.services article aside {
-        padding-left: 3rem; }
+        padding-left: 3rem;
+        line-height: 1.8; }
       .panel.services article p {
         color: #f2eee6; }
       .panel.services article aside {
@@ -336,6 +338,7 @@ footer.footer {
           list-style-type: square;
           margin-bottom: 0; }
           .panel.services article aside ul li span {
+            line-height: 1.8;
             color: #f2eee6; }
   .panel.clients {
     background: #f0ad20 url("/Images/Home/Clients.Tile.png") repeat center top; }

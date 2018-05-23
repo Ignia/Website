@@ -316,6 +316,7 @@ footer.footer {
 
   // Services
   &.services {
+    padding-bottom              : rem-calc(60);
     background                  : $palette-grey-darker;
     header {
       border-color              : rgb(166, 161, 156);
@@ -390,6 +391,7 @@ footer.footer {
       p,
       aside {
         padding-left            : rem-calc(48);
+        line-height             : 1.8;
       }
       p {
         color                   : $palette-white;
@@ -413,6 +415,7 @@ footer.footer {
           margin-bottom         : 0;
           li {
             span {
+              line-height       : 1.8;
               color             : $palette-white;
             }
           }
