@@ -299,6 +299,9 @@ footer.footer {
         color: #ef4a24; }
     .panel.services article {
       margin-top: 3.75rem; }
+      @media screen and (max-width: 47.9375em) {
+        .panel.services article {
+          margin-top: 2.25rem; } }
       .panel.services article.is-active header {
         border-right-color: #f0ad20; }
         .panel.services article.is-active header h2 {
@@ -306,21 +309,35 @@ footer.footer {
       .panel.services article header {
         border-right: 1px solid #a6a19c;
         border-bottom-width: 0; }
+        @media screen and (max-width: 47.9375em) {
+          .panel.services article header {
+            border-right: 0 none transparent;
+            min-height: 0; } }
         .panel.services article header h2 {
           margin: 0;
           padding: 0 3rem 0 0;
           text-align: right;
           font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
-          font-size: 1.5625rem;
+          font-size: 1.5rem;
           line-height: 1.4;
           color: #7f7b76; }
-          .panel.services article header h2 span {
-            display: block;
-            clear: both; }
+          @media screen and (max-width: 47.9375em) {
+            .panel.services article header h2 {
+              padding: 0 0 1rem 0;
+              text-align: center;
+              color: #f0ad20; } }
+          @media screen and (min-width: 48em) {
+            .panel.services article header h2 span {
+              display: block;
+              clear: both; } }
       .panel.services article p,
       .panel.services article aside {
         padding-left: 3rem;
         line-height: 1.8; }
+        @media screen and (max-width: 47.9375em) {
+          .panel.services article p,
+          .panel.services article aside {
+            padding-left: 0; } }
       .panel.services article p {
         color: #f2eee6; }
       .panel.services article aside {
