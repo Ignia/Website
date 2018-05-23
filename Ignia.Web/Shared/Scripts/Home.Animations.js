@@ -115,7 +115,7 @@ $(function() {
       triggerElement            : '#Services',
       triggerHook               : 0,
       offset                    : -topOffset,
-      duration                  : ($('#Services').height() - mainContentHeight)
+      duration                  : ($('#Services .tagline .heading-block').outerHeight())
     }).setPin(servicesPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
     // Contact panel pin
