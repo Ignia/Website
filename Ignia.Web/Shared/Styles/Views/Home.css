@@ -7,7 +7,7 @@
 .no-list-style {
   list-style: none; }
 
-.uppercase, .panel.introduction header h1, .panel.services header h1, .panel.clients header h1, .panel.contact header h1, .panel.introduction section.tagline .section-heading, .panel.contact .sidebar.right .contact.link a.text {
+.uppercase, .panel.introduction header h1, .panel.services header h1, .panel.clients header h1, .panel.contact header h1, .panel.introduction section.tagline .section-heading, .panel.services section.tagline .section-heading, .panel.contact .sidebar.right .contact.link a.text {
   text-transform: uppercase; }
 
 .no-transform {
@@ -269,232 +269,74 @@ footer.footer {
       @media screen and (max-width: 47.9375em) {
         .panel.services header:first-child {
           z-index: 21; } }
-    .panel.services nav {
-      text-align: center; }
+    .panel.services section.tagline .section-heading {
+      border-bottom: 1px solid #a6a19c;
+      font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+      font-size: 6rem;
+      line-height: 113%;
+      font-weight: 700;
+      color: #f2eee6; }
+      @media screen and (min-width: 60em) {
+        .panel.services section.tagline .section-heading {
+          margin: 0;
+          padding: 4.375rem 0 4.875rem 3.75rem; } }
+      @media screen and (max-width: 59.9375em) {
+        .panel.services section.tagline .section-heading {
+          margin: 0 auto;
+          padding: 2.5% 0;
+          font-size: 5.25rem;
+          text-align: center; } }
       @media screen and (max-width: 47.9375em) {
-        .panel.services nav {
-          display: none; } }
-      .panel.services nav ul {
-        clear: both;
-        position: relative;
-        margin: 4.125rem auto;
-        padding: 0;
-        background: transparent url("/Images/Home/Services.Background.png") no-repeat center center; }
-        .panel.services nav ul::before, .panel.services nav ul::after {
-          display: table;
-          content: ' ';
-          -ms-flex-preferred-size: 0;
-              flex-basis: 0;
-          -webkit-box-ordinal-group: 2;
-              -ms-flex-order: 1;
-                  order: 1; }
-        .panel.services nav ul::after {
-          clear: both; }
-        @media screen and (min-width: 60em) {
-          .panel.services nav ul {
-            min-width: 48.875rem;
-            width: 48.875rem;
-            min-height: 16.375rem; } }
-        @media screen and (min-width: 48em) and (max-width: 60em) {
-          .panel.services nav ul {
-            margin-top: 2.1875rem;
-            margin-bottom: 0.9375rem;
-            width: 42.5rem;
-            min-height: 15.125rem;
-            background-size: 100%; } }
-        .panel.services nav ul li {
-          display: block;
-          position: absolute;
-          max-width: 13.6875rem;
-          text-align: center; }
-          @media screen and (min-width: 60em) {
-            .panel.services nav ul li {
-              width: 13.6875rem;
-              height: 13.75rem; } }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services nav ul li {
-              display: table;
-              border-radius: 50%;
-              width: 11.875rem;
-              height: 11.875rem; } }
-          @media screen and (max-width: 47.9375em) {
-            .panel.services nav ul li {
-              margin-top: 0.625rem;
-              background-repeat: no-repeat;
-              background-position: center center;
-              background-size: contain; } }
-          @media screen and (min-width: 60em) {
-            .panel.services nav ul li.first {
-              top: 2.6875rem;
-              left: 0; } }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services nav ul li.first {
-              top: 2.75rem;
-              left: 0; } }
-          @media screen and (min-width: 60em) {
-            .panel.services nav ul li.second {
-              top: 0;
-              left: 17.5625rem; } }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services nav ul li.second {
-              top: 0.5625rem;
-              left: 15.375rem; } }
-          @media screen and (min-width: 60em) {
-            .panel.services nav ul li.third {
-              top: 2.75rem;
-              left: 35.25rem; } }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services nav ul li.third {
-              top: 2.75rem;
-              left: 30.625rem; } }
-          .panel.services nav ul li a {
-            display: block;
-            margin: 0 auto;
-            color: #7f7b76;
-            text-align: center; }
-            @media screen and (min-width: 60em) {
-              .panel.services nav ul li a {
-                height: 13.75rem; } }
-            @media screen and (min-width: 48em) {
-              .panel.services nav ul li a {
-                display: table-cell;
-                vertical-align: middle; } }
-            .panel.services nav ul li a:hover, .panel.services nav ul li a:focus, .panel.services nav ul li a:active, .panel.services nav ul li a.active {
-              color: #f0ad20; }
-      .panel.services nav h2 {
-        margin: 0;
-        font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif; }
-        @media screen and (min-width: 60em) {
-          .panel.services nav h2 {
-            padding: 0 10%;
-            line-height: 2.625rem; } }
-        @media screen and (min-width: 48em) and (max-width: 60em) {
-          .panel.services nav h2 {
-            padding: 0 18%;
-            font-size: 1.5rem;
-            line-height: 1.9375rem; } }
-    .panel.services section.details {
-      position: relative;
-      margin: 0 13.5%;
-      padding-bottom: 4.375rem; }
-      @media screen and (min-width: 48em) and (max-width: 60em) {
-        .panel.services section.details {
-          margin: 2.5rem 8% 0; } }
-      @media screen and (max-width: 47.9375em) {
-        .panel.services section.details {
-          margin: 0; } }
-      .panel.services section.details header {
-        display: table;
-        border-bottom: 0 none transparent;
-        margin: 0;
-        padding: 0 0 0 5%;
-        min-height: initial;
-        text-align: left;
-        background-color: transparent;
-        background-repeat: no-repeat;
-        background-position: 0 50%;
-        background-size: contain; }
-        @media screen and (min-width: 48em) {
-          .panel.services section.details header {
-            display: none; } }
-        .panel.services section.details header h2 {
-          margin-bottom: 0;
-          padding: 1rem 0;
+        .panel.services section.tagline .section-heading {
+          font-size: 2.75rem; } }
+      @media screen and (max-width: 25.8125em) {
+        .panel.services section.tagline .section-heading {
+          font-size: 2.25rem; } }
+      .panel.services section.tagline .section-heading span {
+        display: block;
+        font-style: italic;
+        color: #ef4a24; }
+    .panel.services article {
+      margin-top: 3.75rem; }
+      .panel.services article.is-active header {
+        border-right-color: #f0ad20; }
+        .panel.services article.is-active header h2 {
+          color: #f0ad20; }
+      .panel.services article header {
+        border-right: 1px solid #a6a19c;
+        border-bottom-width: 0; }
+        .panel.services article header h2 {
+          margin: 0;
+          padding: 0 3rem 0 0;
+          text-align: right;
           font-family: "Dosis", "Source Sans Pro", Helvetica, Arial, sans-serif;
           font-size: 1.5625rem;
-          line-height: 1;
-          color: #f0ad20;
-          text-shadow: 1px 1px 3px #4b4b4b; }
-      @media screen and (min-width: 48em) {
-        .panel.services section.details article {
-          display: none;
-          border-top: 1px solid #f0ad20;
-          padding: 1.9375rem 2.5% 0; }
-          .panel.services section.details article:before, .panel.services section.details article:after {
-            content: '';
+          line-height: 1.4;
+          color: #7f7b76; }
+          .panel.services article header h2 span {
             display: block;
-            position: absolute;
-            right: auto;
-            left: 0;
-            border-width: 0.875rem;
-            border-style: solid;
-            width: 0;
-            height: 0;
-            -webkit-transition: all 250ms ease-in-out;
-            transition: all 250ms ease-in-out; }
-          .panel.services section.details article:before {
-            top: -1.75rem;
-            border-color: transparent transparent #f0ad20 transparent; }
-          .panel.services section.details article:after {
-            display: block;
-            position: absolute;
-            top: -1.625rem;
-            border-color: transparent transparent #332e2c transparent; } }
-      @media screen and (max-width: 47.9375em) {
-        .panel.services section.details article {
-          padding: 1.5rem 1rem 1rem 0.875rem; } }
-      .panel.services section.details article.active {
-        display: block; }
-        .panel.services section.details article.active:first-child:before, .panel.services section.details article.active:first-child:after {
-          left: 5.25%; }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services section.details article.active:first-child:before, .panel.services section.details article.active:first-child:after {
-              left: 8.65%; } }
-        .panel.services section.details article.active:nth-child(2):before, .panel.services section.details article.active:nth-child(2):after {
-          left: 48%; }
-        .panel.services section.details article.active:nth-child(3):before, .panel.services section.details article.active:nth-child(3):after {
-          right: 5.25%;
-          left: auto; }
-          @media screen and (min-width: 48em) and (max-width: 60em) {
-            .panel.services section.details article.active:nth-child(3):before, .panel.services section.details article.active:nth-child(3):after {
-              right: 8.65%; } }
-      .panel.services section.details article p,
-      .panel.services section.details article aside {
-        display: block;
-        float: left;
-        font-size: 0.9375rem; }
-        @media screen and (max-width: 47.9375em) {
-          .panel.services section.details article p,
-          .panel.services section.details article aside {
-            float: none;
-            margin: 2.5% 5% 0; } }
-      .panel.services section.details article p {
-        line-height: 1.9375rem;
+            clear: both; }
+      .panel.services article p,
+      .panel.services article aside {
+        padding-left: 3rem; }
+      .panel.services article p {
         color: #f2eee6; }
-        @media screen and (min-width: 60em) {
-          .panel.services section.details article p {
-            margin-right: 5%;
-            max-width: 60%; } }
-        @media screen and (min-width: 48em) and (max-width: 60em) {
-          .panel.services section.details article p {
-            max-width: 58%; } }
-        @media screen and (max-width: 47.9375em) {
-          .panel.services section.details article p {
-            margin-top: 0.5rem; } }
-      .panel.services section.details article aside {
-        border-radius: 0.1875rem;
-        padding: 0.75rem 1.25rem 0.3125rem;
-        background: rgba(0, 0, 0, 0.1); }
-        @media screen and (min-width: 60em) {
-          .panel.services section.details article aside {
-            margin-top: -0.5rem;
-            width: 35%;
-            max-width: 35%;
-            min-height: 12.5rem; } }
-        @media screen and (min-width: 48em) and (max-width: 60em) {
-          .panel.services section.details article aside {
-            float: right;
-            width: 35%;
-            max-width: 35%; } }
-        @media screen and (max-width: 47.9375em) {
-          .panel.services section.details article aside {
-            margin-top: 1.25rem; } }
-        .panel.services section.details article aside ul {
-          margin: 0;
-          padding-left: 0; }
-          .panel.services section.details article aside ul li {
-            padding-bottom: 0.4375rem;
-            color: rgba(242, 238, 230, 0.5); }
+      .panel.services article aside {
+        color: #ef4a24; }
+        .panel.services article aside header {
+          border-right: 0 none transparent;
+          min-height: 0;
+          text-align: left; }
+          .panel.services article aside header:before {
+            display: none; }
+          .panel.services article aside header h3 {
+            font-size: 0.9375rem;
+            font-style: italic; }
+        .panel.services article aside ul {
+          list-style-type: square;
+          margin-bottom: 0; }
+          .panel.services article aside ul li span {
+            color: #f2eee6; }
   .panel.clients {
     background: #f0ad20 url("/Images/Home/Clients.Tile.png") repeat center top; }
     @media screen and (min-width: 60em) {
