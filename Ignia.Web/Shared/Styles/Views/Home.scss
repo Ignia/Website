@@ -369,14 +369,14 @@ footer.footer {
       &.is-active {
         header {
           border-right-color    : $palette-yellow;
-          &:first-child {
-            &:before,
-            &:after {
-              display           : block;
-            }
-          }
           h2 {
             color               : $palette-yellow;
+            i.arrow {
+              &:before,
+              &:after {
+                display         : block;
+              }
+            }
           }
         }
       }
@@ -387,28 +387,6 @@ footer.footer {
         @include breakpoint(767px down) {
           border-right          : 0 none transparent;
           min-height            : 0;
-        }
-        &:before,
-        &:after {
-          content               : '';
-          display               : none;
-          position              : absolute;
-          top                   : rem-calc(22);
-          right                 : 0;
-          left                  : auto;
-          border-width          : rem-calc(14);
-          border-style          : solid;
-          width                 : 0;
-          height                : 0;
-          transition            : all 250ms ease-in-out;
-        }
-        &:before {
-          right                 : rem-calc(-28);
-          border-color          : transparent transparent transparent $palette-yellow;
-        }
-        &:after {
-          right                 : rem-calc(-26);
-          border-color          : transparent transparent transparent rgb(51, 46, 44);
         }
         h2 {
           margin                : 0;
@@ -427,6 +405,36 @@ footer.footer {
             @include breakpoint(768px) {
               display           : block;
               clear             : both;
+            }
+          }
+          i.arrow {
+            display             : block;
+            position            : absolute;
+            top                 : rem-calc(22);
+            left                : 100%;
+            width               : rem-calc(20);
+            height              : rem-calc(28);
+            &:before,
+            &:after {
+              content           : '';
+              display           : none;
+              position          : absolute;
+              top               : 0;
+              right             : auto;
+              left              : 0;
+              border-width      : rem-calc(14);
+              border-style      : solid;
+              width             : 0;
+              height            : 0;
+              transition        : all 250ms ease-in-out;
+            }
+            &:before {
+              left              : rem-calc(1);
+              border-color      : transparent transparent transparent $palette-yellow;
+            }
+            &:after {
+              left              : rem-calc(-0.5);
+              border-color      : transparent transparent transparent rgb(51, 46, 44);
             }
           }
         }
@@ -448,10 +456,6 @@ footer.footer {
           border-right          : 0 none transparent;
           min-height            : 0;
           text-align            : left;
-          &:before,
-          &:after {
-            display             : none !important;
-          }
           h3 {
             font-size           : $body-font-size;
             font-style          : italic;
