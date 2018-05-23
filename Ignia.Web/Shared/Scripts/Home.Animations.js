@@ -118,6 +118,19 @@ $(function() {
       duration                  : ($('#Services .tagline .heading-block').outerHeight())
     }).setPin(servicesPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
+    // Services panel categories animations
+    $('#Services article').each(function () {
+      var category              = '#' + $(this).attr('id');
+
+      new ScrollMagic.Scene({
+        triggerElement          : category,
+        triggerHook             : 1,
+        offset                  : (mainContentHeight/2 - 60),
+        duration                : $(category).outerHeight()
+      }).setClassToggle(category, 'is-active').addIndicators().addTo(sceneController);
+
+    });
+
     // Contact panel pin
     var
       contactPanelAllowance     = ($('#Header').outerHeight() + $('#Contact > .container').outerHeight() + $('#Footer').outerHeight()),
