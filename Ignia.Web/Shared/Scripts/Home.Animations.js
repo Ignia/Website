@@ -108,18 +108,15 @@ $(function() {
   if ($(window).width() > 767) {
 
     // Establish variables
-    var servicesPinDuration     = $('#Services').height();
-    if ($(window).height() > $(window).width()) {
-      servicesPinDuration       = (servicesPinDuration * 0.85);
-    }
+    var servicesPanelHeader     = '#Services header:first-child';
 
-    // Services panel pin
-    var servicesPinScene        = new ScrollMagic.Scene({
+    // Services panel header pin
+    var servicesHeaderScene     = new ScrollMagic.Scene({
       triggerElement            : '#Services',
       triggerHook               : 0,
       offset                    : -topOffset,
-      duration                  : servicesPinDuration
-    }).setPin('#Services').addTo(sceneController);
+      duration                  : ($('#Services').height() - mainContentHeight)
+    }).setPin(servicesPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
     // Contact panel pin
     var

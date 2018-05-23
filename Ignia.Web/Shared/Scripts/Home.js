@@ -31,10 +31,6 @@ $(function() {
    * Adjusts height for panels needing additional buffer for scroll-based functionality or animations (see Home.Animations.js), for
    * tablet or larger screens
    */
-  if (viewportWidth > 767) {
-    // Add buffer height to Services panel to allow for content scrolling
-    $('#Services').height($('#Services').height() * 1.25);
-  }
   // Reduce height for Contact panel to account for footer
   var contactPanelAllowance     = ($('#Header').outerHeight() + $('#Contact > .container').outerHeight() + $('#Footer').outerHeight());
   if (contactPanelAllowance <= $(window).outerHeight()) {
