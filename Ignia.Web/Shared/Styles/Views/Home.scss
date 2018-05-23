@@ -382,9 +382,11 @@ footer.footer {
       }
       header {
         position                : relative;
-        margin-right            : rem-calc(-40);
         border-right            : 1px solid rgb(166, 161, 156);
         border-bottom-width     : 0;
+        @include breakpoint(960px) {
+          margin-right          : rem-calc(-40);
+        }
         @include breakpoint(767px down) {
           border-right          : 0 none transparent;
           min-height            : 0;
@@ -442,8 +444,11 @@ footer.footer {
       }
       p,
       aside {
-        padding-left            : rem-calc(80);
+        padding-left            : rem-calc(48);
         line-height             : 1.8;
+        @include breakpoint(960px) {
+          padding-left          : rem-calc(80);
+        }
         @include breakpoint(767px down) {
           padding-left          : 0;
         }
