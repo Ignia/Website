@@ -310,6 +310,7 @@ footer.footer {
             display: block; }
       .panel.services article header {
         position: relative;
+        margin-right: -2.5rem;
         border-right: 1px solid #a6a19c;
         border-bottom-width: 0; }
         @media screen and (max-width: 47.9375em) {
@@ -361,7 +362,7 @@ footer.footer {
               border-color: transparent transparent transparent #332e2c; }
       .panel.services article p,
       .panel.services article aside {
-        padding-left: 3rem;
+        padding-left: 5rem;
         line-height: 1.8; }
         @media screen and (max-width: 47.9375em) {
           .panel.services article p,
