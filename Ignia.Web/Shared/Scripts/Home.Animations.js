@@ -120,14 +120,20 @@ $(function() {
 
     // Services panel categories animations
     $('#Services article').each(function () {
-      var category              = '#' + $(this).attr('id');
+      var
+        category                = '#' + $(this).attr('id'),
+        sceneDuration           = ($(category).height() - 72);
+
+      if (category === '#CMSService') {
+        sceneDuration           = ($(category).height() - 104);
+      }
 
       new ScrollMagic.Scene({
         triggerElement          : category,
         triggerHook             : 1,
         offset                  : (mainContentHeight/2 - 60),
-        duration                : $(category).outerHeight()
-      }).setClassToggle(category, 'is-active').addIndicators().addTo(sceneController);
+        duration                : sceneDuration
+      }).setClassToggle(category, 'is-active').setPin(category + ' header h2', { pushFollowers: false }).addTo(sceneController);
 
     });
 
