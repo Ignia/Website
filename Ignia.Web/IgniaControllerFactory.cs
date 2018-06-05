@@ -27,6 +27,7 @@ namespace Ignia.Web {
     /*==========================================================================================================================
     | PRIVATE INSTANCES
     \-------------------------------------------------------------------------------------------------------------------------*/
+    private readonly            ITypeLookupService              _typeLookupService              = null;
     private readonly            ITopicMappingService            _topicMappingService            = null;
     private readonly            ITopicRepository                _topicRepository                = null;
     private readonly            Topic                           _rootTopic                      = null;
@@ -41,7 +42,8 @@ namespace Ignia.Web {
     public IgniaControllerFactory() : base() {
       #pragma warning disable CS0618
       _topicRepository          = TopicRepository.DataProvider;
-      _topicMappingService      = new TopicMappingService(_topicRepository);
+      _typeLookupService        = new IgniaTopicViewModelLookupService();
+      _topicMappingService      = new TopicMappingService(_topicRepository, _typeLookupService);
       _rootTopic                = TopicRepository.RootTopic;
       #pragma warning restore CS0618
     }
