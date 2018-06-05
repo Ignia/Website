@@ -123,8 +123,10 @@ $(function() {
       var
         category                = '#' + $(this).attr('id'),
         categoryHeaderTween     = TweenMax.to(category + ' header h2 span', 0.075, {
-          transform             : 'scale(1.1)',
-          ease                  : Back.easeOut.config(2),
+          scale                 : 1.1,
+          x                     : -24,
+          ease                  : Circ.easeOut,
+          autoCSS               : true,
           repeat                : 1,
           yoyo                  : true
         }),
