@@ -22,11 +22,11 @@ namespace Ignia.Web.Models {
     \-------------------------------------------------------------------------------------------------------------------------*/
     public bool BypassDisplay { get; set; }
 
-    [Recurse(Relationships.Children)]
-    [Relationship("Children", RelationshipType.Children)]
+    [Follow(Relationships.Children)]
+    [Relationship("Children", Type=RelationshipType.Children)]
     public TopicViewModelCollection<LibraryIndexTopicViewModel> Indexes { get; set; }
 
-    [Relationship("Children", RelationshipType.Children)]
+    [Relationship("Children", Type=RelationshipType.Children)]
     public TopicViewModelCollection<ArticleTopicViewModel> Articles { get; set; }
 
     /*==========================================================================================================================

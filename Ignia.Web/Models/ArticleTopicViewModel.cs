@@ -28,16 +28,16 @@ namespace Ignia.Web.Models {
     public string PublishDate { get; set; }
     public string Abstract { get; set; }
 
-    [Relationship("Targets", RelationshipType.Relationship)]
+    [Relationship("Targets", Type=RelationshipType.Relationship)]
     public TopicViewModelCollection<TopicViewModel> Targets { get; set; }
 
-    [Relationship("Types", RelationshipType.Relationship)]
+    [Relationship("Types", Type=RelationshipType.Relationship)]
     public TopicViewModelCollection<TopicViewModel> Types { get; set; }
 
-    [Relationship("Languages", RelationshipType.Relationship)]
+    [Relationship("Languages", Type=RelationshipType.Relationship)]
     public TopicViewModelCollection<TopicViewModel> Languages { get; set; }
 
-    [Relationship("Locations", RelationshipType.Relationship)]
+    [Relationship("Locations", Type=RelationshipType.Relationship)]
     public TopicViewModelCollection<TopicViewModel> Locations { get; set; }
 
     [Metadata("Authors")]
