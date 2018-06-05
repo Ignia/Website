@@ -178,6 +178,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\IgniaTopicViewModelLookupService.cs" />
     <Content Include="!Admin\Topics\Common\Controls\FormField.ascx.cs">
       <DependentUpon>FormField.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
