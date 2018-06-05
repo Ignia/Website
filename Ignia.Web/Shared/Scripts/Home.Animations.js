@@ -128,9 +128,14 @@ $(function() {
           repeat                : 1,
           yoyo                  : true
         }),
+        sceneOffset             = (mainContentHeight/2 - 60),
         sceneDuration           = ($(category).height() - 72);
 
+      if (category === '#CloudAPIService') {
+        sceneOffset             = (mainContentHeight/2 - 150);
+      }
       if (category === '#CMSService') {
+        sceneOffset             = (mainContentHeight/2 - 240);
         sceneDuration           = ($(category).height() - 104);
       }
 
@@ -138,14 +143,14 @@ $(function() {
       new ScrollMagic.Scene({
         triggerElement          : category,
         triggerHook             : 1,
-        offset                  : (mainContentHeight/2 - 60)
-      }).setTween(categoryHeaderTween).addIndicators().addTo(sceneController);
+        offset                  : sceneOffset,
+      }).setTween(categoryHeaderTween).addTo(sceneController);
 
       // Highlight and heading pin
       new ScrollMagic.Scene({
         triggerElement          : category,
         triggerHook             : 1,
-        offset                  : (mainContentHeight/2 - 60),
+        offset                  : sceneOffset,
         duration                : sceneDuration
       }).setClassToggle(category, 'is-active').setPin(category + ' header h2', { pushFollowers: false }).addTo(sceneController);
 
