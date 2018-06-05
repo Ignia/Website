@@ -327,6 +327,13 @@ footer.footer {
         }
       }
     }
+    div.container {
+      > div > header {
+        @include breakpoint(768px) {
+          z-index                 : 5;
+        }
+      }
+    }
     section {
       &.tagline {
         .section-heading {

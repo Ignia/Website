@@ -108,15 +108,15 @@ $(function() {
   if ($(window).width() > 767) {
 
     // Establish variables
-    var servicesPanelHeader     = '#Services header:first-child';
+    var servicesPanelHeader     = '#Services > div.container > header';
 
     // Services panel header pin
     var servicesHeaderScene     = new ScrollMagic.Scene({
       triggerElement            : '#Services',
       triggerHook               : 0,
       offset                    : -topOffset,
-      duration                  : ($('#Services .tagline .heading-block').outerHeight())
-    }).setPin(servicesPanelHeader, { pushFollowers: false }).addTo(sceneController);
+      duration                  : ($('#Services').height() - mainContentHeight)
+    }).setClassToggle(servicesPanelHeader, 'is-pinned').setPin(servicesPanelHeader, { pushFollowers: false }).addTo(sceneController);
 
     // Services panel categories animations
     $('#Services article').each(function () {
@@ -124,7 +124,7 @@ $(function() {
         category                = '#' + $(this).attr('id'),
         categoryHeaderTween     = TweenMax.to(category + ' header h2 span', 0.075, {
           scale                 : 1.1,
-          x                     : -24,
+          x                     : '-24px',
           ease                  : Circ.easeOut,
           autoCSS               : true,
           repeat                : 1,
@@ -145,7 +145,7 @@ $(function() {
       new ScrollMagic.Scene({
         triggerElement          : category,
         triggerHook             : 1,
-        offset                  : sceneOffset,
+        offset                  : sceneOffset
       }).setTween(categoryHeaderTween).addTo(sceneController);
 
       // Highlight and heading pin
