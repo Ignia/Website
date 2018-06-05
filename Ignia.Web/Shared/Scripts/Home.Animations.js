@@ -122,12 +122,26 @@ $(function() {
     $('#Services article').each(function () {
       var
         category                = '#' + $(this).attr('id'),
+        categoryHeaderTween     = TweenMax.to(category + ' header h2 span', 0.075, {
+          transform             : 'scale(1.1)',
+          ease                  : Back.easeOut.config(2),
+          repeat                : 1,
+          yoyo                  : true
+        }),
         sceneDuration           = ($(category).height() - 72);
 
       if (category === '#CMSService') {
         sceneDuration           = ($(category).height() - 104);
       }
 
+      // Heading text scaling
+      new ScrollMagic.Scene({
+        triggerElement          : category,
+        triggerHook             : 1,
+        offset                  : (mainContentHeight/2 - 60)
+      }).setTween(categoryHeaderTween).addIndicators().addTo(sceneController);
+
+      // Highlight and heading pin
       new ScrollMagic.Scene({
         triggerElement          : category,
         triggerHook             : 1,
@@ -178,7 +192,7 @@ $(function() {
         triggerElement          : '#FactoryWidget',
         triggerHook             : 1,
         offset                  : 10,
-        duration                : '750',
+        duration                : '750'
       }).setTween(codefactoryTween).addTo(sceneController);
   }
 
