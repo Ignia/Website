@@ -582,8 +582,6 @@ footer.footer {
       @media screen and (max-width: 47.9375em) {
         .panel.contact .form {
           padding-left: 0; } }
-      .panel.contact .form label {
-        display: none; }
     .panel.contact .sidebar.right {
       position: relative;
       top: 6.25rem;

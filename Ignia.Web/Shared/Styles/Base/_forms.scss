@@ -35,11 +35,11 @@
 //----------------------------------------------------------------------------------------------
 fieldset {
   legend {
-    margin-bottom: rem-calc(18);
-    padding-top: rem-calc(34);
-    font-family: $header-font-family;
-    font-size: rem-calc(20);
-    font-weight: 600;
+    margin-bottom               : rem-calc(18);
+    padding-top                 : rem-calc(34);
+    font-family                 : $header-font-family;
+    font-size                   : rem-calc(20);
+    font-weight                 : 600;
   }
 }
 
@@ -49,6 +49,18 @@ fieldset {
 
 label, .label {
   font-size                     : $body-font-size;
+}
+label {
+  position                      : relative;
+}
+.label {
+  position                      : absolute;
+  top                           : rem-calc(16);
+  left                          : rem-calc(8);
+  font-size                     : rem-calc(16);
+  color                         : $medium-gray;
+  transform-origin              : 0 0;
+  transition                    : all .2s ease;
 }
 
 //----------------------------------------------------------------------------------------------
@@ -73,22 +85,32 @@ textarea,
 select {
   box-shadow                    : none;
   border-radius                 : 3px;
+  padding                       : rem-calc(12 8 4);
+  height                        : rem-calc(48);
+  transition                    : all .15s ease;
   &:active,
   &:focus {
     box-shadow                  : none;
     border-color                : $palette-yellow;
   }
 }
-input {
+input,
+textarea {
   &:active,
   &:focus {
-    box-shadow                  : none;
+    box-shadow: none;
   }
   &:hover {
   }
   &.submit {
-    margin-top                  : rem-calc(32);
-    margin-bottom               : 0;
+    margin-top: rem-calc(32);
+    margin-bottom: 0;
+  }
+  &:not(:placeholder-shown),
+  &:focus {
+    + span {
+      transform                 : translateY(-12px) scale(.75);
+    }
   }
 }
 textarea {

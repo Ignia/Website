@@ -192,14 +192,20 @@
             <!-- Form Fields and Submit -->
             <fieldset>
 
-              <label for="contactName">Name</label>
-              <input type="text" id="ContactName" name="contactName" class="form-control" placeholder="Name" required />
+              <label for="contactName">
+                <input type="text" id="ContactName" name="contactName" class="form-control" placeholder="&#160;" required />
+                <span class="label">Name</span>
+              </label>
 
-              <label for="contactEmail">Email</label>
-              <input type="email" id="ContactEmail" name="contactEmail" placeholder="Email@Domain.com" required />
+              <label for="contactEmail">
+                <input type="email" id="ContactEmail" name="contactEmail" placeholder="&#160;" required />
+                <span class="label">Email</span>
+              </label>
 
-              <label for="contactMessage">Message</label>
-              <textarea id="ContactMessage" name="contactMessage" class="form-control" rows="4" cols="50" placeholder="Message..." required minlength="5"></textarea>
+              <label for="contactMessage">
+                <textarea id="ContactMessage" name="contactMessage" class="form-control" rows="4" cols="50" placeholder="&#160;" required minlength="5"></textarea>
+                <span class="label">Message</span>
+              </label>
 
               <button type="submit">Submit</button>
 
