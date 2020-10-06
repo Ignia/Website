@@ -7,7 +7,7 @@
     <title>@(Model.MetaTitle ?? Model.Title ?? Model.Key) - Ignia</title>
     <meta name="keywords" content="@Model.MetaKeywords" />
     <meta name="description" content="@Model.MetaDescription" />
-    <link rel="canonical" href="http://www.ignia.com/@Request.Path.ToLower().TrimStart('/')" />
+    <link rel="canonical" href="http://www.ignia.com@(Model.WebPath)" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/Images/Favicons/favicon-16x16.png" />
