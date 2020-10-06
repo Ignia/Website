@@ -17,7 +17,7 @@
     <meta name="msapplication-config" content="/Images/Favicons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" type="text/css" href="/Shared/Styles/Style.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Shared/Styles/Style.min.css" asp-append-version="true" />
     @RenderSection("Head", false)
     <noscript id="DeferredStyles">
       @RenderSection("DeferredStyles", false)
@@ -112,7 +112,7 @@
        */
       $(document).foundation();
     </script>
-    <script src="/Shared/Scripts/Scripts.min.js" async defer></script>
+    <script src="/Shared/Scripts/Scripts.min.js" async defer asp-append-version="true"></script>
     @RenderSection("Scripts", false)
   </body>
 </html>
