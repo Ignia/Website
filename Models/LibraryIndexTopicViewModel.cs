@@ -4,8 +4,9 @@
 | Project       Website
 \=============================================================================================================================*/
 using System.Linq;
-using Ignia.Topics.ViewModels;
-using Ignia.Topics.Mapping;
+using OnTopic.ViewModels;
+using OnTopic.Mapping;
+using OnTopic.Mapping.Annotations;
 
 namespace Ignia.Web.Models {
 

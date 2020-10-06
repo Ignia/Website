@@ -4,7 +4,7 @@
 | Project       Website
 \=============================================================================================================================*/
 using System.Collections.Generic;
-using Ignia.Topics.ViewModels;
+using OnTopic.ViewModels;
 
 namespace Ignia.Web.Models {
 
