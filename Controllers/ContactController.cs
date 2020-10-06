@@ -37,9 +37,9 @@ namespace Ignia.Web.Controllers {
       /*------------------------------------------------------------------------------------------------------------------------
       | Establish variables
       \-----------------------------------------------------------------------------------------------------------------------*/
-      var fromName              = Request["contactName"];
-      var fromEmail             = Request["contactEmail"];
-      var messageBody           = Request["contactMessage"];
+      HttpContext.Request.Form.TryGetValue("contactName", out var fromName);
+      HttpContext.Request.Form.TryGetValue("contactEmail", out var fromEmail);
+      HttpContext.Request.Form.TryGetValue("contactMessage", out var messageBody);
 
       if (!String.IsNullOrWhiteSpace(fromName) && !String.IsNullOrWhiteSpace(fromEmail) && !String.IsNullOrWhiteSpace(messageBody)) {
         Console.WriteLine("Fields: name = " + fromName + "; email = " + fromEmail + "; message = " + messageBody);
