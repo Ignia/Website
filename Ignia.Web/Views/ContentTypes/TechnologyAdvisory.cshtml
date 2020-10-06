@@ -1,0 +1,163 @@
+﻿@model TechnologyAdvisoryTopicViewModel
+
+@using Ignia.Topics.ViewModels
+
+@{
+  Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+@section Head {
+  <!-- Library Index View Styles -->
+  <link rel="stylesheet" href="/Shared/Styles/Views/Library.min.css" />
+  <link rel="stylesheet" href="/Shared/Styles/Views/Article.min.css" />
+}
+
+@section PageHeaderSection {
+  @Html.Partial("PageHeader.Library")
+}
+
+@section PageBodySection {
+
+  <article id="LibraryArticle" class="library article" role="article" vocab="http://schema.org/" typeof="Article">
+    <div class="container grid-container">
+      <div class="grid-x grid-margin-x">
+
+        <!-- Page Header / Article Title and/or Subtitle -->
+        <header role="heading" class="cell">
+          <h1>@Model.Title</h1>
+          @if (!String.IsNullOrEmpty(Model.Subtitle)) {
+            <p class="subtitle">@Model.Subtitle</p>
+          }
+        </header>
+
+        <!-- Primary Article Body -->
+        <div id="ArticleBody" class="medium-7 cell contents primary">
+
+          <!-- Publication Details -->
+          <section id="PublicationDetails" class="publication details" role="region">
+            <time datetime="@Model.GetFormattedDateTimeValue(Model.PublishDate, "yyyy-MM-dd hh:mm" )" class="pubdate" property="datePublished">
+              @Model.GetFormattedDateTimeValue(Model.PublishDate, "MMMM dd, yyyy | h:mm tt")
+            </time>
+            <span class="author" property="author">by @Model.GetAuthorTitle(Model.Author)</span>
+          </section>
+          <!-- /Publication Details -->
+
+          <!-- Technology Advisory Content Sections -->
+
+          @foreach(var contentSection in Model.ContentSections) {
+            @WriteContentSection(contentSection.Key, contentSection.Value)
+          }
+
+          <!-- /Technology Advisory Content Sections -->
+
+        </div>
+        <!-- /Primary Article Body -->
+
+        <!-- Callouts -->
+        <div id="ArticleMetadata" class="medium-5 large-4 large-offset-1 cell contents ancillary">
+
+          <!-- References -->
+          <aside id="References" role="complementary">
+
+            @if (!String.IsNullOrEmpty(Model.Website)) {
+              <!-- Website -->
+              <h3>Website</h3>
+              <p>@Html.Raw(WriteReference(Model.Website))</p>
+              <!-- /Website -->
+            }
+
+            @if (!String.IsNullOrEmpty(Model.Documentation)) {
+              <!-- Documentation -->
+              <h3>Documentation</h3>
+              <p>@Html.Raw(WriteReference(Model.Documentation))</p>
+              <!-- /Documentation -->
+            }
+
+            @WriteCategoryProperties("Target", Model.Targets)
+
+            @WriteCategoryProperties("Type", Model.Types)
+
+            @WriteCategoryProperties("Language", Model.Languages)
+
+            @WriteCategoryProperties("Location", Model.Locations)
+
+            @if (Model.Resources.Count > 0) {
+              <!-- Additional Resources -->
+              <h3>Additional Resources</h3>
+              <ul id="Resources">
+                @foreach (var resource in Model.Resources) {
+                  <li>@Html.Raw(WriteReference(resource.Url, resource.Title))</li>
+                }
+              </ul>
+            }
+
+          </aside>
+          <!-- /References -->
+
+        </div>
+        <!-- /Callouts -->
+
+      </div>
+
+    </div>
+  </article>
+
+}
+
+@section Scripts {
+  <script src="/Shared/Scripts/Library.min.js" async defer></script>
+}
+
+@helper WriteContentSection(string sectionName, string sectionContent) {
+
+  @*----------------------------------------------------------------------------------------------------------------------------
+  | Write out the content section, if the contents are available
+  \---------------------------------------------------------------------------------------------------------------------------*@
+  if (!String.IsNullOrEmpty(sectionContent)) {
+
+    <!-- @sectionName -->
+    <section id="@sectionName" class="@(sectionName.Equals("Abstract") ? "abstract" : "content section")" role="region" property="@(sectionName.Equals("Abstract") ? "about" : "articleSection")">
+      @if (!sectionName.Equals("Abstract")) {
+        <header role="heading"><h2>@sectionName</h2></header>
+      }
+      @Html.Raw(sectionContent)
+    </section>
+    <!-- /@sectionName -->
+
+  }
+
+}
+
+@helper WriteReference(string value, string label = null) {
+
+  @*----------------------------------------------------------------------------------------------------------------------------
+  | Write full link with label, if URL is valid; otherwise, just write the value
+  \---------------------------------------------------------------------------------------------------------------------------*@
+  if (Uri.IsWellFormedUriString(value, UriKind.Absolute)) {
+    <a href="@value" title="@((label != null) ? label : value)">@((label != null) ? label : value)</a>
+  }
+  else {
+    @value
+  }
+
+}
+
+@helper WriteCategoryProperties(string category, TopicViewModelCollection<TopicViewModel> categoryProperties) {
+
+  if (categoryProperties.Count > 0) {
+    <!-- @(category + "(s)") -->
+    <h3>@category@(categoryProperties.Count > 1 ? "s" : "")</h3>
+    if (categoryProperties.Count > 1) {
+      <ul id="@(category + "s")">
+        @foreach(var categoryProperty in categoryProperties) {
+          <li>@categoryProperty.Title</li>
+        }
+      </ul>
+    }
+    else {
+      <p>@categoryProperties.FirstOrDefault().Title</p>
+    }
+    <!-- /@(category + "(s)") -->
+  }
+
+}

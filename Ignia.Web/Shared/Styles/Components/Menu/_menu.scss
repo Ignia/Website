@@ -1,0 +1,252 @@
+﻿//==============================================================================================
+// MENU
+//----------------------------------------------------------------------------------------------
+// Defines styles associated with with the primary navigation menu(s).
+//----------------------------------------------------------------------------------------------
+// NOTE: If this component requires its own helpers, they should be defined in a separate
+// _placeholders.scss, _mixins.scss, or _functions.scss file and imported here.
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+@import "../../variables";
+@import "../../settings";
+@import "../../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// VARIABLES
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// COMMON
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// CORE
+//----------------------------------------------------------------------------------------------
+
+.site.header {
+  transition                    : all 0.25s ease-in-out 0s;
+  .navbar {
+    transition                  : all 0.25s ease-in-out 0s;
+  }
+  .navigation {
+    &.off-canvas {
+      background                : $palette-white url('/Images/Header/Header.Tile.png') repeat 0 0;
+    }
+    a {
+      border-bottom-color       : transparent;
+      font-family               : $body-font-family;
+      font-size                 : rem-calc(14);
+      font-weight               : 700;
+      line-height               : 1;
+      letter-spacing            : 0.1em;
+      text-decoration           : none;
+      color                     : rgb(145, 143, 138);
+      transition                : border-bottom-color 100ms linear 50ms;
+      @extend .uppercase;
+      @include breakpoint(959px down) {
+        font-size               : rem-calc(24);
+      }
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(21);
+      }
+      @include breakpoint(359px down) {
+        font-size               : rem-calc(16);
+      }
+      &:hover,
+      &:focus,
+      &:active,
+      &.active {
+        color                   : rgb(59, 51, 47);              // #3B332F
+        @include breakpoint(959px down) {
+          background            : transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 16px;
+        }
+        @include breakpoint(767px down) {
+          background-position   : -81px 15px;
+        }
+        .ordinal {
+          transition            : display 100ms ease-in 200ms;
+        }
+      }
+      &:focus,
+      &:active,
+      &.active {
+        border-bottom-color     : $palette-red;
+        transition              : border-bottom-color 75ms cubic-bezier(0.25, 0.1, 0.25, 1) 10ms;
+      }
+      &.ancillary {
+        border-color            : rgba(145, 143, 138, 0.2);
+        transition              : border-bottom-color 0ms linear 0ms;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          background-image      : none;
+        }
+        &:hover {
+          border-color          : rgb(59, 51, 47);
+        }
+        &:focus,
+        &:active {
+          border-color          : $palette-red;
+        }
+      }
+      .ordinal {
+        font-size               : rem-calc(12);
+        font-weight             : 600;
+        color                   : $palette-grey-lighter;
+        @include breakpoint(959px down) {
+          display               : block;
+          line-height           : 1;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// SMALL SCREENS
+//----------------------------------------------------------------------------------------------
+
+.menu-toggle {
+  color                         : rgba(167, 165, 161, 0.95);
+  &:hover,
+  &:focus,
+  &:active {
+    color                       : rgba(59, 51, 47, 1);
+  }
+  &.open-button {
+    @include breakpoint(959px down) {
+      margin                    : rem-calc(23 0 0 27);
+    }
+    @include breakpoint(767px down) {
+      margin                    : rem-calc(14 0 0 10);
+    }
+    svg {
+      width                     : rem-calc(34);
+      height                    : rem-calc(32);
+    }
+  }
+  &.close-button {
+    top                         : auto;
+    right                       : auto;
+    font-size                   : rem-calc(64);
+    line-height                 : 0.5;
+    @include breakpoint(959px down) {
+      bottom                    : rem-calc(38);
+      left                      : rem-calc(36);
+    }
+    @include breakpoint(767px down) {
+      bottom                    : rem-calc(20);
+      left                      : rem-calc(20);
+    }
+  }
+}
+
+.navigation {
+  img.annotation {
+    transition                  : opacity 4.25s;
+  }
+  &.is-closed {
+    img.annotation {
+      opacity                   : 0;
+    }
+  }
+  &.is-open {
+    img.annotation {
+      opacity                   : 1;
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// LIBRARY NAVIGATION
+//----------------------------------------------------------------------------------------------
+
+.navigation.pictographic {
+  ul {
+    margin                      : 0;
+    padding                     : 0;
+    li {
+      display                   : inline-block;
+      margin                    : 0 10% 0 5%;
+      text-align                : center;
+    }
+  }
+  .selection {
+    &.active {
+      a {
+        color                   : $palette-white;
+      }
+    }
+    a {
+      display                   : block;
+      color                     : rgb(149, 149, 149);
+      &:hover,
+      &:focus,
+      &:active {
+        color                   : $palette-white;
+      }
+    }
+    span {
+      &.label {
+        font-family             : $body-font-family;
+        font-size               : 18px;
+      }
+      &.fas {
+        font-size               : 4.571rem;
+      }
+    }
+  }
+  .pictographs {
+    position                    : relative;
+    @include clearfix;
+  }
+  span.fas {
+    position                    : relative;
+    &.fa-cloud {
+      left                      : 15px;
+    }
+    &.fa-server {
+      z-index                   : 15;
+      bottom                    : -5px;
+      left                      : -15px;
+      font-size                 : 3.429rem;
+      text-shadow               : 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+.page.header {
+  .navbar {
+    display                     : table-cell;
+    vertical-align              : bottom;
+  }
+  nav {
+    ul {
+      margin                    : 0 0 10px;
+      padding                   : 0 0 0 18px;
+      li {
+        display                 : inline-block;
+        margin-right            : 12px;
+        a {
+          display               : block;
+          padding               : 16px 18px;
+          font-family           : $body-font-family;
+          font-size             : 16px;
+          line-height           : 1;
+          color                 : rgb(149, 149, 149);
+          &:hover,
+          &:focus,
+          &:active,
+          &.active {
+            color               : $palette-white;
+            background          : $palette-grey-dark;
+          }
+        }
+      }
+    }
+  }
+}

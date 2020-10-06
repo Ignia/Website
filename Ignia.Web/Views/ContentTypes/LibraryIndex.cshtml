@@ -1,0 +1,69 @@
+﻿@model LibraryIndexTopicViewModel
+
+@{
+  Layout = "~/Views/Layout/_Layout.cshtml";
+}
+
+@section Head {
+  <!-- Library Index View Styles -->
+  <link rel="stylesheet" href="/Shared/Styles/Views/Library.min.css" />
+  <link rel="stylesheet" href="/Shared/Styles/Views/LibraryIndex.min.css" />
+}
+
+@section PageHeaderSection {
+  @Html.Partial("PageHeader.Library")
+}
+
+@section PageBodySection {
+
+  <!-- Articles Listing/Index -->
+  <article id="ArticlesIndex" class="container grid-container library index" role="article">
+
+    <!-- Introduction -->
+    <div class="grid-x grid-margin-x">
+      <div class="introduction cell">@Html.Raw(Model.Body)</div>
+    </div>
+    <!-- /Introduction -->
+
+    @WriteArticles(Model)
+
+  </article>
+  <!-- /Articles Listing/Index -->
+
+}
+
+@helper WriteArticles(LibraryIndexTopicViewModel index, int tier = 2) {
+  if (index.GetArticleCount() == 0) { return; }
+
+  if (index.BypassDisplay) {
+    foreach(var childIndex in index.Indexes) {
+      @WriteArticles(childIndex, tier);
+    }
+    return;
+  }
+
+  <!-- @index.Title Articles -->
+  <section class="articles list grid-x grid-margin-x" role="region">
+    <header class="cell">
+      <h@(tier)>@index.Title</h@(tier)>
+    </header>
+    @foreach(var article in index.Articles) {
+      @WriteArticleItem(article, tier+1);
+    }
+    @foreach(var childIndex in index.Indexes) {
+      @WriteArticles(childIndex, tier+1);
+    }
+  </section>
+  <!-- /@index.Title Articles -->
+
+}
+
+@helper WriteArticleItem(ArticleTopicViewModel article, int tier = 3) {
+  <div id="@(article.ContentType + article.Key)" class="article item cell">
+    <!-- Article Title -->
+    <h@(tier) class="title"><a href="@article.WebPath">@article.Title</a></h@(tier)>
+    <!-- Abstract / Description -->
+    <div class="description">@Html.Raw(article.Abstract)</div>
+  </div>
+}
+

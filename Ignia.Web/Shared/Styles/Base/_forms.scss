@@ -1,0 +1,224 @@
+﻿//==============================================================================================
+// FORMS
+//----------------------------------------------------------------------------------------------
+// Defines global styles for form related elements, such as inputs.
+//----------------------------------------------------------------------------------------------
+// NOTE: Font styles should be defined in _typography.scss.
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+
+// @import "../Vendor/RedCastor/awesome-foundation6-checkbox";
+@import '../variables';
+@import '../settings';
+
+//----------------------------------------------------------------------------------------------
+// COMMON
+//----------------------------------------------------------------------------------------------
+.success {
+  border-color                  : rgb(101, 166, 31);            // #65A61F
+  color                         : rgb(101, 166, 31);            // #65A61F
+}
+.warning {
+  border-color                  : rgb(239, 141, 36);            // #EF8D24
+  color                         : rgb(239, 141, 36);            // #EF8D24
+}
+.error {
+  border-color                  : $palette-red;
+  color                         : $palette-red;
+}
+
+//----------------------------------------------------------------------------------------------
+// FIELDSET
+//----------------------------------------------------------------------------------------------
+fieldset {
+  legend {
+    margin-bottom               : rem-calc(18);
+    padding-top                 : rem-calc(34);
+    font-family                 : $header-font-family;
+    font-size                   : rem-calc(20);
+    font-weight                 : 600;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// LABELS
+//----------------------------------------------------------------------------------------------
+
+label, .label {
+  font-size                     : $body-font-size;
+}
+label {
+  position                      : relative;
+}
+.label {
+  position                      : absolute;
+  top                           : rem-calc(16);
+  left                          : rem-calc(8);
+  font-size                     : rem-calc(16);
+  color                         : $medium-gray;
+  transform-origin              : 0 0;
+  transition                    : all .2s ease;
+}
+
+//----------------------------------------------------------------------------------------------
+// INPUT
+//----------------------------------------------------------------------------------------------
+
+[type='text'],
+[type='password'],
+[type='date'],
+[type='datetime'],
+[type='datetime-local'],
+[type='month'],
+[type='week'],
+[type='email'],
+[type='number'],
+[type='search'],
+[type='tel'],
+[type='time'],
+[type='url'],
+[type='color'],
+textarea,
+select {
+  box-shadow                    : none;
+  border-radius                 : 3px;
+  padding                       : rem-calc(12 8 4);
+  height                        : rem-calc(48);
+  transition                    : all .15s ease;
+  &:active,
+  &:focus {
+    box-shadow                  : none;
+    border-color                : $palette-yellow;
+  }
+}
+input,
+textarea {
+  &:active,
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+  }
+  &.submit {
+    margin-top: rem-calc(32);
+    margin-bottom: 0;
+  }
+  &:not(:placeholder-shown),
+  &:focus {
+    + span {
+      transform                 : translateY(-12px) scale(.75);
+    }
+  }
+}
+textarea {
+  min-height                    : rem-calc(128);
+}
+
+//----------------------------------------------------------------------------------------------
+// FANCY INPUTS (radio buttons, checkboxes)
+//----------------------------------------------------------------------------------------------
+
+.radio,
+.checkbox {
+  label {
+    height                      : auto !important;
+    line-height                 : rem-calc(20) !important;
+    &:before {
+      border                    : 2px solid $palette-grey-light !important;
+    }
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    &:checked {
+      + label {
+        &:before {
+          border                : 2px solid $palette-black !important;
+        }
+      }
+    }
+  }
+}
+.radio {
+  label {
+    &:after {
+      top                       : 2px !important;
+      left                      : 2px !important;
+      width                     : 17px !important;
+      height                    : 17px !important;
+    }
+  }
+  input[type="radio"] {
+    &:checked {
+      + label:after {
+        background-color        : $palette-yellow;
+      }
+    }
+  }
+}
+span.radio {
+  display                       : block;
+}
+.checkbox {
+  padding-bottom                : rem-calc(20);
+  @include breakpoint(medium) {
+    padding-bottom              : rem-calc(10);
+  }
+  @include breakpoint(large) {
+    padding-bottom              : 0;
+  }
+  label {
+    &:after {
+      line-height               : 1.8 !important;
+      color                     : $palette-black !important;
+    }
+  }
+  input[type="checkbox"] {
+    &:checked {
+      + label {
+        &:before {
+          background-color      : $palette-yellow;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// BUTTONS
+//----------------------------------------------------------------------------------------------
+
+button {
+  &[type="submit"] {
+    border                      : 0 none transparent;
+    border-radius               : 2px;
+    padding                     : rem-calc(10 12);
+    font-size                   : rem-calc(18);
+    color                       : $palette-grey-dark;
+    background                  : $palette-yellow;
+    &[disabled] {
+      opacity                   : 0.75;
+      cursor                    : not-allowed;
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// VALIDATION
+//----------------------------------------------------------------------------------------------
+
+label {
+  &.required {
+    font-weight                 : 600;
+  }
+}
+.is-invalid-label {
+  font-weight                   : 600;
+}
+.is-invalid-input {
+  &:not(:focus) {
+    background-color            : $palette-white;
+  }
+}

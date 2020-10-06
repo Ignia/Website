@@ -1,0 +1,114 @@
+﻿//==============================================================================================
+// LIBRARY
+//----------------------------------------------------------------------------------------------
+// Represents styles specific to the Ignia Library page(s).
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+// NOTE: It is expected that this page will co-exist with the centralized stylesheet and,
+// therefore, it is not necessary that it reimport shared styles. It may, however, need to
+// import variables and helpers.
+//----------------------------------------------------------------------------------------------
+@import "../variables";
+@import "../settings";
+@import "../Vendor/ZURB/util/mixins";
+@import "../Helpers/mixins";
+@import "../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// LAYOUT
+//----------------------------------------------------------------------------------------------
+
+#PrimaryNavigation,
+#PrimaryNavigationSmallScreen {
+  ul {
+    li {
+      a,
+      a:hover,
+      a:focus,
+      a:active,
+      a.active {
+        .ordinal {
+          display               : none;
+        }
+      }
+    }
+  }
+  img.annotation {
+    display                     : none;
+  }
+}
+#PrimaryNavigationSmallScreen {
+  ul {
+    @include breakpoint(959px down) {
+      top                       : rem-calc(66);
+    }
+    @include breakpoint(767px down) {
+      top                       : rem-calc(45);
+    }
+    @include breakpoint(359px down) {
+      top                       : rem-calc(46);
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// BASE
+//----------------------------------------------------------------------------------------------
+
+header,
+footer {
+  &.site {
+    background-color            : $palette-secondary-grey-dark;
+    background-image            : none;
+  }
+}
+.header {
+  &.site {
+    .navigation {
+      &.off-canvas {
+        background-color        : $palette-secondary-grey-dark;
+        background-image        : none;
+      }
+      a {
+        color                   : $palette-secondary-grey-light;
+        &:hover,
+        &:focus,
+        &:active,
+        &.active {
+          color                 : $palette-white;
+          background-position   : rem-calc(-81 4);
+        }
+        &.ancillary {
+          border-color          : $palette-red;
+          color                 : $palette-white;
+        }
+      }
+    }
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// HEADER CONTENT
+//----------------------------------------------------------------------------------------------
+
+section[itemprop="mainContentOfPage"] {
+  > header {
+    min-height                  : rem-calc(70);
+    &.header {
+      background-color          : lighten($palette-secondary-grey-darkest, 4%);
+      background-image          : none;
+    }
+    h1 {
+      margin                    : 0;
+      padding                   : rem-calc(26 0 18);
+      font-family               : $headings-font-family;
+      font-size                 : rem-calc(36);
+      line-height               : 1;
+      font-weight               : 300;
+      color                     : $palette-white;
+    }
+  }
+}

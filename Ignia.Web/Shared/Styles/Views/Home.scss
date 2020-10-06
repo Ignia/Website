@@ -1,0 +1,795 @@
+﻿//==============================================================================================
+// HOME
+//----------------------------------------------------------------------------------------------
+// Represents styles specific to the Ignia homepage.
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+// NOTE: It is expected that this page will co-exist with the centralized stylesheet and,
+// therefore, it is not necessary that it reimport shared styles. It may, however, need to
+// import variables and helpers.
+//----------------------------------------------------------------------------------------------
+@import "../variables";
+@import "../settings";
+@import "../Vendor/ZURB/util/mixins";
+@import "../Helpers/mixins";
+@import "../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// SKIN
+//----------------------------------------------------------------------------------------------
+
+body {
+  @include breakpoint(959px down) {
+    background-position         : center rem-calc(65);
+  }
+}
+
+main {
+  padding                       : 0;
+  @include breakpoint(767px down) {
+    overflow-y                  : scroll;
+  }
+}
+
+footer.footer {
+  position                      : relative;
+  @include breakpoint(768px) {
+    margin-top                  : -15px;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// CORE
+//----------------------------------------------------------------------------------------------
+
+.panel {
+  margin                        : 0 auto;
+  width                         : 100%;
+
+  // Common - panels
+  &.introduction,
+  &.services,
+  &.clients,
+  &.contact {
+    position                    : relative;
+    header {
+      margin                    : 0 auto;
+      border-bottom-width       : 1px;
+      border-bottom-style       : solid;
+      min-height                : rem-calc(82);
+      text-align                : center;
+      h1 {
+        margin                  : 0;
+        padding                 : rem-calc(51 0 15);
+        font-family             : $body-font-family;
+        font-size               : $body-font-size;
+        font-weight             : 600;
+        font-style              : italic;
+        letter-spacing          : 0.357em;
+        @extend .uppercase;
+      }
+    }
+    span.overlay {
+      z-index                   : -1;
+      position                  : absolute;
+      top                       : 0;
+      right                     : 0;
+      bottom                    : 0;
+      left                      : 0;
+      width                     : 100%;
+      height                    : 100%;
+      background-color          : $palette-black;
+      opacity                   : 0;
+    }
+  }
+  &.introduction,
+  &.services,
+  &.contact {
+    header {
+      border-bottom-color       : $palette-white;
+      h1 {
+        color                   : $palette-white;
+      }
+    }
+  }
+  span.overlay {
+    z-index                     : -1;
+    opacity                     : 0;
+  }
+  section {
+    @include clearfix;
+  }
+  .section-heading {
+    font-family                 : $headings-font-family;
+  }
+
+  // Splash
+  &.splash {
+    display                     : flex;
+    flex-direction              : column;
+    justify-content             : center;
+    text-align                  : center;
+    background                  : transparent url('/Images/Home/Hero.Large.jpg') no-repeat center 120px;
+    background-size             : cover;
+    background-attachment       : fixed;
+    @include breakpoint(959px down) {
+      background-position       : center top;
+      background-attachment     : scroll;
+    }
+    h1,
+    h2 {
+      margin                    : 0;
+      padding                   : 0 2.5%;
+      line-height               : 1.3;
+      color                     : rgb(254, 254, 254);           // #FEFEFE
+      @include breakpoint(639px down) {
+        font-size               : rem-calc(21);
+      }
+      @include breakpoint(640px) {
+        font-size               : rem-calc(36);
+      }
+    }
+    .wrapper {
+      display                   : block;
+      position                  : relative;
+      overflow                  : visible;
+      margin                    : 0 auto;
+      padding                   : rem-calc(25 0);
+      max-width                 : 95%;
+      background                : rgba(0, 0, 0, 0.75);
+      @include breakpoint(959px down) {
+        min-width               : 90%;
+      }
+      @include breakpoint(960px) {
+        min-width               : rem-calc(721);
+      }
+    }
+    .logo {
+      padding-bottom            : rem-calc(27);
+      max-height                : rem-calc(85);
+      @include breakpoint(639px down) {
+        padding-bottom          : rem-calc(10);
+        max-height              : rem-calc(42.5);
+      }
+    }
+    .navigation.arrow {
+      display                   : block;
+      margin                    : rem-calc(77) auto rem-calc(-63);
+      width                     : rem-calc(110);
+      height                    : rem-calc(110);
+      max-height                : rem-calc(110);
+      text-align                : center;
+      background                : $palette-yellow;
+      @include breakpoint(639px down) {
+        margin                  : rem-calc(35) auto rem-calc(-44);
+        width                   : rem-calc(55);
+        max-width               : rem-calc(55);
+        height                  : rem-calc(55);
+        max-height              : rem-calc(55);
+      }
+      img {
+        margin                  : rem-calc(24);
+        width                   : rem-calc(62);
+        height                  : rem-calc(65);
+        @include breakpoint(639px down) {
+          margin                : rem-calc(12);
+          width                 : rem-calc(31);
+          height                : rem-calc(32.5);
+        }
+      }
+    }
+    span.overlay {
+      position                  : absolute;
+      top                       : 0;
+      right                     : 0;
+      bottom                    : 0;
+      left                      : 0;
+      width                     : 100%;
+      height                    : 100%;
+      background-color          : $palette-black;
+    }
+  }
+
+  // Introduction
+  &.introduction {
+    color                       : $palette-white;
+    background                  : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
+    header {
+      z-index                   : 1;
+      background                : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
+      &[style*="position: fixed"] {
+        z-index                 : 10;
+      }
+      h1 {
+        span {
+          display               : inline-block;
+        }
+      }
+    }
+    .container {
+      @include breakpoint(960px) {
+        background-color        : transparent;
+        background-image        : url('/Images/Home/Tagline.Rulers.png');
+        background-repeat       : no-repeat;
+        background-position-x   : calc(50vw - 365px);
+        background-position-y   : 100%;
+        background-attachment   : fixed;
+      }
+    }
+    section {
+      p {
+        margin                  : rem-calc(0 0 52);
+        line-height             : 1.8;
+        color                   : $palette-white;
+        @include breakpoint(767px down) {
+          margin-bottom         : rem-calc(40);
+        }
+        &:first-child {
+          padding-top           : rem-calc(49);
+          @include breakpoint(767px down) {
+            padding-top         : rem-calc(25);
+          }
+        }
+        &:first-child:first-letter {
+          display               : inline-block;
+          float                 : left;
+          margin                : rem-calc(9 5 0 0);
+          font-size             : rem-calc(63);
+          line-height           : rem-calc(42);
+          font-weight           : 900;
+          color                 : $palette-yellow;
+          @include breakpoint(767px down) {
+            margin              : rem-calc(4 6 0 0);
+            font-size           : rem-calc(44);
+            line-height         : 0.85;
+            font-weight         : 700;
+          }
+        }
+        &:last-child {
+          padding-bottom        : rem-calc(40);
+        }
+      }
+      &.tagline {
+        .section-heading {
+          border-bottom         : 1px solid $palette-white;
+          font-family           : $body-font-family;
+          font-size             : rem-calc(110);
+          line-height           : 113%;
+          font-weight           : 700;
+          color                 : $palette-yellow;
+          @extend .uppercase;
+          @include breakpoint(960px) {
+            margin              : 0;
+            padding             : rem-calc(70 0 78 60);
+          }
+          @include breakpoint(959px down) {
+            margin              : 0 auto;
+            padding             : 2.5% 0;
+            font-size           : rem-calc(90);
+            text-align          : center;
+          }
+          @include breakpoint(767px down) {
+            font-size           : rem-calc(44);
+          }
+          @include breakpoint(359px down) {
+            font-size           : rem-calc(38);
+          }
+          span {
+            display             : block;
+            font-style          : italic;
+            color               : $palette-white;
+          }
+        }
+
+      }
+      &.factory {
+        display                 : none;
+        @include breakpoint(960px) {
+          display               : block;
+          position              : relative;
+          top                   : rem-calc(284);
+          min-height            : rem-calc(800);
+          background-color      : transparent;
+          background-image      : url('/Images/Home/Tagline.Code.png');
+          background-repeat     : no-repeat;
+          background-position-x : calc(50vw - 438px);
+          background-position-y : 77.5%;
+          background-attachment : fixed;
+        }
+        img {
+          position              : relative;
+          top                   : rem-calc(-260);
+          left                  : rem-calc(42);
+        }
+      }
+      &.body {
+        @include breakpoint(960px) {
+          padding-right         : rem-calc(40);
+        }
+      }
+
+    }
+  }
+
+  // Services
+  &.services {
+    padding-bottom              : rem-calc(60);
+    background                  : $palette-grey-darker;
+    header {
+      border-color              : rgb(166, 161, 156);
+      background                : $palette-grey-darker;
+      &:first-child {
+        @include breakpoint(767px down) {
+          z-index               : 21;
+        }
+      }
+    }
+    div.container {
+      > div > header {
+        @include breakpoint(768px) {
+          z-index                 : 5;
+        }
+      }
+    }
+    section {
+      &.tagline {
+        .section-heading {
+          border-bottom         : 1px solid rgb(166, 161, 156);
+          font-family           : $body-font-family;
+          font-size             : rem-calc(96);
+          line-height           : 113%;
+          font-weight           : 700;
+          color                 : $palette-white;
+          @extend .uppercase;
+          @include breakpoint(960px) {
+            margin              : 0;
+            padding             : rem-calc(70 0 78 60);
+          }
+          @include breakpoint(959px down) {
+            margin              : 0 auto;
+            padding             : 2.5% 0;
+            font-size           : rem-calc(84);
+            text-align          : center;
+          }
+          @include breakpoint(767px down) {
+            font-size           : rem-calc(44);
+          }
+          @include breakpoint(413px down) {
+            font-size           : rem-calc(36);
+          }
+          span {
+            display             : block;
+            font-style          : italic;
+            color               : $palette-red;
+          }
+        }
+      }
+    }
+    article {
+      margin-top                : rem-calc(60);
+      @include breakpoint(767px down) {
+        margin-top              : rem-calc(36);
+      }
+      &.is-active {
+        header {
+          border-right-color    : $palette-yellow;
+          h2 {
+            color               : $palette-yellow;
+            i.arrow {
+              &:before,
+              &:after {
+                display         : block;
+              }
+            }
+          }
+        }
+      }
+      header {
+        position                : relative;
+        border-right            : 1px solid rgb(166, 161, 156);
+        border-bottom-width     : 0;
+        @include breakpoint(960px) {
+          margin-right          : rem-calc(-40);
+        }
+        @include breakpoint(767px down) {
+          border-right          : 0 none transparent;
+          min-height            : 0;
+        }
+        h2 {
+          margin                : 0;
+          padding               : rem-calc(0 48 0 0);
+          text-align            : right;
+          font-family           : $headings-font-family;
+          font-size             : rem-calc(24);
+          line-height           : 1.4;
+          color                 : rgb(127, 123, 118);
+          @include breakpoint(767px down) {
+            padding             : rem-calc(0 0 16 0);
+            text-align          : center;
+            color               : $palette-yellow;
+          }
+          span {
+            @include breakpoint(768px) {
+              display           : block;
+              clear             : both;
+            }
+          }
+          i.arrow {
+            display             : block;
+            position            : absolute;
+            top                 : rem-calc(22);
+            left                : 100%;
+            width               : rem-calc(20);
+            height              : rem-calc(28);
+            &:before,
+            &:after {
+              content           : '';
+              display           : none;
+              position          : absolute;
+              top               : 0;
+              right             : auto;
+              left              : 0;
+              border-width      : rem-calc(14);
+              border-style      : solid;
+              width             : 0;
+              height            : 0;
+              transition        : all 250ms ease-in-out;
+            }
+            &:before {
+              left              : rem-calc(1);
+              border-color      : transparent transparent transparent $palette-yellow;
+            }
+            &:after {
+              left              : rem-calc(-0.5);
+              border-color      : transparent transparent transparent rgb(51, 46, 44);
+            }
+          }
+        }
+      }
+      p,
+      aside {
+        padding-left            : rem-calc(48);
+        line-height             : 1.8;
+        @include breakpoint(960px) {
+          padding-left          : rem-calc(80);
+        }
+        @include breakpoint(767px down) {
+          padding-left          : 0;
+        }
+      }
+      p {
+        color                   : $palette-white;
+      }
+      aside {
+        color                   : $palette-red;
+        header {
+          border-right          : 0 none transparent;
+          min-height            : 0;
+          text-align            : left;
+          h3 {
+            font-size           : $body-font-size;
+            font-style          : italic;
+          }
+        }
+        ul {
+          list-style-type       : square;
+          margin-bottom         : 0;
+          li {
+            span {
+              line-height       : 1.8;
+              color             : $palette-white;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Clients
+  &.clients {
+    background                  : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
+    @include breakpoint(960px) {
+      z-index                   : 35;
+      padding-bottom            : rem-calc(54);
+    }
+    @include breakpoint(959px down) {
+      padding-bottom            : 18%;
+    }
+    .container {
+      position                  : relative;
+    }
+    header {
+      border-bottom-color       : $palette-grey-dark;
+      background                : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
+      h1 {
+        color                   : $palette-grey-dark;
+      }
+    }
+    section.logos,
+    section.headings {
+      position                  : relative;
+    }
+    section.logos {
+      margin                    : 0 auto;
+      @include breakpoint(960px) {
+        top                     : rem-calc(54);
+        padding-left            : rem-calc(10);
+      }
+      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+        top                     : rem-calc(40);
+        padding-bottom          : 3%;
+        text-align              : center;
+      }
+      @include breakpoint(767px down) {
+        top                     : rem-calc(18);
+        text-align              : center;
+      }
+    }
+    section.headings {
+      top                       : rem-calc(84);
+      @include breakpoint(959px down) {
+        top                     : rem-calc(20);
+      }
+      h2 {
+        position                : relative;
+        font-size               : rem-calc(48);
+        line-height             : 1;
+        color                   : $palette-grey-dark;
+        @include breakpoint(960px) {
+          padding               : 0;
+        }
+        @include breakpoint(959px down) {
+          text-align            : center;
+        }
+        @include breakpoint(768px) {
+          font-size             : rem-calc(60);
+          line-height           : rem-calc(65);
+        }
+        @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+          font-size             : rem-calc(36);
+        }
+        @include breakpoint(767px down) {
+          font-size             : rem-calc(24);
+        }
+        &.subheadline {
+          top                   : rem-calc(33);
+          @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+            top                 : rem-calc(25);
+          }
+          @include breakpoint(767px down) {
+            top                 : 0;
+          }
+        }
+        span {
+          @include breakpoint(960px) {
+            display             : block;
+          }
+        }
+      }
+      .arrow {
+        display                 : block;
+        position                : relative;
+        top                     : rem-calc(69);
+        width                   : rem-calc(110);
+        height                  : rem-calc(110);
+        text-align              : center;
+        background-color        : $palette-red;
+        @include breakpoint(959px down) {
+          display               : none;
+        }
+        img {
+          margin-top            : rem-calc(24);
+          opacity               : 0.95;
+          filter                : alpha(opacity=95);
+        }
+      }
+    }
+    ul {
+      display                   : inline-block;
+      margin                    : 0 auto;
+      padding-left              : 0;
+      text-align                : center;
+      @include breakpoint(960px) {
+        padding-bottom          : rem-calc(34);
+        padding-left            : rem-calc(10);
+      }
+      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+        max-width               : rem-calc(688);
+      }
+      @media screen and #{breakpoint(360px)} and #{breakpoint(767px down)} {
+        max-width               : 78%;
+      }
+      @include breakpoint(359px down) {
+        max-width               : 84.5%;
+      }
+      li {
+        display                 : table;
+        float                   : left;
+        margin                  : rem-calc(0 20 20 0);
+        border-radius           : rem-calc(3);
+        width                   : rem-calc(220);
+        min-height              : rem-calc(60);
+        height                  : rem-calc(200);
+        background              : rgba(0, 0, 0, 0.05);
+        transform-style         : preserve-3d;
+        @media screen and #{breakpoint(580px)} and #{breakpoint(959px down)} {
+          width                 : rem-calc(216);
+          height                : rem-calc(196);
+        }
+        @media screen and #{breakpoint(479px)} and #{breakpoint(579px down)} {
+          width                 : rem-calc(208);
+          height                : rem-calc(198);
+        }
+        @media screen and #{breakpoint(415px)} and #{breakpoint(479px down)} {
+          width                 : rem-calc(147);
+          height                : rem-calc(127);
+        }
+        @include breakpoint(479px down) {
+          width                 : rem-calc(132);
+          height                : rem-calc(102);
+        }
+        @include breakpoint(360px down) {
+          width                 : rem-calc(126);
+          height                : rem-calc(106);
+        }
+        @include breakpoint(320px down) {
+          width                 : rem-calc(120);
+          height                : rem-calc(100);
+        }
+        &:nth-child(even),
+        &:last-child {
+          margin-right          : 0;
+        }
+        &:nth-child(even) {
+          @media screen and #{breakpoint(768px)} and #{breakpoint(959px down)} {
+            margin-right        : rem-calc(20);
+          }
+        }
+        &:nth-child(3n) {
+          @media screen and #{breakpoint(768px)} and #{breakpoint(959px down)} {
+            margin-right        : 0;
+          }
+        }
+        span {
+          display               : table-cell;
+          text-align            : center;
+          vertical-align        : middle;
+        }
+      }
+    }
+    img.logo {
+      width                     : 100%;
+      max-width                 : rem-calc(140);
+      @include breakpoint(479px down) {
+        max-width               : rem-calc(90);
+      }
+    }
+  }
+
+  // Contact
+  &.contact {
+    background                  : $palette-grey-darker;
+    @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+      min-height                : rem-calc(944);
+    }
+    @include breakpoint(767px down) {
+      height                    : auto;
+    }
+    .container,
+    .form {
+      background                : $palette-grey-darker;
+    }
+    header {
+      border-color              : rgb(166, 161, 156);
+    }
+    section {
+      @media screen and #{breakpoint(768px)} and #{breakpoint(960px down)} {
+        padding                 : 0 5%;
+      }
+    }
+    .section-heading {
+      margin                    : 0;
+      padding                   : rem-calc(35 0 25);
+      color                     : $palette-white;
+      @include breakpoint(767px down) {
+        padding                 : rem-calc(15 0);
+        font-size               : rem-calc(26);
+        line-height             : 1.4;
+        text-align              : center;
+      }
+    }
+    .form {
+      padding-left              : rem-calc(10);
+      @include breakpoint(767px down) {
+        padding-left            : 0;
+      }
+      label {
+      //display                 : none;
+      }
+    }
+    .sidebar.right {
+      @include clearfix;
+      position                  : relative;
+      top                       : rem-calc(100);
+      right                     : 0;
+      float                     : right;
+      border-radius             : 3px;
+      padding                   : rem-calc(30 0 30 35);
+      width                     : rem-calc(220);
+      background                : rgba($palette-black, 0.1);
+      @include breakpoint(959px down) {
+        right                   : 0;
+      }
+      @include breakpoint(767px down) {
+        top                     : 0;
+        right                   : 0;
+        float                   : none;
+        margin-bottom           : rem-calc(20);
+        padding                 : 0;
+        width                   : 100%;
+      }
+      .contact.link {
+        @include breakpoint(767px down) {
+          display               : inline-block;
+          margin                : rem-calc(5 10 15);
+        }
+        &:first-child {
+          margin-bottom         : rem-calc(30);
+          @include breakpoint(767px down) {
+            margin-bottom       : rem-calc(15);
+          }
+        }
+        .svg-inline--fa {
+          margin-right          : rem-calc(12);
+          width                 : rem-calc(20);
+          height                : auto;
+          @include breakpoint(767px down) {
+            width               : rem-calc(18);
+          }
+          @include breakpoint(360px down) {
+            width               : rem-calc(16);
+          }
+        }
+        .fa-phone {
+          transform             : rotateY(180deg);
+        }
+        a {
+          position              : relative;
+          &.icon {
+            @include breakpoint(479px down) {
+              top               : rem-calc(8);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(6);
+            }
+          }
+          &.text {
+            @extend .uppercase;
+            top                 : rem-calc(-4);
+            @include breakpoint(479px down) {
+              top               : rem-calc(6);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(4);
+            }
+          }
+        }
+        &:nth-child(2) {
+          a.text {
+            top                 : rem-calc(-6);
+            @include breakpoint(479px down) {
+              top               : rem-calc(6);
+            }
+            @include breakpoint(360px down) {
+              top               : rem-calc(4);
+            }
+          }
+        }
+      }
+    }
+  }
+
+}

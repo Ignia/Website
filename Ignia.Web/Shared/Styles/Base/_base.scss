@@ -1,0 +1,94 @@
+﻿//==============================================================================================
+// BASE CLASSES
+//----------------------------------------------------------------------------------------------
+// Provides global overrides for standard HTML elements based on element, attribute, and single-
+// class selectors. Selectors in this section should never be nested more than two layers deep.
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+@import "../Vendor/ZURB/util/mixins";
+@import "fonts";
+@import "typography";
+@import "links";
+@import "lists";
+@import "buttons";
+@import "images";
+@import "forms";
+@import "utilities";
+
+//----------------------------------------------------------------------------------------------
+// GLOBAL
+//----------------------------------------------------------------------------------------------
+body {
+  background-color              : $palette-grey-dark;
+}
+
+//----------------------------------------------------------------------------------------------
+// HEADER AREA ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+.header {
+  background                    : $palette-white url('/Images/Header/Header.Tile.png') repeat 0 0;
+  .logo {
+    background                  : $palette-red url('/Images/Header/LogoBox.Tile.png') repeat 0 0;
+    a {
+      line-height               : 1;
+    }
+  }
+  img.annotation {
+    opacity                     : 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// MAIN CONTENT AREA ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// FOOTER ELEMENTS
+//----------------------------------------------------------------------------------------------
+
+.footer {
+  background                    : rgb(51, 46, 44);              // #332E2C
+  &.transparent {
+    background                  : transparent;
+  }
+  .navbar {
+    background                  : $palette-white;
+  }
+  .navigation {
+    background-color            : $palette-white;
+    a {
+      color                     : $palette-secondary-grey-medium;
+      &:hover,
+      &:focus,
+      &:active {
+        color                   : $palette-secondary-grey-medium;
+      }
+    }
+    p,
+    dd {
+      font-family               : $headings-font-family;
+      font-weight               : 500;
+    }
+    p.heading {
+      margin-bottom             : rem-calc(8);
+      font-size                 : rem-calc(16);
+      color                     : $palette-grey-dark;
+    }
+    dd {
+      font-size                 : rem-calc(14);
+      color                     : $palette-secondary-grey-medium;
+    }
+  }
+  .copyright {
+    padding-top                 : rem-calc(5);
+    text-align                  : center;
+    color                       : $palette-grey-light;
+    small {
+      font-size                 : rem-calc(12);
+    }
+  }
+}

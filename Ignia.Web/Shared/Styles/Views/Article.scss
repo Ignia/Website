@@ -1,0 +1,146 @@
+﻿//==============================================================================================
+// (LIBRARY) ARTICLE
+//----------------------------------------------------------------------------------------------
+// Represents styles specific to the Ignia Library Article Content Type page(s).
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// IMPORTS
+//----------------------------------------------------------------------------------------------
+// NOTE: It is expected that this page will co-exist with the centralized stylesheet and,
+// therefore, it is not necessary that it reimport shared styles. It may, however, need to
+// import variables and helpers.
+//----------------------------------------------------------------------------------------------
+@import "../variables";
+@import "../settings";
+@import "../Vendor/ZURB/util/mixins";
+@import "../Helpers/mixins";
+@import "../Base/utilities";
+
+//----------------------------------------------------------------------------------------------
+// LAYOUT
+//----------------------------------------------------------------------------------------------
+
+main {
+  .page.header {
+    margin-bottom               : 0;
+  }
+}
+
+//----------------------------------------------------------------------------------------------
+// BASE
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// ARTICLE CONTENT
+//----------------------------------------------------------------------------------------------
+
+.library {
+  &.article {
+    padding                     : rem-calc(48 0);
+    font-family                 : $body-font-family;
+    color                       : $palette-black;
+    background-color            : $palette-white;
+    header {
+      margin-bottom             : rem-calc(20);
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family               : $headings-font-family;
+      font-weight               : 500;
+    }
+    h1,
+    h2,
+    h3 {
+      color                     : $palette-secondary-grey-darker;
+    }
+    h2 {
+      font-size                 : rem-calc(32);
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(24);
+      }
+    }
+    h3 {
+      font-size                 : rem-calc(22);
+      @include breakpoint(767px down) {
+        font-size               : rem-calc(16);
+      }
+    }
+    .publication {
+      &.details {
+        @include clearfix;
+        position                : relative;
+        padding                 : rem-calc(12 0 14);
+        border-radius           : rem-calc(8);
+        min-height              : rem-calc(40);
+        background              : $palette-secondary-grey-lighter;
+        .pubdate,
+        .author {
+          position              : absolute;
+          font-size             : rem-calc(14);
+          line-height           : 100%;
+          font-weight           : 400;
+          color                 : lighten($palette-secondary-grey-medium, 9%);
+        }
+        .pubdate {
+          left                  : rem-calc(20);
+        }
+        .author {
+          right                 : rem-calc(20);
+        }
+      }
+    }
+    .contents {
+      &.ancillary {
+        padding-right           : 0;
+        padding-left            : 0;
+        aside {
+          margin                : 0;
+          padding               : rem-calc(20);
+          border                : 1px solid $palette-secondary-grey-lighter;
+          @include breakpoint(767px down) {
+            margin-top          : rem-calc(32);
+          }
+          h3 {
+            margin-top          : rem-calc(16);
+            margin-bottom       : 0;
+            font-size           : rem-calc(18);
+            color               : $palette-secondary-grey-light;
+            &:first-child {
+              margin-top        : 0;
+            }
+          }
+          p {
+            margin              : rem-calc(0 0 8);
+          }
+          ul {
+            margin              : rem-calc(0 0 8);
+            padding-left        : rem-calc(20);
+            list-style-type     : square;
+          }
+        }
+      }
+    }
+    .abstract,
+    .content.section {
+      header {
+        margin                  : rem-calc(20 0 0);
+        h3 {
+          margin                : rem-calc(0 0 5);
+        }
+        div,
+        p {
+          line-height           : 1.65;
+        }
+        p {
+          margin                : rem-calc(5 0);
+        }
+      }
+    }
+    .abstract {
+      margin-top                : rem-calc(25);
+    }
+  }
+}

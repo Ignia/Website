@@ -1,0 +1,241 @@
+﻿@model HomeTopicViewModel
+
+@{ Layout = "~/Views/Layout/_Layout.cshtml"; }
+
+@section Head {
+  <link rel="stylesheet" type="text/css" href="/Shared/Styles/Views/Home.min.css" />
+}
+
+@section PageBodySection {
+
+  <!-- Splash -->
+  <article id="Splash" class="panel splash full-height" role="article">
+
+    <div class="wrapper block">
+      <img src="/Images/Home/Hero.Logo.png" alt="Ignia" class="logo" />
+      <header role="definition">
+        <h1 class="section-heading headline">Ignia is a software architecture &amp;&nbsp;engineering&nbsp;firm.</h1>
+        <h2 class="section-heading subheadline">Let us build your product.</h2>
+      </header>
+      <a id="SplashArrow" href="#Introduction" class="navigation arrow"><img src="/Images/Home/Hero.DownArrow.png" alt="v" /></a>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Splash -->
+
+  <!-- Introduction -->
+  <article id="Introduction" class="panel introduction full-height" role="article">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Who is Ignia?</h1></header>
+      <section class="tagline">
+        <div class="heading-block"><h2 class="section-heading">Measure twice, <span>code once.</span></h2></div>
+      </section>
+      <div class="grid-x grid-margin-x">
+        <section class="factory cell large-6 show-for-large">
+          <img id="FactoryWidget" src="/Images/Home/CodeFactory.png" alt="v" />
+        </section>
+        <section class="body cell small-10 small-offset-1 large-5 large-offset-1">
+          <p>We believe strong code starts with a strong plan. Ignia crafts projects from the ground up. Before laying down any code, we work closely with stakeholders, domain experts, and designers to understand the business objectives, develop a common language, and identify the areas that are most likely to evolve over time.</p>
+          <p>Ignia collaborates closely with designers to translate functional concepts into modern web and mobile applications. We put an exceptional level of care and detail into the implementation, ensuring the functionality maintains the same degree of craftsmanship that was put into the user experience.</p>
+          <p>We specialize in data-driven applications that span multiple devices, and benefit from our experience building catalogs, communities, and editorial experiences. We have worked extensively with clients from nearly every continent, and are perfectly comfortable integrating with international teams, third-party vendors, and localized content.</p>
+          <p>Ignia has a passion for building applications and products that last. It isn&rsquo;t enough to build a website or an app that just meets today&rsquo;s requirements&ndash;it needs to be designed with the future in mind. And once the application launches, we are prepared to respond to metrics, adapting features to account for emerging requirements and usage data. We architect our code to anticipate new features, future designs, and novel devices.</p>
+          <p>What you can dream up, we can build. Beautifully.</p>
+        </section>
+      </div>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Introduction -->
+
+  <!-- Services -->
+  <article id="Services" class="panel services full-height" role="article">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Services We Offer</h1></header>
+      <section class="tagline">
+        <div class="heading-block"><h2 class="section-heading">Bright Ideas Need <span>the Right Tools.</span></h2></div>
+      </section>
+      <article id="ResponsiveService" class="grid-x grid-margin-x">
+        <header class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <h2><span>Responsive</span> <span>Web Apps</span> <i class="arrow"></i></h2>
+        </header>
+        <section class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <p>Ignia doesn&rsquo;t just build web apps that <em>look</em> different on phones, tablets, or even televisions. We build apps that <em>behave</em> differently, accommodating varying use cases and locations. After all, a customer&rsquo;s needs are considerably different when visiting a retail location than browsing content from the couch.</p>
+          <aside>
+            <header><h3>Some of the tools we use:</h3></header>
+            <ul>
+              <li><span>Google Angular 6+</span></li>
+              <li><span>Facebook React 16+</span></li>
+              <li><span>Twitter Bootstrap 4+</span></li>
+              <li><span>ZURB Foundation 6+</span></li>
+              <li><span>Apache Cordova 8+ (Adobe PhoneGap)</span></li>
+            </ul>
+          </aside>
+        </section>
+      </article>
+      <article id="CloudAPIService" class="grid-x grid-margin-x">
+        <header class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <h2><span>Cloud-Based</span> <span>APIs</span> <i class="arrow"></i></h2>
+        </header>
+        <section class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <p>Web services provide the backbone of modern applications—from smartwatches to online kiosks—not only by retrieving the data each device needs, but also responding intelligently to user requests. Ignia specializes in modeling flexible, developer-friendly APIs that meet existing needs while anticipating additional data and devices in the future.</p>
+          <aside>
+            <header><h3>Some of the tools we use:</h3></header>
+            <ul>
+              <li><span>Microsoft ASP.NET Core 2+</span></li>
+              <li><span>Express.js 4+</span></li>
+              <li><span>Django 2+</span></li>
+              <li><span>Azure Functions 2+</span></li>
+              <li><span>OData Protocol 4+</span></li>
+            </ul>
+          </aside>
+        </section>
+      </article>
+      <article id="CMSService" class="grid-x grid-margin-x">
+        <header class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <h2><span>Content</span> <span>Management</span> <span>Systems</span> <i class="arrow"></i></h2>
+        </header>
+        <section class="cell small-10 small-offset-1 medium-6 medium-offset-0">
+          <p>Ignia has extensive experience with a variety of content management systems, including localization services and community applications. Importantly, we emphasize configuring these platforms to be presentation-agnostic, so the information can be utilized by web services to support different devices and use cases, not simply one-size-fits-some web pages.</p>
+          <aside>
+            <header><h3>Some of the tools we use:</h3></header>
+            <ul>
+              <li><span>Wordpress 3+</span></li>
+              <li><span>Ignia OnTopic 3+</span></li>
+              <li><span>Zimbra Collaboration</span></li>
+              <li><span>Microsoft SharePoint 2016+</span></li>
+            </ul>
+          </aside>
+        </section>
+      </article>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Services -->
+
+  <!-- Client Highlights -->
+  <article id="ClientHighlights" class="panel clients full-height" role="complementary">
+
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Featured Clients</h1></header>
+      <div class="grid-x grid-padding-x">
+        <section class="logos cell large-7">
+          <ul>
+            <li><span><img src="/Images/Clients/BingAds.png" class="logo client" alt="Bing Ads" /></span></li>
+            <li><span><img src="/Images/Clients/BlinkUX.png" class="logo client" alt="Blink UX" /></span></li>
+            <li><span><img src="/Images/Clients/Ford.png" class="logo client" alt="Ford Motor Company" /></span></li>
+            <li><span><img src="/Images/Clients/GoldSim.png" class="logo client" alt="GoldSim Technology Group" /></span></li>
+            <li><span><img src="/Images/Clients/Microsoft.png" class="logo client" alt="Microsoft" /></span></li>
+            <li><span><img src="/Images/Clients/TechEd.png" class="logo client" alt="Microsoft TechEd" /></span></li>
+          </ul>
+        </section>
+        <section class="tagline headings cell large-5">
+          <h2 class="section-heading headline">Our clients <span>love us.</span></h2>
+          <h2 class="section-heading subheadline">Become one <span>to find out</span> <span>why.</span></h2>
+          <a id="ClientsArrow" href="#Contact" class="arrow"><img src="/Images/Home/Hero.DownArrow.png" alt="v" /></a>
+        </section>
+      </div>
+    </div>
+    <span class="overlay"></span>
+
+  </article>
+  <!-- /Client Highlights -->
+
+  <!-- Quote -->
+  <!--
+  <aside id="Quote" class="panel quote" role="note">
+    <blockquote>
+      <q>
+        When I&rsquo;m working on a problem,
+        <br/><span>I never think about beauty,</span>
+        <br/><span>I think only how to solve the problem.</span>
+        <br/><span>But when I have finished,</span>
+        <br/><span>if the solution is not beautiful,</span>
+        <br/><span>I know it is wrong.</span>
+      </q>
+      <footer>&#8212;<cite> R. Buckminster Fuller</cite></footer>
+    </blockquote>
+  </aside>
+  -->
+  <!-- /Quote -->
+
+  <!-- Contact -->
+  <section id="Contact" class="panel contact full-height" role="complementary">
+    <div class="container grid-container">
+      <header><h1 class="panel-heading">Contact Us</h1></header>
+
+      <section class="grid-x grid-margin-x">
+
+        <div class="cell hide-for-medium">
+          <!-- Heading -->
+          <h2 class="section-heading headline">Talk to us&mdash;we&rsquo;d love to hear&nbsp;from&nbsp;you!</h2>
+        </div>
+
+        <div class="cell small-10 small-offset-1 small-order-2 medium-7 medium-offset-0 medium-order-1 large-8 large-order-1">
+          <!-- Contact Form -->
+          <form id="ContactForm" name="contactForm" class="form contact" role="form">
+
+            <!-- Heading -->
+            <h2 class="section-heading headline hide-for-small-only">Talk to us&mdash;we&rsquo;d love to hear&nbsp;from&nbsp;you!</h2>
+
+            <!-- Form Messages -->
+            <h4 id="MessageLengthMessage" class="error hidden">
+              Please provide more information about the product you need built.
+            </h4>
+            <h4 id="SendSuccessMessage" class="success hidden">
+              Thank you for your inquiry. We will contact you shortly.
+            </h4>
+            <h4 id="SendErrorMessage" class="error hidden">
+              There was an error sending your message. Please try again later&ndash;we want to hear from you.
+            </h4>
+            <!-- /Form Messages -->
+
+            <!-- Form Fields and Submit -->
+            <fieldset>
+
+              <label for="contactName">
+                <input type="text" id="ContactName" name="contactName" class="form-control" placeholder="&#160;" required />
+                <span class="label">Name</span>
+              </label>
+
+              <label for="contactEmail">
+                <input type="email" id="ContactEmail" name="contactEmail" placeholder="&#160;" required />
+                <span class="label">Email</span>
+              </label>
+
+              <label for="contactMessage">
+                <textarea id="ContactMessage" name="contactMessage" class="form-control" rows="4" cols="50" placeholder="&#160;" required minlength="5"></textarea>
+                <span class="label">Message</span>
+              </label>
+
+              <button type="submit">Submit</button>
+
+            </fieldset>
+            <!-- /Form Fields and Submit -->
+
+          </form>
+          <!-- /Contact Form -->
+        </div>
+
+        <div class="cell small-10 small-offset-1 small-order-1 medium-5 medium-offset-0 medium-order-2 large-4 large-order-2">
+          <!-- Sidebar: Quick Contact Info -->
+          <aside class="sidebar right" role="complementary">
+            <div class="contact link"><a href="mailto:info@ignia.com" class="icon"><i class="fas fa-envelope"></i></a> <a href="mailto:info@ignia.com" class="text">info@ignia.com</a></div>
+            <div class="contact link"><a href="tel:18774979284" class="icon"><i class="fas fa-phone"></i></a> <a href="tel:18774979284" class="text">+1 (877) 497-9284</a></div>
+          </aside>
+          <!-- /Sidebar: Quick Contact Info -->
+        </div>
+
+      </section>
+    </div>
+  </section>
+
+}
+
+@section Scripts {
+  <script src="/Shared/Scripts/Home.min.js" async defer></script>
+}

@@ -1,0 +1,64 @@
+﻿//==============================================================================================
+// VARIABLES
+//----------------------------------------------------------------------------------------------
+// Primary customization point for making expected modifications to the site.
+//----------------------------------------------------------------------------------------------
+// NOTE: While these variables are meant to be specific to the Ignia website styles, they may
+// overlap with or supercede variables set in the Ignia-specific Foundation settings
+// (_settings.scss, which imports/inherits this file).
+//==============================================================================================
+
+//----------------------------------------------------------------------------------------------
+// COLORS
+//----------------------------------------------------------------------------------------------
+
+// Base / palette colors
+$palette-black                  : rgb(0, 0, 0);                 // #000000
+$palette-white                  : rgb(242, 238, 230);           // #F2EEE6
+$palette-grey-darkest           : rgb(46, 41, 40);              // #2E2928
+$palette-grey-darker            : rgb(51, 46, 44);              // #332E2C
+$palette-grey-dark              : rgb(51, 51, 51);              // #333333
+$palette-grey-medium            : rgb(127, 123, 118);           // #7F7B76
+$palette-grey-light             : rgb(153, 153, 153);           // #999999
+$palette-grey-lighter           : rgb(187, 187, 187);           // #BBBBBB
+$palette-grey-lightest          : rgb(243, 243, 243);           // #F3F3F3
+$palette-red                    : rgb(239, 74, 36);             // #EF4A24
+$palette-yellow                 : rgb(240, 173, 32);            // #F0AD20
+
+// Secondary / Library colors
+$palette-secondary-white        : rgb(255, 255, 255);           // #FFFFFF
+$palette-secondary-grey-darkest : rgb(26, 26, 26);              // #1A1A1A
+$palette-secondary-grey-darker  : rgb(52, 52, 52);              // #343434
+$palette-secondary-grey-dark    : rgb(75, 75, 75);              // #4B4B4B
+$palette-secondary-grey-medium  : rgb(102, 102, 102);           // #666666
+$palette-secondary-grey-light   : rgb(166, 166, 166);           // #A6A6A6
+$palette-secondary-grey-lighter : rgb(204, 204, 204);           // #CCCCCC
+$palette-secondary-grey-lightest: rgb(245, 245, 245);           // #F5F5F5
+
+// Text
+$text-color                     : $palette-grey-dark;
+$link-color                     : $palette-yellow;
+// $link-text-decoration        : $palette-yellow;
+
+// UI elements
+$button-primary                 : $palette-yellow;
+
+//----------------------------------------------------------------------------------------------
+// TYPOGRAPHY
+//----------------------------------------------------------------------------------------------
+
+$body-font-family               : 'Source Sans Pro', Helvetica, Arial, sans-serif;
+$body-font-size                 : rem-calc(15);
+$headings-font-family           : 'Dosis', $body-font-family;
+
+//----------------------------------------------------------------------------------------------
+// BASE/GENERAL
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// LAYOUT
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+// COMPONENTS
+//----------------------------------------------------------------------------------------------
