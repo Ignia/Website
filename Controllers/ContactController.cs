@@ -24,9 +24,7 @@ namespace Ignia.Web.Controllers {
     /// <summary>
     ///   Placeholder / dummy view
     /// </summary>
-    public ActionResult Index() {
-      return View();
-    }
+    public ActionResult Index() => View();
 
     /*==========================================================================================================================
     | SEND CONTACT REQUEST
@@ -73,6 +71,5 @@ namespace Ignia.Web.Controllers {
     }
 
 
-  }
-
-}
+  } //Class
+} //Namespace
