@@ -360,7 +360,6 @@ typings/
 /bower_components
 **/*/.sass-cache
 *.sass-cache*
-**/gulpFile.js
 **/gulpSecrets.js
 
 # Custom
