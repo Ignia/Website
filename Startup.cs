@@ -152,6 +152,8 @@ namespace Ignia.Web {
       var provider              = new FileExtensionContentTypeProvider();
       const int duration        = 60*60*24*365*2;
 
+      provider.Mappings[".webmanifest"]                         = "application/manifest+json";
+
       var staticFileOptions     = new StaticFileOptions {
         ContentTypeProvider     = provider,
         OnPrepareResponse       = context => {
