@@ -3,10 +3,9 @@
 | Client        Ignia, LLC
 | Project       Topics Library
 \=============================================================================================================================*/
-using System;
 using Ignia.Web.Models;
 
-namespace Ignia.Web {
+namespace Ignia.Web.Services {
 
   /*============================================================================================================================
   | CLASS: IGNIA TOPIC VIEW MODEL LOOKUP SERVICE
@@ -15,7 +14,7 @@ namespace Ignia.Web {
   ///   Provides a mapping between string and class names to be used when mapping <see cref="Topic"/> to a <see
   ///   cref="TopicViewModel"/> or derived class.
   /// </summary>
-  public class IgniaTopicViewModelLookupService : Ignia.Topics.ViewModels.TopicViewModelLookupService {
+  public class IgniaTopicViewModelLookupService : OnTopic.ViewModels.TopicViewModelLookupService {
 
     /*==========================================================================================================================
     | CONSTRUCTOR
@@ -41,20 +40,9 @@ namespace Ignia.Web {
       /*------------------------------------------------------------------------------------------------------------------------
       | Override Ignia topics
       \-----------------------------------------------------------------------------------------------------------------------*/
-      Replace(typeof(NavigationTopicViewModel));
-
-      /*------------------------------------------------------------------------------------------------------------------------
-      | Function: Replace
-      \-----------------------------------------------------------------------------------------------------------------------*/
-      void Replace(Type type) {
-        if (Contains(type.Name)) {
-          Remove(type.Name);
-        }
-        Add(type);
-      }
+      AddOrReplace(typeof(NavigationTopicViewModel));
 
     }
 
   } // Class
-
 } // Namespace

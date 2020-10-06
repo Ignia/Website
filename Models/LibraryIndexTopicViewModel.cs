@@ -4,8 +4,9 @@
 | Project       Website
 \=============================================================================================================================*/
 using System.Linq;
-using Ignia.Topics.ViewModels;
-using Ignia.Topics.Mapping;
+using OnTopic.ViewModels;
+using OnTopic.Mapping;
+using OnTopic.Mapping.Annotations;
 
 namespace Ignia.Web.Models {
 
@@ -39,9 +40,7 @@ namespace Ignia.Web.Models {
     /// <returns>
     ///   The total number of <see cref="ArticleTopicViewModel"/> Topics.
     /// </returns>
-    public int GetArticleCount() {
-      return Articles.Count + Indexes.Sum(i => i.GetArticleCount());
-    }
+    public int GetArticleCount() => Articles.Count + Indexes.Sum(i => i.GetArticleCount());
 
     /*==========================================================================================================================
     | GET ALL ARTICLES
@@ -50,13 +49,12 @@ namespace Ignia.Web.Models {
     ///   Returns a collection of articles assembled from the <see cref="Articles"/> and <see cref="Indexes"/> collections.
     /// </summary>
     /// <returns>A consolidated list of articles.</returns>
-    public TopicViewModelCollection<ArticleTopicViewModel> GetAllArticles() {
-      return new TopicViewModelCollection<ArticleTopicViewModel>(
+    public TopicViewModelCollection<ArticleTopicViewModel> GetAllArticles() =>
+      new TopicViewModelCollection<ArticleTopicViewModel>(
         Articles.Union(
           Indexes.SelectMany(i => i.GetAllArticles())
         )
       );
-    }
 
   } // Class
 

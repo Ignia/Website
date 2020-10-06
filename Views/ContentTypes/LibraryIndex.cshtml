@@ -11,7 +11,7 @@
 }
 
 @section PageHeaderSection {
-  @Html.Partial("PageHeader.Library")
+  <partial name="PageHeader.Library" />
 }
 
 @section PageBodySection {
@@ -25,45 +25,47 @@
     </div>
     <!-- /Introduction -->
 
-    @WriteArticles(Model)
+    @{ WriteArticles(Model); }
 
   </article>
   <!-- /Articles Listing/Index -->
 
 }
 
-@helper WriteArticles(LibraryIndexTopicViewModel index, int tier = 2) {
-  if (index.GetArticleCount() == 0) { return; }
+@{
 
-  if (index.BypassDisplay) {
-    foreach(var childIndex in index.Indexes) {
-      @WriteArticles(childIndex, tier);
+  void WriteArticles(LibraryIndexTopicViewModel index, int tier = 2) {
+    if (index.GetArticleCount() == 0) { return; }
+
+    if (index.BypassDisplay) {
+      foreach (var childIndex in index.Indexes) {
+        WriteArticles(childIndex, tier);
+      }
+      return;
     }
-    return;
+
+    <!-- @index.Title Articles -->
+    <section class="articles list grid-x grid-margin-x" role="region">
+      <header class="cell">
+        <h@(tier)>@index.Title</h@(tier)>
+      </header>
+      @foreach (var article in index.Articles) {
+        WriteArticleItem(article, tier+1);
+      }
+      @foreach (var childIndex in index.Indexes) {
+        WriteArticles(childIndex, tier+1);
+      }
+    </section>
+    <!-- /@index.Title Articles -->
   }
 
-  <!-- @index.Title Articles -->
-  <section class="articles list grid-x grid-margin-x" role="region">
-    <header class="cell">
-      <h@(tier)>@index.Title</h@(tier)>
-    </header>
-    @foreach(var article in index.Articles) {
-      @WriteArticleItem(article, tier+1);
-    }
-    @foreach(var childIndex in index.Indexes) {
-      @WriteArticles(childIndex, tier+1);
-    }
-  </section>
-  <!-- /@index.Title Articles -->
+  void WriteArticleItem(ArticleTopicViewModel article, int tier = 3) {
+    <div id="@(article.ContentType + article.Key)" class="article item cell">
+      <!-- Article Title -->
+      <h@(tier) class="title"><a href="@article.WebPath">@article.Title</a></h@(tier)>
+      <!-- Abstract / Description -->
+      <div class="description">@Html.Raw(article.Abstract)</div>
+    </div>
+  }
 
 }
-
-@helper WriteArticleItem(ArticleTopicViewModel article, int tier = 3) {
-  <div id="@(article.ContentType + article.Key)" class="article item cell">
-    <!-- Article Title -->
-    <h@(tier) class="title"><a href="@article.WebPath">@article.Title</a></h@(tier)>
-    <!-- Abstract / Description -->
-    <div class="description">@Html.Raw(article.Abstract)</div>
-  </div>
-}
-

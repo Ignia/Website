@@ -3,7 +3,7 @@
 | Client        Ignia, LLC
 | Project       Website
 \=============================================================================================================================*/
-using Ignia.Topics.ViewModels;
+using OnTopic.ViewModels;
 
 namespace Ignia.Web.Models {
 

@@ -7,7 +7,7 @@
     <title>@(Model.MetaTitle ?? Model.Title ?? Model.Key) - Ignia</title>
     <meta name="keywords" content="@Model.MetaKeywords" />
     <meta name="description" content="@Model.MetaDescription" />
-    <link rel="canonical" href="http://www.ignia.com/@Request.Path.ToLower().TrimStart('/')" />
+    <link rel="canonical" href="http://www.ignia.com@(Model.WebPath)" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/Images/Favicons/favicon-16x16.png" />
@@ -17,7 +17,7 @@
     <meta name="msapplication-config" content="/Images/Favicons/browserconfig.xml" />
     <meta name="theme-color" content="#ffffff" />
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
-    <link rel="stylesheet" type="text/css" href="/Shared/Styles/Style.min.css" />
+    <link rel="stylesheet" type="text/css" href="/Shared/Styles/Style.min.css" asp-append-version="true" />
     @RenderSection("Head", false)
     <noscript id="DeferredStyles">
       @RenderSection("DeferredStyles", false)
@@ -36,7 +36,7 @@
           <!-- Menu open icon -->
           <button class="menu-toggle open-button hide-for-large" type="button" aria-label="Open menu" data-toggle="PrimaryNavigationSmallScreen"><i class="fas fa-bars"></i></button>
           <!-- Navigation Menu -->
-          @Html.Partial("Menu")
+          <partial name="Menu" />
 
           <!-- Logo Area -->
           <div class="logo"><a href="/Home/"><img id="BannerLogo" src="/Images/Logo.White.png" alt="Ignia is a software architecture and engineering firm. Let us build your product." /></a></div>
@@ -78,7 +78,7 @@
     @if (IsSectionDefined("FooterSection")) {
       @RenderSection("FooterSection")
     } else {
-      @Html.Partial("Footer")
+      <partial name="Footer" />
     }
 
     <!-- jQuery -->
@@ -112,7 +112,7 @@
        */
       $(document).foundation();
     </script>
-    <script src="/Shared/Scripts/Scripts.min.js" async defer></script>
+    <script src="/Shared/Scripts/Scripts.min.js" async defer asp-append-version="true"></script>
     @RenderSection("Scripts", false)
   </body>
 </html>
