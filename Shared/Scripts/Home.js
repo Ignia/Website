@@ -185,7 +185,7 @@ function selectService(selectedService) {
     $(arrowIndicator).css('left', '0');
   }
 
-};
+}
 
 /**
  * Performs Contact form validation
