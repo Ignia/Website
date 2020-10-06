@@ -3,7 +3,7 @@
 @{ Layout = "~/Views/Layout/_Layout.cshtml"; }
 
 @section Head {
-  <link rel="stylesheet" type="text/css" href="/Shared/Styles/Views/Home.css" />
+  <link rel="stylesheet" type="text/css" href="/Shared/Styles/Views/Home.css" asp-append-version="true" />
 }
 
 @section PageBodySection {
@@ -237,6 +237,6 @@
 }
 
 @section Scripts {
-  <script src="/Shared/Scripts/Views/Home.js" async defer></script>
-  <script src="/Shared/Scripts/Views/Home.Animations.js" async defer></script>
+  <script src="/Shared/Scripts/Views/Home.js" asp-append-version="true" async defer></script>
+  <script src="/Shared/Scripts/Views/Home.Animations.js" asp-append-version="true" async defer></script>
 }
