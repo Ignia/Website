@@ -36,7 +36,7 @@
           <!-- Menu open icon -->
           <button class="menu-toggle open-button hide-for-large" type="button" aria-label="Open menu" data-toggle="PrimaryNavigationSmallScreen"><i class="fas fa-bars"></i></button>
           <!-- Navigation Menu -->
-          @Html.Partial("Menu")
+          <partial name="Menu" />
 
           <!-- Logo Area -->
           <div class="logo"><a href="/Home/"><img id="BannerLogo" src="/Images/Logo.White.png" alt="Ignia is a software architecture and engineering firm. Let us build your product." /></a></div>
@@ -78,7 +78,7 @@
     @if (IsSectionDefined("FooterSection")) {
       @RenderSection("FooterSection")
     } else {
-      @Html.Partial("Footer")
+      <partial name="Footer" />
     }
 
     <!-- jQuery -->
