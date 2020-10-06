@@ -84,6 +84,14 @@ namespace Ignia.Web {
         mvcBuilder.AddRazorRuntimeCompilation();
       }
 
+      /*------------------------------------------------------------------------------------------------------------------------
+      | Register: Activators
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      var activator = new IgniaActivator(Configuration, HostingEnvironment);
+
+      services.AddSingleton<IControllerActivator>(activator);
+      services.AddSingleton<IViewComponentActivator>(activator);
+
 
     }
 
