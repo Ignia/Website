@@ -147,6 +147,20 @@ namespace Ignia.Web {
       }
 
       /*------------------------------------------------------------------------------------------------------------------------
+      | Enable downloads and cache headers
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      var provider              = new FileExtensionContentTypeProvider();
+      const int duration        = 60*60*24*365*2;
+
+      var staticFileOptions     = new StaticFileOptions {
+        ContentTypeProvider     = provider,
+        OnPrepareResponse       = context => {
+          context.Context.Response.Headers[HeaderNames.CacheControl] = "public,max-age=" + duration;
+        }
+      };
+      app.UseStaticFiles(staticFileOptions);
+
+      /*------------------------------------------------------------------------------------------------------------------------
       | Configure: Server defaults
       \-----------------------------------------------------------------------------------------------------------------------*/
       app.UseStaticFiles();
