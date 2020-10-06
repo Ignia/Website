@@ -135,6 +135,18 @@ namespace Ignia.Web {
     public static void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 
       /*------------------------------------------------------------------------------------------------------------------------
+      | Configure: Error Pages
+      \-----------------------------------------------------------------------------------------------------------------------*/
+      if (env.IsDevelopment()) {
+        app.UseDeveloperExceptionPage();
+      }
+      else {
+        app.UseExceptionHandler("/Error/InternalServer/");
+        app.UseHttpsRedirection();
+        app.UseHsts();
+      }
+
+      /*------------------------------------------------------------------------------------------------------------------------
       | Configure: Server defaults
       \-----------------------------------------------------------------------------------------------------------------------*/
       app.UseStaticFiles();
