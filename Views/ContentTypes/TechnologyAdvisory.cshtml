@@ -6,8 +6,8 @@
 
 @section Head {
   <!-- Library Index View Styles -->
-  <link rel="stylesheet" href="/Shared/Styles/Views/Library.min.css" />
-  <link rel="stylesheet" href="/Shared/Styles/Views/Article.min.css" />
+  <link rel="stylesheet" href="/Shared/Styles/Views/Library.css" asp-append-version="true" />
+  <link rel="stylesheet" href="/Shared/Styles/Views/Article.css" asp-append-version="true" />
 }
 
 @section PageHeaderSection {
@@ -103,7 +103,8 @@
 }
 
 @section Scripts {
-  <script src="/Shared/Scripts/Library.min.js" async defer></script>
+  <script defer src="/Shared/Scripts/Views/Library.js" asp-append-version="true"></script>
+  <script defer src="/Shared/Scripts/Views/Library.Animations.js" asp-append-version="true"></script>
 }
 
 @{

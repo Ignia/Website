@@ -87,7 +87,7 @@ function setActiveNavigation(menuItem) {
   if (typeof menuItem !== 'undefined' && menuItem.length) {
     $(menuItem).addClass('active');
   }
-};
+}
 
 /**
  * Re-associates menu item targets for smaller screens
@@ -126,4 +126,4 @@ function closeOffCanvasMenu() {
   setTimeout(function() {
     $('#PrimaryNavigationSmallScreen').foundation('close');
   }, 250);
-};
+}
