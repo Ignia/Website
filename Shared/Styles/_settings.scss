@@ -33,7 +33,6 @@ $body-font-family               : $body-font-family;            // 'Helvetica Ne
 $global-weight-normal           : 400;                          // normal
 $global-flexbox                 : true;                         // REQUIRED
 $global-button-cursor           : pointer;                      // auto
-$print-hrefs                    : true;                         // NEW
 
 @include add-foundation-colors;
 
@@ -75,10 +74,7 @@ $header-styles                  : (
     'h6'                        : ('font-size': 12),            // 16
   ),
 );
-
-$enable-code-inline             : true;                         // NEW
 $anchor-color                   : $primary-color;               // $palette-yellow
-
 $blockquote-color               : $palette-grey-medium;         // $dark-gray
 $blockquote-padding             : rem-calc(0 0 16 30);          // rem-calc(9 20 0 19)
 $blockquote-border              : 2px solid $palette-grey-medium; // 1px solid $medium-gray
@@ -97,43 +93,20 @@ $subheader-margin-bottom        : 0.5rem;
 $stat-font-size                 : 2.5rem;
 $cite-color                     : $palette-grey-medium;         // $dark-gray
 $cite-font-size                 : rem-calc(14);                 // rem-calc(13)
-$code-block-padding             : 1rem;                         // NEW
-$code-block-margin-margin       : 1.5rem;                       // NEW
-
-//----------------------------------------------------------------------------------------------
-// 7. Accordion
-//----------------------------------------------------------------------------------------------
-
-$accordion-plus-content         : '\002B';                      // NEW
-$accordion-minus-content        : '\2013';                      // NEW
 
 //----------------------------------------------------------------------------------------------
 // 11. Button
 //----------------------------------------------------------------------------------------------
 
-$button-font-weight             : null;                         // NEW
 $button-padding                 : 0.75rem;                      // 0.85em 1em;
 $button-background              : $palette-yellow;              // $primary-color
 $button-color                   : $body-font-color;             // $white
 $button-radius                  : 2px;                          // $global-radius
-$button-responsive-expanded     : false;                        // NEW
-
-//----------------------------------------------------------------------------------------------
-// 13. Callout
-//----------------------------------------------------------------------------------------------
-
-$callout-sizes                  : (
-  small                         : 0.5rem,
-  default                       : 1rem,
-  large                         : 3rem,
-);                                                              // NEW
 
 //----------------------------------------------------------------------------------------------
 // 15. Close Button
 //----------------------------------------------------------------------------------------------
 
-$closebutton-z-index            : 10;                           // NEW
-$closebutton-default-size       : medium;                       // NEW
 $closebutton-color              : $white;                       // WAS $dark-gray
 $closebutton-color-hover        : $palette-yellow;              // WAS $black
 
@@ -154,14 +127,6 @@ $label-color                    : $black;                       // WAS $white
 $label-font-size                : $global-font-size;            // WAS 0.8rem
 $label-padding                  : 0;                            // WAS 0.33333rem 0.5rem
 
-
-//----------------------------------------------------------------------------------------------
-// 23. Menu
-//----------------------------------------------------------------------------------------------
-
-$menu-item-color-alt-active     : $black;                       // NEW
-$menu-icons-back-compat         : true;                         // NEW
-
 //----------------------------------------------------------------------------------------------
 // 25. Off-canvas
 //----------------------------------------------------------------------------------------------
@@ -173,13 +138,6 @@ $offcanvas-background           : $palette-white;               // $light-gray
 $offcanvas-exit-background      : rgba($palette-grey-dark, 0.75); // rgba($white, 0.25)
 
 //----------------------------------------------------------------------------------------------
-// 27. Pagination
-//----------------------------------------------------------------------------------------------
-
-$pagination-arrow-previous      : '\00AB';                      // NEW
-$pagination-arrow-next          : '\00BB';                      // NEW
-
-//----------------------------------------------------------------------------------------------
 // 47. Reveal
 //----------------------------------------------------------------------------------------------
 
@@ -188,13 +146,6 @@ $reveal-width                   : auto;                         // 600px;
 $reveal-padding                 : rem-calc(48 0 32);            // $global-padding
 $reveal-border                  : 1px solid $black;             // 1px solid $medium-gray
 $reveal-overlay-background      : rgba(242, 238, 230, 0.65);    // rgba($black, 0.45)
-
-//----------------------------------------------------------------------------------------------
-// 49. Switch
-//----------------------------------------------------------------------------------------------
-
-$switch-opacity-disabled        : .5;                           // NEW
-$switch-cursor-disabled         : not-allowed;                  // NEW
 
 //----------------------------------------------------------------------------------------------
 // 52. Thumbnail
