@@ -16,7 +16,7 @@
 
 @function sl-purge($list) {
   $_: sl-missing-dependencies('sl-is-true', 'sl-to-list');
-  
+
   $result: ();
 
   @each $item in $list {
@@ -32,7 +32,7 @@
 /// @requires sl-purge
 /// @alias sl-purge
 ///
- 
+
 @function sl-clean($list) {
   @return sl-purge($list);
 }

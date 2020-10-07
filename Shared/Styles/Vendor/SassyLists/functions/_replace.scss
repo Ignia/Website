@@ -18,10 +18,10 @@
 /// @example
 /// sl-replace(a b c, y, z)
 /// // a b c
-/// 
+///
 /// @return {List}
 ///
- 
+
 @function sl-replace($list, $old, $value) {
   $_: sl-missing-dependencies('sl-is-true', 'sl-purge', 'sl-to-list');
 
@@ -41,6 +41,6 @@
   }
 
   $list: if(sl-is-true($value), $list, sl-purge($list));
-  
+
   @return sl-to-list($list);
 }
