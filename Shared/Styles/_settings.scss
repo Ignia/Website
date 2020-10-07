@@ -76,8 +76,8 @@ $global-lineheight              : 1.5;
 $foundation-palette             : (
   primary       : $palette-yellow,
   secondary     : $palette-grey-light,
-  success       : rgb(101, 166, 31),                            // #65A61F
-  warning       : rgb(239, 141, 36),                            // #EF8D24
+  success       : rgb(101, 166, 31),                            // WAS #65A61F
+  warning       : rgb(239, 141, 36),                            // WAS #EF8D24
   alert         : $palette-red,
 );
 $light-gray                     : $palette-grey-lighter;
