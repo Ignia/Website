@@ -170,5 +170,5 @@ namespace Ignia.Web {
     /// </summary>
     public void Release(ViewComponentContext context, object viewComponent) { }
 
-  } //Class
-} //Namespace
+  } // Class
+} // Namespace

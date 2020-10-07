@@ -22,5 +22,4 @@ namespace Ignia.Web.Models {
     public NavigationTopicViewModel NavigationRoot { get; set; }
 
   } // Class
-
 } // Namespace

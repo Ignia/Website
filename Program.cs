@@ -49,5 +49,5 @@ namespace Ignia.Web {
           webBuilder.UseStartup<Startup>();
         });
 
-  } //Class
-} //Namespace
+  } // Class
+} // Namespace

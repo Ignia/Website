@@ -5,7 +5,6 @@
 \=============================================================================================================================*/
 using System;
 using System.Linq;
-using OnTopic.Mapping;
 using OnTopic.Mapping.Annotations;
 using OnTopic.ViewModels;
 
@@ -93,5 +92,4 @@ namespace Ignia.Web.Models {
     }
 
   } // Class
-
 } // Namespace

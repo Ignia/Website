@@ -23,5 +23,4 @@ namespace Ignia.Web.Models {
     public bool IsSelected(string uniqueKey) => uniqueKey?.StartsWith(this.UniqueKey) ?? false;
 
   } // Class
-
 } // Namespace

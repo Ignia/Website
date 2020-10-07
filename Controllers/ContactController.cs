@@ -72,5 +72,5 @@ namespace Ignia.Web.Controllers {
     }
 
 
-  } //Class
-} //Namespace
+  } // Class
+} // Namespace
