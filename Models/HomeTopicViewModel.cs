@@ -16,5 +16,4 @@ namespace Ignia.Web.Models {
   public class HomeTopicViewModel : PageTopicViewModel {
 
   } // Class
-
 } // Namespace

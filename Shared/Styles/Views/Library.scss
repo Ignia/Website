@@ -11,11 +11,11 @@
 // therefore, it is not necessary that it reimport shared styles. It may, however, need to
 // import variables and helpers.
 //----------------------------------------------------------------------------------------------
-@import "../variables";
-@import "../settings";
-@import "../Vendor/ZURB/util/mixins";
-@import "../Helpers/mixins";
-@import "../Base/utilities";
+@import "variables";
+@import "settings";
+@import "util/mixins";
+@import "Helpers/mixins";
+@import "Base/utilities";
 
 //----------------------------------------------------------------------------------------------
 // LAYOUT

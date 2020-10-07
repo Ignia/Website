@@ -43,5 +43,4 @@ namespace Ignia.Web.Models {
     }
 
   } // Class
-
 } // Namespace

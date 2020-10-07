@@ -192,5 +192,5 @@ namespace Ignia.Web {
 
     }
 
-  } //Class
-} //Namespace
+  } // Class
+} // Namespace

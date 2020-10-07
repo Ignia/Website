@@ -20,5 +20,4 @@ namespace Ignia.Web.Models
     public string Url { get; set; }
 
   } // Class
-
 } // Namespace

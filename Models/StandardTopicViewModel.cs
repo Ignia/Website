@@ -15,5 +15,4 @@ namespace Ignia.Web.Models {
   public class StandardTopicViewModel : ArticleTopicViewModel {
 
   } // Class
-
 } // Namespace
