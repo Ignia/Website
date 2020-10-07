@@ -78,14 +78,6 @@ $blockquote-border              : 2px solid $palette-grey-medium; // 1px solid $
 // 5. Typography Helpers
 //----------------------------------------------------------------------------------------------
 
-$lead-font-size                 : $global-font-size * 1.25;
-$lead-lineheight                : 1.6;
-$subheader-lineheight           : 1.4;
-$subheader-color                : $dark-gray;
-$subheader-font-weight          : $global-weight-normal;
-$subheader-margin-top           : 0.2rem;
-$subheader-margin-bottom        : 0.5rem;
-$stat-font-size                 : 2.5rem;
 $cite-color                     : $palette-grey-medium;         // $dark-gray
 $cite-font-size                 : rem-calc(14);                 // rem-calc(13)
 
