@@ -41,8 +41,8 @@ $global-button-cursor           : pointer;                      // auto
 //----------------------------------------------------------------------------------------------
 
 $grid-column-gutter             : (
-  small                         : 10px,                         // 10px
-  medium                        : 20px,
+  small                         : 10px,                         // 20px
+  medium                        : 20px,                         // 30px
 );
 
 //----------------------------------------------------------------------------------------------
@@ -165,5 +165,5 @@ $titlebar-icon-color-hover      : $dark-gray;                   // $medium-gray
 
 $grid-margin-gutters            : (
   small                         : 10px,                         // 20px
-  medium                        : 20px
+  medium                        : 20px                          // 30px
 );
