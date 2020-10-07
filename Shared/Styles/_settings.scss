@@ -57,7 +57,6 @@ $grid-column-gutter             : (
 
 $header-font-family             : $headings-font-family;        // $body-font-family
 $header-font-weight             : 300;                          // $global-weight-normal
-$header-margin-top              : 0.2rem;                       // OLD
 $header-styles                  : (
   small                         : (
     'h1'                        : ('font-size': 24),
@@ -78,9 +77,7 @@ $header-styles                  : (
 );
 
 $enable-code-inline             : true;                         // NEW
-$anchor-color                   : $primary-color;               // NEW
-
-$anchor-color                   : $palette-yellow;              // OLD
+$anchor-color                   : $primary-color;               // $palette-yellow
 
 $blockquote-color               : $palette-grey-medium;         // $dark-gray
 $blockquote-padding             : rem-calc(0 0 16 30);          // rem-calc(9 20 0 19)
@@ -119,14 +116,6 @@ $button-padding                 : 0.75rem;                      // 0.85em 1em;
 $button-background              : $palette-yellow;              // $primary-color
 $button-color                   : $body-font-color;             // $white
 $button-radius                  : 2px;                          // $global-radius
-$button-sizes                   : (
-  tiny                          : 0.6rem,
-  small                         : 0.75rem,
-  default                       : 0.9rem,
-  large                         : 1.25rem,
-  huge                          : rem-calc(24)                  // OLD
-);
-$button-palette                 : map-merge($foundation-palette, (white: $palette-white)); // OLD
 $button-responsive-expanded     : false;                        // NEW
 
 //----------------------------------------------------------------------------------------------
@@ -138,7 +127,6 @@ $callout-sizes                  : (
   default                       : 1rem,
   large                         : 3rem,
 );                                                              // NEW
-$callout-padding                : 1rem;                         // OLD
 
 //----------------------------------------------------------------------------------------------
 // 15. Close Button
@@ -172,7 +160,6 @@ $label-padding                  : 0;                            // WAS 0.33333re
 //----------------------------------------------------------------------------------------------
 
 $menu-item-color-alt-active     : $black;                       // NEW
-$menu-item-background-hover     : $light-gray;                  // OLD
 $menu-icons-back-compat         : true;                         // NEW
 
 //----------------------------------------------------------------------------------------------
@@ -183,7 +170,6 @@ $offcanvas-vertical-sizes       : (
   small                         : 496px,                        // 250px
 );
 $offcanvas-background           : $palette-white;               // $light-gray
-$offcanvas-shadow               : 0 0 5px rgba($black, 0.5);    // OLD
 $offcanvas-exit-background      : rgba($palette-grey-dark, 0.75); // rgba($white, 0.25)
 
 //----------------------------------------------------------------------------------------------
@@ -209,12 +195,6 @@ $reveal-overlay-background      : rgba(242, 238, 230, 0.65);    // rgba($black, 
 
 $switch-opacity-disabled        : .5;                           // NEW
 $switch-cursor-disabled         : not-allowed;                  // NEW
-
-//----------------------------------------------------------------------------------------------
-// 51. Tabs
-//----------------------------------------------------------------------------------------------
-
-$tab-expand-max                 : 6;                            // OLD
 
 //----------------------------------------------------------------------------------------------
 // 52. Thumbnail
