@@ -110,7 +110,11 @@
       /**
        * Initialize Foundation
        */
-      $(document).foundation();
+      window.addEventListener('DOMContentLoaded', function() {
+        (function($) {
+          $(document).foundation();
+        })(jQuery);
+      });
     </script>
     <script defer src="/Shared/Scripts/Scripts.js" async defer asp-append-version="true"></script>
     @RenderSection("Scripts", false)
