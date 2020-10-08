@@ -6,12 +6,26 @@
 //==============================================================================================
 
 //----------------------------------------------------------------------------------------------
-// ICONS
+// FONT AWESOME
 //----------------------------------------------------------------------------------------------
-@mixin icon() {
+@mixin fa-regular() {
   @include fa-icon;
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 400;
-  padding-right: rem-calc(8);
-  vertical-align: baseline;
+  font-family                   : 'Font Awesome 5 Free';
+  padding-right                 : rem-calc(8);
+  vertical-align                : middle;
+}
+
+@mixin fa-brand() {
+  @include fa-icon;
+  font-family                   : 'Font Awesome 5 Brands';
+  padding-right                 : rem-calc(8);
+  vertical-align                : baseline;
+}
+
+@mixin fa-solid() {
+  @include fa-icon;
+  font-family                   : 'Font Awesome 5 Free';
+  font-weight                   : 900;
+  padding-right                 : rem-calc(8);
+  vertical-align                : middle;
 }

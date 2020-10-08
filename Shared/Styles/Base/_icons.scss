@@ -9,32 +9,29 @@
 //----------------------------------------------------------------------------------------------
 
 .email:before {
-  @include icon;
+  @include fa-solid;
   content                       : fa-content($fa-var-envelope);
   vertical-align                : middle;
 }
 
 .phone:before {
-  @include icon;
+  @include fa-solid;
   content                       : fa-content($fa-var-phone);
   vertical-align                : middle;
 }
 
 .github:before {
-  @include icon;
-  font-family                   : 'Font Awesome 5 Brands';
+  @include fa-brand;
   content                       : fa-content($fa-var-github);
 }
 
 .linkedin:before {
-  @include icon;
-  font-family                   : 'Font Awesome 5 Brands';
+  @include fa-brand;
   content                       : fa-content($fa-var-linkedin-in);
 }
 
 .facebook:before {
-  @include icon;
-  font-family                   : 'Font Awesome 5 Brands';
+  @include fa-brand;
   content                       : fa-content($fa-var-facebook-f);
 }
 
