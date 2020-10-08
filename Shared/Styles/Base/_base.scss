@@ -90,6 +90,10 @@ body {
     color                       : $palette-grey-light;
     small {
       font-size                 : rem-calc(12);
+      &:before {
+        @include fa-regular;
+        content                 : fa-content($fa-var-copyright);
+      }
     }
   }
 }
