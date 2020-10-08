@@ -742,19 +742,19 @@ footer.footer {
             margin-bottom       : rem-calc(15);
           }
         }
-        .svg-inline--fa {
+        a:before {
           margin-right          : rem-calc(12);
-          width                 : rem-calc(20);
+          width                 : rem-calc(24);
           height                : auto;
+          font-size             : rem-calc(20);
           @include breakpoint(767px down) {
-            width               : rem-calc(18);
+            width               : rem-calc(23);
+            font-size           : rem-calc(18);
           }
           @include breakpoint(360px down) {
-            width               : rem-calc(16);
+            width               : rem-calc(11);
+            font-size           : rem-calc(17);
           }
-        }
-        .fa-phone {
-          transform             : rotateY(180deg);
         }
         a {
           position              : relative;

@@ -8,6 +8,25 @@
 // GLOBAL
 //----------------------------------------------------------------------------------------------
 
+.email:before {
+  @include fa-icon;
+  font-family                   : 'Font Awesome 5 Free';
+  font-weight                   : 400;
+  padding-right                 : rem-calc(8);
+  content                       : fa-content($fa-var-envelope);
+  vertical-align                : middle;
+}
+
+.phone:before {
+  @include fa-icon;
+  font-family                   : 'Font Awesome 5 Free';
+  font-weight                   : 400;
+  padding-right                 : rem-calc(8);
+  content                       : fa-content($fa-var-phone);
+  vertical-align                : middle;
+}
+
+
 //----------------------------------------------------------------------------------------------
 // FILE TYPES
 //----------------------------------------------------------------------------------------------
