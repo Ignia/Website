@@ -11,6 +11,7 @@
 @import "util/mixins";
 @import "fonts";
 @import "typography";
+@import "icons";
 @import "links";
 @import "lists";
 @import "buttons";
@@ -89,6 +90,14 @@ body {
     color                       : $palette-grey-light;
     small {
       font-size                 : rem-calc(12);
+      &:before {
+        @include fa-regular;
+        content                 : fa-content($fa-var-copyright);
+      }
     }
+  }
+  .registered:after {
+    @include fa-regular;
+    content                     : fa-content($fa-var-registered);
   }
 }
