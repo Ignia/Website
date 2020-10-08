@@ -332,6 +332,9 @@ body {
     @include breakpoint(767px down) {
       text-align                : center;
     }
+    &:before {
+      padding-right             : rem-calc(8);
+    }
   }
   .contact {
     padding-left                : rem-calc(26);
