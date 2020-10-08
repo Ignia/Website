@@ -96,4 +96,8 @@ body {
       }
     }
   }
+  .registered:after {
+    @include fa-regular;
+    content                     : fa-content($fa-var-registered);
+  }
 }
