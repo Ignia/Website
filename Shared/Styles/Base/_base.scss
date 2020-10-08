@@ -31,9 +31,9 @@ body {
 //----------------------------------------------------------------------------------------------
 
 .header {
-  background                    : $palette-white url('/Images/Header/Header.Tile.png') repeat 0 0;
+  background                    : $palette-white url('/Images/Header/Header.Background.Tile.png') repeat 0 0;
   .logo {
-    background                  : $palette-red url('/Images/Header/LogoBox.Tile.png') repeat 0 0;
+    background                  : $palette-red url('/Images/Header/LogoBox.Background.Tile.png') repeat 0 0;
     a {
       line-height               : 1;
     }

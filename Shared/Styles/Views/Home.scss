@@ -196,10 +196,10 @@ footer.footer {
   // Introduction
   &.introduction {
     color                       : $palette-white;
-    background                  : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
+    background                  : $palette-red url('/Images/Home/Introduction.Background.Tile.png') repeat center top;
     header {
       z-index                   : 1;
-      background                : $palette-red url('/Images/Home/Introduction.Tile.png') repeat center top;
+      background                : $palette-red url('/Images/Home/Introduction.Background.Tile.png') repeat center top;
       &[style*="position: fixed"] {
         z-index                 : 10;
       }
@@ -212,8 +212,8 @@ footer.footer {
     .container {
       @include breakpoint(960px) {
         background-color        : transparent;
-        background-image        : url('/Images/Home/Tagline.Rulers.png');
-        background-repeat       : no-repeat;
+        background-image        : url('/Images/Home/Tagline.Rulers.Tile.png');
+        background-repeat       : repeat-y;
         background-position-x   : calc(50vw - 365px);
         background-position-y   : 100%;
         background-attachment   : fixed;
@@ -293,8 +293,8 @@ footer.footer {
           top                   : rem-calc(284);
           min-height            : rem-calc(800);
           background-color      : transparent;
-          background-image      : url('/Images/Home/Tagline.Code.png');
-          background-repeat     : no-repeat;
+          background-image      : url('/Images/Home/Tagline.Code.Tile.png');
+          background-repeat     : repeat-y;
           background-position-x : calc(50vw - 438px);
           background-position-y : 77.5%;
           background-attachment : fixed;
@@ -490,7 +490,7 @@ footer.footer {
 
   // Clients
   &.clients {
-    background                  : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
+    background                  : $palette-yellow url('/Images/Home/Clients.Background.Tile.png') repeat center top;
     @include breakpoint(960px) {
       z-index                   : 35;
       padding-bottom            : rem-calc(54);
@@ -503,7 +503,7 @@ footer.footer {
     }
     header {
       border-bottom-color       : $palette-grey-dark;
-      background                : $palette-yellow url('/Images/Home/Clients.Tile.png') repeat center top;
+      background                : $palette-yellow url('/Images/Home/Clients.Background.Tile.png') repeat center top;
       h1 {
         color                   : $palette-grey-dark;
       }
