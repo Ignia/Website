@@ -118,6 +118,11 @@
     color                       : rgba(59, 51, 47, 1);
   }
   &.open-button {
+    &:before {
+      @include fa-solid;
+      content                   : fa-content($fa-var-bars);
+      font-size                 : rem-calc(30);
+    }
     @include breakpoint(959px down) {
       margin                    : rem-calc(23 0 0 27);
     }
