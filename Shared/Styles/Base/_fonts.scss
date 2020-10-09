@@ -9,9 +9,11 @@
 //----------------------------------------------------------------------------------------------
 // IMPORTS
 //----------------------------------------------------------------------------------------------
-@import url(https://fonts.googleapis.com/css?family=Dosis:400,500,700);
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,700italic,600italic,900);
-@import url(https://fonts.googleapis.com/css?family=Nunito+Sans);
+// Fonts commonly used above the fold—such as Dosis and Source Sans Pro, should be preloaded as
+// part of the template to avoid chaining the requests. That said, keeping them here as a
+// fallback doesn't hurt since, worse case, they'll be loaded from the cache.
+//----------------------------------------------------------------------------------------------
+@import url(https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&display=swap);
 
 //----------------------------------------------------------------------------------------------
 // FONT AWESOME

@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>@(Model.MetaTitle ?? Model.Title ?? Model.Key) - Ignia</title>
     <meta name="keywords" content="@Model.MetaKeywords" />
     <meta name="description" content="@Model.MetaDescription" />
+    <meta name="msapplication-config" content="/Images/Favicons/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>@(Model.MetaTitle ?? Model.Title ?? Model.Key) - Ignia</title>
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" crossorigin href="https://www.google-analytics.com" />
     <link rel="canonical" href="http://www.ignia.com@(Model.WebPath)" />
     <link rel="apple-touch-icon" sizes="180x180" href="/Images/Favicons/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/Images/Favicons/favicon-32x32.png" />
@@ -14,13 +19,22 @@
     <link rel="manifest" href="/Images/Favicons/manifest.json" />
     <link rel="mask-icon" href="/Images/Favicons/safari-pinned-tab.svg" color="#000000" />
     <link rel="shortcut icon" href="/Images/Favicons/favicon.ico" />
-    <meta name="msapplication-config" content="/Images/Favicons/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
     <link rel="stylesheet" type="text/css" href="/Shared/Styles/Style.css" asp-append-version="true" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Dosis:wght@400;500;700&family=Source+Sans+Pro:ital,wght@0,400;0,600;0,700;0,900;1,600;1,700&display=swap" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Shared/Fonts/Vendor/FontAwesome/fa-regular-400.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Shared/Fonts/Vendor/FontAwesome/fa-brands-400.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/Shared/Fonts/Vendor/FontAwesome/fa-solid-900.woff2">
     @RenderSection("Head", false)
     <noscript id="DeferredStyles">
       @RenderSection("DeferredStyles", false)
     </noscript>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-19251033-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'UA-19251033-1');
+    </script>
   </head>
   <body vocab="http://schema.org/" typeof="WebPage">
 
@@ -85,11 +99,9 @@
 
     <!-- Foundation -->
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.core.min.js"></script>
-
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.util.keyboard.min.js"></script>
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.util.mediaQuery.min.js"></script>
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.util.triggers.min.js"></script>
-
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.offcanvas.min.js"></script>
     <script defer src="/Shared/Scripts/Vendor/ZURB/Plugins/foundation.smoothscroll.min.js"></script>
 
@@ -99,7 +111,7 @@
     <!-- ScrollMagic -->
     <script defer src="~/Shared/Scripts/Vendor/ScrollMagic/ScrollMagic.min.js"></script>
     <script defer src="~/Shared/Scripts/Vendor/ScrollMagic/plugins/animation.gsap.min.js"></script>
-    <script defer src="~/Shared/Scripts/Vendor/ScrollMagic/plugins/debug.addIndicators.min.js"></script>
+    <!--<script defer src="~/Shared/Scripts/Vendor/ScrollMagic/plugins/debug.addIndicators.min.js"></script>-->
 
     <script>
       var loadDeferredStyles = function () {
@@ -128,5 +140,6 @@
     </script>
     <script defer src="/Shared/Scripts/Scripts.js" asp-append-version="true"></script>
     @RenderSection("Scripts", false)
+
   </body>
 </html>
