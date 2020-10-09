@@ -4,6 +4,7 @@
 | Project       Topics Library
 \=============================================================================================================================*/
 using Ignia.Web.Models;
+using OnTopic.Editor.AspNetCore.Infrastructure;
 
 namespace Ignia.Web.Services {
 
@@ -14,7 +15,7 @@ namespace Ignia.Web.Services {
   ///   Provides a mapping between string and class names to be used when mapping <see cref="Topic"/> to a <see
   ///   cref="TopicViewModel"/> or derived class.
   /// </summary>
-  public class IgniaTopicViewModelLookupService : OnTopic.ViewModels.TopicViewModelLookupService {
+  public class IgniaTopicViewModelLookupService : EditorViewModelLookupService {
 
     /*==========================================================================================================================
     | CONSTRUCTOR
