@@ -70,11 +70,6 @@ namespace Ignia.Web {
 
       /*------------------------------------------------------------------------------------------------------------------------
       | Use the Microsoft Identity Platform for authentication
-      >-------------------------------------------------------------------------------------------------------------------------
-      | ### NOTE JJC20191122: OpenId only allows authentication against a single Azure AD tenant, or ALL Azure AD tenants. In
-      | order to permit authentication against just Ignia, we to validate the issuer. The issuer addresses can be retrieved per
-      | tenant by looking at the "issuer" attribute of the https://login.microsoftonline.com/{TenantId}/v2.0/.well-known/openid-
-      | configuration feed (where {TenantId} is e.g. "Ignia.com").
       \-----------------------------------------------------------------------------------------------------------------------*/
       services.AddAuthentication(options => {
         options.DefaultAuthenticateScheme = OpenIdConnectDefaults.AuthenticationScheme;
@@ -85,12 +80,6 @@ namespace Ignia.Web {
         Configuration.GetSection("OpenIdConnect").Bind(options);
         options.CorrelationCookie.SameSite = SameSiteMode.None;
         options.SaveTokens = true;
-        options.TokenValidationParameters = new TokenValidationParameters {
-          NameClaimType = "name",
-          ValidIssuers = new[] {
-            $"https://login.microsoftonline.com/10dcd9d4-80f7-47c8-ad5a-7efddcd5f868/v2.0",
-          }
-        };
       })
       .AddCookie();
 
