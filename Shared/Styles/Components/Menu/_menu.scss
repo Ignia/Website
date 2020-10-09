@@ -33,7 +33,7 @@
   }
   .navigation {
     &.off-canvas {
-      background                : $palette-white url('/Images/Header/Header.Background.Tile.png') repeat 0 0;
+      background                : $palette-white url('/Images/Backgrounds/White.Tile.png') repeat 0 0;
     }
     a {
       border-bottom-color       : transparent;
@@ -61,7 +61,7 @@
       &.active {
         color                   : rgb(59, 51, 47);              // #3B332F
         @include breakpoint(959px down) {
-          background            : transparent url("/Images/Header/ActiveNavigation.Highlight.png") no-repeat -70px 16px;
+          background            : transparent url("/Images/Backgrounds/Red.Tile.png") no-repeat -70px 16px;
         }
         @include breakpoint(767px down) {
           background-position   : -81px 15px;
