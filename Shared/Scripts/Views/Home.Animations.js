@@ -50,8 +50,8 @@ $(function() {
 
     // Define tweens timeline
     var overlayTweens           = gsap.timeline()
-      .add(TweenMax.to(panelOverlay, 0.1, { zIndex: 1, ease: Power0.easeNone }))
-      .add(TweenMax.to(panelOverlay, 0.9, { autoAlpha: 0.8, ease: Power0.easeNone }, '-=0.05'));
+      .add(TweenMax.to(panelOverlay, 0.1, { zIndex: 1, ease: "none" }))
+      .add(TweenMax.to(panelOverlay, 0.9, { autoAlpha: 0.8, ease: "none" }, '-=0.05'));
 
     // Define scene
     var overlayScene            = new ScrollMagic.Scene({
@@ -72,7 +72,7 @@ $(function() {
       clientLogosItem,
       3,
       { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1, ease: SlowMo.ease.config(0.3, 0.4, false), autoCSS: true },
+      { autoAlpha: 1, scale: 1, ease: "slowMo(0.3, 0.4, false)", autoCSS: true },
       0.25
     ),
     clientLogosScene            = new ScrollMagic.Scene({
@@ -89,7 +89,7 @@ $(function() {
     contactFormArea             = $('#Contact section'),
     contactFormAreaTween        = gsap.to(
       contactFormArea,
-      { duraction: 0.9, autoAlpha: 0.05, ease: Power0.easeNone }
+      { duraction: 0.9, autoAlpha: 0.05, ease: "none" }
     ),
     contactFormAreaScene        = new ScrollMagic.Scene({
       triggerElement            : '#Footer',
@@ -192,7 +192,7 @@ $(function() {
     var
       codefactoryTween          = gsap.to(
         'img#FactoryWidget',
-        { duration: 10, y: '260px', ease: Linear.easeNone, force3D: true }
+        { duration: 10, y: '260px', ease: "none", force3D: true }
       ),
       codeFactoryScene          = new ScrollMagic.Scene({
         triggerElement          : '#FactoryWidget',
