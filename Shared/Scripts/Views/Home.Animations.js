@@ -72,7 +72,7 @@ $(function() {
       clientLogosItem,
       3,
       { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1, ease: "slowMo(0.3, 0.4, false)", autoCSS: true },
+      { autoAlpha: 1, scale: 1, ease: "slowMo(0.3, 0.4, false)" },
       0.25
     ),
     clientLogosScene            = new ScrollMagic.Scene({
@@ -126,7 +126,6 @@ $(function() {
           scale                 : 1.1,
           x                     : '-24px',
           ease                  : Circ.easeOut,
-          autoCSS               : true,
           repeat                : 1,
           yoyo                  : true
         }),
