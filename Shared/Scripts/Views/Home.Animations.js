@@ -68,12 +68,10 @@ $(function() {
   var
     clientLogosItem             = $('#ClientHighlights section.logos ul li'),
     clientLogosDuration         = ($('#ClientHighlights').innerHeight() * 0.5),
-    clientLogosTween            = TweenMax.staggerFromTo(
+    clientLogosTween            = gsap.fromTo(
       clientLogosItem,
-      3,
       { autoAlpha: 0, scale: 0 },
-      { autoAlpha: 1, scale: 1, ease: "slowMo(0.3, 0.4, false)" },
-      0.25
+      { duration: 3, autoAlpha: 1, scale: 1, ease: "slowMo(0.3, 0.4, false)", stagger: 0.25 }
     ),
     clientLogosScene            = new ScrollMagic.Scene({
       triggerElement            : '#ClientHighlights section.tagline h2.subheadline',
