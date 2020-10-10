@@ -49,7 +49,7 @@ $(function() {
     }
 
     // Define tweens timeline
-    var overlayTweens           = new TimelineMax()
+    var overlayTweens           = gsap.timeline()
       .add(TweenMax.to(panelOverlay, 0.1, { zIndex: 1, ease: Power0.easeNone }))
       .add(TweenMax.to(panelOverlay, 0.9, { autoAlpha: 0.8, ease: Power0.easeNone }, '-=0.05'));
 
@@ -87,10 +87,9 @@ $(function() {
    */
   var
     contactFormArea             = $('#Contact section'),
-    contactFormAreaTween        = TweenMax.to(
+    contactFormAreaTween        = gsap.to(
       contactFormArea,
-      0.9,
-      { autoAlpha: 0.05, ease: Power0.easeNone }
+      { duraction: 0.9, autoAlpha: 0.05, ease: Power0.easeNone }
     ),
     contactFormAreaScene        = new ScrollMagic.Scene({
       triggerElement            : '#Footer',
@@ -122,7 +121,8 @@ $(function() {
     $('#Services article').each(function () {
       var
         category                = '#' + $(this).attr('id'),
-        categoryHeaderTween     = TweenMax.to(category + ' header h2 span', 0.075, {
+        categoryHeaderTween     = gsap.to(category + ' header h2 span', 0.075, {
+          duration              : 0.075,
           scale                 : 1.1,
           x                     : '-24px',
           ease                  : Circ.easeOut,
@@ -190,10 +190,9 @@ $(function() {
 
     // Introduction panel code factory tween
     var
-      codefactoryTween          = TweenMax.to(
+      codefactoryTween          = gsap.to(
         'img#FactoryWidget',
-        10,
-        { y: '260px', ease: Linear.easeNone, force3D: true }
+        { duration: 10, y: '260px', ease: Linear.easeNone, force3D: true }
       ),
       codeFactoryScene          = new ScrollMagic.Scene({
         triggerElement          : '#FactoryWidget',
