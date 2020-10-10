@@ -55,9 +55,7 @@ const dependencies = {
   'Scripts': {
     'ApplicationInsights'       : 'node_modules/@microsoft/applicationinsights-web/dist/*.min.*',
     'FontAwesome'               : 'node_modules/@fortawesome/fontawesome-free/js/*.min.js',
-    'GreenSock'                 : [ 'node_modules/gsap/dist/*.min.*',
-                                    'node_modules/greensock/dist/**'
-                                  ],
+    'GSAP'                      : 'node_modules/gsap/dist/**',
     'jQuery'                    : 'node_modules/jquery/dist/*.*',
     'ScrollMagic'               : [ 'node_modules/scrollmagic/scrollmagic/minified/**',
                                     'scrollmagic/scrollmagic/uncompressed/**'
