@@ -50,8 +50,8 @@ $(function() {
 
     // Define tweens timeline
     var overlayTweens           = gsap.timeline()
-      .add(TweenMax.to(panelOverlay, 0.1, { zIndex: 1, ease: "none" }))
-      .add(TweenMax.to(panelOverlay, 0.9, { autoAlpha: 0.8, ease: "none" }, '-=0.05'));
+      .add(gsap.to(panelOverlay, { duration: 0.1, zIndex: 1, ease: "none" }))
+      .add(gsap.to(panelOverlay, { duraction: 0.9, autoAlpha: 0.8, ease: "none" }, '-=0.05'));
 
     // Define scene
     var overlayScene            = new ScrollMagic.Scene({
